@@ -1,0 +1,392 @@
+[gd_scene format=3 uid="uid://ddq1d0apcytuj"]
+
+[ext_resource type="Script" uid="uid://d2imru6bsil13" path="res://Gres/Scripts/boss/template/BossTemplateArtillery.gd" id="1_455a1"]
+[ext_resource type="PackedScene" uid="uid://rupg6m325jkj" path="res://Gres/Scenes/enemies/bullets/enemy_bullet_1.tscn" id="2_8adu8"]
+[ext_resource type="Texture2D" uid="uid://dpidox32m26al" path="res://Gres/Assets/Enemy/Boss/SpyEye_2.png" id="3_7hg46"]
+[ext_resource type="PackedScene" uid="uid://cg5i2wr402g6r" path="res://Gres/Scenes/Effects/expl_p.tscn" id="3_cujmj"]
+[ext_resource type="Texture2D" uid="uid://bv22hceuf4j3h" path="res://Gres/Assets/Enemy/Boss/SpyEye_F2.png" id="3_upayj"]
+[ext_resource type="Texture2D" uid="uid://iunppxsylh0l" path="res://Gres/Assets/Enemy/Boss/SpyEye_F3.png" id="4_w7iie"]
+[ext_resource type="Texture2D" uid="uid://wrhp1blmwrio" path="res://Gres/Assets/UI/Bar/HP_Bar_6.png" id="7_cujmj"]
+[ext_resource type="PackedScene" uid="uid://chisk4qu6p40" path="res://Gres/Scenes/obj/solarius_laser.tscn" id="7_rqckk"]
+[ext_resource type="PackedScene" uid="uid://bp0cq4dq162op" path="res://Gres/Scenes/obj/solarius_mine.tscn" id="8_rqckk"]
+[ext_resource type="Texture2D" uid="uid://c5tcqgai0nlnx" path="res://Gres/Assets/Effects/Free Smoke Fx  Pixel 07.png" id="10_rqckk"]
+[ext_resource type="Texture2D" uid="uid://dl8x8wnnktwys" path="res://Gres/Assets/Effects/Free Smoke Fx  Pixel 05.png" id="11_h15ko"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vhh44"]
+radius = 49.09175
+
+[sub_resource type="Animation" id="Animation_455a1"]
+resource_name = "charge"
+length = 2.0
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_vhh44"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 18.16015]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.3148148, 2.3148148), Vector2(0.1, 0.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hurt_box/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i8o78"]
+resource_name = "hover"
+length = 1.4
+step = 0.05
+
+[sub_resource type="Animation" id="Animation_7hg46"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_mh62k"]
+resource_name = "laser_charge"
+
+[sub_resource type="Animation" id="Animation_8adu8"]
+resource_name = "mine_drop"
+
+[sub_resource type="Animation" id="Animation_cujmj"]
+resource_name = "orbital_spin"
+step = 0.02
+
+[sub_resource type="Animation" id="Animation_kt17v"]
+resource_name = "rocket_fire"
+
+[sub_resource type="Animation" id="Animation_upayj"]
+resource_name = "shoot"
+
+[sub_resource type="Animation" id="Animation_w7iie"]
+resource_name = "spread_fire"
+
+[sub_resource type="Animation" id="Animation_rqckk"]
+resource_name = "transform_p2"
+
+[sub_resource type="Animation" id="Animation_h15ko"]
+resource_name = "transform_p3"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkeow"]
+_data = {
+&"charge": SubResource("Animation_455a1"),
+&"death": SubResource("Animation_vhh44"),
+&"hover": SubResource("Animation_i8o78"),
+&"idle": SubResource("Animation_7hg46"),
+&"laser_charge": SubResource("Animation_mh62k"),
+&"mine_drop": SubResource("Animation_8adu8"),
+&"orbital_spin": SubResource("Animation_cujmj"),
+&"rocket_fire": SubResource("Animation_kt17v"),
+&"shoot": SubResource("Animation_upayj"),
+&"spread_fire": SubResource("Animation_w7iie"),
+&"transform_p2": SubResource("Animation_rqckk"),
+&"transform_p3": SubResource("Animation_h15ko")
+}
+
+[sub_resource type="Gradient" id="Gradient_rqckk"]
+offsets = PackedFloat32Array(0, 0.5543478, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.120000005, 1, 1, 1, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8o78"]
+radius = 54.91812
+
+[sub_resource type="Animation" id="Animation_d4lud"]
+resource_name = "loop"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dsnlj"]
+_data = {
+&"loop": SubResource("Animation_d4lud")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rqckk"]
+blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_qkeow"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dsnlj"]
+resource_name = "loop"
+length = 11.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 1.5, 2, 5, 5.1, 6, 6.2000003, 6.3, 6.4, 6.5, 7, 7.4, 7.6, 8, 9, 10, 10.2, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.06981317, 0.0, 1.5707964, 0.0, 6.2831855, 0.0, 0.0, 0.9424778, 0.0, 0.30543262, 0.0, 0.0, -0.7941248, -0.7941248, 0.0, -6.2831855, -6.2831855, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bddbo"]
+_data = {
+&"RESET": SubResource("Animation_qkeow"),
+&"loop": SubResource("Animation_dsnlj")
+}
+
+[sub_resource type="Animation" id="Animation_5slmu"]
+resource_name = "death"
+length = 2.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FX2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45000002, 0.5, 0.55, 0.6, 0.65000004, 0.7, 0.75, 0.8, 0.85, 0.90000004, 0.95, 1, 1.0500001, 1.3, 1.3499999, 1.3999999, 1.45, 1.5, 1.55, 1.5999999, 1.6499999, 1.7, 1.75, 1.9, 1.9499999, 2, 2.0499997, 2.1, 2.15, 2.1999998, 2.25, 2.2999997, 2.35, 2.4, 2.4499998),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FX2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.0500001, 1.65),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.375, 0, 1), Color(1, 0.75, 0, 1), Color(1, 0.375, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.35, 0.4, 0.65000004, 0.75, 0.85, 1.25, 1.3, 1.4, 1.55, 1.8, 1.9, 2.0499997, 2.15, 2.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.3148148, 2.3148148), Vector2(2.87, 2.87), Vector2(2.09, 2.09), Vector2(2.3148148, 2.3148148), Vector2(2.3148148, 2.3148148), Vector2(2.09, 2.09), Vector2(2.3148148, 2.3148148), Vector2(2.3148148, 2.3148148), Vector2(2.87, 2.87), Vector2(2.09, 2.09), Vector2(2.3148148, 2.3148148), Vector2(2.3148148, 2.3148148), Vector2(2.09, 2.09), Vector2(2.87, 2.87), Vector2(2.09, 2.09), Vector2(2.3148148, 2.3148148)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.65000004, 0.85, 1.25, 1.3000001, 1.55, 1.8, 2.05, 2.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.38397244, 0.0, 0.0, 0.0, 0.0, -0.41887903, 0.0, 0.0, -0.25307274, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FX2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.65000004, 1.1, 1.3000001, 1.5500001, 2, 2.3500001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.615, 2.615), Vector2(2.615, 2.615), Vector2(4.68, 4.68), Vector2(4.68, 4.68), Vector2(3.855, 3.855), Vector2(2.955, 2.955), Vector2(3.95, 3.95), Vector2(5.59, 5.59)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_klshj"]
+_data = {
+&"death": SubResource("Animation_5slmu")
+}
+
+[node name="SolariusSniper" type="CharacterBody2D" unique_id=1513823864 groups=["enemy"]]
+script = ExtResource("1_455a1")
+boss_name = "Solarius Sniper"
+phase_1_texture = ExtResource("3_7hg46")
+phase_2_texture = ExtResource("3_upayj")
+phase_3_texture = ExtResource("4_w7iie")
+movement_type = 2
+float_frequency = 6.0
+bullet_scene = ExtResource("2_8adu8")
+orbital_speed_deg = 60.0
+explosion_scene = ExtResource("3_cujmj")
+laser_scene = ExtResource("7_rqckk")
+mine_scene = ExtResource("8_rqckk")
+use_mines = true
+use_rocket_barrage = true
+use_vortex = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1883254118]
+visible = false
+offset_left = -420.0
+offset_top = -384.0
+offset_right = 414.0
+offset_bottom = 450.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=102406384]
+shape = SubResource("CircleShape2D_vhh44")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=803314510]
+libraries/ = SubResource("AnimationLibrary_qkeow")
+
+[node name="FXShadow" type="CPUParticles2D" parent="." unique_id=1512489993]
+scale = Vector2(2.3148148, 2.3148148)
+texture = ExtResource("3_7hg46")
+lifetime = 0.4
+gravity = Vector2(0, 0)
+scale_amount_min = 2.25
+scale_amount_max = 2.25
+color_ramp = SubResource("Gradient_rqckk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1439334039]
+scale = Vector2(2.3148148, 2.3148148)
+texture = ExtResource("3_7hg46")
+
+[node name="FireTimer" type="Timer" parent="." unique_id=145271199]
+one_shot = true
+
+[node name="ShieldRegenTimer" type="Timer" parent="." unique_id=459167248]
+one_shot = true
+
+[node name="hurt_box" type="Area2D" parent="." unique_id=267449488]
+collision_layer = 2
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box" unique_id=752511738]
+shape = SubResource("CircleShape2D_i8o78")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="HP_Text" type="Label" parent="." unique_id=1214404147]
+modulate = Color(0, 0, 0, 0.162)
+offset_left = -45.0
+offset_top = -15.0
+offset_right = 46.0
+offset_bottom = 17.0
+text = "999999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HP_Bar" type="TextureProgressBar" parent="." unique_id=1830303309]
+offset_left = -125.0
+offset_top = -125.0
+offset_right = 125.0
+offset_bottom = 125.0
+pivot_offset = Vector2(125, 125)
+fill_mode = 5
+nine_patch_stretch = true
+texture_progress = ExtResource("7_cujmj")
+
+[node name="loop" type="AnimationPlayer" parent="HP_Bar" unique_id=1210178842]
+libraries/ = SubResource("AnimationLibrary_dsnlj")
+autoplay = &"loop"
+
+[node name="DeadTime" type="Timer" parent="." unique_id=1049414726]
+wait_time = 5.0
+one_shot = true
+
+[node name="FX1" type="Sprite2D" parent="." unique_id=1647070049]
+material = SubResource("CanvasItemMaterial_rqckk")
+scale = Vector2(4, 4)
+texture = ExtResource("10_rqckk")
+hframes = 16
+vframes = 20
+frame = 15
+
+[node name="FX2" type="Sprite2D" parent="." unique_id=324407637]
+modulate = Color(1, 0.375, 0, 1)
+material = SubResource("CanvasItemMaterial_rqckk")
+scale = Vector2(2.615, 2.615)
+texture = ExtResource("11_h15ko")
+hframes = 11
+vframes = 15
+frame = 65
+
+[node name="loop" type="AnimationPlayer" parent="." unique_id=1445191067]
+libraries/ = SubResource("AnimationLibrary_bddbo")
+autoplay = &"loop"
+
+[node name="Dead" type="AnimationPlayer" parent="." unique_id=1656383362]
+libraries/ = SubResource("AnimationLibrary_klshj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1718343736]
+zoom = Vector2(1.715, 1.715)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="hurt_box" to="." method="_on_hurt_box_area_entered"]
+[connection signal="timeout" from="DeadTime" to="." method="_death_cleanup"]
+[connection signal="animation_finished" from="Dead" to="." method="_on_dead_animation_finished"]

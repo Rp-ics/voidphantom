@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqsgr71w0crpy"]
+
+[ext_resource type="Script" uid="uid://bup6clcphfmdn" path="res://Gres/Weapons/Common/blaster_c1.gd" id="1_akwi7"]
+[ext_resource type="PackedScene" uid="uid://d0hp8n1bv0tt6" path="res://Gres/Bullets/Common/blaster_bullet_c_1.tscn" id="2_8m8rd"]
+
+[node name="Blaster" type="Node2D"]
+script = ExtResource("1_akwi7")
+bullet_scene = ExtResource("2_8m8rd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

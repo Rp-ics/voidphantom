@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://d3048ja7s7fwp"]
+
+[ext_resource type="Script" uid="uid://r4wxdum32udm" path="res://Gres/Scripts/UI/key_map.gd" id="1_ggr0u"]
+[ext_resource type="Texture2D" uid="uid://ptxe50lhu7tt" path="res://Gres/Assets/UI/Buttons/button_hold.png" id="5_dgog7"]
+[ext_resource type="Texture2D" uid="uid://diu6rp7ollok5" path="res://Gres/Assets/UI/Buttons/button_disabled.png" id="6_osn42"]
+[ext_resource type="Texture2D" uid="uid://bomskic2yknhy" path="res://Gres/Assets/UI/Buttons/button_pressed.png" id="7_1ekfn"]
+[ext_resource type="Texture2D" uid="uid://h4jesxhig3ru" path="res://Gres/Assets/UI/Buttons/button_normal.png" id="8_lbhke"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="9_s7pj7"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="10_4y8kp"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="11_mlac4"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="12_bni77"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="13_lf5in"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kk7yi"]
+texture = ExtResource("8_lbhke")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qp462"]
+texture = ExtResource("7_1ekfn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kmrm6"]
+texture = ExtResource("5_dgog7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lmkmi"]
+texture = ExtResource("6_osn42")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ioia7"]
+texture = ExtResource("5_dgog7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6802c"]
+texture = ExtResource("10_4y8kp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vi13g"]
+texture = ExtResource("13_lf5in")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bvgh7"]
+texture = ExtResource("12_bni77")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dedf"]
+texture = ExtResource("11_mlac4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_40fx0"]
+texture = ExtResource("10_4y8kp")
+
+[node name="KeyMap" type="Control" unique_id=1805613775]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_ggr0u")
+label_font_size = 30
+label_font_color = Color(1, 0.375, 0, 1)
+button_font_size = 30
+button_font_color = Color(0, 0.976563, 1, 1)
+button_normal_color = null
+button_hover_color = null
+button_pressed_color = null
+
+[node name="BindingsGrid" type="GridContainer" parent="." unique_id=356350869]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 114.0
+offset_right = 675.0
+offset_bottom = 624.0
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="ResetButton" type="Button" parent="." unique_id=477177275]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 481.0
+offset_right = 795.0
+offset_bottom = 673.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_kk7yi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qp462")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kmrm6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_lmkmi")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ioia7")
+text = "RESET"
+script = ExtResource("9_s7pj7")
+
+[node name="ActionL" type="Label" parent="." unique_id=54899350]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 201.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 30
+text = "Action"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PKL" type="Label" parent="." unique_id=612192549]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 40.0
+offset_right = 420.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 30
+text = "Primary Key"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SKL" type="Label" parent="." unique_id=541596119]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 42.0
+offset_right = 726.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 30
+text = "Secondary Key"
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="." unique_id=1463692220]
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 5.0
+offset_right = 1167.0
+offset_bottom = 129.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_6802c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vi13g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bvgh7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_8dedf")
+theme_override_styles/focus = SubResource("StyleBoxTexture_40fx0")
+text = "x"
+script = ExtResource("9_s7pj7")
+
+[connection signal="mouse_entered" from="ResetButton" to="ResetButton" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="BackButton" to="BackButton" method="_on_mouse_entered"]

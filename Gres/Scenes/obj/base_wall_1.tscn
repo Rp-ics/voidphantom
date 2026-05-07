@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwh8mfln8wt0"]
+
+[ext_resource type="Script" uid="uid://cdx1ivhmta4tq" path="res://Gres/Scripts/obj/base_wall_1.gd" id="1_f4kc7"]
+[ext_resource type="Texture2D" uid="uid://ci1bo8nghcle3" path="res://Gres/Assets/obj/base_1_wall.png" id="2_grvu7"]
+[ext_resource type="Texture2D" uid="uid://ca7gmsnxykvdm" path="res://Gres/Assets/UI/Buttons/inv.png" id="3_thar0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4kc7"]
+size = Vector2(325.50702, 325.507)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfo3w"]
+texture = ExtResource("3_thar0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3siyh"]
+texture = ExtResource("3_thar0")
+
+[node name="BaseWall" type="CharacterBody2D" groups=["base"]]
+collision_mask = 66
+script = ExtResource("1_f4kc7")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_grvu7")
+hframes = 5
+
+[node name="coll" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.0000019)
+scale = Vector2(0.16589504, 0.16589504)
+shape = SubResource("RectangleShape2D_f4kc7")
+
+[node name="HPB1" type="ProgressBar" parent="."]
+offset_left = -27.0
+offset_top = -28.0
+offset_right = 512.99994
+offset_bottom = 33.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxTexture_lfo3w")
+theme_override_styles/fill = SubResource("StyleBoxTexture_3siyh")
+max_value = 800.0
+
+[node name="HPB2" type="ProgressBar" parent="."]
+offset_left = -27.000002
+offset_top = 19.999998
+offset_right = 512.99994
+offset_bottom = 81.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxTexture_lfo3w")
+theme_override_styles/fill = SubResource("StyleBoxTexture_3siyh")
+max_value = 800.0
+
+[node name="HPB3" type="ProgressBar" parent="."]
+offset_left = 26.999994
+offset_top = -27.999998
+offset_right = 566.99994
+offset_bottom = 33.0
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxTexture_lfo3w")
+theme_override_styles/fill = SubResource("StyleBoxTexture_3siyh")
+max_value = 800.0
+
+[node name="HPB4" type="ProgressBar" parent="."]
+offset_left = -27.000002
+offset_top = 25.99999
+offset_right = 512.99994
+offset_bottom = 86.99999
+rotation = -1.5707964
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxTexture_lfo3w")
+theme_override_styles/fill = SubResource("StyleBoxTexture_3siyh")
+max_value = 800.0

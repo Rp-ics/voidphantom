@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bp0cq4dq162op"]
+
+[ext_resource type="Script" uid="uid://ddl1xspden1n1" path="res://Gres/Scripts/obj/solarius_mine.gd" id="1_s0473"]
+[ext_resource type="Texture2D" uid="uid://bmhy54vm4ocyy" path="res://Gres/Assets/obj/sol_mine.png" id="2_vdreo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vnoud"]
+radius = 14.035668
+
+[sub_resource type="Animation" id="Animation_01sxn"]
+resource_name = "expl"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uhjsu"]
+_data = {
+&"expl": SubResource("Animation_01sxn")
+}
+
+[node name="Solarius_mine" type="Area2D" unique_id=2045611334]
+collision_layer = 2
+collision_mask = 33
+script = ExtResource("1_s0473")
+danno = 10
+
+[node name="SolMine" type="Sprite2D" parent="." unique_id=1303741624]
+texture = ExtResource("2_vdreo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=184114893]
+shape = SubResource("CircleShape2D_vnoud")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=1878184897]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=212489396]
+libraries/ = SubResource("AnimationLibrary_uhjsu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

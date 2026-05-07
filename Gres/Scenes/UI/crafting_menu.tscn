@@ -1,0 +1,708 @@
+[gd_scene format=3 uid="uid://bjbvmyb73qh4f"]
+
+[ext_resource type="Script" uid="uid://c2uyp36snpqp7" path="res://Gres/Scripts/UI/crafting_menu.gd" id="1_1amqw"]
+[ext_resource type="Texture2D" uid="uid://b23e4kychddr2" path="res://Gres/Assets/UI/inentory/body.png" id="1_06urx"]
+[ext_resource type="Texture2D" uid="uid://bb736wq4yxbba" path="res://Gres/Assets/UI/inentory/text_holder.png" id="2_t7wud"]
+[ext_resource type="PackedScene" uid="uid://5ntd7d60ykyh" path="res://Gres/Scenes/UI/audio_manager.tscn" id="2_v6rhx"]
+[ext_resource type="Texture2D" uid="uid://ceptuyv77vorg" path="res://Gres/Assets/UI/inentory/liner1.png" id="3_mojuj"]
+[ext_resource type="AudioStream" uid="uid://d1urox2plsv84" path="res://Gres/Music/BGM/bg1.ogg" id="3_yldnk"]
+[ext_resource type="AudioStream" uid="uid://bk26rjldhx5v0" path="res://Gres/Music/BGM/bg2.ogg" id="4_0ntoc"]
+[ext_resource type="Texture2D" uid="uid://dp0051x4tl6uu" path="res://Gres/Assets/UI/inentory/info_holder.png" id="4_1vsan"]
+[ext_resource type="AudioStream" uid="uid://b1qa4lvgn3178" path="res://Gres/Music/BGM/bg3.ogg" id="5_kaxxx"]
+[ext_resource type="Texture2D" uid="uid://bu862gdv3kyru" path="res://Gres/Assets/UI/inentory/liner2.png" id="5_sfvqr"]
+[ext_resource type="AudioStream" uid="uid://dyqahqcb4ykue" path="res://Gres/Music/BGM/bg4.ogg" id="6_4kwfr"]
+[ext_resource type="Texture2D" uid="uid://de66eiw0nr5x6" path="res://Gres/Assets/UI/inentory/info_holder1.png" id="6_kesaj"]
+[ext_resource type="Texture2D" uid="uid://b2nhhity5frxl" path="res://Gres/Assets/Icons/craft/cryst_1.png" id="7_mx5v6"]
+[ext_resource type="AudioStream" uid="uid://75bjef4wh8a" path="res://Gres/Music/BGM/bg5.ogg" id="7_ny5br"]
+[ext_resource type="AudioStream" uid="uid://d3ibrjqakk8dy" path="res://Gres/Music/BGM/bg6.ogg" id="8_3tswy"]
+[ext_resource type="Texture2D" uid="uid://bcsi0qw81d6r0" path="res://Gres/Assets/Icons/craft/cryst_2.png" id="8_bgilq"]
+[ext_resource type="AudioStream" uid="uid://cvdgw6d4bng11" path="res://Gres/Music/BGM/bg7.ogg" id="9_fv35s"]
+[ext_resource type="Texture2D" uid="uid://csnkktechwhdr" path="res://Gres/Assets/Icons/craft/cryst_3.png" id="9_xrgeg"]
+[ext_resource type="AudioStream" uid="uid://d05bw82xay7fv" path="res://Gres/Music/BGM/bg8.ogg" id="10_4bmw6"]
+[ext_resource type="Texture2D" uid="uid://dg4qnf3yrx3nj" path="res://Gres/Assets/Icons/craft/cryst_4.png" id="10_ume62"]
+[ext_resource type="AudioStream" uid="uid://d3fuopoacf8tc" path="res://Gres/Music/BGM/bg9.ogg" id="11_5ovm8"]
+[ext_resource type="Texture2D" uid="uid://cexnd3ykax18i" path="res://Gres/Assets/Icons/gold_1.png" id="11_narge"]
+[ext_resource type="AudioStream" uid="uid://dl6g8ueupyt5h" path="res://Gres/Music/BGM/bg10.ogg" id="12_bgqfe"]
+[ext_resource type="AudioStream" uid="uid://8ea3v3f6k8e7" path="res://Gres/Music/BGM/bg11.ogg" id="13_k3op0"]
+[ext_resource type="Texture2D" uid="uid://h4jesxhig3ru" path="res://Gres/Assets/UI/Buttons/button_normal.png" id="13_mtoue"]
+[ext_resource type="AudioStream" uid="uid://cgogerbyy7jjb" path="res://Gres/Music/BGM/bg12.ogg" id="14_xcie2"]
+[ext_resource type="Texture2D" uid="uid://bomskic2yknhy" path="res://Gres/Assets/UI/Buttons/button_pressed.png" id="14_xkchv"]
+[ext_resource type="AudioStream" uid="uid://2hylgivywekw" path="res://Gres/Music/BGM/bg13.ogg" id="15_4iphw"]
+[ext_resource type="Texture2D" uid="uid://ptxe50lhu7tt" path="res://Gres/Assets/UI/Buttons/button_hold.png" id="15_ejcix"]
+[ext_resource type="Texture2D" uid="uid://diu6rp7ollok5" path="res://Gres/Assets/UI/Buttons/button_disabled.png" id="16_4qq3f"]
+[ext_resource type="AudioStream" uid="uid://238ipc1nmhge" path="res://Gres/Music/BGM/bg14.ogg" id="16_k5xd1"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="17_7imfx"]
+[ext_resource type="AudioStream" uid="uid://b762jix3keavo" path="res://Gres/Music/BGM/bg15.ogg" id="17_dpgw8"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="18_4qq3f"]
+[ext_resource type="AudioStream" uid="uid://b1ubd4snx41ws" path="res://Gres/Music/BGM/bg16.ogg" id="18_jbc4o"]
+[ext_resource type="AudioStream" uid="uid://bd0ljabudebvp" path="res://Gres/Music/BGM/bg17.ogg" id="19_5khg8"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="19_7imfx"]
+[ext_resource type="AudioStream" uid="uid://bfyu3ybsiy7te" path="res://Gres/Music/BGM/bg18.ogg" id="20_gtd08"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="20_h8g3v"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="21_266nw"]
+[ext_resource type="AudioStream" uid="uid://cnsjvus1yleeo" path="res://Gres/Music/BGM/bg19.ogg" id="21_o7q1v"]
+[ext_resource type="Shader" uid="uid://1abiepe6jn2y" path="res://Gres/Shaders/ColorShader.gdshader" id="22_fpatn"]
+[ext_resource type="AudioStream" uid="uid://b35utltd7wc43" path="res://Gres/Music/BGM/bg20.ogg" id="22_qvkmd"]
+[ext_resource type="AudioStream" uid="uid://bl4uvgma70gmx" path="res://Gres/Music/BGM/bg21.ogg" id="23_0hht6"]
+[ext_resource type="AudioStream" uid="uid://c57qaqrvhhw38" path="res://Gres/Music/BGM/bg22.ogg" id="24_cjvnl"]
+[ext_resource type="Texture2D" uid="uid://c2tfddlukkevj" path="res://Gres/Assets/UI/Bar/craftbar.png" id="24_xmcwf"]
+[ext_resource type="Texture2D" uid="uid://c4vf6uijqor5b" path="res://Gres/Assets/UI/Bar/craftbar2.png" id="25_1yr2r"]
+[ext_resource type="AudioStream" uid="uid://dej46xjftjh8d" path="res://Gres/Music/BGM/bg23.ogg" id="25_n2d0i"]
+[ext_resource type="Texture2D" uid="uid://b2040i7q781ag" path="res://Gres/Assets/UI/Bar/craftbar1.png" id="26_70lmr"]
+[ext_resource type="AudioStream" uid="uid://dh53xpqbvuy8k" path="res://Gres/Music/BGM/bg24.ogg" id="26_j28g0"]
+[ext_resource type="AudioStream" uid="uid://dgg303q1vhr2j" path="res://Gres/Music/BGM/bg25.ogg" id="27_4ib8k"]
+[ext_resource type="AudioStream" uid="uid://bhf701o17yarp" path="res://Gres/Music/BGM/bg26.ogg" id="28_535ht"]
+[ext_resource type="AudioStream" uid="uid://brrqivx2yci6x" path="res://Gres/Music/BGM/bg27.ogg" id="29_fckeb"]
+[ext_resource type="AudioStream" uid="uid://dc0mwjbmt0iqh" path="res://Gres/Music/BGM/bg28.ogg" id="30_0swgx"]
+[ext_resource type="AudioStream" uid="uid://b25l86087pan" path="res://Gres/Music/BGM/bg29.ogg" id="31_0boou"]
+[ext_resource type="AudioStream" uid="uid://duggkgjmp4aaq" path="res://Gres/Music/BGM/bg30.ogg" id="32_xjiur"]
+[ext_resource type="AudioStream" uid="uid://cjy5wwqhfcbqg" path="res://Gres/Music/SE/craft2.ogg" id="57_sooa6"]
+[ext_resource type="AudioStream" uid="uid://b34etsiqpv0qk" path="res://Gres/Music/SE/craft3.ogg" id="58_dd1iw"]
+[ext_resource type="AudioStream" uid="uid://cg728a8gshm8e" path="res://Gres/Music/SE/gun_11.ogg" id="59_nidp0"]
+[ext_resource type="AudioStream" uid="uid://doagxyhsnw7tm" path="res://Gres/Music/SE/gun_22.ogg" id="60_6vqvh"]
+[ext_resource type="AudioStream" uid="uid://xr1dkvs4pfdo" path="res://Gres/Music/SE/fx/done_1.ogg" id="61_ciolv"]
+[ext_resource type="AudioStream" uid="uid://b5sjl2clrchck" path="res://Gres/Music/SE/fx/3.ogg" id="61_v6rhx"]
+[ext_resource type="Texture2D" uid="uid://bft7wnryhrob4" path="res://Gres/Assets/Background/bgstar_9.png" id="63_yldnk"]
+
+[sub_resource type="Animation" id="Animation_6u0rk"]
+resource_name = "loop"
+length = 2.2
+loop_mode = 2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k6w66"]
+_data = {
+&"loop": SubResource("Animation_6u0rk")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h8g3v"]
+texture = ExtResource("13_mtoue")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_266nw"]
+texture = ExtResource("14_xkchv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fpatn"]
+texture = ExtResource("15_ejcix")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xmcwf"]
+texture = ExtResource("16_4qq3f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1yr2r"]
+texture = ExtResource("15_ejcix")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70lmr"]
+texture = ExtResource("18_4qq3f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7o67h"]
+texture = ExtResource("19_7imfx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tow30"]
+texture = ExtResource("20_h8g3v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dnidg"]
+texture = ExtResource("21_266nw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tvqot"]
+texture = ExtResource("18_4qq3f")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xmcwf"]
+shader = ExtResource("22_fpatn")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="Animation" id="Animation_70lmr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 1, 0.8125, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../WeaponL:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../progressbar:material:shader_parameter/hue_shift")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1yr2r"]
+resource_name = "loop"
+length = 4.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 1, 0.8125, 1), Color(1, 0.9375, 0, 1), Color(0, 1, 0.8125, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../WeaponL:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 1, 0.859375, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../progressbar:material:shader_parameter/hue_shift")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7o67h"]
+_data = {
+&"RESET": SubResource("Animation_70lmr"),
+&"loop": SubResource("Animation_1yr2r")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fpatn"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(600, 1, 1)
+angle_min = -372.6
+angle_max = 236.4
+inherit_velocity_ratio = 0.771
+spread = 180.0
+gravity = Vector3(0, 200, 0)
+linear_accel_min = -100.0
+linear_accel_max = 100.0
+radial_accel_min = -2.23517e-06
+radial_accel_max = 31.84
+tangential_accel_min = -56.72
+tangential_accel_max = 41.79
+scale_min = 0.5
+hue_variation_min = -0.43
+hue_variation_max = 0.05
+turbulence_noise_speed_random = 0.0
+
+[sub_resource type="Animation" id="Animation_htpd8"]
+resource_name = "close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgtrs:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bgtrs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eelop"]
+resource_name = "open"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgtrs:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bgtrs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_htpd8"]
+_data = {
+&"close": SubResource("Animation_htpd8"),
+&"open": SubResource("Animation_eelop")
+}
+
+[node name="CraftingMenu" type="Control" unique_id=1575026328]
+editor_description = "CraftingMenu (Control)
+│
+├── Background (ColorRect)
+├── Title (Label)
+├── WeaponList (GridContainer)
+│     └── (Button xN) ← generati da script
+│
+├── PreviewPanel (Control)
+│   ├── WeaponIcon (TextureRect)
+│   ├── WeaponName (Label)
+│   ├── MaterialList (Control)          ← semplice Control, non VBox
+│   │     └── (TextureRect + Label) xN  ← generati da script, posizionati manualmente
+│   ├── CraftButton (Button)
+│
+├── InfoLabel (Label)
+├── CloseButton (Button)
+"
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1amqw")
+
+[node name="AudioManager" parent="." unique_id=764799166 instance=ExtResource("2_v6rhx")]
+playlist = Array[AudioStream]([ExtResource("3_yldnk"), ExtResource("4_0ntoc"), ExtResource("5_kaxxx"), ExtResource("6_4kwfr"), ExtResource("7_ny5br"), ExtResource("8_3tswy"), ExtResource("9_fv35s"), ExtResource("10_4bmw6"), ExtResource("11_5ovm8"), ExtResource("12_bgqfe"), ExtResource("13_k3op0"), ExtResource("14_xcie2"), ExtResource("15_4iphw"), ExtResource("16_k5xd1"), ExtResource("17_dpgw8"), ExtResource("18_jbc4o"), ExtResource("19_5khg8"), ExtResource("20_gtd08"), ExtResource("21_o7q1v"), ExtResource("22_qvkmd"), ExtResource("23_0hht6"), ExtResource("24_cjvnl"), ExtResource("25_n2d0i"), ExtResource("26_j28g0"), ExtResource("27_4ib8k"), ExtResource("28_535ht"), ExtResource("29_fckeb"), ExtResource("30_0swgx"), ExtResource("31_0boou"), ExtResource("32_xjiur")])
+
+[node name="Background" type="TextureRect" parent="." unique_id=1939592645]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_06urx")
+
+[node name="Title" type="Label" parent="." unique_id=1449396092]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 1152.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0.969452, 0.441406, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.929688, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 70
+text = "CRAFTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoMaterials" type="Sprite2D" parent="." unique_id=1415422841]
+position = Vector2(379.1, 143.75)
+scale = Vector2(5.3, 5.3)
+texture = ExtResource("2_t7wud")
+metadata/_edit_group_ = true
+
+[node name="InfoMaterials2" type="Sprite2D" parent="InfoMaterials" unique_id=748476586]
+position = Vector2(73.7735, 0)
+texture = ExtResource("2_t7wud")
+
+[node name="InfoMaterials3" type="Sprite2D" parent="InfoMaterials" unique_id=1554632416]
+position = Vector2(34.6981, 0)
+scale = Vector2(1.38127, 1)
+texture = ExtResource("3_mojuj")
+
+[node name="InfoHolder" type="Sprite2D" parent="." unique_id=1093789494]
+position = Vector2(688, 408)
+scale = Vector2(6.26, 6.26)
+texture = ExtResource("4_1vsan")
+metadata/_edit_group_ = true
+
+[node name="InfoHolder2" type="Sprite2D" parent="InfoHolder" unique_id=1820062268]
+position = Vector2(33.2268, 0)
+texture = ExtResource("4_1vsan")
+
+[node name="Liner1" type="Sprite2D" parent="InfoHolder" unique_id=7565252]
+position = Vector2(12.78, -0.025)
+scale = Vector2(0.277, 0.984)
+texture = ExtResource("5_sfvqr")
+
+[node name="Grid" type="Sprite2D" parent="." unique_id=475297825]
+position = Vector2(287, 409)
+scale = Vector2(7.84, 7.84)
+texture = ExtResource("6_kesaj")
+
+[node name="Values" type="Node2D" parent="." unique_id=637901329]
+
+[node name="Crystal1" type="Sprite2D" parent="Values" unique_id=939500010]
+position = Vector2(144, 143)
+texture = ExtResource("7_mx5v6")
+
+[node name="Crystal2" type="Sprite2D" parent="Values" unique_id=1172790808]
+position = Vector2(288, 143)
+texture = ExtResource("8_bgilq")
+
+[node name="Crystal3" type="Sprite2D" parent="Values" unique_id=1448027277]
+position = Vector2(434, 143)
+texture = ExtResource("9_xrgeg")
+
+[node name="Crystal4" type="Sprite2D" parent="Values" unique_id=29188766]
+position = Vector2(586, 143)
+texture = ExtResource("10_ume62")
+
+[node name="VoidShard" type="Label" parent="Values" unique_id=13156110]
+offset_left = 175.0
+offset_top = 104.0
+offset_right = 223.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(0.938538, 0.585938, 1, 1)
+theme_override_colors/font_outline_color = Color(0.546875, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagmaShard" type="Label" parent="Values" unique_id=1200994680]
+offset_left = 319.0
+offset_top = 104.0
+offset_right = 367.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(1, 0.328125, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IceShard" type="Label" parent="Values" unique_id=1388397757]
+offset_left = 463.0
+offset_top = 104.0
+offset_right = 511.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(0, 0.742188, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.203125, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LightShard" type="Label" parent="Values" unique_id=303652941]
+offset_left = 615.0
+offset_top = 104.0
+offset_right = 663.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(1, 0.796875, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gold" type="Label" parent="Values" unique_id=1370494707]
+offset_left = 778.0
+offset_top = 124.0
+offset_right = 993.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
+text = "999999999"
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="GoldIcon" type="Sprite2D" parent="Values/gold" unique_id=1337694691]
+position = Vector2(-34.25, 18.75)
+scale = Vector2(1.32031, 1.32031)
+texture = ExtResource("11_narge")
+hframes = 22
+frame = 12
+
+[node name="loop" type="AnimationPlayer" parent="Values/gold/GoldIcon" unique_id=585208711]
+libraries/ = SubResource("AnimationLibrary_k6w66")
+autoplay = &"loop"
+
+[node name="WeaponList" type="GridContainer" parent="." unique_id=28681230]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 232.0
+offset_right = 460.0
+offset_bottom = 592.0
+columns = 5
+
+[node name="PreviewPanel" type="Control" parent="." unique_id=684912664]
+anchors_preset = 0
+offset_left = 520.0
+offset_top = 192.0
+offset_right = 1056.0
+offset_bottom = 616.0
+
+[node name="Decor4" type="Sprite2D" parent="PreviewPanel" unique_id=140276905]
+position = Vector2(118.929, 171.929)
+scale = Vector2(3.04285, 3.04284)
+texture = ExtResource("6_kesaj")
+
+[node name="WeaponIcon" type="TextureRect" parent="PreviewPanel" unique_id=283692094]
+layout_mode = 0
+offset_left = 49.69
+offset_top = 102.0
+offset_right = 188.69
+offset_bottom = 241.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Decor" type="Sprite2D" parent="PreviewPanel" unique_id=1729479032]
+position = Vector2(315, 76)
+scale = Vector2(1.50885, 1.50885)
+texture = ExtResource("1_06urx")
+metadata/_edit_group_ = true
+
+[node name="Decor2" type="Sprite2D" parent="PreviewPanel/Decor" unique_id=1857671744]
+position = Vector2(84.8326, 0)
+texture = ExtResource("1_06urx")
+
+[node name="Decor3" type="Sprite2D" parent="PreviewPanel/Decor" unique_id=324514038]
+position = Vector2(45.067, 0)
+scale = Vector2(0.746, 0.984)
+texture = ExtResource("5_sfvqr")
+
+[node name="InfoHolder" type="Sprite2D" parent="PreviewPanel/Decor" unique_id=1209384869]
+position = Vector2(41.4222, 125.592)
+scale = Vector2(3.59213, 3.59213)
+texture = ExtResource("6_kesaj")
+
+[node name="WeaponName" type="Label" parent="PreviewPanel" unique_id=848552523]
+layout_mode = 0
+offset_left = -7.99997
+offset_top = 56.0
+offset_right = 1272.0
+offset_bottom = 157.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(1, 0.375, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.964154, 0.0823529, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "Void Destructor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaterialList" type="GridContainer" parent="PreviewPanel" unique_id=674131160]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 147.0
+offset_right = 510.0
+offset_bottom = 395.0
+columns = 3
+
+[node name="CraftButton" type="Button" parent="PreviewPanel" unique_id=150959040]
+layout_mode = 0
+offset_left = -80.0
+offset_top = 208.0
+offset_right = 240.0
+offset_bottom = 336.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_h8g3v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_266nw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fpatn")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_xmcwf")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1yr2r")
+text = "CRAFT"
+script = ExtResource("17_7imfx")
+
+[node name="InfoLabel" type="Label" parent="." unique_id=1293278301]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 224.0
+offset_right = 2290.22
+offset_bottom = 707.333
+scale = Vector2(0.18, 0.18)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 100
+text = "SELECT A WEAPON TO CRAFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CloseButton" type="Button" parent="." unique_id=588928597]
+layout_mode = 0
+offset_left = 1033.0
+offset_top = -8.0
+offset_right = 1157.0
+offset_bottom = 116.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_70lmr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7o67h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tow30")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_dnidg")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tvqot")
+text = "x"
+script = ExtResource("17_7imfx")
+
+[node name="CraftMan" type="ColorRect" parent="." unique_id=77233153]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.945)
+
+[node name="progressbar" type="TextureProgressBar" parent="CraftMan" unique_id=415128979]
+material = SubResource("ShaderMaterial_xmcwf")
+layout_mode = 0
+offset_left = 103.0
+offset_top = 409.0
+offset_right = 1033.0
+offset_bottom = 502.0
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("24_xmcwf")
+texture_over = ExtResource("25_1yr2r")
+texture_progress = ExtResource("26_70lmr")
+
+[node name="Counter" type="Label" parent="CraftMan/progressbar" unique_id=485323088]
+layout_mode = 0
+offset_right = 930.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0.0107422, 0.6875, 1)
+theme_override_colors/font_outline_color = Color(0, 0.90625, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WeaponL" type="RichTextLabel" parent="CraftMan" unique_id=420916658]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 1152.0
+offset_bottom = 100.0
+theme_override_colors/font_outline_color = Color(0.125, 0, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "weapon rare the name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="CraftMan" unique_id=1634632675]
+layout_mode = 0
+offset_top = 130.0
+offset_right = 1152.0
+offset_bottom = 191.0
+theme_override_colors/font_outline_color = Color(0, 1, 0.8125, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "Sharpening edges, almost ready…"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="anim" type="AnimationPlayer" parent="CraftMan/Title" unique_id=1446399367]
+libraries/ = SubResource("AnimationLibrary_7o67h")
+autoplay = &"loop"
+
+[node name="Cryst1" type="GPUParticles2D" parent="CraftMan" unique_id=2017287442]
+position = Vector2(598, -24)
+emitting = false
+amount = 100
+texture = ExtResource("7_mx5v6")
+lifetime = 5.0
+one_shot = true
+speed_scale = 2.0
+process_material = SubResource("ParticleProcessMaterial_fpatn")
+
+[node name="craft1" type="AudioStreamPlayer" parent="CraftMan" unique_id=538776990]
+stream = ExtResource("57_sooa6")
+pitch_scale = 0.8
+
+[node name="craft2" type="AudioStreamPlayer" parent="CraftMan" unique_id=2033054646]
+stream = ExtResource("58_dd1iw")
+pitch_scale = 1.4
+
+[node name="craft3" type="AudioStreamPlayer" parent="CraftMan" unique_id=27084437]
+stream = ExtResource("59_nidp0")
+pitch_scale = 0.2
+
+[node name="craft4" type="AudioStreamPlayer" parent="CraftMan" unique_id=1957026754]
+stream = ExtResource("60_6vqvh")
+pitch_scale = 0.1
+
+[node name="craft5" type="AudioStreamPlayer" parent="CraftMan" unique_id=75339123]
+stream = ExtResource("61_v6rhx")
+pitch_scale = 4.0
+
+[node name="Done" type="AudioStreamPlayer" parent="CraftMan" unique_id=1658960253]
+stream = ExtResource("61_ciolv")
+pitch_scale = 0.2
+
+[node name="trs" type="AnimationPlayer" parent="." unique_id=129123306]
+libraries/ = SubResource("AnimationLibrary_htpd8")
+autoplay = &"open"
+
+[node name="bgtrs" type="TextureRect" parent="." unique_id=1976287492]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -168.0
+offset_top = -160.0
+offset_right = 1312.0
+offset_bottom = 808.0
+texture = ExtResource("63_yldnk")
+
+[connection signal="mouse_entered" from="PreviewPanel/CraftButton" to="PreviewPanel/CraftButton" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="CloseButton" to="CloseButton" method="_on_mouse_entered"]
+[connection signal="animation_finished" from="trs" to="." method="_on_trs_animation_finished"]

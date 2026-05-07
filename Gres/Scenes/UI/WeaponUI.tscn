@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvce7jwn526mo"]
+
+[ext_resource type="Script" uid="uid://dy24s1pwue3dt" path="res://Gres/Scripts/UI/weapon_ui.gd" id="1_ol2ja"]
+[ext_resource type="Texture2D" uid="uid://doop2djq0tqdp" path="res://Gres/Assets/UI/inentory/slot.png" id="1_t1m2q"]
+[ext_resource type="Texture2D" uid="uid://chcrfc522h13c" path="res://Gres/Assets/player/weapons/common/gun_2.png" id="2_1j7tg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1cayn"]
+texture = ExtResource("1_t1m2q")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol2ja"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mn1xn"]
+bg_color = Color(0, 0.952941, 1, 0.309804)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 1, 0.976563, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7angk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kd86s"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="WeaponUI" type="Control" groups=["weapon_ui"]]
+custom_minimum_size = Vector2(20, 132)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ol2ja")
+
+[node name="Slot_1" type="Panel" parent="."]
+custom_minimum_size = Vector2(132, 132)
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 132.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1cayn")
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 121.0
+offset_bottom = 121.0
+texture = ExtResource("2_1j7tg")
+stretch_mode = 5
+
+[node name="GunButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 132.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_ol2ja")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mn1xn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7angk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kd86s")
+
+[connection signal="mouse_entered" from="GunButton" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="GunButton" to="." method="_on_Button_pressed"]

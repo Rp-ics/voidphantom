@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://g8uvkwacpvht"]
+
+[ext_resource type="Script" uid="uid://dyjc6rf8y03tx" path="res://Gres/Scripts/Bullets/gaia_laser.gd" id="1_xddt2"]
+
+[node name="GaiaLaser" type="Node2D"]
+script = ExtResource("1_xddt2")
+laser_length = 600.0
+laser_width = 10.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collide_with_areas = true
+
+[node name="Line2D" type="Line2D" parent="."]

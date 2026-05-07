@@ -1,0 +1,2887 @@
+[gd_scene format=3 uid="uid://bf28id8rfiiim"]
+
+[ext_resource type="Script" uid="uid://c12k14cmih0gc" path="res://Gres/Scripts/arena/arena.gd" id="1_0heui"]
+[ext_resource type="PackedScene" uid="uid://nr8uyp8iyphr" path="res://Gres/Scenes/player/player.tscn" id="2_2af1v"]
+[ext_resource type="Script" uid="uid://bhfx0n8e43pjq" path="res://Gres/Scripts/UI/lvl_ui_manager.gd" id="2_dyb6p"]
+[ext_resource type="PackedScene" uid="uid://lbby7vtums4i" path="res://Gres/Scenes/UI/pause_ui.tscn" id="2_ffhdp"]
+[ext_resource type="Texture2D" uid="uid://sff7nvx0yv1w" path="res://Gres/Assets/BGame/galaxy9.png" id="2_wh44p"]
+[ext_resource type="PackedScene" uid="uid://ce1w83l6sfcqs" path="res://Gres/Scenes/UI/mini_map.tscn" id="3_3fagf"]
+[ext_resource type="PackedScene" uid="uid://dppgeynuf774u" path="res://Gres/Scenes/UI/inventory.tscn" id="3_7hhyc"]
+[ext_resource type="PackedScene" uid="uid://5ntd7d60ykyh" path="res://Gres/Scenes/UI/audio_manager.tscn" id="3_7sb2g"]
+[ext_resource type="Texture2D" uid="uid://dm76s8op3c4gg" path="res://Gres/Assets/BGame/galaxy10.png" id="3_7tdjj"]
+[ext_resource type="PackedScene" uid="uid://bci5salrufp48" path="res://Gres/Scenes/Boss/blood_mother.tscn" id="3_u6ftn"]
+[ext_resource type="Texture2D" uid="uid://dq3jytyp0ua81" path="res://Gres/Assets/BGame/stars_2.png" id="3_wh44p"]
+[ext_resource type="Texture2D" uid="uid://blge7hhsyv61o" path="res://Gres/Assets/BGame/stars_1.png" id="4_7tdjj"]
+[ext_resource type="AudioStream" uid="uid://cnsjvus1yleeo" path="res://Gres/Music/BGM/bg19.ogg" id="4_f0jok"]
+[ext_resource type="PackedScene" uid="uid://ddq1d0apcytuj" path="res://Gres/Scenes/Boss/solarius_sniper.tscn" id="4_jxyh8"]
+[ext_resource type="PackedScene" uid="uid://bacegrhjosklp" path="res://Gres/Scenes/Boss/wrath_boss.tscn" id="5_g8i02"]
+[ext_resource type="AudioStream" uid="uid://b35utltd7wc43" path="res://Gres/Music/BGM/bg20.ogg" id="5_u6ftn"]
+[ext_resource type="PackedScene" uid="uid://1ch0ia0rvjs7" path="res://Gres/Scenes/Boss/fire_boss.tscn" id="6_g8i02"]
+[ext_resource type="AudioStream" uid="uid://bl4uvgma70gmx" path="res://Gres/Music/BGM/bg21.ogg" id="6_jxyh8"]
+[ext_resource type="PackedScene" uid="uid://djiyprvsiwfwh" path="res://Gres/Scenes/chest/chest.tscn" id="7_dyb6p"]
+[ext_resource type="AudioStream" uid="uid://c57qaqrvhhw38" path="res://Gres/Music/BGM/bg22.ogg" id="7_g8i02"]
+[ext_resource type="Texture2D" uid="uid://duvccb3lp1u5t" path="res://Gres/Assets/planets/p_1.png" id="7_mgyvj"]
+[ext_resource type="Texture2D" uid="uid://cuwm4ec77sq0t" path="res://Gres/Assets/planets/p_6.png" id="8_ut6ap"]
+[ext_resource type="AudioStream" uid="uid://dej46xjftjh8d" path="res://Gres/Music/BGM/bg23.ogg" id="8_y3lnx"]
+[ext_resource type="Texture2D" uid="uid://dj1vi0lc11vxa" path="res://Gres/Assets/planets/p_7.png" id="9_0j46j"]
+[ext_resource type="AudioStream" uid="uid://dh53xpqbvuy8k" path="res://Gres/Music/BGM/bg24.ogg" id="9_vfd7w"]
+[ext_resource type="AudioStream" uid="uid://dgg303q1vhr2j" path="res://Gres/Music/BGM/bg25.ogg" id="10_hkukv"]
+[ext_resource type="Texture2D" uid="uid://xmhtpgm6kgnn" path="res://Gres/Assets/planets/p_8.png" id="10_lcfih"]
+[ext_resource type="Texture2D" uid="uid://dt3xy0d4tkc30" path="res://Gres/Assets/planets/p_2.png" id="11_l0esf"]
+[ext_resource type="PackedScene" uid="uid://b50vk3wb5y3kp" path="res://Gres/Scenes/obj/object.tscn" id="11_v1a52"]
+[ext_resource type="AudioStream" uid="uid://bhf701o17yarp" path="res://Gres/Music/BGM/bg26.ogg" id="11_wtr2q"]
+[ext_resource type="AudioStream" uid="uid://brrqivx2yci6x" path="res://Gres/Music/BGM/bg27.ogg" id="12_rqvys"]
+[ext_resource type="Texture2D" uid="uid://d06cuqhnst8rs" path="res://Gres/Assets/planets/p_5.png" id="12_uhye3"]
+[ext_resource type="Texture2D" uid="uid://6r5arj2t5egi" path="res://Gres/Assets/planets/pbj_1.png" id="13_8b8pb"]
+[ext_resource type="AudioStream" uid="uid://dc0mwjbmt0iqh" path="res://Gres/Music/BGM/bg28.ogg" id="13_8vdyo"]
+[ext_resource type="Texture2D" uid="uid://q65miexfny7v" path="res://Gres/Assets/planets/p_3.png" id="14_e0orq"]
+[ext_resource type="AudioStream" uid="uid://b25l86087pan" path="res://Gres/Music/BGM/bg29.ogg" id="14_ggrhb"]
+[ext_resource type="Texture2D" uid="uid://5k2tuksvp5us" path="res://Gres/Assets/planets/p_4.png" id="15_6pmjr"]
+[ext_resource type="AudioStream" uid="uid://duggkgjmp4aaq" path="res://Gres/Music/BGM/bg30.ogg" id="15_ki11v"]
+[ext_resource type="AudioStream" uid="uid://bapbo8tany0y0" path="res://Gres/Music/BGM/bg31.ogg" id="16_1mh67"]
+[ext_resource type="AudioStream" uid="uid://625t0dsfkeki" path="res://Gres/Music/BGM/bg32.ogg" id="17_bniug"]
+[ext_resource type="AudioStream" uid="uid://bg1h2u52kakij" path="res://Gres/Music/BGM/bg33.ogg" id="18_dih7q"]
+[ext_resource type="AudioStream" uid="uid://crnmdwro58tht" path="res://Gres/Music/BGM/bg34.ogg" id="19_ecip2"]
+[ext_resource type="AudioStream" uid="uid://ctqcnhuq4ruol" path="res://Gres/Music/BGM/bg35.ogg" id="20_jjfv7"]
+[ext_resource type="AudioStream" uid="uid://b1mcvs21furab" path="res://Gres/Music/BGM/bg36.ogg" id="21_cbvlg"]
+[ext_resource type="AudioStream" uid="uid://cj7myat7xdh43" path="res://Gres/Music/BGM/bg37.ogg" id="22_wd6yw"]
+[ext_resource type="AudioStream" uid="uid://dc71yq2x0lci2" path="res://Gres/Music/BGM/bg38.ogg" id="23_8iaed"]
+[ext_resource type="Script" uid="uid://wo6pg4fkfghd" path="res://Gres/Scripts/obj/dead_area.gd" id="47_jxyh8"]
+[ext_resource type="Texture2D" uid="uid://cr5p6vfpfw28i" path="res://Gres/Assets/Effects/32x32_Grow_12.png" id="47_u6ftn"]
+
+[sub_resource type="Animation" id="Animation_a66oc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_decaw"]
+resource_name = "loop"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_81h5s"]
+_data = {
+&"RESET": SubResource("Animation_a66oc"),
+&"loop": SubResource("Animation_decaw")
+}
+
+[sub_resource type="Animation" id="Animation_ut6ap"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, -1399)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mgyvj"]
+resource_name = "loop"
+length = 4.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(13, -1399), Vector2(397, -1421), Vector2(13, -1399), Vector2(-339, -1399)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(3, 3), Vector2(4, 4), Vector2(3, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0j46j"]
+_data = {
+&"RESET": SubResource("Animation_ut6ap"),
+&"loop": SubResource("Animation_mgyvj")
+}
+
+[sub_resource type="Animation" id="Animation_dr0vn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_w2lkd"]
+resource_name = "loop"
+length = 0.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u4iej"]
+_data = {
+&"RESET": SubResource("Animation_dr0vn"),
+&"loop": SubResource("Animation_w2lkd")
+}
+
+[sub_resource type="Animation" id="Animation_gpk8p"]
+resource_name = "loop"
+length = 120.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 60, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Layer2/Galaxy10:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 60, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Layer3/Galaxy11:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 60, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(581, 330), Vector2(581, 330)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Layer2/Galaxy10:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 60, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-26.1602, 155), Vector2(793, 362), Vector2(-26.1602, 155)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Layer3/Galaxy11:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 60, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(438.84, 250), Vector2(-334, 7), Vector2(438.84, 250)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Layer2/Galaxy10:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 60, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.72168, 0.72168), Vector2(1, 1), Vector2(0.72168, 0.72168)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../Layer3/Galaxy11:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 60, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../Layer1/Galaxy9:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 60, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.609375, 0.609375, 0.609375, 1), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../Layer5/Galaxy9:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 60, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.568627), Color(1, 1, 1, 1), Color(1, 1, 1, 0.568627)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1a52"]
+_data = {
+&"loop": SubResource("Animation_gpk8p")
+}
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g1idy"]
+rough = true
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1a52"]
+size = Vector2(10000, 20)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jxyh8"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_g8i02"]
+offsets = PackedFloat32Array(0, 0.495283, 1)
+colors = PackedColorArray(1, 0.84375, 0, 0, 1, 0, 0, 1, 1, 0.6328125, 0, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jxyh8"]
+radius = 170.0
+height = 9938.0
+
+[node name="Arena" type="Node2D" unique_id=618379213 node_paths=PackedStringArray("chest_spawn_points")]
+script = ExtResource("1_0heui")
+wave_delay = 1.0
+max_enemies_on_field_base = 500
+chest_scenes = Array[PackedScene]([ExtResource("7_dyb6p")])
+chest_spawn_points = [NodePath("CSP1"), NodePath("CSP2"), NodePath("CSP3"), NodePath("CSP4"), NodePath("CSP5"), NodePath("CSP6"), NodePath("CSP7")]
+boss_scenes = Array[PackedScene]([ExtResource("3_u6ftn"), ExtResource("4_jxyh8"), ExtResource("5_g8i02"), ExtResource("6_g8i02")])
+boss_wave_interval_min = 5
+boss_wave_interval_max = 7
+
+[node name="AudioManager" parent="." unique_id=2050665176 instance=ExtResource("3_7sb2g")]
+playlist = Array[AudioStream]([ExtResource("4_f0jok"), ExtResource("5_u6ftn"), ExtResource("6_jxyh8"), ExtResource("7_g8i02"), ExtResource("8_y3lnx"), ExtResource("9_vfd7w"), ExtResource("10_hkukv"), ExtResource("11_wtr2q"), ExtResource("12_rqvys"), ExtResource("13_8vdyo"), ExtResource("14_ggrhb"), ExtResource("15_ki11v"), ExtResource("16_1mh67"), ExtResource("17_bniug"), ExtResource("18_dih7q"), ExtResource("19_ecip2"), ExtResource("20_jjfv7"), ExtResource("21_cbvlg"), ExtResource("22_wd6yw"), ExtResource("23_8iaed")])
+in_loop = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1051426280]
+scroll_offset = Vector2(0.2, 0.1)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground" unique_id=687171496]
+offset_left = -8489.0
+offset_top = -7816.0
+offset_right = 9079.0
+offset_bottom = 7453.0
+color = Color(0.12496948, 0, 0.17578125, 1)
+
+[node name="Layer4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=458152267]
+scale = Vector2(6, 6)
+
+[node name="Galaxy11" type="Sprite2D" parent="ParallaxBackground/Layer4" unique_id=1355161357]
+modulate = Color(1, 1, 1, 0.78900003)
+texture = ExtResource("2_wh44p")
+
+[node name="Layer1" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1021742856]
+motion_mirroring = Vector2(1500, 1500)
+
+[node name="Galaxy9" type="Sprite2D" parent="ParallaxBackground/Layer1" unique_id=1920243352]
+position = Vector2(305, 143)
+scale = Vector2(0.740234, 0.740234)
+texture = ExtResource("2_wh44p")
+
+[node name="Layer5" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1529748424]
+motion_mirroring = Vector2(1500, 1500)
+
+[node name="Galaxy9" type="Sprite2D" parent="ParallaxBackground/Layer5" unique_id=176825401]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(898, 845)
+scale = Vector2(0.740234, 0.740234)
+texture = ExtResource("3_7tdjj")
+
+[node name="Layer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1269339318]
+motion_offset = Vector2(2, 2)
+
+[node name="Galaxy10" type="Sprite2D" parent="ParallaxBackground/Layer2" unique_id=1271327076]
+position = Vector2(-26.1602, 155)
+scale = Vector2(0.72168, 0.72168)
+texture = ExtResource("3_wh44p")
+
+[node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=651956543]
+motion_offset = Vector2(1, 1)
+motion_mirroring = Vector2(600, 400)
+
+[node name="Galaxy11" type="Sprite2D" parent="ParallaxBackground/Layer3" unique_id=551081109]
+position = Vector2(438.84, 250)
+texture = ExtResource("4_7tdjj")
+
+[node name="Planet1" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1313446517]
+motion_offset = Vector2(1, 1)
+
+[node name="Planet" type="Sprite2D" parent="ParallaxBackground/Planet1" unique_id=331063622]
+position = Vector2(592.42, 403.58)
+scale = Vector2(8, 8)
+texture = ExtResource("7_mgyvj")
+
+[node name="Planet2" type="Sprite2D" parent="ParallaxBackground/Planet1" unique_id=584840681]
+position = Vector2(-1503, -3456)
+scale = Vector2(3, 3)
+texture = ExtResource("8_ut6ap")
+
+[node name="Planet3" type="Sprite2D" parent="ParallaxBackground/Planet1" unique_id=382562581]
+position = Vector2(975, -4190)
+scale = Vector2(8, 8)
+texture = ExtResource("9_0j46j")
+
+[node name="Planet4" type="Sprite2D" parent="ParallaxBackground/Planet1" unique_id=273278271]
+position = Vector2(-3902, 3115)
+scale = Vector2(3, 3)
+texture = ExtResource("10_lcfih")
+
+[node name="Planet2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2080789640]
+motion_offset = Vector2(1, 1)
+
+[node name="Planet" type="Sprite2D" parent="ParallaxBackground/Planet2" unique_id=446003060]
+position = Vector2(3572, -3184)
+scale = Vector2(12, 12)
+texture = ExtResource("11_l0esf")
+
+[node name="Planet2" type="Sprite2D" parent="ParallaxBackground/Planet2" unique_id=1547277246]
+position = Vector2(4365, 2022)
+scale = Vector2(8, 8)
+texture = ExtResource("12_uhye3")
+
+[node name="Planet3" type="Sprite2D" parent="ParallaxBackground/Planet2/Planet2" unique_id=658375561]
+texture = ExtResource("13_8b8pb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/Planet2/Planet2/Planet3" unique_id=602413218]
+libraries/ = SubResource("AnimationLibrary_81h5s")
+autoplay = &"loop"
+
+[node name="Planet3" type="Sprite2D" parent="ParallaxBackground/Planet2" unique_id=1581801081]
+position = Vector2(3211, -28)
+scale = Vector2(8, 8)
+texture = ExtResource("12_uhye3")
+
+[node name="Planet3" type="Sprite2D" parent="ParallaxBackground/Planet2/Planet3" unique_id=314766439]
+texture = ExtResource("13_8b8pb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/Planet2/Planet3/Planet3" unique_id=1667873154]
+libraries/ = SubResource("AnimationLibrary_81h5s")
+autoplay = &"loop"
+
+[node name="Planet3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1094293927]
+motion_offset = Vector2(1, 1)
+
+[node name="Planet" type="Sprite2D" parent="ParallaxBackground/Planet3" unique_id=1217498098]
+position = Vector2(-4306, -1527)
+scale = Vector2(4, 4)
+texture = ExtResource("14_e0orq")
+
+[node name="p1" type="Sprite2D" parent="ParallaxBackground/Planet3" unique_id=115894189]
+position = Vector2(13, -1399)
+scale = Vector2(4, 4)
+texture = ExtResource("14_e0orq")
+flip_h = true
+flip_v = true
+
+[node name="loop" type="AnimationPlayer" parent="ParallaxBackground/Planet3/p1" unique_id=1058783911]
+libraries/ = SubResource("AnimationLibrary_0j46j")
+autoplay = &"loop"
+
+[node name="p2" type="Sprite2D" parent="ParallaxBackground/Planet3" unique_id=1536279066]
+position = Vector2(35.0002, -1415)
+scale = Vector2(12, 12)
+texture = ExtResource("11_l0esf")
+
+[node name="Planet2" type="Sprite2D" parent="ParallaxBackground/Planet3" unique_id=105708310]
+position = Vector2(-1388, 3521)
+scale = Vector2(8, 8)
+texture = ExtResource("15_6pmjr")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/Planet3/Planet2" unique_id=1100393566]
+libraries/ = SubResource("AnimationLibrary_u4iej")
+autoplay = &"loop"
+
+[node name="Planet3" type="Sprite2D" parent="ParallaxBackground/Planet3" unique_id=226380979]
+position = Vector2(-647, 261)
+scale = Vector2(8, 8)
+texture = ExtResource("15_6pmjr")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/Planet3/Planet3" unique_id=993164215]
+libraries/ = SubResource("AnimationLibrary_u4iej")
+autoplay = &"loop"
+
+[node name="loop" type="AnimationPlayer" parent="ParallaxBackground" unique_id=2114861853]
+root_node = NodePath("../Layer4/Galaxy11")
+libraries/ = SubResource("AnimationLibrary_v1a52")
+
+[node name="Gameplay" type="Node2D" parent="." unique_id=857418965]
+
+[node name="PlayerSpawn" type="Marker2D" parent="Gameplay" unique_id=1251600002]
+position = Vector2(580, 307)
+
+[node name="EnemyContainer" type="Node2D" parent="Gameplay" unique_id=1539403300]
+
+[node name="ChestContainer" type="Node2D" parent="Gameplay" unique_id=778521227]
+
+[node name="WaveSpawner" type="Node" parent="Gameplay" unique_id=1153836351]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1914023909]
+script = ExtResource("2_dyb6p")
+
+[node name="WaveManager" type="Node2D" parent="UI" unique_id=711861179]
+
+[node name="WaveInfo" type="RichTextLabel" parent="UI/WaveManager" unique_id=600074695]
+offset_top = 212.0
+offset_right = 1157.0
+offset_bottom = 427.0
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "wave couter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpawnInfo" type="RichTextLabel" parent="UI/WaveManager" unique_id=420941627]
+offset_top = 557.0
+offset_right = 1157.0
+offset_bottom = 648.0
+theme_override_colors/font_outline_color = Color(1, 0.585938, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "spawn progress info"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KillInfo" type="RichTextLabel" parent="UI/WaveManager" unique_id=973879456]
+offset_top = 557.0
+offset_right = 1150.0
+offset_bottom = 648.0
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "kill information"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MiniMap" parent="UI" unique_id=500793345 instance=ExtResource("3_3fagf")]
+offset_left = 96.0
+offset_top = 554.0
+offset_right = 96.0
+offset_bottom = 554.0
+player_path = NodePath("../../Player")
+
+[node name="PauseUI" parent="UI" unique_id=1949169206 instance=ExtResource("2_ffhdp")]
+
+[node name="Inventory" parent="UI" unique_id=1175345147 instance=ExtResource("3_7hhyc")]
+visible = false
+offset_left = 582.0
+offset_top = 379.0
+offset_right = 582.0
+offset_bottom = 379.0
+
+[node name="objects" type="Node2D" parent="." unique_id=146397832]
+
+[node name="object1" parent="objects" unique_id=115873871 instance=ExtResource("11_v1a52")]
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object2" parent="objects" unique_id=1186754403 instance=ExtResource("11_v1a52")]
+position = Vector2(672, 475)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object3" parent="objects" unique_id=1049211457 instance=ExtResource("11_v1a52")]
+position = Vector2(182, 718)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object4" parent="objects" unique_id=1831405558 instance=ExtResource("11_v1a52")]
+position = Vector2(1653, 667)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object5" parent="objects" unique_id=1753489973 instance=ExtResource("11_v1a52")]
+position = Vector2(1587, 116)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object6" parent="objects" unique_id=214530291 instance=ExtResource("11_v1a52")]
+position = Vector2(1097, 1026)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object7" parent="objects" unique_id=345481683 instance=ExtResource("11_v1a52")]
+position = Vector2(2229, 1056)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object8" parent="objects" unique_id=360494908 instance=ExtResource("11_v1a52")]
+position = Vector2(2365, 187)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object9" parent="objects" unique_id=821990299 instance=ExtResource("11_v1a52")]
+position = Vector2(564, 416)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object10" parent="objects" unique_id=1615466167 instance=ExtResource("11_v1a52")]
+position = Vector2(501, 80)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object11" parent="objects" unique_id=464666360 instance=ExtResource("11_v1a52")]
+position = Vector2(68, 1150)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object12" parent="objects" unique_id=1194797310 instance=ExtResource("11_v1a52")]
+position = Vector2(206, 1178)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object13" parent="objects" unique_id=1028935385 instance=ExtResource("11_v1a52")]
+position = Vector2(1593, 1156)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object14" parent="objects" unique_id=1695012427 instance=ExtResource("11_v1a52")]
+position = Vector2(1731, 767)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object15" parent="objects" unique_id=1265000785 instance=ExtResource("11_v1a52")]
+position = Vector2(1596, 780)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object16" parent="objects" unique_id=509906678 instance=ExtResource("11_v1a52")]
+position = Vector2(2017, 102)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object17" parent="objects" unique_id=183563484 instance=ExtResource("11_v1a52")]
+position = Vector2(2412, 733)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object18" parent="objects" unique_id=1945012009 instance=ExtResource("11_v1a52")]
+position = Vector2(-2504, 766)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object19" parent="objects" unique_id=1320857327 instance=ExtResource("11_v1a52")]
+position = Vector2(-1832, 1241)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object20" parent="objects" unique_id=675093902 instance=ExtResource("11_v1a52")]
+position = Vector2(-2322, 1484)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object21" parent="objects" unique_id=1179164990 instance=ExtResource("11_v1a52")]
+position = Vector2(-851, 1433)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object22" parent="objects" unique_id=300876654 instance=ExtResource("11_v1a52")]
+position = Vector2(-917, 882)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object23" parent="objects" unique_id=1924865324 instance=ExtResource("11_v1a52")]
+position = Vector2(-1407, 1792)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object24" parent="objects" unique_id=1961275036 instance=ExtResource("11_v1a52")]
+position = Vector2(-275, 1822)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object25" parent="objects" unique_id=385041906 instance=ExtResource("11_v1a52")]
+position = Vector2(-139, 953)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object26" parent="objects" unique_id=1827554889 instance=ExtResource("11_v1a52")]
+position = Vector2(-1940, 1182)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object27" parent="objects" unique_id=113710709 instance=ExtResource("11_v1a52")]
+position = Vector2(-2003, 846)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object28" parent="objects" unique_id=1553806159 instance=ExtResource("11_v1a52")]
+position = Vector2(-2436, 1916)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object29" parent="objects" unique_id=1819605080 instance=ExtResource("11_v1a52")]
+position = Vector2(-2298, 1944)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object30" parent="objects" unique_id=305127459 instance=ExtResource("11_v1a52")]
+position = Vector2(-911, 1922)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object31" parent="objects" unique_id=534650198 instance=ExtResource("11_v1a52")]
+position = Vector2(-773, 1533)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object32" parent="objects" unique_id=1239520091 instance=ExtResource("11_v1a52")]
+position = Vector2(-908, 1546)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object33" parent="objects" unique_id=2011989263 instance=ExtResource("11_v1a52")]
+position = Vector2(-487, 868)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object34" parent="objects" unique_id=1998005935 instance=ExtResource("11_v1a52")]
+position = Vector2(-92, 1499)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object35" parent="objects" unique_id=663401269 instance=ExtResource("11_v1a52")]
+position = Vector2(-2056, 2024)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object36" parent="objects" unique_id=89349848 instance=ExtResource("11_v1a52")]
+position = Vector2(-1384, 2499)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object37" parent="objects" unique_id=652653856 instance=ExtResource("11_v1a52")]
+position = Vector2(-1874, 2742)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object38" parent="objects" unique_id=736686917 instance=ExtResource("11_v1a52")]
+position = Vector2(-403, 2691)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object39" parent="objects" unique_id=685718608 instance=ExtResource("11_v1a52")]
+position = Vector2(-469, 2140)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object40" parent="objects" unique_id=1018705271 instance=ExtResource("11_v1a52")]
+position = Vector2(-959, 3050)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object41" parent="objects" unique_id=870364005 instance=ExtResource("11_v1a52")]
+position = Vector2(173, 3080)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object42" parent="objects" unique_id=641553679 instance=ExtResource("11_v1a52")]
+position = Vector2(309, 2211)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object43" parent="objects" unique_id=995066899 instance=ExtResource("11_v1a52")]
+position = Vector2(-1492, 2440)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object44" parent="objects" unique_id=381286865 instance=ExtResource("11_v1a52")]
+position = Vector2(-1555, 2104)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object45" parent="objects" unique_id=1186848050 instance=ExtResource("11_v1a52")]
+position = Vector2(-1988, 3174)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object46" parent="objects" unique_id=1535093636 instance=ExtResource("11_v1a52")]
+position = Vector2(-1850, 3202)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object47" parent="objects" unique_id=103411726 instance=ExtResource("11_v1a52")]
+position = Vector2(-1362, 3560)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object48" parent="objects" unique_id=1303948798 instance=ExtResource("11_v1a52")]
+position = Vector2(-325, 2791)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object49" parent="objects" unique_id=285242319 instance=ExtResource("11_v1a52")]
+position = Vector2(-460, 2804)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object50" parent="objects" unique_id=1578613764 instance=ExtResource("11_v1a52")]
+position = Vector2(-39, 2126)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object51" parent="objects" unique_id=1372545325 instance=ExtResource("11_v1a52")]
+position = Vector2(356, 2757)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object52" parent="objects" unique_id=1100335002 instance=ExtResource("11_v1a52")]
+position = Vector2(-4816, 2288)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object53" parent="objects" unique_id=1652137489 instance=ExtResource("11_v1a52")]
+position = Vector2(-4144, 2763)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object54" parent="objects" unique_id=1321048951 instance=ExtResource("11_v1a52")]
+position = Vector2(-4634, 3006)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object55" parent="objects" unique_id=357037725 instance=ExtResource("11_v1a52")]
+position = Vector2(-3163, 2955)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object56" parent="objects" unique_id=692137717 instance=ExtResource("11_v1a52")]
+position = Vector2(-3229, 2404)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object57" parent="objects" unique_id=446395246 instance=ExtResource("11_v1a52")]
+position = Vector2(-3719, 3314)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object58" parent="objects" unique_id=1821912594 instance=ExtResource("11_v1a52")]
+position = Vector2(-2587, 3344)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object59" parent="objects" unique_id=2129535531 instance=ExtResource("11_v1a52")]
+position = Vector2(-2451, 2475)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object60" parent="objects" unique_id=263435347 instance=ExtResource("11_v1a52")]
+position = Vector2(-4252, 2704)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object61" parent="objects" unique_id=1132917751 instance=ExtResource("11_v1a52")]
+position = Vector2(-4315, 2368)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object62" parent="objects" unique_id=643837814 instance=ExtResource("11_v1a52")]
+position = Vector2(-4748, 3438)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object63" parent="objects" unique_id=1933832416 instance=ExtResource("11_v1a52")]
+position = Vector2(-4610, 3466)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object64" parent="objects" unique_id=50513706 instance=ExtResource("11_v1a52")]
+position = Vector2(-3223, 3444)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object65" parent="objects" unique_id=938210754 instance=ExtResource("11_v1a52")]
+position = Vector2(-3085, 3055)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object66" parent="objects" unique_id=1042280955 instance=ExtResource("11_v1a52")]
+position = Vector2(-3220, 3068)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object67" parent="objects" unique_id=285315136 instance=ExtResource("11_v1a52")]
+position = Vector2(-2799, 2390)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object68" parent="objects" unique_id=908788561 instance=ExtResource("11_v1a52")]
+position = Vector2(-2404, 3021)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object69" parent="objects" unique_id=53819326 instance=ExtResource("11_v1a52")]
+position = Vector2(-4056, 3752)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object70" parent="objects" unique_id=1937952524 instance=ExtResource("11_v1a52")]
+position = Vector2(-3384, 4227)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object71" parent="objects" unique_id=247871092 instance=ExtResource("11_v1a52")]
+position = Vector2(-3874, 4470)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object72" parent="objects" unique_id=1007261296 instance=ExtResource("11_v1a52")]
+position = Vector2(-2403, 4419)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object73" parent="objects" unique_id=1394493801 instance=ExtResource("11_v1a52")]
+position = Vector2(-2469, 3868)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object74" parent="objects" unique_id=1533761953 instance=ExtResource("11_v1a52")]
+position = Vector2(-2959, 4778)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object75" parent="objects" unique_id=2135455729 instance=ExtResource("11_v1a52")]
+position = Vector2(-1827, 4808)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object76" parent="objects" unique_id=1545769015 instance=ExtResource("11_v1a52")]
+position = Vector2(-1691, 3939)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object77" parent="objects" unique_id=47693443 instance=ExtResource("11_v1a52")]
+position = Vector2(-3492, 4168)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object78" parent="objects" unique_id=1119094385 instance=ExtResource("11_v1a52")]
+position = Vector2(-3555, 3832)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object79" parent="objects" unique_id=2056423937 instance=ExtResource("11_v1a52")]
+position = Vector2(-3988, 4902)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object80" parent="objects" unique_id=1685638398 instance=ExtResource("11_v1a52")]
+position = Vector2(-3850, 4930)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object81" parent="objects" unique_id=1728601600 instance=ExtResource("11_v1a52")]
+position = Vector2(-2463, 4908)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object82" parent="objects" unique_id=2135593526 instance=ExtResource("11_v1a52")]
+position = Vector2(-2325, 4519)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object83" parent="objects" unique_id=1450504475 instance=ExtResource("11_v1a52")]
+position = Vector2(-2460, 4532)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object84" parent="objects" unique_id=352035864 instance=ExtResource("11_v1a52")]
+position = Vector2(-2039, 3854)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object85" parent="objects" unique_id=2007872676 instance=ExtResource("11_v1a52")]
+position = Vector2(-1644, 4485)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object89" parent="objects" unique_id=1921465882 instance=ExtResource("11_v1a52")]
+position = Vector2(-5043, 4635)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object93" parent="objects" unique_id=887705930 instance=ExtResource("11_v1a52")]
+position = Vector2(-4331, 4155)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object99" parent="objects" unique_id=1956646828 instance=ExtResource("11_v1a52")]
+position = Vector2(-4965, 4735)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object101" parent="objects" unique_id=686664724 instance=ExtResource("11_v1a52")]
+position = Vector2(-4679, 4070)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object102" parent="objects" unique_id=949455957 instance=ExtResource("11_v1a52")]
+position = Vector2(-4284, 4701)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object103" parent="objects" unique_id=98726552 instance=ExtResource("11_v1a52")]
+position = Vector2(-2015, -326)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object104" parent="objects" unique_id=1834399269 instance=ExtResource("11_v1a52")]
+position = Vector2(-883, -296)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object105" parent="objects" unique_id=198597312 instance=ExtResource("11_v1a52")]
+position = Vector2(-747, -1165)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object106" parent="objects" unique_id=966053610 instance=ExtResource("11_v1a52")]
+position = Vector2(-2548, -936)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object107" parent="objects" unique_id=130503708 instance=ExtResource("11_v1a52")]
+position = Vector2(-2611, -1272)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object108" parent="objects" unique_id=387603739 instance=ExtResource("11_v1a52")]
+position = Vector2(-3044, -202)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object109" parent="objects" unique_id=842447021 instance=ExtResource("11_v1a52")]
+position = Vector2(-2906, -174)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object110" parent="objects" unique_id=1114633050 instance=ExtResource("11_v1a52")]
+position = Vector2(-1519, -196)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object111" parent="objects" unique_id=1211031220 instance=ExtResource("11_v1a52")]
+position = Vector2(-1381, -585)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object803" parent="objects" unique_id=341361464 instance=ExtResource("11_v1a52")]
+position = Vector2(-811, 544)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object804" parent="objects" unique_id=105700882 instance=ExtResource("11_v1a52")]
+position = Vector2(-1023, 272)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object805" parent="objects" unique_id=1936696741 instance=ExtResource("11_v1a52")]
+position = Vector2(-2098, 264)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object112" parent="objects" unique_id=1340132647 instance=ExtResource("11_v1a52")]
+position = Vector2(-1516, -572)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object113" parent="objects" unique_id=540920195 instance=ExtResource("11_v1a52")]
+position = Vector2(-1095, -1250)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object114" parent="objects" unique_id=1531277832 instance=ExtResource("11_v1a52")]
+position = Vector2(-700, -619)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object118" parent="objects" unique_id=2016749731 instance=ExtResource("11_v1a52")]
+position = Vector2(-4219, -421)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object119" parent="objects" unique_id=1616137359 instance=ExtResource("11_v1a52")]
+position = Vector2(-4285, -972)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object120" parent="objects" unique_id=161703003 instance=ExtResource("11_v1a52")]
+position = Vector2(-4775, -62)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object121" parent="objects" unique_id=395395152 instance=ExtResource("11_v1a52")]
+position = Vector2(-3643, -32)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object122" parent="objects" unique_id=1244416695 instance=ExtResource("11_v1a52")]
+position = Vector2(-3507, -901)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object127" parent="objects" unique_id=52427456 instance=ExtResource("11_v1a52")]
+position = Vector2(-4279, 68)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object128" parent="objects" unique_id=520733042 instance=ExtResource("11_v1a52")]
+position = Vector2(-4141, -321)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object129" parent="objects" unique_id=1586498698 instance=ExtResource("11_v1a52")]
+position = Vector2(-4276, -308)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object130" parent="objects" unique_id=1286865880 instance=ExtResource("11_v1a52")]
+position = Vector2(-3855, -986)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object131" parent="objects" unique_id=15703535 instance=ExtResource("11_v1a52")]
+position = Vector2(-3460, -355)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object133" parent="objects" unique_id=1964355234 instance=ExtResource("11_v1a52")]
+position = Vector2(-4440, 851)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object134" parent="objects" unique_id=2101459940 instance=ExtResource("11_v1a52")]
+position = Vector2(-4930, 1094)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object135" parent="objects" unique_id=1883061577 instance=ExtResource("11_v1a52")]
+position = Vector2(-3459, 1043)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object136" parent="objects" unique_id=384401094 instance=ExtResource("11_v1a52")]
+position = Vector2(-3525, 492)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object137" parent="objects" unique_id=42075691 instance=ExtResource("11_v1a52")]
+position = Vector2(-4015, 1402)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object138" parent="objects" unique_id=836992287 instance=ExtResource("11_v1a52")]
+position = Vector2(-2883, 1432)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object139" parent="objects" unique_id=1165413189 instance=ExtResource("11_v1a52")]
+position = Vector2(-2747, 563)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object140" parent="objects" unique_id=80041446 instance=ExtResource("11_v1a52")]
+position = Vector2(-4548, 792)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object141" parent="objects" unique_id=1372853251 instance=ExtResource("11_v1a52")]
+position = Vector2(-4611, 456)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object142" parent="objects" unique_id=479798011 instance=ExtResource("11_v1a52")]
+position = Vector2(-5044, 1526)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object143" parent="objects" unique_id=2134374890 instance=ExtResource("11_v1a52")]
+position = Vector2(-4906, 1554)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object144" parent="objects" unique_id=1852630250 instance=ExtResource("11_v1a52")]
+position = Vector2(-3519, 1532)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object145" parent="objects" unique_id=1715864138 instance=ExtResource("11_v1a52")]
+position = Vector2(-3381, 1143)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object146" parent="objects" unique_id=1638847216 instance=ExtResource("11_v1a52")]
+position = Vector2(-3516, 1156)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object147" parent="objects" unique_id=348371182 instance=ExtResource("11_v1a52")]
+position = Vector2(-3095, 478)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object148" parent="objects" unique_id=999484153 instance=ExtResource("11_v1a52")]
+position = Vector2(-2700, 1109)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object166" parent="objects" unique_id=1896236334 instance=ExtResource("11_v1a52")]
+position = Vector2(769, -3878)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object167" parent="objects" unique_id=792193218 instance=ExtResource("11_v1a52")]
+position = Vector2(1901, -3848)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object168" parent="objects" unique_id=1943499779 instance=ExtResource("11_v1a52")]
+position = Vector2(2037, -4717)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object169" parent="objects" unique_id=2096549917 instance=ExtResource("11_v1a52")]
+position = Vector2(236, -4488)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object170" parent="objects" unique_id=65826542 instance=ExtResource("11_v1a52")]
+position = Vector2(173, -4824)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object171" parent="objects" unique_id=515288503 instance=ExtResource("11_v1a52")]
+position = Vector2(-260, -3754)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object172" parent="objects" unique_id=117439646 instance=ExtResource("11_v1a52")]
+position = Vector2(-122, -3726)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object173" parent="objects" unique_id=204921743 instance=ExtResource("11_v1a52")]
+position = Vector2(1265, -3748)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object174" parent="objects" unique_id=1252347431 instance=ExtResource("11_v1a52")]
+position = Vector2(1403, -4137)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object175" parent="objects" unique_id=1865884203 instance=ExtResource("11_v1a52")]
+position = Vector2(1268, -4124)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object176" parent="objects" unique_id=1881907240 instance=ExtResource("11_v1a52")]
+position = Vector2(1689, -4802)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object177" parent="objects" unique_id=592509871 instance=ExtResource("11_v1a52")]
+position = Vector2(2084, -4171)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object178" parent="objects" unique_id=18797035 instance=ExtResource("11_v1a52")]
+position = Vector2(-3088, -4640)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object179" parent="objects" unique_id=825216517 instance=ExtResource("11_v1a52")]
+position = Vector2(-2416, -4165)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object180" parent="objects" unique_id=1318009033 instance=ExtResource("11_v1a52")]
+position = Vector2(-2906, -3922)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object181" parent="objects" unique_id=946785992 instance=ExtResource("11_v1a52")]
+position = Vector2(-1435, -3973)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object182" parent="objects" unique_id=1935604552 instance=ExtResource("11_v1a52")]
+position = Vector2(-1501, -4524)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object183" parent="objects" unique_id=1336624498 instance=ExtResource("11_v1a52")]
+position = Vector2(-1991, -3614)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object184" parent="objects" unique_id=1474172484 instance=ExtResource("11_v1a52")]
+position = Vector2(-859, -3584)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object185" parent="objects" unique_id=1024737443 instance=ExtResource("11_v1a52")]
+position = Vector2(-723, -4453)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object186" parent="objects" unique_id=588532681 instance=ExtResource("11_v1a52")]
+position = Vector2(-2524, -4224)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object187" parent="objects" unique_id=200606101 instance=ExtResource("11_v1a52")]
+position = Vector2(-2587, -4560)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object188" parent="objects" unique_id=1949608929 instance=ExtResource("11_v1a52")]
+position = Vector2(-3020, -3490)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object189" parent="objects" unique_id=1841990948 instance=ExtResource("11_v1a52")]
+position = Vector2(-2882, -3462)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object190" parent="objects" unique_id=2093647683 instance=ExtResource("11_v1a52")]
+position = Vector2(-1495, -3484)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object191" parent="objects" unique_id=837247917 instance=ExtResource("11_v1a52")]
+position = Vector2(-1357, -3873)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object192" parent="objects" unique_id=439980639 instance=ExtResource("11_v1a52")]
+position = Vector2(-1492, -3860)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object193" parent="objects" unique_id=13442505 instance=ExtResource("11_v1a52")]
+position = Vector2(-1071, -4538)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object194" parent="objects" unique_id=202917838 instance=ExtResource("11_v1a52")]
+position = Vector2(-676, -3907)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object195" parent="objects" unique_id=2024170234 instance=ExtResource("11_v1a52")]
+position = Vector2(-2328, -3176)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object196" parent="objects" unique_id=2061721282 instance=ExtResource("11_v1a52")]
+position = Vector2(-1656, -2701)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object197" parent="objects" unique_id=164751865 instance=ExtResource("11_v1a52")]
+position = Vector2(-2146, -2458)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object198" parent="objects" unique_id=938224386 instance=ExtResource("11_v1a52")]
+position = Vector2(-675, -2509)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object199" parent="objects" unique_id=1455270057 instance=ExtResource("11_v1a52")]
+position = Vector2(-741, -3060)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object200" parent="objects" unique_id=1018124998 instance=ExtResource("11_v1a52")]
+position = Vector2(-1231, -2150)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object201" parent="objects" unique_id=966437316 instance=ExtResource("11_v1a52")]
+position = Vector2(-99, -2120)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object202" parent="objects" unique_id=738578341 instance=ExtResource("11_v1a52")]
+position = Vector2(37, -2989)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object203" parent="objects" unique_id=1598875998 instance=ExtResource("11_v1a52")]
+position = Vector2(-1764, -2760)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object204" parent="objects" unique_id=1825972839 instance=ExtResource("11_v1a52")]
+position = Vector2(-1827, -3096)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object205" parent="objects" unique_id=1865241431 instance=ExtResource("11_v1a52")]
+position = Vector2(-2260, -2026)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object206" parent="objects" unique_id=1556901471 instance=ExtResource("11_v1a52")]
+position = Vector2(-2122, -1998)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object207" parent="objects" unique_id=676964196 instance=ExtResource("11_v1a52")]
+position = Vector2(-735, -2020)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object208" parent="objects" unique_id=1190099056 instance=ExtResource("11_v1a52")]
+position = Vector2(-597, -2409)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object209" parent="objects" unique_id=688837280 instance=ExtResource("11_v1a52")]
+position = Vector2(-732, -2396)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object210" parent="objects" unique_id=1843062587 instance=ExtResource("11_v1a52")]
+position = Vector2(-311, -3074)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object211" parent="objects" unique_id=1489585210 instance=ExtResource("11_v1a52")]
+position = Vector2(84, -2443)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object212" parent="objects" unique_id=831384023 instance=ExtResource("11_v1a52")]
+position = Vector2(-4968, -2960)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object213" parent="objects" unique_id=1541059358 instance=ExtResource("11_v1a52")]
+position = Vector2(-4296, -2485)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object214" parent="objects" unique_id=756825281 instance=ExtResource("11_v1a52")]
+position = Vector2(-4786, -2242)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object215" parent="objects" unique_id=1436440631 instance=ExtResource("11_v1a52")]
+position = Vector2(-3315, -2293)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object216" parent="objects" unique_id=1351094922 instance=ExtResource("11_v1a52")]
+position = Vector2(-3381, -2844)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object217" parent="objects" unique_id=1821184072 instance=ExtResource("11_v1a52")]
+position = Vector2(-3871, -1934)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object218" parent="objects" unique_id=421036757 instance=ExtResource("11_v1a52")]
+position = Vector2(-2739, -1904)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object219" parent="objects" unique_id=673031716 instance=ExtResource("11_v1a52")]
+position = Vector2(-2603, -2773)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object220" parent="objects" unique_id=1775576391 instance=ExtResource("11_v1a52")]
+position = Vector2(-4404, -2544)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object221" parent="objects" unique_id=51878322 instance=ExtResource("11_v1a52")]
+position = Vector2(-4467, -2880)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object222" parent="objects" unique_id=2003027653 instance=ExtResource("11_v1a52")]
+position = Vector2(-4900, -1810)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object223" parent="objects" unique_id=679561505 instance=ExtResource("11_v1a52")]
+position = Vector2(-4762, -1782)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object224" parent="objects" unique_id=884863662 instance=ExtResource("11_v1a52")]
+position = Vector2(-3375, -1804)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object225" parent="objects" unique_id=2039561686 instance=ExtResource("11_v1a52")]
+position = Vector2(-3237, -2193)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object226" parent="objects" unique_id=2139030848 instance=ExtResource("11_v1a52")]
+position = Vector2(-3372, -2180)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object227" parent="objects" unique_id=2052179079 instance=ExtResource("11_v1a52")]
+position = Vector2(-2951, -2858)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object228" parent="objects" unique_id=479637563 instance=ExtResource("11_v1a52")]
+position = Vector2(-2556, -2227)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object241" parent="objects" unique_id=674598878 instance=ExtResource("11_v1a52")]
+position = Vector2(2688, -5064)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object242" parent="objects" unique_id=1777532593 instance=ExtResource("11_v1a52")]
+position = Vector2(3360, -4589)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object243" parent="objects" unique_id=1216800462 instance=ExtResource("11_v1a52")]
+position = Vector2(2870, -4346)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object244" parent="objects" unique_id=1925116171 instance=ExtResource("11_v1a52")]
+position = Vector2(4341, -4397)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object245" parent="objects" unique_id=1940542641 instance=ExtResource("11_v1a52")]
+position = Vector2(4275, -4948)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object246" parent="objects" unique_id=6826961 instance=ExtResource("11_v1a52")]
+position = Vector2(3785, -4038)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object247" parent="objects" unique_id=436186660 instance=ExtResource("11_v1a52")]
+position = Vector2(4917, -4008)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object248" parent="objects" unique_id=1107952355 instance=ExtResource("11_v1a52")]
+position = Vector2(5053, -4877)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object249" parent="objects" unique_id=575419962 instance=ExtResource("11_v1a52")]
+position = Vector2(3252, -4648)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object250" parent="objects" unique_id=1445394366 instance=ExtResource("11_v1a52")]
+position = Vector2(3189, -4984)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object251" parent="objects" unique_id=1438675856 instance=ExtResource("11_v1a52")]
+position = Vector2(2756, -3914)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object252" parent="objects" unique_id=1749765765 instance=ExtResource("11_v1a52")]
+position = Vector2(2894, -3886)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object253" parent="objects" unique_id=717545812 instance=ExtResource("11_v1a52")]
+position = Vector2(4281, -3908)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object254" parent="objects" unique_id=257534711 instance=ExtResource("11_v1a52")]
+position = Vector2(4419, -4297)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object255" parent="objects" unique_id=1313994416 instance=ExtResource("11_v1a52")]
+position = Vector2(4284, -4284)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object256" parent="objects" unique_id=32053687 instance=ExtResource("11_v1a52")]
+position = Vector2(4705, -4962)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object257" parent="objects" unique_id=1483732325 instance=ExtResource("11_v1a52")]
+position = Vector2(5100, -4331)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object258" parent="objects" unique_id=1690225534 instance=ExtResource("11_v1a52")]
+position = Vector2(3448, -3600)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object259" parent="objects" unique_id=1325270279 instance=ExtResource("11_v1a52")]
+position = Vector2(4120, -3125)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object260" parent="objects" unique_id=466303428 instance=ExtResource("11_v1a52")]
+position = Vector2(3630, -2882)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object261" parent="objects" unique_id=653990536 instance=ExtResource("11_v1a52")]
+position = Vector2(5101, -2933)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object262" parent="objects" unique_id=2070395581 instance=ExtResource("11_v1a52")]
+position = Vector2(5035, -3484)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object263" parent="objects" unique_id=1029694391 instance=ExtResource("11_v1a52")]
+position = Vector2(4545, -2574)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object266" parent="objects" unique_id=1976699907 instance=ExtResource("11_v1a52")]
+position = Vector2(4012, -3184)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object267" parent="objects" unique_id=904419623 instance=ExtResource("11_v1a52")]
+position = Vector2(3949, -3520)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object268" parent="objects" unique_id=1247866033 instance=ExtResource("11_v1a52")]
+position = Vector2(3516, -2450)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object269" parent="objects" unique_id=1715785641 instance=ExtResource("11_v1a52")]
+position = Vector2(3654, -2422)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object270" parent="objects" unique_id=1970534084 instance=ExtResource("11_v1a52")]
+position = Vector2(5041, -2444)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object272" parent="objects" unique_id=2122689779 instance=ExtResource("11_v1a52")]
+position = Vector2(5044, -2820)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object275" parent="objects" unique_id=1887272166 instance=ExtResource("11_v1a52")]
+position = Vector2(808, -3384)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object276" parent="objects" unique_id=357116583 instance=ExtResource("11_v1a52")]
+position = Vector2(1480, -2909)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object277" parent="objects" unique_id=1978493163 instance=ExtResource("11_v1a52")]
+position = Vector2(990, -2666)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object278" parent="objects" unique_id=1938698787 instance=ExtResource("11_v1a52")]
+position = Vector2(2461, -2717)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object279" parent="objects" unique_id=1228516171 instance=ExtResource("11_v1a52")]
+position = Vector2(2395, -3268)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object280" parent="objects" unique_id=1173101368 instance=ExtResource("11_v1a52")]
+position = Vector2(1905, -2358)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object281" parent="objects" unique_id=1752963786 instance=ExtResource("11_v1a52")]
+position = Vector2(3037, -2328)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object282" parent="objects" unique_id=267464145 instance=ExtResource("11_v1a52")]
+position = Vector2(3173, -3197)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object283" parent="objects" unique_id=645735834 instance=ExtResource("11_v1a52")]
+position = Vector2(1372, -2968)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object284" parent="objects" unique_id=1808672159 instance=ExtResource("11_v1a52")]
+position = Vector2(1309, -3304)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object285" parent="objects" unique_id=1619741238 instance=ExtResource("11_v1a52")]
+position = Vector2(876, -2234)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object286" parent="objects" unique_id=2088548083 instance=ExtResource("11_v1a52")]
+position = Vector2(1014, -2206)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object287" parent="objects" unique_id=1655481027 instance=ExtResource("11_v1a52")]
+position = Vector2(2401, -2228)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object288" parent="objects" unique_id=394627403 instance=ExtResource("11_v1a52")]
+position = Vector2(2539, -2617)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object289" parent="objects" unique_id=938741734 instance=ExtResource("11_v1a52")]
+position = Vector2(2404, -2604)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object290" parent="objects" unique_id=1927199495 instance=ExtResource("11_v1a52")]
+position = Vector2(2825, -3282)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object291" parent="objects" unique_id=1344848310 instance=ExtResource("11_v1a52")]
+position = Vector2(3220, -2651)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object304" parent="objects" unique_id=1226346026 instance=ExtResource("11_v1a52")]
+position = Vector2(4224, -2208)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object305" parent="objects" unique_id=1609422319 instance=ExtResource("11_v1a52")]
+position = Vector2(4896, -1733)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object306" parent="objects" unique_id=388321578 instance=ExtResource("11_v1a52")]
+position = Vector2(4406, -1490)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object312" parent="objects" unique_id=331243383 instance=ExtResource("11_v1a52")]
+position = Vector2(4788, -1792)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object313" parent="objects" unique_id=1193830189 instance=ExtResource("11_v1a52")]
+position = Vector2(4725, -2128)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object314" parent="objects" unique_id=1813427715 instance=ExtResource("11_v1a52")]
+position = Vector2(4292, -1058)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object315" parent="objects" unique_id=1828945273 instance=ExtResource("11_v1a52")]
+position = Vector2(4430, -1030)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object321" parent="objects" unique_id=407855361 instance=ExtResource("11_v1a52")]
+position = Vector2(4984, -744)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object331" parent="objects" unique_id=1268434526 instance=ExtResource("11_v1a52")]
+position = Vector2(5052, 406)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object338" parent="objects" unique_id=1758890179 instance=ExtResource("11_v1a52")]
+position = Vector2(2344, -528)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object339" parent="objects" unique_id=1281885649 instance=ExtResource("11_v1a52")]
+position = Vector2(3016, -53)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object340" parent="objects" unique_id=263337016 instance=ExtResource("11_v1a52")]
+position = Vector2(2526, 190)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object341" parent="objects" unique_id=2054076167 instance=ExtResource("11_v1a52")]
+position = Vector2(3997, 139)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object342" parent="objects" unique_id=1032662276 instance=ExtResource("11_v1a52")]
+position = Vector2(3931, -412)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object343" parent="objects" unique_id=2025383228 instance=ExtResource("11_v1a52")]
+position = Vector2(3441, 498)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object344" parent="objects" unique_id=686921216 instance=ExtResource("11_v1a52")]
+position = Vector2(4573, 528)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object345" parent="objects" unique_id=1778966754 instance=ExtResource("11_v1a52")]
+position = Vector2(4709, -341)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object346" parent="objects" unique_id=1684279810 instance=ExtResource("11_v1a52")]
+position = Vector2(2908, -112)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object347" parent="objects" unique_id=368173577 instance=ExtResource("11_v1a52")]
+position = Vector2(2845, -448)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object348" parent="objects" unique_id=1361298179 instance=ExtResource("11_v1a52")]
+position = Vector2(2412, 622)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object349" parent="objects" unique_id=748463891 instance=ExtResource("11_v1a52")]
+position = Vector2(2550, 650)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object350" parent="objects" unique_id=1115507661 instance=ExtResource("11_v1a52")]
+position = Vector2(3937, 628)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object351" parent="objects" unique_id=1310513347 instance=ExtResource("11_v1a52")]
+position = Vector2(4075, 239)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object352" parent="objects" unique_id=559098676 instance=ExtResource("11_v1a52")]
+position = Vector2(3940, 252)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object353" parent="objects" unique_id=1185365003 instance=ExtResource("11_v1a52")]
+position = Vector2(4361, -426)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object354" parent="objects" unique_id=666675419 instance=ExtResource("11_v1a52")]
+position = Vector2(4756, 205)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object373" parent="objects" unique_id=1423643931 instance=ExtResource("11_v1a52")]
+position = Vector2(-4547, -5160)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object387" parent="objects" unique_id=1189193987 instance=ExtResource("11_v1a52")]
+position = Vector2(-4363, -4085)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object388" parent="objects" unique_id=422399853 instance=ExtResource("11_v1a52")]
+position = Vector2(-4429, -4636)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object389" parent="objects" unique_id=1626172822 instance=ExtResource("11_v1a52")]
+position = Vector2(-4919, -3726)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object390" parent="objects" unique_id=1353431953 instance=ExtResource("11_v1a52")]
+position = Vector2(-3787, -3696)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object391" parent="objects" unique_id=270795635 instance=ExtResource("11_v1a52")]
+position = Vector2(-3651, -4565)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object396" parent="objects" unique_id=941817000 instance=ExtResource("11_v1a52")]
+position = Vector2(-4423, -3596)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object397" parent="objects" unique_id=872727744 instance=ExtResource("11_v1a52")]
+position = Vector2(-4285, -3985)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object398" parent="objects" unique_id=1226756189 instance=ExtResource("11_v1a52")]
+position = Vector2(-4420, -3972)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object399" parent="objects" unique_id=747325958 instance=ExtResource("11_v1a52")]
+position = Vector2(-3999, -4650)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object400" parent="objects" unique_id=2082721014 instance=ExtResource("11_v1a52")]
+position = Vector2(-3604, -4019)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object458" parent="objects" unique_id=964706396 instance=ExtResource("11_v1a52")]
+position = Vector2(1990, -5198)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object469" parent="objects" unique_id=250800328 instance=ExtResource("11_v1a52")]
+position = Vector2(241, -5134)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object470" parent="objects" unique_id=2044194957 instance=ExtResource("11_v1a52")]
+position = Vector2(1373, -5104)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object474" parent="objects" unique_id=837590121 instance=ExtResource("11_v1a52")]
+position = Vector2(-788, -5010)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object475" parent="objects" unique_id=1187306593 instance=ExtResource("11_v1a52")]
+position = Vector2(-650, -4982)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object476" parent="objects" unique_id=2077363103 instance=ExtResource("11_v1a52")]
+position = Vector2(737, -5004)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object481" parent="objects" unique_id=43263358 instance=ExtResource("11_v1a52")]
+position = Vector2(4849, 2162)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object484" parent="objects" unique_id=233593783 instance=ExtResource("11_v1a52")]
+position = Vector2(4316, 1552)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object485" parent="objects" unique_id=1084088213 instance=ExtResource("11_v1a52")]
+position = Vector2(4253, 1216)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object486" parent="objects" unique_id=986189785 instance=ExtResource("11_v1a52")]
+position = Vector2(3820, 2286)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object487" parent="objects" unique_id=1232706320 instance=ExtResource("11_v1a52")]
+position = Vector2(3958, 2314)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object493" parent="objects" unique_id=857692962 instance=ExtResource("11_v1a52")]
+position = Vector2(992, 1400)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object494" parent="objects" unique_id=567725505 instance=ExtResource("11_v1a52")]
+position = Vector2(1664, 1875)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object495" parent="objects" unique_id=98337108 instance=ExtResource("11_v1a52")]
+position = Vector2(1174, 2118)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object496" parent="objects" unique_id=326157285 instance=ExtResource("11_v1a52")]
+position = Vector2(2645, 2067)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object497" parent="objects" unique_id=434632245 instance=ExtResource("11_v1a52")]
+position = Vector2(2579, 1516)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object498" parent="objects" unique_id=579812777 instance=ExtResource("11_v1a52")]
+position = Vector2(2089, 2426)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object499" parent="objects" unique_id=528350911 instance=ExtResource("11_v1a52")]
+position = Vector2(3221, 2456)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object500" parent="objects" unique_id=639954396 instance=ExtResource("11_v1a52")]
+position = Vector2(3357, 1587)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object501" parent="objects" unique_id=1741117907 instance=ExtResource("11_v1a52")]
+position = Vector2(1556, 1816)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object502" parent="objects" unique_id=1423471495 instance=ExtResource("11_v1a52")]
+position = Vector2(1493, 1480)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object503" parent="objects" unique_id=1318031722 instance=ExtResource("11_v1a52")]
+position = Vector2(1060, 2550)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object504" parent="objects" unique_id=43923108 instance=ExtResource("11_v1a52")]
+position = Vector2(1198, 2578)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object505" parent="objects" unique_id=13549674 instance=ExtResource("11_v1a52")]
+position = Vector2(2585, 2556)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object506" parent="objects" unique_id=1834847133 instance=ExtResource("11_v1a52")]
+position = Vector2(2723, 2167)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object507" parent="objects" unique_id=1862485011 instance=ExtResource("11_v1a52")]
+position = Vector2(2588, 2180)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object508" parent="objects" unique_id=912815276 instance=ExtResource("11_v1a52")]
+position = Vector2(3009, 1502)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object509" parent="objects" unique_id=334753182 instance=ExtResource("11_v1a52")]
+position = Vector2(3404, 2133)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object510" parent="objects" unique_id=80222551 instance=ExtResource("11_v1a52")]
+position = Vector2(1752, 2864)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object511" parent="objects" unique_id=2065193654 instance=ExtResource("11_v1a52")]
+position = Vector2(2424, 3339)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object512" parent="objects" unique_id=222741259 instance=ExtResource("11_v1a52")]
+position = Vector2(1934, 3582)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object513" parent="objects" unique_id=219179832 instance=ExtResource("11_v1a52")]
+position = Vector2(3405, 3531)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object514" parent="objects" unique_id=67663569 instance=ExtResource("11_v1a52")]
+position = Vector2(3339, 2980)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object515" parent="objects" unique_id=1900885369 instance=ExtResource("11_v1a52")]
+position = Vector2(2849, 3890)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object516" parent="objects" unique_id=1069833927 instance=ExtResource("11_v1a52")]
+position = Vector2(3981, 3920)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object517" parent="objects" unique_id=479743458 instance=ExtResource("11_v1a52")]
+position = Vector2(4117, 3051)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object518" parent="objects" unique_id=1780915972 instance=ExtResource("11_v1a52")]
+position = Vector2(2316, 3280)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object519" parent="objects" unique_id=2095650337 instance=ExtResource("11_v1a52")]
+position = Vector2(2253, 2944)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object520" parent="objects" unique_id=743121586 instance=ExtResource("11_v1a52")]
+position = Vector2(1820, 4014)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object521" parent="objects" unique_id=869963505 instance=ExtResource("11_v1a52")]
+position = Vector2(1958, 4042)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object522" parent="objects" unique_id=1819032714 instance=ExtResource("11_v1a52")]
+position = Vector2(3345, 4020)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object523" parent="objects" unique_id=840713352 instance=ExtResource("11_v1a52")]
+position = Vector2(3483, 3631)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object524" parent="objects" unique_id=681458302 instance=ExtResource("11_v1a52")]
+position = Vector2(3348, 3644)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object525" parent="objects" unique_id=2032144149 instance=ExtResource("11_v1a52")]
+position = Vector2(3769, 2966)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object526" parent="objects" unique_id=1454360891 instance=ExtResource("11_v1a52")]
+position = Vector2(4164, 3597)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object527" parent="objects" unique_id=1051279736 instance=ExtResource("11_v1a52")]
+position = Vector2(-888, 3080)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object528" parent="objects" unique_id=704929976 instance=ExtResource("11_v1a52")]
+position = Vector2(-216, 3555)
+float_range = 500.0
+float_speed = 10.0
+object_type = "sat"
+
+[node name="object529" parent="objects" unique_id=2071377829 instance=ExtResource("11_v1a52")]
+position = Vector2(-706, 3798)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+
+[node name="object530" parent="objects" unique_id=1882712206 instance=ExtResource("11_v1a52")]
+position = Vector2(765, 3747)
+float_range = 500.0
+float_speed = 10.0
+object_type = "rock"
+is_random = false
+sprite_index = 1
+
+[node name="object531" parent="objects" unique_id=1954997772 instance=ExtResource("11_v1a52")]
+position = Vector2(699, 3196)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object532" parent="objects" unique_id=955650595 instance=ExtResource("11_v1a52")]
+position = Vector2(209, 4106)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object533" parent="objects" unique_id=1521435691 instance=ExtResource("11_v1a52")]
+position = Vector2(1341, 4136)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object534" parent="objects" unique_id=313983956 instance=ExtResource("11_v1a52")]
+position = Vector2(1477, 3267)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object535" parent="objects" unique_id=302287094 instance=ExtResource("11_v1a52")]
+position = Vector2(-324, 3496)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object536" parent="objects" unique_id=2047546021 instance=ExtResource("11_v1a52")]
+position = Vector2(-387, 3160)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object537" parent="objects" unique_id=160569262 instance=ExtResource("11_v1a52")]
+position = Vector2(-820, 4230)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object538" parent="objects" unique_id=306748822 instance=ExtResource("11_v1a52")]
+position = Vector2(-682, 4258)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object539" parent="objects" unique_id=112195620 instance=ExtResource("11_v1a52")]
+position = Vector2(705, 4236)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object540" parent="objects" unique_id=1336974963 instance=ExtResource("11_v1a52")]
+position = Vector2(843, 3847)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object541" parent="objects" unique_id=1303568520 instance=ExtResource("11_v1a52")]
+position = Vector2(708, 3860)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object542" parent="objects" unique_id=1827684114 instance=ExtResource("11_v1a52")]
+position = Vector2(1129, 3182)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object543" parent="objects" unique_id=1962093535 instance=ExtResource("11_v1a52")]
+position = Vector2(1524, 3813)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object546" parent="objects" unique_id=1863802204 instance=ExtResource("11_v1a52")]
+position = Vector2(2869, 4507)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object547" parent="objects" unique_id=1845544335 instance=ExtResource("11_v1a52")]
+position = Vector2(1068, 4736)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object548" parent="objects" unique_id=2119710100 instance=ExtResource("11_v1a52")]
+position = Vector2(1005, 4400)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object554" parent="objects" unique_id=148711717 instance=ExtResource("11_v1a52")]
+position = Vector2(2521, 4422)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object556" parent="objects" unique_id=318096623 instance=ExtResource("11_v1a52")]
+position = Vector2(-2256, 4584)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object560" parent="objects" unique_id=1440309850 instance=ExtResource("11_v1a52")]
+position = Vector2(-669, 4700)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object563" parent="objects" unique_id=898079414 instance=ExtResource("11_v1a52")]
+position = Vector2(109, 4771)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object564" parent="objects" unique_id=813223577 instance=ExtResource("11_v1a52")]
+position = Vector2(-1692, 5000)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object565" parent="objects" unique_id=1027427538 instance=ExtResource("11_v1a52")]
+position = Vector2(-1755, 4664)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object571" parent="objects" unique_id=1422701920 instance=ExtResource("11_v1a52")]
+position = Vector2(-239, 4686)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object609" parent="objects" unique_id=81923088 instance=ExtResource("11_v1a52")]
+position = Vector2(2869, 4507)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object610" parent="objects" unique_id=176567033 instance=ExtResource("11_v1a52")]
+position = Vector2(1068, 4736)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object611" parent="objects" unique_id=1971916311 instance=ExtResource("11_v1a52")]
+position = Vector2(1005, 4400)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object617" parent="objects" unique_id=732787273 instance=ExtResource("11_v1a52")]
+position = Vector2(2521, 4422)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object619" parent="objects" unique_id=1726475237 instance=ExtResource("11_v1a52")]
+position = Vector2(-2256, 4584)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object623" parent="objects" unique_id=2068977079 instance=ExtResource("11_v1a52")]
+position = Vector2(-669, 4700)
+float_range = 500.0
+float_speed = 10.0
+is_random = false
+sprite_index = 1
+
+[node name="object626" parent="objects" unique_id=19279100 instance=ExtResource("11_v1a52")]
+position = Vector2(109, 4771)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object627" parent="objects" unique_id=67569733 instance=ExtResource("11_v1a52")]
+position = Vector2(-1692, 5000)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object628" parent="objects" unique_id=101906258 instance=ExtResource("11_v1a52")]
+position = Vector2(-1755, 4664)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object634" parent="objects" unique_id=1389275072 instance=ExtResource("11_v1a52")]
+position = Vector2(-239, 4686)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object670" parent="objects" unique_id=1842877276 instance=ExtResource("11_v1a52")]
+position = Vector2(4217, 4736)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object686" parent="objects" unique_id=1899304762 instance=ExtResource("11_v1a52")]
+position = Vector2(1035, -1787)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object687" parent="objects" unique_id=1943825483 instance=ExtResource("11_v1a52")]
+position = Vector2(602, -717)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object688" parent="objects" unique_id=1049110948 instance=ExtResource("11_v1a52")]
+position = Vector2(740, -689)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object689" parent="objects" unique_id=332102277 instance=ExtResource("11_v1a52")]
+position = Vector2(2127, -711)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object690" parent="objects" unique_id=669888774 instance=ExtResource("11_v1a52")]
+position = Vector2(2265, -1100)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object691" parent="objects" unique_id=2078335519 instance=ExtResource("11_v1a52")]
+position = Vector2(2130, -1087)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object692" parent="objects" unique_id=1550165263 instance=ExtResource("11_v1a52")]
+position = Vector2(2551, -1765)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object693" parent="objects" unique_id=1206121066 instance=ExtResource("11_v1a52")]
+position = Vector2(2946, -1134)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object694" parent="objects" unique_id=1753470045 instance=ExtResource("11_v1a52")]
+position = Vector2(-1354, -1978)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object695" parent="objects" unique_id=835077508 instance=ExtResource("11_v1a52")]
+position = Vector2(-1787, -908)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object696" parent="objects" unique_id=2040257337 instance=ExtResource("11_v1a52")]
+position = Vector2(-1649, -880)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object697" parent="objects" unique_id=1638882762 instance=ExtResource("11_v1a52")]
+position = Vector2(-262, -902)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object698" parent="objects" unique_id=1681729599 instance=ExtResource("11_v1a52")]
+position = Vector2(-124, -1291)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object699" parent="objects" unique_id=115840153 instance=ExtResource("11_v1a52")]
+position = Vector2(-259, -1278)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object700" parent="objects" unique_id=2066704938 instance=ExtResource("11_v1a52")]
+position = Vector2(162, -1956)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object701" parent="objects" unique_id=499872409 instance=ExtResource("11_v1a52")]
+position = Vector2(557, -1325)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object782" parent="objects" unique_id=957429645 instance=ExtResource("11_v1a52")]
+position = Vector2(4538, -2658)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object783" parent="objects" unique_id=1719853705 instance=ExtResource("11_v1a52")]
+position = Vector2(4933, -2027)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object784" parent="objects" unique_id=1352290657 instance=ExtResource("11_v1a52")]
+position = Vector2(297, -2048)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object785" parent="objects" unique_id=380254907 instance=ExtResource("11_v1a52")]
+position = Vector2(-136, -978)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object786" parent="objects" unique_id=862862440 instance=ExtResource("11_v1a52")]
+position = Vector2(2, -950)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object787" parent="objects" unique_id=1106346095 instance=ExtResource("11_v1a52")]
+position = Vector2(1389, -972)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object788" parent="objects" unique_id=767915092 instance=ExtResource("11_v1a52")]
+position = Vector2(1527, -1361)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object789" parent="objects" unique_id=1215530431 instance=ExtResource("11_v1a52")]
+position = Vector2(1578, -901)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object790" parent="objects" unique_id=471233845 instance=ExtResource("11_v1a52")]
+position = Vector2(1973, -270)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object791" parent="objects" unique_id=235781982 instance=ExtResource("11_v1a52")]
+position = Vector2(-2663, -291)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object792" parent="objects" unique_id=1899559632 instance=ExtResource("11_v1a52")]
+position = Vector2(-3096, 779)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object793" parent="objects" unique_id=1084041167 instance=ExtResource("11_v1a52")]
+position = Vector2(-2958, 807)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object794" parent="objects" unique_id=2117533741 instance=ExtResource("11_v1a52")]
+position = Vector2(-1571, 785)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object795" parent="objects" unique_id=1350876766 instance=ExtResource("11_v1a52")]
+position = Vector2(-1433, 396)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object798" parent="objects" unique_id=63206309 instance=ExtResource("11_v1a52")]
+position = Vector2(3422, 1021)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object799" parent="objects" unique_id=271882710 instance=ExtResource("11_v1a52")]
+position = Vector2(2989, 2091)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object800" parent="objects" unique_id=1783864161 instance=ExtResource("11_v1a52")]
+position = Vector2(3127, 2119)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object801" parent="objects" unique_id=963464746 instance=ExtResource("11_v1a52")]
+position = Vector2(4514, 2097)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object802" parent="objects" unique_id=585649302 instance=ExtResource("11_v1a52")]
+position = Vector2(4652, 1708)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object774" parent="objects" unique_id=831410501 instance=ExtResource("11_v1a52")]
+position = Vector2(2285, -1787)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object775" parent="objects" unique_id=931400585 instance=ExtResource("11_v1a52")]
+position = Vector2(1852, -717)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object776" parent="objects" unique_id=896448836 instance=ExtResource("11_v1a52")]
+position = Vector2(1990, -689)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object777" parent="objects" unique_id=1105607701 instance=ExtResource("11_v1a52")]
+position = Vector2(3377, -711)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object778" parent="objects" unique_id=1240110907 instance=ExtResource("11_v1a52")]
+position = Vector2(3515, -1100)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object779" parent="objects" unique_id=939568098 instance=ExtResource("11_v1a52")]
+position = Vector2(3380, -1087)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object780" parent="objects" unique_id=1059738196 instance=ExtResource("11_v1a52")]
+position = Vector2(3801, -1765)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="object781" parent="objects" unique_id=327783181 instance=ExtResource("11_v1a52")]
+position = Vector2(4196, -1134)
+float_range = 500.0
+float_speed = 10.0
+
+[node name="Player" parent="." unique_id=1100638148 instance=ExtResource("2_2af1v")]
+
+[node name="Chest" parent="." unique_id=1262327751 instance=ExtResource("7_dyb6p")]
+position = Vector2(472, 212)
+can_random = false
+rarity = "epic"
+
+[node name="CSP1" type="Marker2D" parent="." unique_id=377098854]
+
+[node name="CSP2" type="Marker2D" parent="." unique_id=38557344]
+position = Vector2(-3444, -3325)
+
+[node name="CSP3" type="Marker2D" parent="." unique_id=666687607]
+position = Vector2(2277, -3683)
+
+[node name="CSP4" type="Marker2D" parent="." unique_id=1564251057]
+position = Vector2(3582, 3304)
+
+[node name="CSP5" type="Marker2D" parent="." unique_id=148194533]
+position = Vector2(-2522, 3458)
+
+[node name="CSP6" type="Marker2D" parent="." unique_id=287131105]
+position = Vector2(-3367, 905)
+
+[node name="CSP7" type="Marker2D" parent="." unique_id=741082746]
+position = Vector2(3543, -554)
+
+[node name="DeadArea" type="StaticBody2D" parent="." unique_id=660137192]
+collision_layer = 64
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_g1idy")
+script = ExtResource("47_jxyh8")
+
+[node name="c1" type="CollisionShape2D" parent="DeadArea" unique_id=457884321]
+position = Vector2(0, -4990)
+shape = SubResource("RectangleShape2D_v1a52")
+
+[node name="c2" type="CollisionShape2D" parent="DeadArea" unique_id=1564231994]
+position = Vector2(-4990, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_v1a52")
+
+[node name="c3" type="CollisionShape2D" parent="DeadArea" unique_id=892902355]
+position = Vector2(0, 4990)
+shape = SubResource("RectangleShape2D_v1a52")
+
+[node name="c4" type="CollisionShape2D" parent="DeadArea" unique_id=2102979745]
+position = Vector2(4991, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_v1a52")
+
+[node name="up" type="CPUParticles2D" parent="DeadArea" unique_id=877898979]
+material = SubResource("CanvasItemMaterial_jxyh8")
+position = Vector2(17, -4997)
+emitting = false
+amount = 50
+texture = ExtResource("47_u6ftn")
+emission_shape = 3
+emission_rect_extents = Vector2(400, 1)
+gravity = Vector2(0, 0)
+scale_amount_min = 1.6
+scale_amount_max = 3.55
+color_ramp = SubResource("Gradient_g8i02")
+
+[node name="down" type="CPUParticles2D" parent="DeadArea" unique_id=97339928]
+material = SubResource("CanvasItemMaterial_jxyh8")
+position = Vector2(0, 5006)
+emitting = false
+amount = 50
+texture = ExtResource("47_u6ftn")
+emission_shape = 3
+emission_rect_extents = Vector2(400, 1)
+gravity = Vector2(0, 0)
+scale_amount_min = 1.6
+scale_amount_max = 3.55
+color_ramp = SubResource("Gradient_g8i02")
+
+[node name="right" type="CPUParticles2D" parent="DeadArea" unique_id=1214712200]
+material = SubResource("CanvasItemMaterial_jxyh8")
+position = Vector2(4991, 0)
+emitting = false
+amount = 50
+texture = ExtResource("47_u6ftn")
+emission_shape = 3
+emission_rect_extents = Vector2(1, 400)
+gravity = Vector2(0, 0)
+angle_min = 90.0
+angle_max = 90.0
+scale_amount_min = 1.6
+scale_amount_max = 3.55
+color_ramp = SubResource("Gradient_g8i02")
+
+[node name="left" type="CPUParticles2D" parent="DeadArea" unique_id=223246226]
+material = SubResource("CanvasItemMaterial_jxyh8")
+position = Vector2(-4990, 0)
+emitting = false
+amount = 50
+texture = ExtResource("47_u6ftn")
+emission_shape = 3
+emission_rect_extents = Vector2(1, 400)
+gravity = Vector2(0, 0)
+angle_min = 90.0
+angle_max = 90.0
+scale_amount_min = 1.6
+scale_amount_max = 3.55
+color_ramp = SubResource("Gradient_g8i02")
+
+[node name="Check" type="Area2D" parent="DeadArea" unique_id=362830691]
+collision_layer = 2
+
+[node name="L" type="CollisionShape2D" parent="DeadArea/Check" unique_id=725544300]
+position = Vector2(-4815, 0)
+shape = SubResource("CapsuleShape2D_jxyh8")
+
+[node name="R" type="CollisionShape2D" parent="DeadArea/Check" unique_id=1421229100]
+position = Vector2(4808, -3)
+shape = SubResource("CapsuleShape2D_jxyh8")
+
+[node name="U" type="CollisionShape2D" parent="DeadArea/Check" unique_id=1181487146]
+position = Vector2(0, -4814)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_jxyh8")
+
+[node name="D" type="CollisionShape2D" parent="DeadArea/Check" unique_id=1451959113]
+position = Vector2(0, 4812)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_jxyh8")
+
+[connection signal="body_entered" from="DeadArea/Check" to="." method="_on_check_body_entered"]
+[connection signal="body_exited" from="DeadArea/Check" to="." method="_on_check_body_exited"]

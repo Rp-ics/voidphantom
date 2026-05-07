@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bt62x0u3xrfxx"]
+
+[ext_resource type="Script" uid="uid://dy1rvft7sk4c0" path="res://Gres/Scripts/Bullets/phinix_bullet.gd" id="1_jt7t7"]
+[ext_resource type="Texture2D" uid="uid://nsglftguo6ow" path="res://Gres/Assets/player/bullets/blaster_bulletC.png" id="2_pjkm0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_icrln"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_jt7t7"]
+resource_name = "queue"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.2, 2.39171, 2.59171, 2.8, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.160784), Color(1, 1, 1, 1), Color(1, 1, 1, 0.160784), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pjkm0"]
+_data = {
+&"queue": SubResource("Animation_jt7t7")
+}
+
+[node name="PlayerBullet" type="Area2D" groups=["p_bullet"]]
+collision_layer = 32
+collision_mask = 30
+script = ExtResource("1_jt7t7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_icrln")
+debug_color = Color(0, 1, 0.0859375, 0.42)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_pjkm0")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pjkm0")
+}
+autoplay = "queue"
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="Anim" to="." method="_on_anim_animation_finished"]

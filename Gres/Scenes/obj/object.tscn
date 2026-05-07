@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b50vk3wb5y3kp"]
+
+[ext_resource type="Script" uid="uid://26ir78hdjv2m" path="res://Gres/Scripts/obj/object.gd" id="1_p8beh"]
+[ext_resource type="Texture2D" uid="uid://dmklosasyg2nm" path="res://Gres/Assets/obj/asteroid_1.png" id="2_ejobp"]
+
+[node name="object" type="Node2D"]
+script = ExtResource("1_p8beh")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_ejobp")

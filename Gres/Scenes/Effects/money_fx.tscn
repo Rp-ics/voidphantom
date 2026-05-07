@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://6fdlt2thrifd"]
+
+[ext_resource type="Texture2D" uid="uid://c4s7ulv1wquuh" path="res://Gres/Assets/Icons/parts/gold_icon.png" id="2_2lufl"]
+[ext_resource type="Script" uid="uid://cmltjusturyqq" path="res://Gres/Scripts/UI/partiles.gd" id="2_7x6vi"]
+
+[sub_resource type="Gradient" id="Gradient_i3ygh"]
+offsets = PackedFloat32Array(0, 0.47328246, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2lufl"]
+gradient = SubResource("Gradient_i3ygh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7x6vi"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 112.66
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 0, 0)
+scale_min = 1.5
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_2lufl")
+
+[sub_resource type="Animation" id="Animation_rw814"]
+resource_name = "loop"
+loop_mode = 2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45000002, 0.5, 0.55, 0.6, 0.65000004, 0.7, 0.75, 0.8, 0.85, 0.90000004, 0.95, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wf130"]
+_data = {
+&"loop": SubResource("Animation_rw814")
+}
+
+[node name="moneyFX" type="Node2D"]
+
+[node name="Sprite" type="GPUParticles2D" parent="."]
+amount = 20
+texture = ExtResource("2_2lufl")
+process_material = SubResource("ParticleProcessMaterial_7x6vi")
+script = ExtResource("2_7x6vi")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wf130")
+}
+autoplay = "loop"

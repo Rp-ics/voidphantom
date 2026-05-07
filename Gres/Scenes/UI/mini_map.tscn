@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ce1w83l6sfcqs"]
+
+[ext_resource type="Script" uid="uid://cxh0xra67dst6" path="res://Gres/Scripts/UI/mini_map.gd" id="1_r465r"]
+[ext_resource type="Texture2D" uid="uid://bdocnjyskicea" path="res://Gres/Assets/UI/Map/map_contorn.png" id="2_6g57d"]
+
+[node name="MiniMap" type="Control" unique_id=1423053503]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -997.0
+offset_bottom = -511.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r465r")
+
+[node name="MapContorn" type="Sprite2D" parent="." unique_id=1486273951]
+visible = false
+position = Vector2(0, -6)
+texture = ExtResource("2_6g57d")
+hframes = 4

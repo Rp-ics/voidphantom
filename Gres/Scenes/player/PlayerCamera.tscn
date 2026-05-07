@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ywfwhw2t5a1f"]
+
+[ext_resource type="Script" uid="uid://bsj2ip2pn30xs" path="res://Gres/Scripts/player/PlayerCamera.gd" id="1_5e8lk"]
+
+[node name="PlayerCamera" type="Camera2D"]
+script = ExtResource("1_5e8lk")
+
+[node name="ShakeNode" type="Marker2D" parent="."]

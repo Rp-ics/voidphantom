@@ -1,0 +1,810 @@
+[gd_scene format=3 uid="uid://1ch0ia0rvjs7"]
+
+[ext_resource type="Script" uid="uid://dw7kjyxyy6vj0" path="res://Gres/Scripts/boss/template/BossTemplatePhantom.gd" id="1_imdkp"]
+[ext_resource type="PackedScene" uid="uid://rupg6m325jkj" path="res://Gres/Scenes/enemies/bullets/enemy_bullet_1.tscn" id="2_ajbc5"]
+[ext_resource type="Texture2D" uid="uid://dgwcjlv14vxy4" path="res://Gres/Assets/Enemy/Boss/egg.png" id="2_s22oi"]
+[ext_resource type="Texture2D" uid="uid://dofi3ykix7n7j" path="res://Gres/Assets/Enemy/Boss/egg_2.png" id="3_ulk14"]
+[ext_resource type="Texture2D" uid="uid://y5nsroam8fwj" path="res://Gres/Assets/Enemy/Boss/egg_3.png" id="4_1kyw8"]
+[ext_resource type="Texture2D" uid="uid://bwytxi1iybf1x" path="res://Gres/Assets/Effects/64x64_Aura_3.png" id="4_xkd4t"]
+[ext_resource type="Texture2D" uid="uid://5f162rhve51" path="res://Gres/Assets/Effects/Light_02A.png" id="5_ceds7"]
+[ext_resource type="Texture2D" uid="uid://dl8x8wnnktwys" path="res://Gres/Assets/Effects/Free Smoke Fx  Pixel 05.png" id="5_gu756"]
+[ext_resource type="Shader" uid="uid://b0bl8mg78kc07" path="res://Gres/Scenes/Boss/death_2.gdshader" id="5_iyha0"]
+[ext_resource type="PackedScene" uid="uid://cbm0ecdouy2ry" path="res://Gres/Scenes/enemies/drone.tscn" id="6_1n4hm"]
+[ext_resource type="AudioStream" uid="uid://lse85dqu3415" path="res://Gres/Music/SE/fx/Barrier.ogg" id="7_ejl5x"]
+[ext_resource type="AudioStream" uid="uid://iswcp4ikyqt3" path="res://Gres/Music/SE/fx/Blow1.ogg" id="8_1n4hm"]
+[ext_resource type="AudioStream" uid="uid://d4jaulpatwvaa" path="res://Gres/Music/SE/fx/Blow4.ogg" id="9_1y3ko"]
+[ext_resource type="Texture2D" uid="uid://cgwxnnict24tt" path="res://Gres/Assets/UI/Bar/egg_bar_under.png" id="9_57ksv"]
+[ext_resource type="Texture2D" uid="uid://dcn7cnf47waxm" path="res://Gres/Assets/Effects/Light_02B.png" id="10_1kyw8"]
+[ext_resource type="AudioStream" uid="uid://cwxxxtb1tpsm7" path="res://Gres/Music/SE/fx/Breath.ogg" id="10_5wabu"]
+[ext_resource type="Texture2D" uid="uid://bxj3qhi0s7rqt" path="res://Gres/Assets/UI/Bar/egg_bar_progress.png" id="10_rpfby"]
+[ext_resource type="Texture2D" uid="uid://duso6eahgfwg0" path="res://Gres/Assets/Effects/64x64_Aura_2.png" id="11_wofmn"]
+
+[sub_resource type="Gradient" id="Gradient_0gmem"]
+offsets = PackedFloat32Array(0, 0.54545456, 1)
+colors = PackedColorArray(1, 0, 0, 0, 1, 0.82040936, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_gu756"]
+offsets = PackedFloat32Array(0, 0.5529954, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.127, 1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grped"]
+shader = ExtResource("5_iyha0")
+shader_parameter/progress = 0.0
+shader_parameter/impact_point = Vector2(0.5, 0.5)
+shader_parameter/randomness = 1.0
+shader_parameter/background_color = Color(0, 0, 0, 0)
+shader_parameter/seed = 0.0
+shader_parameter/shard_count = 18
+shader_parameter/displacement_strength = 0.4
+shader_parameter/crack_width = 0.007
+shader_parameter/crack_darkness = 0.65
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xkd4t"]
+radius = 40.0
+height = 158.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gu756"]
+radius = 25.0
+height = 158.0
+
+[sub_resource type="Animation" id="Animation_cmutq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CloneBurst:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloneSpawn:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("disapear:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Idle:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_s22oi"]
+resource_name = "appear"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Appear:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AppearSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_xkd4t"]
+resource_name = "clone_burst"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clone_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.42200002), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clone_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.42200002), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Clone_1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(104, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Clone_2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-104, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Clone_1:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(5.44, 5.44), Vector2(4, 4)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Clone_2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.53333336, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(6, 6), Vector2(4, 4), Vector2(4, 4)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CloneBurst:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_gu756"]
+resource_name = "clone_spawn"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clone_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.19900002), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0.34300002), Color(1, 1, 1, 0), Color(1, 1, 1, 0.657), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clone_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.24100001), Color(1, 1, 1, 0), Color(1, 1, 1, 0.23500001), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Clone_1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-129, -70), Vector2(-129, -70), Vector2(-185, 187), Vector2(-185, 187), Vector2(172, 68), Vector2(172, 68), Vector2(27, -220), Vector2(27, -220), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Clone_2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8, 0.90000004, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(180, 97), Vector2(138, 127), Vector2(288, -60), Vector2(108, -151), Vector2(32, -207), Vector2(-181, -138), Vector2(-237, 160), Vector2(-237, 160), Vector2(180, 97)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CloneSpawn:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ceds7"]
+resource_name = "death"
+length = 2.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.7, 0.8, 1, 1.0699999, 1.1699998, 1.27, 1.4699999, 1.51, 1.6099999, 1.71, 1.91),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.13800001), Color(1, 1, 1, 1), Color(1, 1, 1, 0.067), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.067), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.067), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clone_1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Clone_2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Clone_2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(117, 121), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Clone_1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-110, -126), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Coll1:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Coll2:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Coll3:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("hurt_box/Coll1:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("hurt_box/Coll2:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("hurt_box/Coll3:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Death:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.328125, 0, 1), Color(1, 0.65625, 0, 1), Color(1, 0, 0, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Death:frame")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1813842, 1.2813842, 1.3813843, 1.4813843, 1.5813842, 1.6813842, 1.7813842, 1.8813841, 1.98, 1.9813843),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 10, 11, 12, 13, 14, 15, 16, 17, 21, 21]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("shadow:emitting")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Sprite2D:material:shader_parameter/progress")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ajbc5"]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Disappear:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("disapear:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_iyha0"]
+resource_name = "float"
+
+[sub_resource type="Animation" id="Animation_grped"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Idle:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_57ksv"]
+resource_name = "mirror_dash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dash:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_rpfby"]
+resource_name = "shadow_strike"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShdowStrike:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ulk14"]
+resource_name = "soul_arrow"
+
+[sub_resource type="Animation" id="Animation_1kyw8"]
+resource_name = "transform_p2"
+
+[sub_resource type="Animation" id="Animation_ejl5x"]
+resource_name = "transform_p3"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nia00"]
+_data = {
+&"RESET": SubResource("Animation_cmutq"),
+&"appear": SubResource("Animation_s22oi"),
+&"clone_burst": SubResource("Animation_xkd4t"),
+&"clone_spawn": SubResource("Animation_gu756"),
+&"death": SubResource("Animation_ceds7"),
+&"disappear": SubResource("Animation_ajbc5"),
+&"float": SubResource("Animation_iyha0"),
+&"idle": SubResource("Animation_grped"),
+&"mirror_dash": SubResource("Animation_57ksv"),
+&"shadow_strike": SubResource("Animation_rpfby"),
+&"soul_arrow": SubResource("Animation_ulk14"),
+&"transform_p2": SubResource("Animation_1kyw8"),
+&"transform_p3": SubResource("Animation_ejl5x")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1kyw8"]
+_data = {
+&"appear": SubResource("Animation_s22oi"),
+&"clone_burst": SubResource("Animation_xkd4t"),
+&"clone_spawn": SubResource("Animation_gu756"),
+&"death": SubResource("Animation_ceds7"),
+&"disappear": SubResource("Animation_ajbc5"),
+&"float": SubResource("Animation_iyha0"),
+&"idle": SubResource("Animation_grped"),
+&"mirror_dash": SubResource("Animation_57ksv"),
+&"shadow_strike": SubResource("Animation_rpfby"),
+&"soul_arrow": SubResource("Animation_ulk14"),
+&"transform_p2": SubResource("Animation_1kyw8"),
+&"transform_p3": SubResource("Animation_ejl5x")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ceds7"]
+radius = 30.0
+height = 172.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gu756"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_40ump"]
+_data = [Vector2(0, 0.77528095), 0.0, 0.0, 0, 0, Vector2(0.5020577, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.73033714), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_x6w3m"]
+offsets = PackedFloat32Array(0, 0.51704544, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.813, 0, 0, 0, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ceds7"]
+blend_mode = 1
+
+[node name="FireBoss" type="CharacterBody2D" unique_id=1561548970 groups=["boss"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_imdkp")
+boss_name = "Fire Boss"
+legendary_weapon_drop = "BLOOD_NEXUS"
+texture_phase_1 = ExtResource("2_s22oi")
+texture_phase_2 = ExtResource("3_ulk14")
+texture_phase_3 = ExtResource("4_1kyw8")
+hp_easy = 10500
+hp_medium = 25000
+hp_hard = 36850
+visible_time_easy = 6.0
+visible_time_medium = 4.0
+visible_time_hard = 2.0
+invisible_time_easy = 6.0
+invisible_time_medium = 10.0
+invisible_time_hard = 15.0
+clone_scene = null
+bullet_scene = ExtResource("2_ajbc5")
+teleport_radius_min = 600.0
+teleport_radius_max = 1200.0
+teleport_behind_player = true
+explosion_scene = ExtResource("6_1n4hm")
+mirror_dash_count_easy = 10
+use_void_cage = true
+explosive_barrage_allow_invisible = true
+explosive_barrage_bullet_scene = ExtResource("2_ajbc5")
+
+[node name="AppearSound" type="AudioStreamPlayer" parent="." unique_id=1676287541]
+stream = ExtResource("7_ejl5x")
+bus = &"edit_2"
+
+[node name="CloneBurst" type="AudioStreamPlayer" parent="." unique_id=1113709221]
+stream = ExtResource("8_1n4hm")
+bus = &"edit_2"
+
+[node name="CloneSpawn" type="AudioStreamPlayer" parent="." unique_id=1832800356]
+stream = ExtResource("9_1y3ko")
+bus = &"edit_2"
+
+[node name="disapear" type="AudioStreamPlayer" parent="." unique_id=553871670]
+stream = ExtResource("10_5wabu")
+bus = &"edit_2"
+
+[node name="Idle" type="CPUParticles2D" parent="." unique_id=1197995593]
+emitting = false
+amount = 2
+texture = ExtResource("11_wofmn")
+lifetime = 4.0
+one_shot = true
+local_coords = true
+gravity = Vector2(0, 0)
+angular_velocity_min = -180.0
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_0gmem")
+
+[node name="shadow" type="CPUParticles2D" parent="." unique_id=392848641]
+scale = Vector2(4, 4)
+texture = ExtResource("2_s22oi")
+lifetime = 0.2
+gravity = Vector2(0, 0)
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_gu756")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1249368782]
+material = SubResource("ShaderMaterial_grped")
+scale = Vector2(4, 4)
+texture = ExtResource("2_s22oi")
+
+[node name="Clone_1" type="Sprite2D" parent="." unique_id=467472990]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(4.096, 4.096)
+texture = ExtResource("2_s22oi")
+
+[node name="Clone_2" type="Sprite2D" parent="." unique_id=2010501495]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(180, 97)
+scale = Vector2(4.2222223, 4.2222223)
+texture = ExtResource("2_s22oi")
+
+[node name="Coll1" type="CollisionShape2D" parent="." unique_id=1618225828]
+shape = SubResource("CapsuleShape2D_xkd4t")
+debug_color = Color(0, 0.60038817, 0.70000815, 0)
+
+[node name="Coll2" type="CollisionShape2D" parent="." unique_id=544332114]
+position = Vector2(-66, 0)
+shape = SubResource("CapsuleShape2D_gu756")
+debug_color = Color(0, 0.60038817, 0.70000815, 0)
+
+[node name="Coll3" type="CollisionShape2D" parent="." unique_id=1668231238]
+position = Vector2(66, 0)
+shape = SubResource("CapsuleShape2D_gu756")
+debug_color = Color(0, 0.60038817, 0.70000815, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=133814688]
+libraries/ = SubResource("AnimationLibrary_nia00")
+
+[node name="DeathAnim" type="AnimationPlayer" parent="." unique_id=1563630916]
+libraries/ = SubResource("AnimationLibrary_1kyw8")
+
+[node name="PhaseTimer" type="Timer" parent="." unique_id=1451536243]
+
+[node name="hurt_box" type="Area2D" parent="." unique_id=1925870364]
+collision_layer = 2
+collision_mask = 32
+
+[node name="Coll1" type="CollisionShape2D" parent="hurt_box" unique_id=574319212]
+shape = SubResource("CapsuleShape2D_ceds7")
+debug_color = Color(1, 0, 0, 0)
+
+[node name="Coll2" type="CollisionShape2D" parent="hurt_box" unique_id=1026974174]
+position = Vector2(-66, 0)
+shape = SubResource("CapsuleShape2D_ceds7")
+debug_color = Color(1, 0, 0, 0)
+
+[node name="Coll3" type="CollisionShape2D" parent="hurt_box" unique_id=2125035950]
+position = Vector2(66, 0)
+shape = SubResource("CapsuleShape2D_ceds7")
+debug_color = Color(1, 0, 0, 0)
+
+[node name="HP_Bar" type="TextureProgressBar" parent="." unique_id=1674906603]
+offset_left = -18.0
+offset_top = 2.0
+offset_right = -9.0
+offset_bottom = 12.0
+scale = Vector2(4, 4)
+value = 100.0
+fill_mode = 6
+nine_patch_stretch = true
+texture_under = ExtResource("9_57ksv")
+texture_progress = ExtResource("10_rpfby")
+
+[node name="Appear" type="CPUParticles2D" parent="." unique_id=989408364]
+material = SubResource("CanvasItemMaterial_gu756")
+emitting = false
+amount = 2
+texture = ExtResource("4_xkd4t")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+gravity = Vector2(0, 0)
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+scale_amount_min = 6.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_40ump")
+color_ramp = SubResource("Gradient_x6w3m")
+
+[node name="Disappear" type="CPUParticles2D" parent="." unique_id=2004888618]
+material = SubResource("CanvasItemMaterial_gu756")
+emitting = false
+amount = 3
+texture = ExtResource("5_ceds7")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+gravity = Vector2(0, 0)
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_40ump")
+color_ramp = SubResource("Gradient_x6w3m")
+
+[node name="Dash" type="CPUParticles2D" parent="." unique_id=1572418246]
+material = SubResource("CanvasItemMaterial_gu756")
+emitting = false
+amount = 3
+texture = ExtResource("2_s22oi")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+gravity = Vector2(0, 0)
+scale_amount_min = 4.5
+scale_amount_max = 4.5
+scale_amount_curve = SubResource("Curve_40ump")
+color_ramp = SubResource("Gradient_x6w3m")
+
+[node name="ShdowStrike" type="CPUParticles2D" parent="." unique_id=49339990]
+emitting = false
+texture = ExtResource("10_1kyw8")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 80.0
+gravity = Vector2(0, 0)
+angular_velocity_max = 180.0
+scale_amount_min = 6.35
+scale_amount_max = 8.05
+scale_amount_curve = SubResource("Curve_40ump")
+color_ramp = SubResource("Gradient_x6w3m")
+
+[node name="Death" type="Sprite2D" parent="." unique_id=1377500219]
+modulate = Color(1, 0.328125, 0, 1)
+material = SubResource("CanvasItemMaterial_ceds7")
+scale = Vector2(2, 2)
+texture = ExtResource("5_gu756")
+hframes = 11
+vframes = 15
+frame = 10
+
+[connection signal="animation_finished" from="DeathAnim" to="." method="_on_death_anim_animation_finished"]
+[connection signal="area_entered" from="hurt_box" to="." method="_on_hurt_box_area_entered"]

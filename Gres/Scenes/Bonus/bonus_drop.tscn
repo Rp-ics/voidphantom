@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://dc1l16ljt5om2"]
+
+[ext_resource type="Script" uid="uid://w833cjryoyua" path="res://Gres/Scripts/Bonus/bonus_drop.gd" id="1_ivyay"]
+[ext_resource type="Texture2D" uid="uid://cjat4v4qbih0l" path="res://Gres/Assets/Icons/heart_1.png" id="2_ls1t7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbubl"]
+radius = 14.0357
+
+[sub_resource type="Animation" id="Animation_jbubl"]
+resource_name = "rotation_2"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_ls1t7"]
+resource_name = "rottion_1"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m8sya"]
+_data = {
+&"rotation_2": SubResource("Animation_jbubl"),
+&"rottion_1": SubResource("Animation_ls1t7")
+}
+
+[node name="BonusDrop" type="Area2D" groups=["bonus"]]
+script = ExtResource("1_ivyay")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_ls1t7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jbubl")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="loop" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m8sya")
+}
+autoplay = "rotation_2"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cgeexvcgs51lf"]
+
+[ext_resource type="Texture2D" uid="uid://bhjpkpk0usaqq" path="res://Gres/Assets/Effects/wall.png" id="1_dcxs2"]
+
+[sub_resource type="Gradient" id="Gradient_dcxs2"]
+offsets = PackedFloat32Array(0, 0.525, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.7734375, 0, 1, 1, 1, 1, 1)
+
+[node name="void_wall" type="StaticBody2D" unique_id=759882916 groups=["wall_skill"]]
+collision_layer = 4
+collision_mask = 99
+
+[node name="Wall_1" type="CPUParticles2D" parent="." unique_id=1611642047]
+amount = 1
+texture = ExtResource("1_dcxs2")
+gravity = Vector2(0, 0)
+scale_amount_min = 0.9
+color_ramp = SubResource("Gradient_dcxs2")
+
+[node name="Wall_2" type="CPUParticles2D" parent="." unique_id=1119158274]
+amount = 1
+texture = ExtResource("1_dcxs2")
+gravity = Vector2(0, 0)
+angle_min = 90.0
+angle_max = 90.0
+scale_amount_min = 0.9
+color_ramp = SubResource("Gradient_dcxs2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1881368207]
+polygon = PackedVector2Array(-144, -10, -8, -10, -8, -141, 11, -141, 11, -11, 137, -11, 137, 10, 10, 11, 10, 142, -10, 142, -11, 10, -144, 9)

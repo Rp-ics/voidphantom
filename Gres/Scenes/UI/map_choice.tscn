@@ -1,0 +1,524 @@
+[gd_scene format=3 uid="uid://bhui4hkdeoglk"]
+
+[ext_resource type="Script" uid="uid://wk5avpnf2rm6" path="res://Gres/Scripts/UI/map_choice.gd" id="1_hbmni"]
+[ext_resource type="PackedScene" uid="uid://5ntd7d60ykyh" path="res://Gres/Scenes/UI/audio_manager.tscn" id="1_ww1e6"]
+[ext_resource type="AudioStream" uid="uid://d1urox2plsv84" path="res://Gres/Music/BGM/bg1.ogg" id="2_acymc"]
+[ext_resource type="AudioStream" uid="uid://bk26rjldhx5v0" path="res://Gres/Music/BGM/bg2.ogg" id="3_kxqkt"]
+[ext_resource type="AudioStream" uid="uid://b1qa4lvgn3178" path="res://Gres/Music/BGM/bg3.ogg" id="4_t1cm5"]
+[ext_resource type="AudioStream" uid="uid://dyqahqcb4ykue" path="res://Gres/Music/BGM/bg4.ogg" id="5_hbmni"]
+[ext_resource type="AudioStream" uid="uid://75bjef4wh8a" path="res://Gres/Music/BGM/bg5.ogg" id="6_lhgnf"]
+[ext_resource type="AudioStream" uid="uid://d3ibrjqakk8dy" path="res://Gres/Music/BGM/bg6.ogg" id="7_4lqjw"]
+[ext_resource type="AudioStream" uid="uid://cvdgw6d4bng11" path="res://Gres/Music/BGM/bg7.ogg" id="8_xbr1w"]
+[ext_resource type="AudioStream" uid="uid://d05bw82xay7fv" path="res://Gres/Music/BGM/bg8.ogg" id="9_yrdto"]
+[ext_resource type="AudioStream" uid="uid://d3fuopoacf8tc" path="res://Gres/Music/BGM/bg9.ogg" id="10_b8jqd"]
+[ext_resource type="AudioStream" uid="uid://dl6g8ueupyt5h" path="res://Gres/Music/BGM/bg10.ogg" id="11_qvxm4"]
+[ext_resource type="AudioStream" uid="uid://8ea3v3f6k8e7" path="res://Gres/Music/BGM/bg11.ogg" id="12_ra7d1"]
+[ext_resource type="AudioStream" uid="uid://cgogerbyy7jjb" path="res://Gres/Music/BGM/bg12.ogg" id="13_nl4b6"]
+[ext_resource type="AudioStream" uid="uid://2hylgivywekw" path="res://Gres/Music/BGM/bg13.ogg" id="14_85wru"]
+[ext_resource type="AudioStream" uid="uid://238ipc1nmhge" path="res://Gres/Music/BGM/bg14.ogg" id="15_5q7x8"]
+[ext_resource type="AudioStream" uid="uid://b762jix3keavo" path="res://Gres/Music/BGM/bg15.ogg" id="16_gcm00"]
+[ext_resource type="AudioStream" uid="uid://b1ubd4snx41ws" path="res://Gres/Music/BGM/bg16.ogg" id="17_gg12n"]
+[ext_resource type="AudioStream" uid="uid://bd0ljabudebvp" path="res://Gres/Music/BGM/bg17.ogg" id="18_ms1eo"]
+[ext_resource type="AudioStream" uid="uid://bfyu3ybsiy7te" path="res://Gres/Music/BGM/bg18.ogg" id="19_mc7lf"]
+[ext_resource type="AudioStream" uid="uid://cnsjvus1yleeo" path="res://Gres/Music/BGM/bg19.ogg" id="20_q784e"]
+[ext_resource type="AudioStream" uid="uid://b35utltd7wc43" path="res://Gres/Music/BGM/bg20.ogg" id="21_qigr8"]
+[ext_resource type="AudioStream" uid="uid://bl4uvgma70gmx" path="res://Gres/Music/BGM/bg21.ogg" id="22_wpi5i"]
+[ext_resource type="AudioStream" uid="uid://c57qaqrvhhw38" path="res://Gres/Music/BGM/bg22.ogg" id="23_a4r2g"]
+[ext_resource type="AudioStream" uid="uid://dej46xjftjh8d" path="res://Gres/Music/BGM/bg23.ogg" id="24_xarxe"]
+[ext_resource type="AudioStream" uid="uid://dh53xpqbvuy8k" path="res://Gres/Music/BGM/bg24.ogg" id="25_mksxt"]
+[ext_resource type="AudioStream" uid="uid://dgg303q1vhr2j" path="res://Gres/Music/BGM/bg25.ogg" id="26_mhtc6"]
+[ext_resource type="AudioStream" uid="uid://bhf701o17yarp" path="res://Gres/Music/BGM/bg26.ogg" id="27_0qweh"]
+[ext_resource type="AudioStream" uid="uid://brrqivx2yci6x" path="res://Gres/Music/BGM/bg27.ogg" id="28_3mg52"]
+[ext_resource type="AudioStream" uid="uid://dc0mwjbmt0iqh" path="res://Gres/Music/BGM/bg28.ogg" id="29_1hwuy"]
+[ext_resource type="AudioStream" uid="uid://b25l86087pan" path="res://Gres/Music/BGM/bg29.ogg" id="30_e02ry"]
+[ext_resource type="AudioStream" uid="uid://duggkgjmp4aaq" path="res://Gres/Music/BGM/bg30.ogg" id="31_82ipc"]
+[ext_resource type="Texture2D" uid="uid://dwcedf6mbfvv2" path="res://Gres/Assets/BGame/galaxy2.png" id="32_dxuot"]
+[ext_resource type="Texture2D" uid="uid://bqfje4k1r0qub" path="res://Gres/Assets/UI/Buttons/button_hover1.png" id="33_t1cm5"]
+[ext_resource type="Texture2D" uid="uid://lnenok3u67yr" path="res://Gres/Assets/UI/Buttons/button_normal1.png" id="34_hbmni"]
+[ext_resource type="Texture2D" uid="uid://dxh0lww3ea6lq" path="res://Gres/Assets/Effects/Star.png" id="34_nl4b6"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="35_lhgnf"]
+[ext_resource type="Shader" uid="uid://bbtt03fdkxw2g" path="res://Gres/Scenes/weapons/bullet/fire_2.gdshader" id="36_ra7d1"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="37_yrdto"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="38_b8jqd"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="39_qvxm4"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="40_ra7d1"]
+[ext_resource type="Texture2D" uid="uid://m3o5uj35ebtn" path="res://Gres/Assets/obj/tilesets/map_1.png" id="44_85wru"]
+[ext_resource type="Texture2D" uid="uid://dyegf0qmqwqkb" path="res://Gres/Assets/obj/tilesets/map_2.png" id="45_5q7x8"]
+
+[sub_resource type="Gradient" id="Gradient_85wru"]
+offsets = PackedFloat32Array(0.0054347827, 0.52717394, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.5245902, 1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_08mjw"]
+resource_name = "loop"
+length = 16.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4, 7, 8, 11, 12, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0.725, 0.8, 1), Color(0, 0.725, 0.8, 1), Color(0.0546875, 0, 1, 1), Color(0.0546875, 0, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1is31"]
+_data = {
+&"loop": SubResource("Animation_08mjw")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_85wru"]
+shader = ExtResource("36_ra7d1")
+shader_parameter/fire_color = Color(0.875, 0, 1, 1)
+shader_parameter/fire_power_factor = 2.1
+shader_parameter/fire_intensity = 1.775
+shader_parameter/fire_start = 1.04
+shader_parameter/ball_size = 4.985
+shader_parameter/roughness = 0.675
+shader_parameter/detail = 6
+shader_parameter/scale = 4.0
+shader_parameter/lacunarity = 2.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lqjw"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ra7d1"]
+texture = ExtResource("34_hbmni")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvxm4"]
+texture = ExtResource("34_hbmni")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b8jqd"]
+texture = ExtResource("33_t1cm5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrdto"]
+texture = ExtResource("34_hbmni")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xbr1w"]
+texture = ExtResource("33_t1cm5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl4b6"]
+bg_color = Color(0.234375, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_85wru"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5q7x8"]
+resource_name = "loop"
+length = 5.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gcm00"]
+_data = {
+&"RESET": SubResource("Animation_85wru"),
+&"loop": SubResource("Animation_5q7x8")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nl4b6"]
+texture = ExtResource("37_yrdto")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_85wru"]
+texture = ExtResource("38_b8jqd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5q7x8"]
+texture = ExtResource("39_qvxm4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gcm00"]
+texture = ExtResource("40_ra7d1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gg12n"]
+texture = ExtResource("37_yrdto")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ms1eo"]
+texture = ExtResource("37_yrdto")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mc7lf"]
+texture = ExtResource("38_b8jqd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q784e"]
+texture = ExtResource("39_qvxm4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qigr8"]
+texture = ExtResource("40_ra7d1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wpi5i"]
+texture = ExtResource("37_yrdto")
+
+[sub_resource type="Animation" id="Animation_htpd8"]
+resource_name = "close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgtrs:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bgtrs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eelop"]
+resource_name = "open"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgtrs:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bgtrs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_htpd8"]
+_data = {
+&"close": SubResource("Animation_htpd8"),
+&"open": SubResource("Animation_eelop")
+}
+
+[node name="MapChoice" type="Control" unique_id=305777517]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hbmni")
+
+[node name="AudioManager" parent="." unique_id=1798720411 instance=ExtResource("1_ww1e6")]
+playlist = Array[AudioStream]([ExtResource("2_acymc"), ExtResource("3_kxqkt"), ExtResource("4_t1cm5"), ExtResource("5_hbmni"), ExtResource("6_lhgnf"), ExtResource("7_4lqjw"), ExtResource("8_xbr1w"), ExtResource("9_yrdto"), ExtResource("10_b8jqd"), ExtResource("11_qvxm4"), ExtResource("12_ra7d1"), ExtResource("13_nl4b6"), ExtResource("14_85wru"), ExtResource("15_5q7x8"), ExtResource("16_gcm00"), ExtResource("17_gg12n"), ExtResource("18_ms1eo"), ExtResource("19_mc7lf"), ExtResource("20_q784e"), ExtResource("21_qigr8"), ExtResource("22_wpi5i"), ExtResource("23_a4r2g"), ExtResource("24_xarxe"), ExtResource("25_mksxt"), ExtResource("26_mhtc6"), ExtResource("27_0qweh"), ExtResource("28_3mg52"), ExtResource("29_1hwuy"), ExtResource("30_e02ry"), ExtResource("31_82ipc")])
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1592112388]
+layout_mode = 0
+offset_left = -2112.0
+offset_top = -1648.0
+offset_right = 2936.0
+offset_bottom = 2184.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect3" unique_id=1325802906]
+layout_mode = 0
+offset_left = 1994.0
+offset_top = 1500.0
+offset_right = 3422.0
+offset_bottom = 2452.0
+texture = ExtResource("32_dxuot")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="stars" type="CPUParticles2D" parent="ColorRect3" unique_id=1690860283]
+position = Vector2(2689, 1978)
+amount = 50
+texture = ExtResource("34_nl4b6")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 300)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 20.0
+scale_amount_min = 0.01
+scale_amount_max = 0.3
+color_ramp = SubResource("Gradient_85wru")
+
+[node name="Title" type="Label" parent="." unique_id=842521403]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 80
+text = "Choice of Destiny"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="loop" type="AnimationPlayer" parent="Title" unique_id=1047509557]
+libraries/ = SubResource("AnimationLibrary_1is31")
+autoplay = &"loop"
+
+[node name="Buttons" type="Node2D" parent="." unique_id=915531582]
+
+[node name="fire" type="ColorRect" parent="Buttons" unique_id=1557339002]
+modulate = Color(1, 1, 1, 0.90000004)
+material = SubResource("ShaderMaterial_85wru")
+offset_left = 755.6116
+offset_top = 133.76035
+offset_right = 1171.5222
+offset_bottom = 484.12192
+rotation = 1.5707964
+color = Color(0, 0.025840001, 0.15594886, 0.795)
+
+[node name="Endless" type="Button" parent="Buttons" unique_id=849752603]
+material = SubResource("CanvasItemMaterial_4lqjw")
+offset_left = 403.0
+offset_top = 136.0
+offset_right = 753.0
+offset_bottom = 248.0
+pivot_offset = Vector2(175, 56)
+theme_override_colors/font_color = Color(1, 0, 0.210938, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_ra7d1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qvxm4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b8jqd")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_yrdto")
+theme_override_styles/focus = SubResource("StyleBoxTexture_xbr1w")
+text = "ARENA"
+script = ExtResource("35_lhgnf")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="BossRide" type="Button" parent="Buttons" unique_id=1371151169]
+material = SubResource("CanvasItemMaterial_4lqjw")
+offset_left = 403.0
+offset_top = 288.0
+offset_right = 753.0
+offset_bottom = 400.0
+pivot_offset = Vector2(175, 56)
+theme_override_colors/font_color = Color(1, 0.375, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxTexture_ra7d1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qvxm4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b8jqd")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_yrdto")
+theme_override_styles/focus = SubResource("StyleBoxTexture_xbr1w")
+disabled = true
+text = "BOSS RIDE"
+script = ExtResource("35_lhgnf")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Buttons/BossRide" unique_id=2129159445]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 351.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_nl4b6")
+text = "IN DEVELOPMENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/BossRide/Label" unique_id=1557077156]
+libraries/ = SubResource("AnimationLibrary_gcm00")
+autoplay = &"loop"
+
+[node name="Void" type="Button" parent="Buttons" unique_id=436529887]
+material = SubResource("CanvasItemMaterial_4lqjw")
+offset_left = 403.0
+offset_top = 440.0
+offset_right = 753.0
+offset_bottom = 552.0
+pivot_offset = Vector2(175, 56)
+theme_override_colors/font_color = Color(1, 0, 0.984375, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_ra7d1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qvxm4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b8jqd")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_yrdto")
+theme_override_styles/focus = SubResource("StyleBoxTexture_xbr1w")
+text = "Void Raid"
+script = ExtResource("35_lhgnf")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="Label" type="Label" parent="Buttons" unique_id=809772528]
+offset_right = 1152.0
+offset_bottom = 17.0
+text = "|"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="." unique_id=117234256]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -20.0
+offset_right = 167.0
+offset_bottom = 162.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_nl4b6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_85wru")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5q7x8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_gcm00")
+theme_override_styles/focus = SubResource("StyleBoxTexture_gg12n")
+text = "x"
+script = ExtResource("35_lhgnf")
+
+[node name="VoidChoice" type="ColorRect" parent="." unique_id=1742633622]
+visible = false
+layout_mode = 0
+offset_left = -44.0
+offset_top = -24.0
+offset_right = 1194.0
+offset_bottom = 676.0
+color = Color(0, 0, 0, 1)
+
+[node name="Map1" type="Sprite2D" parent="VoidChoice" unique_id=1324667784]
+position = Vector2(405, 372)
+scale = Vector2(0.36713287, 0.36713287)
+texture = ExtResource("44_85wru")
+
+[node name="Name" type="Label" parent="VoidChoice/Map1" unique_id=364794086]
+offset_left = -315.9619
+offset_top = 283.27625
+offset_right = -88.961914
+offset_bottom = 323.27625
+theme_override_colors/font_color = Color(0.5703125, 0, 1, 1)
+theme_override_font_sizes/font_size = 105
+text = "Void Temple"
+
+[node name="map1" type="Button" parent="VoidChoice/Map1" unique_id=1480412696]
+offset_left = -446.70477
+offset_top = -277.82855
+offset_right = 479.39044
+offset_bottom = 345.92377
+flat = true
+
+[node name="map2" type="Sprite2D" parent="VoidChoice" unique_id=503545121]
+position = Vector2(811.0001, 383)
+scale = Vector2(0.37150353, 0.37150353)
+texture = ExtResource("45_5q7x8")
+
+[node name="Name" type="Label" parent="VoidChoice/map2" unique_id=1247413171]
+offset_left = -390.30597
+offset_top = 288.0188
+offset_right = 379.69403
+offset_bottom = 394.0188
+theme_override_colors/font_color = Color(0.5703125, 0, 1, 1)
+theme_override_font_sizes/font_size = 105
+text = "Void Sanctuary"
+
+[node name="map2" type="Button" parent="VoidChoice/map2" unique_id=1544946647]
+offset_left = -514.1274
+offset_top = -277.82855
+offset_right = 479.39044
+offset_bottom = 345.92377
+flat = true
+
+[node name="Title" type="Label" parent="VoidChoice" unique_id=46691986]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 23.0
+offset_right = 1195.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 80
+text = "Void Arena Maps"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="loop" type="AnimationPlayer" parent="VoidChoice/Title" unique_id=1507171405]
+libraries/ = SubResource("AnimationLibrary_1is31")
+autoplay = &"loop"
+
+[node name="Back" type="Button" parent="VoidChoice" unique_id=717113967]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 2.0
+offset_right = 188.0
+offset_bottom = 164.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_ms1eo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mc7lf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q784e")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qigr8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_wpi5i")
+text = "x"
+script = ExtResource("35_lhgnf")
+
+[node name="trs" type="AnimationPlayer" parent="." unique_id=95682369]
+libraries/ = SubResource("AnimationLibrary_htpd8")
+autoplay = &"open"
+
+[node name="bgtrs" type="TextureRect" parent="." unique_id=1946860035]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -168.0
+offset_top = -160.0
+offset_right = 1312.0
+offset_bottom = 808.0
+texture = ExtResource("32_dxuot")
+
+[connection signal="mouse_entered" from="Buttons/Endless" to="." method="_on_endless_mouse_entered"]
+[connection signal="mouse_entered" from="Buttons/Endless" to="Buttons/Endless" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Buttons/BossRide" to="." method="_on_dungeon_mouse_entered"]
+[connection signal="mouse_entered" from="Buttons/BossRide" to="Buttons/BossRide" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Buttons/Void" to="." method="_on_void_mouse_entered"]
+[connection signal="mouse_entered" from="Buttons/Void" to="Buttons/Void" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="CloseButton" to="CloseButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="VoidChoice/Map1/map1" to="." method="_on_map_1_pressed"]
+[connection signal="pressed" from="VoidChoice/map2/map2" to="." method="_on_map_2_pressed"]
+[connection signal="mouse_entered" from="VoidChoice/Back" to="VoidChoice/Back" method="_on_mouse_entered"]
+[connection signal="pressed" from="VoidChoice/Back" to="." method="_on_back_pressed"]
+[connection signal="animation_finished" from="trs" to="." method="_on_trs_animation_finished"]

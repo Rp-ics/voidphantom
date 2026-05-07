@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bfpe3rqabul03"]
+
+[node name="NetworkManager" type="Node2D"]
+
+[node name="Steam" type="Node" parent="."]
+
+[node name="Players" type="Node" parent="."]
+
+[node name="RPCSync" type="Node" parent="."]

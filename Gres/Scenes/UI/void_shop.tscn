@@ -1,0 +1,1080 @@
+[gd_scene format=3 uid="uid://cm8pawwl1nq27"]
+
+[ext_resource type="Script" uid="uid://wr6pr4fp6fvn" path="res://Gres/Scripts/UI/void_shop.gd" id="1_2ohh8"]
+[ext_resource type="Texture2D" uid="uid://bft7wnryhrob4" path="res://Gres/Assets/Background/bgstar_9.png" id="2_i0me2"]
+[ext_resource type="AudioStream" uid="uid://24eys8uqhoqt" path="res://Gres/Music/SE/fx/Absorb2.ogg" id="3_lhh1p"]
+[ext_resource type="PackedScene" uid="uid://5ntd7d60ykyh" path="res://Gres/Scenes/UI/audio_manager.tscn" id="3_py3u5"]
+[ext_resource type="AudioStream" uid="uid://d1urox2plsv84" path="res://Gres/Music/BGM/bg1.ogg" id="4_m0be4"]
+[ext_resource type="AudioStream" uid="uid://bx76kwmrov7tn" path="res://Gres/Music/SE/fx/Buzzer1.ogg" id="4_mknff"]
+[ext_resource type="AudioStream" uid="uid://bk26rjldhx5v0" path="res://Gres/Music/BGM/bg2.ogg" id="5_fki3n"]
+[ext_resource type="AudioStream" uid="uid://b1qa4lvgn3178" path="res://Gres/Music/BGM/bg3.ogg" id="6_vyiof"]
+[ext_resource type="AudioStream" uid="uid://dyqahqcb4ykue" path="res://Gres/Music/BGM/bg4.ogg" id="7_4hjrp"]
+[ext_resource type="AudioStream" uid="uid://75bjef4wh8a" path="res://Gres/Music/BGM/bg5.ogg" id="8_3pcxp"]
+[ext_resource type="AudioStream" uid="uid://d3ibrjqakk8dy" path="res://Gres/Music/BGM/bg6.ogg" id="9_svnlm"]
+[ext_resource type="AudioStream" uid="uid://cvdgw6d4bng11" path="res://Gres/Music/BGM/bg7.ogg" id="10_xd6kh"]
+[ext_resource type="AudioStream" uid="uid://d05bw82xay7fv" path="res://Gres/Music/BGM/bg8.ogg" id="11_c5bfq"]
+[ext_resource type="AudioStream" uid="uid://d3fuopoacf8tc" path="res://Gres/Music/BGM/bg9.ogg" id="12_r0djq"]
+[ext_resource type="AudioStream" uid="uid://dl6g8ueupyt5h" path="res://Gres/Music/BGM/bg10.ogg" id="13_hg6e1"]
+[ext_resource type="AudioStream" uid="uid://8ea3v3f6k8e7" path="res://Gres/Music/BGM/bg11.ogg" id="14_vndvn"]
+[ext_resource type="AudioStream" uid="uid://cgogerbyy7jjb" path="res://Gres/Music/BGM/bg12.ogg" id="15_jccc2"]
+[ext_resource type="AudioStream" uid="uid://2hylgivywekw" path="res://Gres/Music/BGM/bg13.ogg" id="16_qgo6v"]
+[ext_resource type="AudioStream" uid="uid://238ipc1nmhge" path="res://Gres/Music/BGM/bg14.ogg" id="17_fbpsu"]
+[ext_resource type="AudioStream" uid="uid://b762jix3keavo" path="res://Gres/Music/BGM/bg15.ogg" id="18_fv4wk"]
+[ext_resource type="AudioStream" uid="uid://b1ubd4snx41ws" path="res://Gres/Music/BGM/bg16.ogg" id="19_7l2he"]
+[ext_resource type="AudioStream" uid="uid://bd0ljabudebvp" path="res://Gres/Music/BGM/bg17.ogg" id="20_snlle"]
+[ext_resource type="AudioStream" uid="uid://bfyu3ybsiy7te" path="res://Gres/Music/BGM/bg18.ogg" id="21_gvyqq"]
+[ext_resource type="AudioStream" uid="uid://cnsjvus1yleeo" path="res://Gres/Music/BGM/bg19.ogg" id="22_m26dr"]
+[ext_resource type="AudioStream" uid="uid://b35utltd7wc43" path="res://Gres/Music/BGM/bg20.ogg" id="23_1u6vp"]
+[ext_resource type="AudioStream" uid="uid://bl4uvgma70gmx" path="res://Gres/Music/BGM/bg21.ogg" id="24_v6pds"]
+[ext_resource type="AudioStream" uid="uid://c57qaqrvhhw38" path="res://Gres/Music/BGM/bg22.ogg" id="25_rsxtu"]
+[ext_resource type="AudioStream" uid="uid://dej46xjftjh8d" path="res://Gres/Music/BGM/bg23.ogg" id="26_h7moq"]
+[ext_resource type="AudioStream" uid="uid://dh53xpqbvuy8k" path="res://Gres/Music/BGM/bg24.ogg" id="27_108x1"]
+[ext_resource type="AudioStream" uid="uid://dgg303q1vhr2j" path="res://Gres/Music/BGM/bg25.ogg" id="28_02pvg"]
+[ext_resource type="AudioStream" uid="uid://bhf701o17yarp" path="res://Gres/Music/BGM/bg26.ogg" id="29_lcrsb"]
+[ext_resource type="AudioStream" uid="uid://brrqivx2yci6x" path="res://Gres/Music/BGM/bg27.ogg" id="30_3uxii"]
+[ext_resource type="AudioStream" uid="uid://dc0mwjbmt0iqh" path="res://Gres/Music/BGM/bg28.ogg" id="31_wqdyt"]
+[ext_resource type="AudioStream" uid="uid://b25l86087pan" path="res://Gres/Music/BGM/bg29.ogg" id="32_l1vwt"]
+[ext_resource type="AudioStream" uid="uid://duggkgjmp4aaq" path="res://Gres/Music/BGM/bg30.ogg" id="33_4lqea"]
+[ext_resource type="Texture2D" uid="uid://diq7xkhnherr5" path="res://Gres/Assets/BGame/galaxy11.png" id="34_y00na"]
+[ext_resource type="Shader" uid="uid://bfbpdc86tm83f" path="res://Gres/Shaders/portal1.gdshader" id="41_0jh1w"]
+[ext_resource type="Texture2D" uid="uid://bi4fjx66x1uup" path="res://Gres/Assets/obj/Black_hole_1.png" id="42_qdqhu"]
+[ext_resource type="Texture2D" uid="uid://lnenok3u67yr" path="res://Gres/Assets/UI/Buttons/button_normal1.png" id="43_ulfc7"]
+[ext_resource type="Texture2D" uid="uid://cr0evq28a4y8i" path="res://Gres/Assets/player/weapons/common/rotated/gun_22E.png" id="44_oml4f"]
+[ext_resource type="Texture2D" uid="uid://bqfje4k1r0qub" path="res://Gres/Assets/UI/Buttons/button_hover1.png" id="44_tlpy2"]
+[ext_resource type="Texture2D" uid="uid://rs5f7jogxnu4" path="res://Gres/Assets/player/weapons/common/rotated/icon_gun_23E.png" id="45_fysly"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="45_hqloj"]
+[ext_resource type="Texture2D" uid="uid://bsmvv08rebb22" path="res://Gres/Assets/player/weapons/common/rotated/icon_gun_26E.png" id="45_oml4f"]
+[ext_resource type="Texture2D" uid="uid://m8cv2o0evsau" path="res://Gres/Assets/player/weapons/common/rotated/icon_gun_25E.png" id="45_ui6cv"]
+[ext_resource type="Texture2D" uid="uid://bnokmno8tm4fw" path="res://Gres/Assets/player/weapons/common/rotated/icon_gun_27E.png" id="46_1l14i"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="46_3wueu"]
+[ext_resource type="Texture2D" uid="uid://cn4rovt2uwh3w" path="res://Gres/Assets/player/weapons/common/rotated/icon_gun_24E.png" id="46_n3yqo"]
+[ext_resource type="Texture2D" uid="uid://leag8735oi6b" path="res://Gres/Assets/player/weapons/common/rotated/icon_gun_28E.png" id="47_mcnp7"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="47_vimwn"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="48_lhh1p"]
+[ext_resource type="Texture2D" uid="uid://b0mqarhhjp1hf" path="res://Gres/Assets/player/weapons/common/rotated/icon_gun_30E.png" id="49_2hick"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="49_mknff"]
+[ext_resource type="Texture2D" uid="uid://dxh0lww3ea6lq" path="res://Gres/Assets/Effects/Star.png" id="50_3nju5"]
+[ext_resource type="Texture2D" uid="uid://bvxh63r1g2khl" path="res://Gres/Assets/player/weapons/common/rotated/icon_gun_31E.png" id="50_7w2vo"]
+[ext_resource type="Texture2D" uid="uid://cta5iigf01ep7" path="res://Gres/Assets/player/weapons/common/rotated/icon_gun_32E.png" id="51_1e8l7"]
+[ext_resource type="Texture2D" uid="uid://bg0m621u3igdt" path="res://Gres/Assets/UI/Buttons/audio_icn_holder_norm.png" id="51_xwb7p"]
+[ext_resource type="Shader" uid="uid://bbtt03fdkxw2g" path="res://Gres/Scenes/weapons/bullet/fire_2.gdshader" id="52_mknff"]
+[ext_resource type="Texture2D" uid="uid://dxdvtvuie7c" path="res://Gres/Assets/UI/Buttons/audio_icn_holder_hold.png" id="52_u25np"]
+[ext_resource type="Texture2D" uid="uid://b4sjigpc35xyr" path="res://Gres/Assets/player/weapons/common/rotated/icon_gun_34E.png" id="52_v2gi2"]
+[ext_resource type="Texture2D" uid="uid://blejr3t2n4bg7" path="res://Gres/Assets/player/weapons/common/rotated/icon_gun_35E.png" id="53_i0me2"]
+
+[sub_resource type="Animation" id="Animation_08mjw"]
+resource_name = "loop"
+length = 16.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4, 7, 8, 11, 12, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0.725, 0.8, 1), Color(0, 0.725, 0.8, 1), Color(0.0546875, 0, 1, 1), Color(0.0546875, 0, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1is31"]
+_data = {
+&"loop": SubResource("Animation_08mjw")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sj21v"]
+blend_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1yrs"]
+shader = ExtResource("41_0jh1w")
+shader_parameter/portal_texture = ExtResource("42_qdqhu")
+shader_parameter/portal_tint = Color(0, 0.015625, 1, 1)
+shader_parameter/vortex_effect_radius = 0.45
+shader_parameter/twist_strength = 8.0
+shader_parameter/pulsation_speed = 0.7
+shader_parameter/breath_magnitude = -0.055
+shader_parameter/overall_rotation_speed = 0.25
+shader_parameter/texture_scroll_speed_x = 0.08
+shader_parameter/texture_scroll_speed_y = 0.03
+shader_parameter/edge_softness = 0.44
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y2sfd"]
+blend_mode = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eelop"]
+load_path = "res://.godot/imported/Star.png-0ca69afd1fb9cb1159b68e37a313e330.ctex"
+
+[sub_resource type="Gradient" id="Gradient_htpd8"]
+offsets = PackedFloat32Array(0, 0.491525, 1)
+colors = PackedColorArray(1, 0, 0, 0, 0.945313, 1, 0, 0.491525, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_htpd8"]
+resource_name = "close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgtrs:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bgtrs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eelop"]
+resource_name = "open"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgtrs:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bgtrs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_htpd8"]
+_data = {
+&"close": SubResource("Animation_htpd8"),
+&"open": SubResource("Animation_eelop")
+}
+
+[sub_resource type="Curve" id="Curve_fo71m"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.492754, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_fa30l"]
+offsets = PackedFloat32Array(0, 0.558011, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk3hp"]
+bg_color = Color(1, 0.398438, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gw8c"]
+bg_color = Color(1, 0.632813, 0, 1)
+
+[sub_resource type="Theme" id="Theme_8wx6e"]
+HSlider/icons/grabber = ExtResource("51_xwb7p")
+HSlider/icons/grabber_disabled = ExtResource("51_xwb7p")
+HSlider/icons/grabber_highlight = ExtResource("52_u25np")
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_xk3hp")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_8gw8c")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iafdq"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_augen"]
+bg_color = Color(0, 0.9532835, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iokpd"]
+bg_color = Color(0, 0.92947316, 1, 0.15100001)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 1, 0.9765625, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ui6cv"]
+shader = ExtResource("52_mknff")
+shader_parameter/fire_color = Color(0, 0, 0, 1)
+shader_parameter/fire_power_factor = 2.0
+shader_parameter/fire_intensity = 1.775
+shader_parameter/fire_start = 1.04
+shader_parameter/ball_size = 4.985
+shader_parameter/roughness = 0.675
+shader_parameter/detail = 6
+shader_parameter/scale = 4.0
+shader_parameter/lacunarity = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfrb0"]
+bg_color = Color(0, 0, 0, 0.54800004)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3k00o"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wueu"]
+texture = ExtResource("43_ulfc7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vimwn"]
+texture = ExtResource("43_ulfc7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lhh1p"]
+texture = ExtResource("44_tlpy2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mknff"]
+texture = ExtResource("43_ulfc7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui6cv"]
+texture = ExtResource("44_tlpy2")
+
+[sub_resource type="Shader" id="Shader_roq78"]
+code = "// FIREBALL SHADER
+
+// Author: Muhammad Mujtaba
+// MIT License
+
+shader_type canvas_item;
+
+uniform vec3 fire_color: source_color = vec3(1.0, 0.33, 0.068);
+uniform float fire_power_factor = 2.0;
+uniform float fire_intensity = 3.0;
+uniform float fire_start = 1.0;
+uniform float ball_size = 1.0;
+
+uniform float roughness = 0.675;
+uniform int detail = 6;
+uniform float scale = 4.0;
+uniform float lacunarity = 2.0;
+
+vec2 random2(vec2 st, float seed) {
+    st = vec2(dot(st, vec2(127.1, 311.7)),
+              dot(st, vec2(269.5, 183.3)));
+    return -1.0 + 2.0 * fract(sin(st) * 43758.5453123 * seed * 0.753421);
+}
+
+// Remap value
+float map(float value, float from_min, float from_max, float to_min, float to_max) {
+    value = (value - from_min) / (from_max - from_min);
+    value = to_min + value * (to_max - to_min);
+    return value;
+}
+
+vec3 linear_light(in vec3 a, in vec3 b, in float factor) {
+    return a + factor * (2.0 * b - 1.0);
+}
+
+float noise(vec2 st, float seed) {
+    vec2 i = floor(st);
+    vec2 f = fract(st);
+
+    vec2 u = f * f * (3.0 - 2.0 * f);
+
+    return mix(mix(dot(random2(i + vec2(0.0, 0.0), seed), f - vec2(0.0, 0.0)),
+                   dot(random2(i + vec2(1.0, 0.0), seed), f - vec2(1.0, 0.0)), u.x),
+               mix(dot(random2(i + vec2(0.0, 1.0), seed), f - vec2(0.0, 1.0)),
+                   dot(random2(i + vec2(1.0, 1.0), seed), f - vec2(1.0, 1.0)), u.x), u.y);
+}
+
+float fbm(in float seed, in vec2 st, in float _scale, in int octaves, in float _roughness, in float _lacunarity) {
+    float amplitude = 0.5;
+    float frequency = 0.0;
+    float value = 0.0;
+    st *= _scale;
+    for (int i = 1; i < octaves; i++) {
+        value += amplitude * noise(st, seed);
+        st *= _lacunarity;
+        amplitude *= _roughness;
+    }
+    return value * 0.5 + 0.5;
+}
+
+vec3 neon(float val, vec3 color) {
+    float ramp = clamp(val, 0.0, 1.0);
+    vec3 outp = vec3(0.0);
+    ramp = ramp * ramp;
+    outp += pow(color, vec3(4.0)) * ramp;
+    ramp = ramp * ramp;
+    outp += color * ramp;
+    ramp = ramp * ramp;
+    outp += vec3(1.0) * ramp;
+    return outp;
+}
+
+void fragment() {
+    vec2 uv = UV;
+    float uv_x = uv.x;
+    uv = (uv * 2.0 - 1.0);
+    vec2 uv_flame = uv + vec2(TIME * 2.0, 0.0);
+
+    float noise_1d = fbm(24.0, uv_flame, scale, detail, roughness, lacunarity);
+    vec3 noise_3d = vec3(fbm(24.0, uv_flame, scale, detail, roughness, lacunarity), 
+                         fbm(12.0, uv_flame, scale, detail, roughness, lacunarity),
+                         fbm(33.0, uv_flame, scale, detail, roughness, lacunarity));
+
+    float light_factor = clamp(map(uv_x, 0.13, 0.87, 1.0, 0.06), 0.06, 1.0);
+    
+    vec3 light = linear_light(vec3(uv * vec2(1.0, 1.0), 0.0), noise_3d, light_factor);
+    light = abs(light) - vec3(0.75, 0.0, 0.0);
+    light = max(light, vec3(0.0));
+    float light_length = length(light) / ball_size;
+    float fireball_grad = clamp(map(uv_x, -0.24, 0.82, 0.0, 0.27), 0.0, 0.27);
+    light_length -= fireball_grad;
+    light_length = smoothstep(0.0, -0.09, light_length);
+    
+    noise_1d *= uv_x * fire_start;
+    noise_1d *= pow(uv_x, fire_power_factor);
+    
+    vec3 color = mix(vec3(0.0), fire_color * noise_1d * 4.0, light_length);
+    
+    float alpha = mix(0.0, noise_1d * fire_intensity, light_length);
+    
+    COLOR = vec4(neon(alpha * UV.x + 0.2, color), 1.0);
+    COLOR.a = alpha;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oml4f"]
+shader = SubResource("Shader_roq78")
+shader_parameter/fire_color = Color(1, 1, 1, 1)
+shader_parameter/fire_power_factor = 2.0
+shader_parameter/fire_intensity = 1.44
+shader_parameter/fire_start = 1.0
+shader_parameter/ball_size = 4.52
+shader_parameter/roughness = 0.675
+shader_parameter/detail = 6
+shader_parameter/scale = 4.0
+shader_parameter/lacunarity = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dosyx"]
+texture = ExtResource("46_3wueu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fysly"]
+texture = ExtResource("47_vimwn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n3yqo"]
+texture = ExtResource("48_lhh1p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q15vi"]
+texture = ExtResource("49_mknff")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ohh8"]
+texture = ExtResource("46_3wueu")
+
+[sub_resource type="Animation" id="Animation_ui6cv"]
+resource_name = "show"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Purchasound:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("part:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("flash:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dosyx"]
+_data = {
+&"show": SubResource("Animation_ui6cv")
+}
+
+[sub_resource type="Gradient" id="Gradient_mknff"]
+offsets = PackedFloat32Array(0.005263158, 0.23157895, 0.42105263, 0.5, 0.5842105, 0.80526316, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.30866912, 1, 0, 0, 0.752381, 1, 0.5859375, 0, 1, 1, 0, 0, 0.7411765, 0, 0, 0, 0.37647054, 0, 0, 0, 0)
+
+[node name="VoidShop" type="Control" unique_id=1954386417]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2ohh8")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=440261680]
+process_mode = 3
+layout_mode = 0
+offset_left = -2112.0
+offset_top = -1648.0
+offset_right = 2936.0
+offset_bottom = 2184.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect3" unique_id=30179812]
+process_mode = 3
+layout_mode = 0
+offset_left = 1704.0
+offset_top = 1320.0
+offset_right = 3760.0
+offset_bottom = 2691.0
+texture = ExtResource("2_i0me2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="." unique_id=1723893601]
+process_mode = 3
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.725, 0.8, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 70
+text = "Void Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="loop" type="AnimationPlayer" parent="Title" unique_id=951026596]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_1is31")
+autoplay = &"loop"
+
+[node name="Purchasound" type="AudioStreamPlayer" parent="." unique_id=193266873]
+stream = ExtResource("3_lhh1p")
+pitch_scale = 0.6
+
+[node name="Error" type="AudioStreamPlayer" parent="." unique_id=943437085]
+stream = ExtResource("4_mknff")
+pitch_scale = 0.8
+
+[node name="AudioManager" parent="." unique_id=1986876779 instance=ExtResource("3_py3u5")]
+process_mode = 3
+playlist = Array[AudioStream]([ExtResource("4_m0be4"), ExtResource("5_fki3n"), ExtResource("6_vyiof"), ExtResource("7_4hjrp"), ExtResource("8_3pcxp"), ExtResource("9_svnlm"), ExtResource("10_xd6kh"), ExtResource("11_c5bfq"), ExtResource("12_r0djq"), ExtResource("13_hg6e1"), ExtResource("14_vndvn"), ExtResource("15_jccc2"), ExtResource("16_qgo6v"), ExtResource("17_fbpsu"), ExtResource("18_fv4wk"), ExtResource("19_7l2he"), ExtResource("20_snlle"), ExtResource("21_gvyqq"), ExtResource("22_m26dr"), ExtResource("23_1u6vp"), ExtResource("24_v6pds"), ExtResource("25_rsxtu"), ExtResource("26_h7moq"), ExtResource("27_108x1"), ExtResource("28_02pvg"), ExtResource("29_lcrsb"), ExtResource("30_3uxii"), ExtResource("31_wqdyt"), ExtResource("32_l1vwt"), ExtResource("33_4lqea")])
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1525853138]
+process_mode = 3
+position = Vector2(576, 324)
+
+[node name="paralax" type="TextureRect" parent="Camera" unique_id=1895313235]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_sj21v")
+offset_left = -768.0
+offset_top = -508.0
+offset_right = 768.0
+offset_bottom = 516.0
+texture = ExtResource("34_y00na")
+
+[node name="Constel" type="Node2D" parent="." unique_id=1777431448]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="Constel" unique_id=420606239]
+material = SubResource("ShaderMaterial_m1yrs")
+offset_left = -21.0
+offset_top = -306.0
+offset_right = 1180.0
+offset_bottom = 1039.12
+
+[node name="Particles" type="CPUParticles2D" parent="." unique_id=1321457732]
+process_mode = 3
+z_index = 100
+material = SubResource("CanvasItemMaterial_y2sfd")
+position = Vector2(146, 162)
+texture = SubResource("CompressedTexture2D_eelop")
+speed_scale = 0.5
+emission_shape = 1
+emission_sphere_radius = 30.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 80.36
+initial_velocity_max = 187.5
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+orbit_velocity_max = 0.1
+angle_min = -360.0
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+color_ramp = SubResource("Gradient_htpd8")
+
+[node name="trs" type="AnimationPlayer" parent="." unique_id=185537723]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_htpd8")
+autoplay = &"open"
+
+[node name="bgtrs" type="TextureRect" parent="." unique_id=997982981]
+process_mode = 3
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -168.0
+offset_top = -160.0
+offset_right = 1312.0
+offset_bottom = 808.0
+texture = ExtResource("2_i0me2")
+
+[node name="FX" type="CPUParticles2D" parent="." unique_id=1783545975]
+process_mode = 3
+position = Vector2(576, 352)
+amount = 100
+texture = ExtResource("50_3nju5")
+lifetime = 5.0
+speed_scale = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(600, 500)
+gravity = Vector2(0, 0)
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+angle_max = 720.0
+scale_amount_min = 0.02
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_fo71m")
+color_ramp = SubResource("Gradient_fa30l")
+
+[node name="MaxOffset" type="HSlider" parent="." unique_id=2112205522]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 622.0
+offset_right = 572.0
+offset_bottom = 638.0
+theme = SubResource("Theme_8wx6e")
+max_value = 200.0
+step = 0.1
+
+[node name="Label" type="Label" parent="MaxOffset" unique_id=1618969072]
+layout_mode = 0
+offset_top = -32.0
+offset_right = 570.0
+offset_bottom = 29.0
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 60
+text = "Max Offset: 600.0"
+
+[node name="SmoothSpeed" type="HSlider" parent="." unique_id=535184744]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 622.0
+offset_right = 820.0
+offset_bottom = 638.0
+theme = SubResource("Theme_8wx6e")
+max_value = 400.0
+step = 0.1
+
+[node name="Label" type="Label" parent="SmoothSpeed" unique_id=200608066]
+layout_mode = 0
+offset_top = -32.0
+offset_right = 570.0
+offset_bottom = 29.0
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 60
+text = "Smooth Speed: 600.0"
+
+[node name="Manager" type="Node2D" parent="." unique_id=1586763653]
+
+[node name="Scroll" type="ScrollContainer" parent="Manager" unique_id=257987582]
+offset_left = 8.0
+offset_top = 104.0
+offset_right = 572.0
+offset_bottom = 506.0
+
+[node name="Weapons" type="GridContainer" parent="Manager/Scroll" unique_id=1569916401]
+layout_mode = 2
+columns = 4
+
+[node name="W1" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1104741685]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W1" unique_id=2115647695]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("45_fysly")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W1" unique_id=1877949741]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W2" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1870919580]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W2" unique_id=258864685]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("46_n3yqo")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W2" unique_id=1780497819]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W3" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1080932578]
+visible = false
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W3" unique_id=1728739429]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("44_oml4f")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W3" unique_id=230000153]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W4" type="Panel" parent="Manager/Scroll/Weapons" unique_id=233021230]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W4" unique_id=1692762094]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("45_ui6cv")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W4" unique_id=137449907]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W5" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1146312033]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W5" unique_id=574626401]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("45_oml4f")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W5" unique_id=1220638707]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W6" type="Panel" parent="Manager/Scroll/Weapons" unique_id=152134331]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W6" unique_id=658040427]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("46_1l14i")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W6" unique_id=1701211096]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W7" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1143538286]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W7" unique_id=70684961]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("47_mcnp7")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W7" unique_id=1251403543]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W8" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1209660123]
+visible = false
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W8" unique_id=2102303087]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("49_2hick")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W8" unique_id=1974431542]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W9" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1831672787]
+visible = false
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W9" unique_id=352815150]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("50_7w2vo")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W9" unique_id=1003004819]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W10" type="Panel" parent="Manager/Scroll/Weapons" unique_id=53683015]
+visible = false
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W10" unique_id=1481314624]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("51_1e8l7")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W10" unique_id=1486941490]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W11" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1342806414]
+visible = false
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W11" unique_id=350844774]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("52_v2gi2")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W11" unique_id=1874007899]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W12" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1679565013]
+visible = false
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W12" unique_id=2063385975]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("53_i0me2")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W12" unique_id=1024230496]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W13" type="Panel" parent="Manager/Scroll/Weapons" unique_id=836306644]
+visible = false
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W13" unique_id=1303804761]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("53_i0me2")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W13" unique_id=402382907]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="W14" type="Panel" parent="Manager/Scroll/Weapons" unique_id=335803318]
+visible = false
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W14" unique_id=453663591]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("53_i0me2")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W14" unique_id=1976405853]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iafdq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_augen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iokpd")
+
+[node name="fire" type="ColorRect" parent="Manager" unique_id=1761592175]
+modulate = Color(1, 1, 1, 0.90000004)
+material = SubResource("ShaderMaterial_ui6cv")
+offset_left = 967.75
+offset_top = 396.32895
+offset_right = 1132.421
+offset_bottom = 640.079
+rotation = 1.5707964
+color = Color(0, 0.025840001, 0.15594886, 0.795)
+
+[node name="info" type="RichTextLabel" parent="Manager" unique_id=892443573]
+offset_left = 593.0
+offset_top = 104.0
+offset_right = 1109.0
+offset_bottom = 397.0
+theme_override_font_sizes/normal_font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_lfrb0")
+bbcode_enabled = true
+
+[node name="price" type="RichTextLabel" parent="Manager" unique_id=1398962541]
+offset_left = 593.0
+offset_top = 403.0
+offset_right = 1109.0
+offset_bottom = 478.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[color=#fc0356]???[img=20]res://Gres/Assets/Icons/black_hole_bonus.png[/img][/color] + [color=red]????? Kills [/color]+ [color=#fc5a03]??? Max Wave[/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="Manager" unique_id=938043158]
+offset_left = 742.0
+offset_right = 1152.0
+offset_bottom = 92.0
+theme_override_font_sizes/normal_font_size = 62
+bbcode_enabled = true
+text = "[color=#fc0356][img=50]res://Gres/Assets/Icons/black_hole_bonus.png[/img]9999999[/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyGun" type="Button" parent="Manager" unique_id=666698730]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_3k00o")
+offset_left = 724.0
+offset_top = 483.0
+offset_right = 967.75
+offset_bottom = 561.0
+pivot_offset = Vector2(175, 56)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_3wueu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vimwn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lhh1p")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_mknff")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ui6cv")
+text = "GET IT"
+script = ExtResource("45_hqloj")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="fire2" type="ColorRect" parent="Manager" unique_id=1422147891]
+modulate = Color(1, 1, 1, 0.90000004)
+material = SubResource("ShaderMaterial_oml4f")
+offset_left = 292.0
+offset_top = 445.0
+offset_right = 472.51062
+offset_bottom = 699.04944
+rotation = 1.5707964
+color = Color(0, 0.025840001, 0.15594886, 0.795)
+
+[node name="LinkButton" type="LinkButton" parent="Manager" unique_id=224180996]
+offset_left = 37.0
+offset_top = 579.0
+offset_right = 291.0
+offset_bottom = 640.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+text = "Feedback"
+underline = 1
+uri = "https://tally.so/r/rj2OM5"
+
+[node name="Back" type="Button" parent="." unique_id=1208136043]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -25.0
+offset_right = 150.0
+offset_bottom = 137.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_dosyx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fysly")
+theme_override_styles/hover = SubResource("StyleBoxTexture_n3yqo")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_q15vi")
+theme_override_styles/focus = SubResource("StyleBoxTexture_2ohh8")
+text = "x"
+script = ExtResource("45_hqloj")
+
+[node name="Purchased" type="ColorRect" parent="." unique_id=155934654]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -273.0
+offset_top = -160.0
+offset_right = 1344.0
+offset_bottom = 822.0
+color = Color(0, 0.025840001, 0.15594886, 0.795)
+
+[node name="anim" type="AnimationPlayer" parent="Purchased" unique_id=345297745]
+libraries/ = SubResource("AnimationLibrary_dosyx")
+
+[node name="fire" type="ColorRect" parent="Purchased" unique_id=144792915]
+modulate = Color(1, 1, 1, 0.90000004)
+material = SubResource("ShaderMaterial_ui6cv")
+layout_mode = 0
+offset_left = 1407.723
+offset_top = -995.0
+offset_right = 2902.3452
+offset_bottom = 113.4718
+rotation = 1.5707964
+color = Color(0, 0.025840001, 0.15594886, 0.795)
+
+[node name="txt" type="RichTextLabel" parent="Purchased" unique_id=1352489754]
+modulate = Color(1, 1, 1, 0.693)
+layout_mode = 0
+offset_left = 273.0
+offset_top = 246.0
+offset_right = 1425.0
+offset_bottom = 666.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/normal_font_size = 47
+bbcode_enabled = true
+text = "[center]Weapon successfully purchased and added to your inventory. You're ready to conquer space.[/center]
+"
+vertical_alignment = 1
+
+[node name="part" type="CPUParticles2D" parent="Purchased" unique_id=2033098265]
+position = Vector2(848, 444)
+emitting = false
+amount = 100
+emission_shape = 3
+emission_rect_extents = Vector2(500, 1)
+scale_amount_max = 10.0
+
+[node name="flash" type="CPUParticles2D" parent="Purchased" unique_id=542182730]
+position = Vector2(821, 444)
+emitting = false
+amount = 100
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 300)
+spread = 180.0
+gravity = Vector2(0, 50)
+initial_velocity_max = 1000.0
+angular_velocity_max = 346.99
+scale_amount_max = 31.8
+color_ramp = SubResource("Gradient_mknff")
+
+[connection signal="animation_finished" from="trs" to="." method="_on_trs_animation_finished"]
+[connection signal="value_changed" from="MaxOffset" to="." method="_on_max_offset_value_changed"]
+[connection signal="value_changed" from="SmoothSpeed" to="." method="_on_smooth_speed_value_changed"]
+[connection signal="mouse_entered" from="Manager/BuyGun" to="Manager/BuyGun" method="_on_mouse_entered"]
+[connection signal="pressed" from="Manager/BuyGun" to="." method="_on_buy_gun_pressed"]
+[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

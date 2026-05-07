@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvrbw3rmvfm87"]
+
+[ext_resource type="Script" uid="uid://b2dg1ttxp1dc8" path="res://Gres/Scripts/Bullets/void_shard.gd" id="1_jx8mi"]
+[ext_resource type="Texture2D" uid="uid://nsglftguo6ow" path="res://Gres/Assets/player/bullets/blaster_bulletC.png" id="2_wevhq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_icrln"]
+radius = 8.0
+
+[node name="PlayerBullet" type="Area2D" groups=["p_bullet"]]
+collision_layer = 32
+collision_mask = 30
+script = ExtResource("1_jx8mi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_icrln")
+debug_color = Color(0, 1, 0.0859375, 0.42)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_wevhq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

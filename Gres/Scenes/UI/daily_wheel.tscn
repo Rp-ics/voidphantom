@@ -1,0 +1,1725 @@
+[gd_scene format=3 uid="uid://cgjctnghnpgcd"]
+
+[ext_resource type="Script" uid="uid://dyy7y8il3bh00" path="res://Gres/Scripts/UI/daily_wheel_manager.gd" id="1_1yr7t"]
+[ext_resource type="Texture2D" uid="uid://b23e4kychddr2" path="res://Gres/Assets/UI/inentory/body.png" id="2_2lo1f"]
+[ext_resource type="Shader" uid="uid://1abiepe6jn2y" path="res://Gres/Shaders/ColorShader.gdshader" id="3_7jqup"]
+[ext_resource type="Texture2D" uid="uid://053jh0fhgce" path="res://Gres/Assets/Effects/Star_04A.png" id="3_mcix5"]
+[ext_resource type="Texture2D" uid="uid://mw0vp2t6m454" path="res://Gres/Assets/obj/weel_spin_1.png" id="4_74rtp"]
+[ext_resource type="AudioStream" uid="uid://dp44mn5kgon3w" path="res://Gres/Music/SE/fx/spin.ogg" id="4_p2i8h"]
+[ext_resource type="AudioStream" uid="uid://dd41tanyxm2pv" path="res://Gres/Music/SE/fx/win_se.ogg" id="5_7j4mo"]
+[ext_resource type="Texture2D" uid="uid://c803qh02wyx3x" path="res://Gres/Assets/obj/weel_spin_2.png" id="5_xktai"]
+[ext_resource type="Texture2D" uid="uid://b2nhhity5frxl" path="res://Gres/Assets/Icons/craft/cryst_1.png" id="6_eubib"]
+[ext_resource type="Texture2D" uid="uid://bcsi0qw81d6r0" path="res://Gres/Assets/Icons/craft/cryst_2.png" id="7_h2smb"]
+[ext_resource type="Texture2D" uid="uid://e3cau7c4b2gg" path="res://Gres/Assets/obj/weel_spin_4.png" id="7_q72qx"]
+[ext_resource type="Texture2D" uid="uid://debqo76t1ok65" path="res://Gres/Assets/obj/weel_spin_6.png" id="8_eubib"]
+[ext_resource type="Texture2D" uid="uid://csnkktechwhdr" path="res://Gres/Assets/Icons/craft/cryst_3.png" id="8_g3wk0"]
+[ext_resource type="Texture2D" uid="uid://cdlr16mgbljhf" path="res://Gres/Assets/obj/weel_spin_5.png" id="9_fhuca"]
+[ext_resource type="Texture2D" uid="uid://dg4qnf3yrx3nj" path="res://Gres/Assets/Icons/craft/cryst_4.png" id="9_kk86n"]
+[ext_resource type="Texture2D" uid="uid://quysiudmaya" path="res://Gres/Assets/obj/chest_g_1.png" id="10_td5nq"]
+[ext_resource type="Texture2D" uid="uid://c4s7ulv1wquuh" path="res://Gres/Assets/Icons/parts/gold_icon.png" id="11_mcix5"]
+[ext_resource type="Texture2D" uid="uid://c81n3vchbb75a" path="res://Gres/Assets/obj/chest_g_2.png" id="12_ir8s4"]
+[ext_resource type="Texture2D" uid="uid://b08ecvklqyqsa" path="res://Gres/Assets/obj/chest_g_3.png" id="13_lsqkf"]
+[ext_resource type="Texture2D" uid="uid://dyf63c4f7tk18" path="res://Gres/Assets/obj/tablet_2.png" id="14_ur8h6"]
+[ext_resource type="Texture2D" uid="uid://dyifa1nwadonj" path="res://Gres/Assets/obj/weel_spin_7.png" id="15_g3wk0"]
+[ext_resource type="Texture2D" uid="uid://cgff41rxt2kpp" path="res://Gres/Assets/obj/tablet_1.png" id="15_ur8h6"]
+[ext_resource type="Texture2D" uid="uid://b5cl0r5yfhoxv" path="res://Gres/Assets/player/weapons/common/rotated/gun_2R.png" id="19_0dut3"]
+[ext_resource type="Texture2D" uid="uid://bcxb42yu1pj1l" path="res://Gres/Assets/player/body/body_14.png" id="20_0dut3"]
+[ext_resource type="Texture2D" uid="uid://bvbjpbk6dycxm" path="res://Gres/Assets/player/wings/wing_12.png" id="20_2tnqe"]
+[ext_resource type="Texture2D" uid="uid://bi4s3s3ld284u" path="res://Gres/Assets/player/body/body_12.png" id="21_j4wkk"]
+[ext_resource type="Texture2D" uid="uid://dv6mgd4lrm6ug" path="res://Gres/Assets/player/propuls/prop_14.png" id="21_nfqwo"]
+[ext_resource type="Texture2D" uid="uid://dxh0lww3ea6lq" path="res://Gres/Assets/Effects/Star.png" id="21_td5nq"]
+[ext_resource type="Texture2D" uid="uid://dh6u2m7x83rwc" path="res://Gres/Assets/player/propuls/prop_12.png" id="22_715f1"]
+[ext_resource type="Texture2D" uid="uid://b48cdu5su2xmm" path="res://Gres/Assets/player/wings/wing_14.png" id="22_r1ndl"]
+[ext_resource type="Texture2D" uid="uid://dp0051x4tl6uu" path="res://Gres/Assets/UI/inentory/info_holder.png" id="23_ir8s4"]
+[ext_resource type="Texture2D" uid="uid://ikmrelc84kus" path="res://Gres/Assets/UI/inentory/liner.png" id="24_3tt0v"]
+[ext_resource type="Texture2D" uid="uid://c4fgn3bg6g0j2" path="res://Gres/Assets/Icons/exotic_gold_1.png" id="25_bl0es"]
+[ext_resource type="Texture2D" uid="uid://cexnd3ykax18i" path="res://Gres/Assets/Icons/gold_1.png" id="25_tex6l"]
+[ext_resource type="Texture2D" uid="uid://d683w8bhbgy" path="res://Gres/Assets/player/propuls/prop_13.png" id="26_yelde"]
+[ext_resource type="Shader" uid="uid://coc1hdj27s0a1" path="res://Gres/Shaders/fade_1.gdshader" id="27_bl0es"]
+[ext_resource type="Texture2D" uid="uid://da2hew3unef4c" path="res://Gres/Assets/player/wings/wing_13.png" id="27_u4pwv"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="28_e8xt2"]
+[ext_resource type="Texture2D" uid="uid://dvm7da4ic7643" path="res://Gres/Assets/player/body/body_13.png" id="28_jktff"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="29_p2i8h"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="30_7j4mo"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="31_twu0g"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="32_x25em"]
+[ext_resource type="Texture2D" uid="uid://de66eiw0nr5x6" path="res://Gres/Assets/UI/inentory/info_holder1.png" id="38_nfqwo"]
+[ext_resource type="Texture2D" uid="uid://crhu3vjtum73r" path="res://Gres/Assets/Icons/incognito_1.png" id="39_r1ndl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ir8s4"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_lsqkf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.497382, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_3tt0v"]
+offsets = PackedFloat32Array(0.00606061, 0.50303, 0.993939)
+colors = PackedColorArray(1, 0.515625, 0, 0, 1, 0.867188, 0, 0.509091, 0.898438, 1, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eubib"]
+shader = ExtResource("3_7jqup")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ur8h6"]
+shader = ExtResource("3_7jqup")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = -0.4
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = -1.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="Animation" id="Animation_ur8h6"]
+resource_name = "cc"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/hue_shift")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../center/SpinButton:material:shader_parameter/hue_shift")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_td5nq"]
+_data = {
+&"cc": SubResource("Animation_ur8h6")
+}
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p2i8h"]
+b = Vector2(0, 41)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kk86n"]
+shader = ExtResource("3_7jqup")
+shader_parameter/red_factor = 2.0
+shader_parameter/green_factor = 0.354
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.115
+shader_parameter/gamma = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mcix5"]
+shader = ExtResource("3_7jqup")
+shader_parameter/red_factor = 2.0
+shader_parameter/green_factor = 2.0
+shader_parameter/blue_factor = 0.208
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = -1.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2i8h"]
+size = Vector2(20, 22)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mcix5"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_ir8s4"]
+offsets = PackedFloat32Array(0, 0.521212, 1)
+colors = PackedColorArray(1, 0, 0, 0, 1, 0.914063, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_tex6l"]
+resource_name = "loop"
+length = 2.2
+loop_mode = 2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u28ih"]
+_data = {
+&"loop": SubResource("Animation_tex6l")
+}
+
+[sub_resource type="Animation" id="Animation_6u0rk"]
+resource_name = "loop"
+length = 2.2
+loop_mode = 2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k6w66"]
+_data = {
+&"loop": SubResource("Animation_6u0rk")
+}
+
+[sub_resource type="Animation" id="Animation_u28ih"]
+resource_name = "tutorial"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tutorial:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tutorial:material:shader_parameter/circle_softness")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.5, 0.05, 0.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("tutorial:material:shader_parameter/circle_radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.124, 0.198, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("tutorial:material:shader_parameter/circle_pos")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.255, 0.48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q5061"]
+_data = {
+&"tutorial": SubResource("Animation_u28ih")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u28ih"]
+shader = ExtResource("27_bl0es")
+shader_parameter/circle_pos = Vector2(0.255, 0.48)
+shader_parameter/circle_radius = 0.0
+shader_parameter/circle_softness = 0.5
+shader_parameter/dark_color = Color(0, 0, 0, 0.801)
+
+[sub_resource type="Shader" id="Shader_bl0es"]
+code = "shader_type canvas_item;
+
+uniform vec2 circle_pos = vec2(0.5, 0.5); // centro del cerchio in UV
+uniform float circle_radius : hint_range(0.0, 1.0) = 0.3; // raggio del cerchio (0–1, in UV)
+uniform float circle_softness : hint_range(0.0, 0.5) = 0.05; // sfumatura bordo
+uniform vec4 dark_color : source_color = vec4(0.0, 0.0, 0.0, 1.0); // colore dello schermo scuro
+
+void fragment() {
+    // full-screen UV
+    vec2 uv = SCREEN_UV;
+
+    // Correggiamo l'aspect ratio per evitare ovali
+    vec2 aspect = vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y);
+    vec2 corrected_uv = (uv - circle_pos) * aspect;
+
+    // Distanza radiale corretta
+    float dist = length(corrected_uv);
+
+    // Maschera circolare con bordo sfumato
+    float mask = smoothstep(circle_radius, circle_radius - circle_softness, dist);
+
+    // Invertiamo la maschera: il cerchio resta trasparente
+    float inverse_mask = 1.0 - mask;
+
+    // Applicazione del colore scuro
+    COLOR = vec4(dark_color.rgb, dark_color.a * inverse_mask);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kt7sd"]
+shader = SubResource("Shader_bl0es")
+shader_parameter/circle_pos = Vector2(0.565, 0.135)
+shader_parameter/circle_radius = 0.137
+shader_parameter/circle_softness = 0.05
+shader_parameter/dark_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_kt7sd"]
+resource_name = "show"
+length = 2.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/dark_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.01, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.818), Color(0, 0, 0, 0.818), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yq6h5"]
+_data = {
+&"show": SubResource("Animation_kt7sd")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ymdah"]
+texture = ExtResource("28_e8xt2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yfjg7"]
+texture = ExtResource("31_twu0g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_715f1"]
+texture = ExtResource("30_7j4mo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4wkk"]
+texture = ExtResource("29_p2i8h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2tnqe"]
+texture = ExtResource("28_e8xt2")
+
+[node name="DailyWheel" type="Control" unique_id=9155544]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1yr7t")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2006870918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2lo1f")
+
+[node name="Stars" type="CPUParticles2D" parent="." unique_id=1809330396]
+material = SubResource("CanvasItemMaterial_ir8s4")
+position = Vector2(560, 320)
+amount = 100
+texture = ExtResource("3_mcix5")
+lifetime = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 300)
+gravity = Vector2(0, 0)
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+scale_amount_curve = SubResource("Curve_lsqkf")
+color_ramp = SubResource("Gradient_3tt0v")
+
+[node name="spin_se" type="AudioStreamPlayer" parent="." unique_id=264385769]
+stream = ExtResource("4_p2i8h")
+
+[node name="win_se" type="AudioStreamPlayer" parent="." unique_id=684254090]
+stream = ExtResource("5_7j4mo")
+pitch_scale = 0.8
+
+[node name="Wheel" type="TextureRect" parent="." unique_id=1577425699]
+material = SubResource("ShaderMaterial_eubib")
+layout_mode = 0
+offset_left = 18.0
+offset_top = 32.0
+offset_right = 578.0
+offset_bottom = 592.0
+pivot_offset = Vector2(280, 280)
+texture = ExtResource("4_74rtp")
+
+[node name="w_1" type="TextureRect" parent="Wheel" unique_id=482726497]
+material = SubResource("ShaderMaterial_ur8h6")
+layout_mode = 0
+offset_right = 560.0
+offset_bottom = 560.0
+pivot_offset = Vector2(280, 280)
+texture = ExtResource("5_xktai")
+
+[node name="shine" type="AnimationPlayer" parent="Wheel/w_1" unique_id=1020226404]
+libraries/ = SubResource("AnimationLibrary_td5nq")
+
+[node name="Segments" type="Node2D" parent="Wheel" unique_id=1769250858]
+position = Vector2(280, 281)
+
+[node name="Shardsx6_icon" type="Sprite2D" parent="Wheel/Segments" unique_id=839525015]
+position = Vector2(-161.239, 1.3928)
+texture = ExtResource("6_eubib")
+offset = Vector2(-10.515, 0)
+metadata/_edit_group_ = true
+
+[node name="icon4" type="Sprite2D" parent="Wheel/Segments/Shardsx6_icon" unique_id=1356833547]
+position = Vector2(2.00605, 22.5826)
+scale = Vector2(0.533203, 0.533203)
+texture = ExtResource("7_h2smb")
+
+[node name="icon" type="Sprite2D" parent="Wheel/Segments/Shardsx6_icon" unique_id=1118362756]
+position = Vector2(-12, 10)
+rotation = -1.64934
+scale = Vector2(0.890625, 0.890625)
+texture = ExtResource("9_kk86n")
+
+[node name="icon1" type="Sprite2D" parent="Wheel/Segments/Shardsx6_icon/icon" unique_id=1805868072]
+position = Vector2(-24.0879, -15.3067)
+scale = Vector2(0.70614, 0.70614)
+texture = ExtResource("8_g3wk0")
+
+[node name="icon3" type="Sprite2D" parent="Wheel/Segments/Shardsx6_icon/icon" unique_id=717557786]
+position = Vector2(15.3056, -8.47198)
+scale = Vector2(0.706141, 0.706141)
+texture = ExtResource("8_g3wk0")
+
+[node name="icon2" type="Sprite2D" parent="Wheel/Segments/Shardsx6_icon/icon" unique_id=1815029485]
+position = Vector2(16.3961, 16.2312)
+scale = Vector2(0.70614, 0.70614)
+texture = ExtResource("7_h2smb")
+
+[node name="Label" type="Label" parent="Wheel/Segments/Shardsx6_icon" unique_id=651765271]
+offset_left = -8.14731
+offset_top = -8.27594
+offset_right = 155.853
+offset_bottom = 53.7241
+rotation = -1.5708
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shardsx10" type="Sprite2D" parent="Wheel/Segments" unique_id=2107994489]
+position = Vector2(-130, -131)
+rotation = -0.811578
+texture = ExtResource("7_h2smb")
+metadata/_edit_group_ = true
+
+[node name="icon1" type="Sprite2D" parent="Wheel/Segments/Shardsx10" unique_id=333417037]
+position = Vector2(-17.4035, -20.7719)
+scale = Vector2(0.631579, 0.631579)
+texture = ExtResource("6_eubib")
+
+[node name="icon2" type="Sprite2D" parent="Wheel/Segments/Shardsx10" unique_id=792057311]
+position = Vector2(24.1404, -9.54386)
+scale = Vector2(0.631579, 0.631579)
+texture = ExtResource("8_g3wk0")
+
+[node name="icon3" type="Sprite2D" parent="Wheel/Segments/Shardsx10" unique_id=1189048735]
+position = Vector2(-28.6316, 23.0176)
+scale = Vector2(0.421053, 0.421053)
+texture = ExtResource("9_kk86n")
+
+[node name="icon4" type="Sprite2D" parent="Wheel/Segments/Shardsx10" unique_id=1059655704]
+position = Vector2(9.54387, 18.5263)
+scale = Vector2(0.421053, 0.421053)
+texture = ExtResource("9_kk86n")
+
+[node name="icon5" type="Sprite2D" parent="Wheel/Segments/Shardsx10" unique_id=1987159441]
+position = Vector2(29.7544, 18.5263)
+scale = Vector2(0.421053, 0.421053)
+texture = ExtResource("6_eubib")
+
+[node name="icon6" type="Sprite2D" parent="Wheel/Segments/Shardsx10" unique_id=2107181468]
+position = Vector2(8.42105, -38.7369)
+scale = Vector2(0.245614, 0.245614)
+texture = ExtResource("7_h2smb")
+
+[node name="icon7" type="Sprite2D" parent="Wheel/Segments/Shardsx10" unique_id=439891257]
+position = Vector2(-29.7544, -2.80703)
+scale = Vector2(0.245614, 0.245614)
+texture = ExtResource("7_h2smb")
+
+[node name="icon8" type="Sprite2D" parent="Wheel/Segments/Shardsx10" unique_id=1264340202]
+position = Vector2(-8.98246, 25.8246)
+scale = Vector2(0.298245, 0.298245)
+texture = ExtResource("8_g3wk0")
+
+[node name="Label" type="Label" parent="Wheel/Segments/Shardsx10" unique_id=2139641250]
+offset_left = -56.7592
+offset_top = 26.3138
+offset_right = 71.2408
+offset_bottom = 88.3138
+rotation = 0.0349066
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="goldx600_icon" type="Sprite2D" parent="Wheel/Segments" unique_id=1122340904]
+position = Vector2(132, -138)
+rotation = 0.794125
+scale = Vector2(0.555078, 0.555078)
+texture = ExtResource("10_td5nq")
+metadata/_edit_group_ = true
+
+[node name="icon_9" type="Sprite2D" parent="Wheel/Segments/goldx600_icon" unique_id=342598281]
+position = Vector2(-14.3659, -17.0894)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_16" type="Sprite2D" parent="Wheel/Segments/goldx600_icon" unique_id=1194855624]
+position = Vector2(4.61719, -18.5089)
+rotation = -4.17134
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_17" type="Sprite2D" parent="Wheel/Segments/goldx600_icon" unique_id=1856700145]
+position = Vector2(-30.7871, -10.3386)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_10" type="Sprite2D" parent="Wheel/Segments/goldx600_icon" unique_id=2052494223]
+position = Vector2(-9.48453, -5.69958)
+rotation = -0.541052
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_11" type="Sprite2D" parent="Wheel/Segments/goldx600_icon" unique_id=358644836]
+position = Vector2(4.61716, -3.53009)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_15" type="Sprite2D" parent="Wheel/Segments/goldx600_icon" unique_id=1015157184]
+position = Vector2(18.2342, -18.5089)
+rotation = 0.174533
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_13" type="Sprite2D" parent="Wheel/Segments/goldx600_icon" unique_id=60579930]
+position = Vector2(33.2129, -8.97693)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_14" type="Sprite2D" parent="Wheel/Segments/goldx600_icon" unique_id=568809510]
+position = Vector2(15.5108, -8.97693)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_12" type="Sprite2D" parent="Wheel/Segments/goldx600_icon" unique_id=1377059699]
+visible = false
+position = Vector2(1.43051e-05, 0.000198364)
+scale = Vector2(0.978723, 0.978723)
+texture = ExtResource("12_ir8s4")
+
+[node name="icon_8" type="Sprite2D" parent="Wheel/Segments/goldx600_icon" unique_id=1573925298]
+position = Vector2(-1.36176, 1.36176)
+scale = Vector2(0.978723, 0.978723)
+texture = ExtResource("13_lsqkf")
+
+[node name="Label" type="Label" parent="Wheel/Segments/goldx600_icon" unique_id=666848657]
+offset_left = -78.0
+offset_top = 83.0
+offset_right = 104.0
+offset_bottom = 145.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x600"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="goldx1200" type="Sprite2D" parent="Wheel/Segments" unique_id=285081538]
+position = Vector2(180, -8.58307e-06)
+rotation = 1.58825
+scale = Vector2(0.545594, 0.545594)
+texture = ExtResource("10_td5nq")
+metadata/_edit_group_ = true
+
+[node name="icon_9" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=819880431]
+position = Vector2(-14.3659, -17.0894)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_16" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1387143641]
+position = Vector2(4.61719, -18.5089)
+rotation = -4.17134
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_17" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=130435325]
+position = Vector2(-30.7871, -10.3386)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_10" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1658726720]
+position = Vector2(-9.48453, -5.69958)
+rotation = -0.541052
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_11" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1704247511]
+position = Vector2(4.61716, -3.53009)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_15" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1307552325]
+position = Vector2(18.2342, -18.5089)
+rotation = 0.174533
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_13" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=680596233]
+position = Vector2(33.2129, -8.97693)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_14" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=503190745]
+position = Vector2(15.5108, -8.97693)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_12" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=272193453]
+visible = false
+position = Vector2(1.43051e-05, 0.000198364)
+scale = Vector2(0.978723, 0.978723)
+texture = ExtResource("12_ir8s4")
+
+[node name="icon_8" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1401071792]
+position = Vector2(-1.36176, 1.36176)
+scale = Vector2(0.978723, 0.978723)
+texture = ExtResource("13_lsqkf")
+
+[node name="Label" type="Label" parent="Wheel/Segments/goldx1200" unique_id=1199049062]
+offset_left = -85.3102
+offset_top = 70.2435
+offset_right = 127.69
+offset_bottom = 132.244
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x1200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="icon" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1242958221]
+position = Vector2(-23.1742, 29.0579)
+scale = Vector2(0.734375, 0.734375)
+texture = ExtResource("10_td5nq")
+
+[node name="icon_9" type="Sprite2D" parent="Wheel/Segments/goldx1200/icon" unique_id=1825786917]
+position = Vector2(-14.3659, -17.0894)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_16" type="Sprite2D" parent="Wheel/Segments/goldx1200/icon" unique_id=1967145987]
+position = Vector2(4.61719, -18.5089)
+rotation = -4.17134
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_17" type="Sprite2D" parent="Wheel/Segments/goldx1200/icon" unique_id=782997794]
+position = Vector2(-30.7871, -10.3386)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_10" type="Sprite2D" parent="Wheel/Segments/goldx1200/icon" unique_id=509073361]
+position = Vector2(-9.48453, -5.69958)
+rotation = -0.541052
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_11" type="Sprite2D" parent="Wheel/Segments/goldx1200/icon" unique_id=431994478]
+position = Vector2(4.61716, -3.53009)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_15" type="Sprite2D" parent="Wheel/Segments/goldx1200/icon" unique_id=1789388019]
+position = Vector2(18.2342, -18.5089)
+rotation = 0.174533
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_13" type="Sprite2D" parent="Wheel/Segments/goldx1200/icon" unique_id=184756552]
+position = Vector2(33.2129, -8.97693)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_14" type="Sprite2D" parent="Wheel/Segments/goldx1200/icon" unique_id=556075852]
+position = Vector2(15.5108, -8.97693)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_8" type="Sprite2D" parent="Wheel/Segments/goldx1200/icon" unique_id=368283550]
+position = Vector2(-1.36176, 1.36176)
+scale = Vector2(0.978723, 0.978723)
+texture = ExtResource("13_lsqkf")
+
+[node name="icon_18" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1812237145]
+position = Vector2(9.73278, 52.3665)
+rotation = 2.11185
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_19" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1046905702]
+position = Vector2(-0.0916653, 57.8042)
+rotation = 1.09083
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_20" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1052424407]
+position = Vector2(27.4571, 41.424)
+rotation = 2.11185
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_21" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1598028801]
+position = Vector2(42.0593, 37.1166)
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_22" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1107218301]
+position = Vector2(37.8742, 46.605)
+rotation = 1.09083
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_23" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1154810888]
+position = Vector2(-38.6502, 58.3846)
+rotation = 0.349066
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_24" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=148516068]
+position = Vector2(-57.963, 59.6371)
+rotation = -1.02102
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_25" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1569068384]
+position = Vector2(-47.5459, 64.8181)
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_26" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=827255388]
+position = Vector2(-9.71449, 57.4681)
+rotation = -1.02102
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_27" type="Sprite2D" parent="Wheel/Segments/goldx1200" unique_id=1819828139]
+position = Vector2(11.3213, 62.0565)
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="Tabletx1" type="Sprite2D" parent="Wheel/Segments" unique_id=1200809120]
+position = Vector2(128, 124)
+rotation = -0.794125
+texture = ExtResource("14_ur8h6")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Wheel/Segments/Tabletx1" unique_id=2060655069]
+offset_left = -51.0
+offset_top = -90.0
+offset_right = 62.0
+offset_bottom = -28.0
+rotation = -3.14159
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tabletx2" type="Sprite2D" parent="Wheel/Segments" unique_id=893035042]
+position = Vector2(-8.00002, 168)
+rotation = 3.31613
+texture = ExtResource("15_ur8h6")
+metadata/_edit_group_ = true
+
+[node name="icon_7" type="Sprite2D" parent="Wheel/Segments/Tabletx2" unique_id=169314322]
+position = Vector2(-31.1933, 5.79666)
+rotation = -0.410152
+scale = Vector2(0.782954, 0.782954)
+texture = ExtResource("15_ur8h6")
+
+[node name="Label" type="Label" parent="Wheel/Segments/Tabletx2" unique_id=1783398885]
+offset_left = -57.0
+offset_top = 28.0
+offset_right = 78.0
+offset_bottom = 89.0
+rotation = -0.270526
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gun_icon" type="Sprite2D" parent="Wheel/Segments" unique_id=1538882431]
+position = Vector2(-1.25543, -181.255)
+rotation = 1.5708
+scale = Vector2(2.51596, 2.51596)
+texture = ExtResource("19_0dut3")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Wheel/Segments/Gun_icon" unique_id=2123845775]
+offset_left = -28.0449
+offset_top = -30.3271
+offset_right = 81.9551
+offset_bottom = 30.6729
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shardsx2" type="Sprite2D" parent="Wheel/Segments" unique_id=955260685]
+position = Vector2(-132, 132)
+scale = Vector2(0.890625, 0.890625)
+texture = ExtResource("9_kk86n")
+
+[node name="icon1" type="Sprite2D" parent="Wheel/Segments/Shardsx2" unique_id=1369020378]
+position = Vector2(-14.5965, 7.85965)
+scale = Vector2(0.70614, 0.70614)
+texture = ExtResource("8_g3wk0")
+
+[node name="Label" type="Label" parent="Wheel/Segments/Shardsx2" unique_id=1070210706]
+offset_left = 1.8772
+offset_top = -79.8772
+offset_right = 119.877
+offset_bottom = -17.8772
+rotation = -2.35619
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Segments_boost" type="Node2D" parent="Wheel" unique_id=505284064]
+visible = false
+position = Vector2(280, 281)
+
+[node name="SkinRare" type="Sprite2D" parent="Wheel/Segments_boost" unique_id=136909271]
+position = Vector2(-155.442, -1.35307)
+scale = Vector2(1.8125, 1.8125)
+texture = ExtResource("20_0dut3")
+offset = Vector2(-10.515, 0)
+metadata/_edit_group_ = true
+
+[node name="SkinRare2" type="Sprite2D" parent="Wheel/Segments_boost/SkinRare" unique_id=164778430]
+texture = ExtResource("21_nfqwo")
+offset = Vector2(-10.515, 0)
+metadata/_edit_group_ = true
+
+[node name="SkinRare3" type="Sprite2D" parent="Wheel/Segments_boost/SkinRare" unique_id=2118766257]
+texture = ExtResource("22_r1ndl")
+offset = Vector2(-10.515, 0)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Wheel/Segments_boost/SkinRare" unique_id=1015833541]
+offset_left = -26.7909
+offset_top = -24.0811
+offset_right = 137.209
+offset_bottom = 37.9189
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_color = Color(0, 1, 0.554688, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shardsx10" type="Sprite2D" parent="Wheel/Segments_boost" unique_id=1251752144]
+position = Vector2(-130, -131)
+rotation = -0.811578
+texture = ExtResource("7_h2smb")
+metadata/_edit_group_ = true
+
+[node name="icon1" type="Sprite2D" parent="Wheel/Segments_boost/Shardsx10" unique_id=882759379]
+position = Vector2(-17.4035, -20.7719)
+scale = Vector2(0.631579, 0.631579)
+texture = ExtResource("6_eubib")
+
+[node name="icon2" type="Sprite2D" parent="Wheel/Segments_boost/Shardsx10" unique_id=1086793413]
+position = Vector2(24.1404, -9.54386)
+scale = Vector2(0.631579, 0.631579)
+texture = ExtResource("8_g3wk0")
+
+[node name="icon3" type="Sprite2D" parent="Wheel/Segments_boost/Shardsx10" unique_id=298671826]
+position = Vector2(-28.6316, 23.0176)
+scale = Vector2(0.421053, 0.421053)
+texture = ExtResource("9_kk86n")
+
+[node name="icon4" type="Sprite2D" parent="Wheel/Segments_boost/Shardsx10" unique_id=456549733]
+position = Vector2(9.54387, 18.5263)
+scale = Vector2(0.421053, 0.421053)
+texture = ExtResource("9_kk86n")
+
+[node name="icon5" type="Sprite2D" parent="Wheel/Segments_boost/Shardsx10" unique_id=901380010]
+position = Vector2(29.7544, 18.5263)
+scale = Vector2(0.421053, 0.421053)
+texture = ExtResource("6_eubib")
+
+[node name="icon6" type="Sprite2D" parent="Wheel/Segments_boost/Shardsx10" unique_id=1295960493]
+position = Vector2(8.42105, -38.7369)
+scale = Vector2(0.245614, 0.245614)
+texture = ExtResource("7_h2smb")
+
+[node name="icon7" type="Sprite2D" parent="Wheel/Segments_boost/Shardsx10" unique_id=2045949460]
+position = Vector2(-29.7544, -2.80703)
+scale = Vector2(0.245614, 0.245614)
+texture = ExtResource("7_h2smb")
+
+[node name="icon8" type="Sprite2D" parent="Wheel/Segments_boost/Shardsx10" unique_id=278247146]
+position = Vector2(-8.98246, 25.8246)
+scale = Vector2(0.298245, 0.298245)
+texture = ExtResource("8_g3wk0")
+
+[node name="Label" type="Label" parent="Wheel/Segments_boost/Shardsx10" unique_id=1723044386]
+offset_left = -56.7592
+offset_top = 26.3138
+offset_right = 71.2408
+offset_bottom = 88.3138
+rotation = 0.0349066
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="goldx600_icon" type="Sprite2D" parent="Wheel/Segments_boost" unique_id=1319000684]
+position = Vector2(132, -138)
+rotation = 0.794125
+scale = Vector2(0.555078, 0.555078)
+texture = ExtResource("10_td5nq")
+metadata/_edit_group_ = true
+
+[node name="icon_9" type="Sprite2D" parent="Wheel/Segments_boost/goldx600_icon" unique_id=2050177815]
+position = Vector2(-14.3659, -17.0894)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_16" type="Sprite2D" parent="Wheel/Segments_boost/goldx600_icon" unique_id=1403089086]
+position = Vector2(4.61719, -18.5089)
+rotation = -4.17134
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_eubib")
+
+[node name="icon_17" type="Sprite2D" parent="Wheel/Segments_boost/goldx600_icon" unique_id=133861881]
+position = Vector2(-30.7871, -10.3386)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_10" type="Sprite2D" parent="Wheel/Segments_boost/goldx600_icon" unique_id=1734221904]
+position = Vector2(-9.48453, -5.69958)
+rotation = -0.541052
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_h2smb")
+
+[node name="icon_11" type="Sprite2D" parent="Wheel/Segments_boost/goldx600_icon" unique_id=42715489]
+position = Vector2(4.61716, -3.53009)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_15" type="Sprite2D" parent="Wheel/Segments_boost/goldx600_icon" unique_id=41383261]
+position = Vector2(18.2342, -18.5089)
+rotation = 0.174533
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_h2smb")
+
+[node name="icon_13" type="Sprite2D" parent="Wheel/Segments_boost/goldx600_icon" unique_id=1696854896]
+position = Vector2(33.2129, -8.97693)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_eubib")
+
+[node name="icon_14" type="Sprite2D" parent="Wheel/Segments_boost/goldx600_icon" unique_id=425607696]
+position = Vector2(15.5108, -8.97693)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_12" type="Sprite2D" parent="Wheel/Segments_boost/goldx600_icon" unique_id=1206177614]
+visible = false
+position = Vector2(1.43051e-05, 0.000198364)
+scale = Vector2(0.978723, 0.978723)
+texture = ExtResource("12_ir8s4")
+
+[node name="icon_8" type="Sprite2D" parent="Wheel/Segments_boost/goldx600_icon" unique_id=359120653]
+position = Vector2(-1.36176, 1.36176)
+scale = Vector2(0.978723, 0.978723)
+texture = ExtResource("13_lsqkf")
+
+[node name="Label" type="Label" parent="Wheel/Segments_boost/goldx600_icon" unique_id=1006097282]
+offset_left = -78.0
+offset_top = 83.0
+offset_right = 104.0
+offset_bottom = 145.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_color = Color(1, 0.773438, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x800
+x2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="goldx1200" type="Sprite2D" parent="Wheel/Segments_boost" unique_id=947264724]
+position = Vector2(180, -8.58307e-06)
+rotation = 1.58825
+scale = Vector2(0.545594, 0.545594)
+texture = ExtResource("10_td5nq")
+metadata/_edit_group_ = true
+
+[node name="icon_9" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1719028585]
+position = Vector2(-14.3659, -17.0894)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_16" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1112154728]
+position = Vector2(4.61719, -18.5089)
+rotation = -4.17134
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_17" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1143697336]
+position = Vector2(-30.7871, -10.3386)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_10" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=95363641]
+position = Vector2(-9.48453, -5.69958)
+rotation = -0.541052
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_11" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=816035137]
+position = Vector2(4.61716, -3.53009)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_15" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1237864186]
+position = Vector2(18.2342, -18.5089)
+rotation = 0.174533
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_13" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1832053436]
+position = Vector2(33.2129, -8.97693)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_14" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=322495628]
+position = Vector2(15.5108, -8.97693)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_12" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1823288083]
+visible = false
+position = Vector2(1.43051e-05, 0.000198364)
+scale = Vector2(0.978723, 0.978723)
+texture = ExtResource("12_ir8s4")
+
+[node name="icon_8" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1605722040]
+position = Vector2(-1.36176, 1.36176)
+scale = Vector2(0.978723, 0.978723)
+texture = ExtResource("13_lsqkf")
+
+[node name="Label" type="Label" parent="Wheel/Segments_boost/goldx1200" unique_id=78828085]
+offset_left = -85.3102
+offset_top = 70.2435
+offset_right = 127.69
+offset_bottom = 132.244
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_color = Color(1, 0.984375, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x1800
+x6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="icon" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1125036812]
+position = Vector2(-23.1742, 29.0579)
+scale = Vector2(0.734375, 0.734375)
+texture = ExtResource("10_td5nq")
+
+[node name="icon_9" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200/icon" unique_id=1554217068]
+position = Vector2(-14.3659, -17.0894)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_eubib")
+
+[node name="icon_16" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200/icon" unique_id=1765156832]
+position = Vector2(4.61719, -18.5089)
+rotation = -4.17134
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_h2smb")
+
+[node name="icon_17" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200/icon" unique_id=477571827]
+position = Vector2(-30.7871, -10.3386)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_g3wk0")
+
+[node name="icon_10" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200/icon" unique_id=2116219612]
+position = Vector2(-9.48453, -5.69958)
+rotation = -0.541052
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_h2smb")
+
+[node name="icon_11" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200/icon" unique_id=1000557978]
+position = Vector2(4.61716, -3.53009)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_eubib")
+
+[node name="icon_15" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200/icon" unique_id=1057735894]
+position = Vector2(18.2342, -18.5089)
+rotation = 0.174533
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_g3wk0")
+
+[node name="icon_13" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200/icon" unique_id=1447874298]
+position = Vector2(33.2129, -8.97693)
+rotation = 1.06465
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_h2smb")
+
+[node name="icon_14" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200/icon" unique_id=249669281]
+position = Vector2(15.5108, -8.97693)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_kk86n")
+
+[node name="icon_8" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200/icon" unique_id=1928203628]
+position = Vector2(-1.36176, 1.36176)
+scale = Vector2(0.978723, 0.978723)
+texture = ExtResource("13_lsqkf")
+
+[node name="icon_18" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=142420764]
+position = Vector2(9.73278, 52.3665)
+rotation = 2.11185
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("9_kk86n")
+
+[node name="icon_19" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=343850013]
+position = Vector2(-0.0916653, 57.8042)
+rotation = 1.09083
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("8_g3wk0")
+
+[node name="icon_20" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1252192396]
+position = Vector2(27.4571, 41.424)
+rotation = 2.11185
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_21" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1439498193]
+position = Vector2(42.0593, 37.1166)
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_22" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=475895951]
+position = Vector2(37.8742, 46.605)
+rotation = 1.09083
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("11_mcix5")
+
+[node name="icon_23" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1318013675]
+position = Vector2(-38.6502, 58.3846)
+rotation = 0.349066
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("9_kk86n")
+
+[node name="icon_24" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1809372534]
+position = Vector2(-57.963, 59.6371)
+rotation = -1.02102
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("6_eubib")
+
+[node name="icon_25" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=2107297598]
+position = Vector2(-47.5459, 64.8181)
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("7_h2smb")
+
+[node name="icon_26" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=976782240]
+position = Vector2(-9.71449, 57.4681)
+rotation = -1.02102
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("7_h2smb")
+
+[node name="icon_27" type="Sprite2D" parent="Wheel/Segments_boost/goldx1200" unique_id=1572080915]
+position = Vector2(11.3213, 62.0565)
+scale = Vector2(0.514063, 0.514063)
+texture = ExtResource("6_eubib")
+
+[node name="Tabletx1" type="Sprite2D" parent="Wheel/Segments_boost" unique_id=304501646]
+position = Vector2(128, 124)
+rotation = -0.794125
+texture = ExtResource("14_ur8h6")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Wheel/Segments_boost/Tabletx1" unique_id=218981596]
+offset_left = -51.0
+offset_top = -90.0
+offset_right = 62.0
+offset_bottom = -28.0
+rotation = -3.14159
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CommonSkin" type="Sprite2D" parent="Wheel/Segments_boost" unique_id=1123453457]
+position = Vector2(1.43051e-05, 166)
+rotation = 1.5708
+scale = Vector2(1.3651, 1.3651)
+texture = ExtResource("20_2tnqe")
+metadata/_edit_group_ = true
+
+[node name="CommonSkin2" type="Sprite2D" parent="Wheel/Segments_boost/CommonSkin" unique_id=351585553]
+texture = ExtResource("22_715f1")
+metadata/_edit_group_ = true
+
+[node name="CommonSkin3" type="Sprite2D" parent="Wheel/Segments_boost/CommonSkin" unique_id=1835625317]
+texture = ExtResource("21_j4wkk")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Wheel/Segments_boost/CommonSkin" unique_id=1921773027]
+offset_left = -91.5686
+offset_top = -38.8251
+offset_right = 43.4314
+offset_bottom = 22.1749
+rotation = 1.6057
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EpicSkin" type="Sprite2D" parent="Wheel/Segments_boost" unique_id=467484800]
+position = Vector2(-4, -181)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("26_yelde")
+metadata/_edit_group_ = true
+
+[node name="EpicSkin1" type="Sprite2D" parent="Wheel/Segments_boost/EpicSkin" unique_id=520897576]
+texture = ExtResource("27_u4pwv")
+metadata/_edit_group_ = true
+
+[node name="EpicSkin2" type="Sprite2D" parent="Wheel/Segments_boost/EpicSkin" unique_id=694061074]
+texture = ExtResource("28_jktff")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Wheel/Segments_boost/EpicSkin" unique_id=190499240]
+offset_left = -20.75
+offset_top = -33.75
+offset_right = 89.25
+offset_bottom = 27.25
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_color = Color(1, 0, 0.726563, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shardsx2" type="Sprite2D" parent="Wheel/Segments_boost" unique_id=1673433681]
+position = Vector2(-132, 132)
+scale = Vector2(0.890625, 0.890625)
+texture = ExtResource("9_kk86n")
+
+[node name="icon1" type="Sprite2D" parent="Wheel/Segments_boost/Shardsx2" unique_id=1610648677]
+position = Vector2(-14.5965, 7.85965)
+scale = Vector2(0.70614, 0.70614)
+texture = ExtResource("8_g3wk0")
+
+[node name="Label" type="Label" parent="Wheel/Segments_boost/Shardsx2" unique_id=1644786166]
+offset_left = 1.8772
+offset_top = -79.8772
+offset_right = 119.877
+offset_bottom = -17.8772
+rotation = -2.35619
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(52, 31)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "x4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ticker_body" type="Area2D" parent="Wheel" unique_id=174538293 groups=["player"]]
+collision_mask = 2
+
+[node name="coll_1" type="CollisionShape2D" parent="Wheel/ticker_body" unique_id=1134445369]
+position = Vector2(280, 43)
+shape = SubResource("SegmentShape2D_p2i8h")
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="coll_2" type="CollisionShape2D" parent="Wheel/ticker_body" unique_id=1664882428]
+position = Vector2(280, 483)
+shape = SubResource("SegmentShape2D_p2i8h")
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="coll_3" type="CollisionShape2D" parent="Wheel/ticker_body" unique_id=616864907]
+position = Vector2(72, 280)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_p2i8h")
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="coll_4" type="CollisionShape2D" parent="Wheel/ticker_body" unique_id=490915952]
+position = Vector2(526, 280)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_p2i8h")
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="coll_5" type="CollisionShape2D" parent="Wheel/ticker_body" unique_id=1673512736]
+position = Vector2(136, 427)
+rotation = 0.767945
+shape = SubResource("SegmentShape2D_p2i8h")
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="coll_6" type="CollisionShape2D" parent="Wheel/ticker_body" unique_id=693584297]
+position = Vector2(456, 104)
+rotation = 0.698132
+shape = SubResource("SegmentShape2D_p2i8h")
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="coll_7" type="CollisionShape2D" parent="Wheel/ticker_body" unique_id=898813936]
+position = Vector2(104, 103)
+rotation = -0.698132
+shape = SubResource("SegmentShape2D_p2i8h")
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="coll_8" type="CollisionShape2D" parent="Wheel/ticker_body" unique_id=1371285870]
+position = Vector2(429, 424)
+rotation = -0.698132
+shape = SubResource("SegmentShape2D_p2i8h")
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="Pointer" type="TextureRect" parent="." unique_id=448918792]
+material = SubResource("ShaderMaterial_kk86n")
+layout_mode = 0
+offset_left = 257.0
+offset_top = 14.0
+offset_right = 340.0
+offset_bottom = 97.0
+texture = ExtResource("15_g3wk0")
+
+[node name="center" type="CenterContainer" parent="." unique_id=150627708]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 213.0
+offset_right = 399.0
+offset_bottom = 413.0
+
+[node name="SpinButton" type="TextureButton" parent="center" unique_id=1414234613]
+material = SubResource("ShaderMaterial_mcix5")
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("7_q72qx")
+texture_pressed = ExtResource("7_q72qx")
+texture_hover = ExtResource("9_fhuca")
+texture_disabled = ExtResource("8_eubib")
+texture_focused = ExtResource("7_q72qx")
+stretch_mode = 5
+
+[node name="IndexBody" type="Area2D" parent="center" unique_id=1710111235 groups=["enemy"]]
+position = Vector2(0, 1)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="center/IndexBody" unique_id=507449350]
+position = Vector2(99, -131)
+shape = SubResource("RectangleShape2D_p2i8h")
+disabled = true
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="GemCostLabel" type="Label" parent="." unique_id=308413901]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 127.0
+offset_right = 938.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exlossive" type="CPUParticles2D" parent="." unique_id=1647555376]
+material = SubResource("CanvasItemMaterial_mcix5")
+position = Vector2(298, 313)
+emitting = false
+amount = 100
+texture = ExtResource("21_td5nq")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.76
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+scale_amount_min = 0.05
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_ir8s4")
+
+[node name="RewardPopup" type="TextureRect" parent="." unique_id=720081626]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 29.0
+offset_right = 1113.0
+offset_bottom = 621.0
+texture = ExtResource("23_ir8s4")
+
+[node name="container" type="TextureRect" parent="RewardPopup" unique_id=1346260205]
+layout_mode = 0
+offset_top = 91.0
+offset_right = 456.0
+offset_bottom = 270.0
+texture = ExtResource("24_3tt0v")
+
+[node name="Values" type="Node2D" parent="RewardPopup/container" unique_id=2021277072]
+
+[node name="Crystal1" type="Sprite2D" parent="RewardPopup/container/Values" unique_id=1497406177]
+position = Vector2(36, 46)
+texture = ExtResource("6_eubib")
+
+[node name="Crystal2" type="Sprite2D" parent="RewardPopup/container/Values" unique_id=1400188095]
+position = Vector2(148, 46)
+texture = ExtResource("7_h2smb")
+
+[node name="Crystal3" type="Sprite2D" parent="RewardPopup/container/Values" unique_id=2087012060]
+position = Vector2(262, 46)
+texture = ExtResource("8_g3wk0")
+
+[node name="Crystal4" type="Sprite2D" parent="RewardPopup/container/Values" unique_id=1926613042]
+position = Vector2(366, 46)
+texture = ExtResource("9_kk86n")
+
+[node name="Tableticon" type="Sprite2D" parent="RewardPopup/container/Values" unique_id=379146326]
+position = Vector2(366, 126)
+texture = ExtResource("14_ur8h6")
+
+[node name="SpinGem" type="Sprite2D" parent="RewardPopup/container/Values" unique_id=1553033063]
+position = Vector2(54, -44)
+scale = Vector2(1.60938, 1.60938)
+texture = ExtResource("25_bl0es")
+hframes = 22
+
+[node name="loop" type="AnimationPlayer" parent="RewardPopup/container/Values/SpinGem" unique_id=18507334]
+libraries/ = SubResource("AnimationLibrary_u28ih")
+autoplay = &"loop"
+
+[node name="VoidShard" type="Label" parent="RewardPopup/container/Values" unique_id=467910261]
+offset_left = 65.0
+offset_top = 7.0
+offset_right = 113.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.938538, 0.585938, 1, 1)
+theme_override_colors/font_outline_color = Color(0.546875, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagmaShard" type="Label" parent="RewardPopup/container/Values" unique_id=1794177688]
+offset_left = 177.0
+offset_top = 7.0
+offset_right = 225.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(1, 0.328125, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IceShard" type="Label" parent="RewardPopup/container/Values" unique_id=1231907502]
+offset_left = 289.0
+offset_top = 7.0
+offset_right = 337.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0.742188, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.203125, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LightShard" type="Label" parent="RewardPopup/container/Values" unique_id=395080178]
+offset_left = 395.0
+offset_top = 7.0
+offset_right = 443.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(1, 0.796875, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabletL" type="Label" parent="RewardPopup/container/Values" unique_id=439658098]
+offset_left = 395.0
+offset_top = 87.0
+offset_right = 443.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(1, 0.796875, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpinGems" type="Label" parent="RewardPopup/container/Values" unique_id=1293214354]
+offset_left = 100.0
+offset_top = -81.0
+offset_right = 148.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0.0111084, 0.355469, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 0.789063, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FreeSpins" type="RichTextLabel" parent="RewardPopup/container/Values" unique_id=1951714169]
+offset_left = 196.0
+offset_top = -81.0
+offset_right = 556.0
+offset_bottom = 35.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/default_color = Color(0.96875, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.859375, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[img=50]res://Gres/Assets/UI/Buttons/check_1.png[/img] Free Spin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gold" type="Label" parent="RewardPopup/container/Values" unique_id=1486076396]
+offset_left = 76.0
+offset_top = 99.0
+offset_right = 291.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
+text = "999999999"
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="GoldIcon" type="Sprite2D" parent="RewardPopup/container/Values/gold" unique_id=11596886]
+position = Vector2(-34.25, 18.75)
+scale = Vector2(1.32031, 1.32031)
+texture = ExtResource("25_tex6l")
+hframes = 22
+frame = 1
+
+[node name="loop" type="AnimationPlayer" parent="RewardPopup/container/Values/gold/GoldIcon" unique_id=1100752059]
+libraries/ = SubResource("AnimationLibrary_k6w66")
+autoplay = &"loop"
+
+[node name="RewardLabel" type="Label" parent="RewardPopup" unique_id=196668234]
+layout_mode = 0
+offset_top = 452.0
+offset_right = 760.0
+offset_bottom = 520.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0.945313, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.351563, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoHolder" type="Sprite2D" parent="RewardPopup" unique_id=594195880]
+position = Vector2(230, 356)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("38_nfqwo")
+
+[node name="Icon" type="TextureRect" parent="RewardPopup/InfoHolder" unique_id=1372931491]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+texture = ExtResource("39_r1ndl")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_group_ = true
+
+[node name="Icon1" type="TextureRect" parent="RewardPopup/InfoHolder/Icon" unique_id=1463644357]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Icon2" type="TextureRect" parent="RewardPopup/InfoHolder/Icon" unique_id=1273031607]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MiniTutorial" type="AnimationPlayer" parent="." unique_id=622471974]
+libraries/ = SubResource("AnimationLibrary_q5061")
+autoplay = &"tutorial"
+
+[node name="tutorial" type="ColorRect" parent="." unique_id=186115500]
+visible = false
+material = SubResource("ShaderMaterial_u28ih")
+layout_mode = 0
+offset_left = -731.0
+offset_top = -411.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Gems_show" type="ColorRect" parent="." unique_id=130013366]
+visible = false
+material = SubResource("ShaderMaterial_kt7sd")
+layout_mode = 0
+offset_left = -731.0
+offset_top = -411.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="showhide" type="AnimationPlayer" parent="Gems_show" unique_id=622886527]
+libraries/ = SubResource("AnimationLibrary_yq6h5")
+
+[node name="BackToMenu" type="Button" parent="." unique_id=1870647779]
+layout_mode = 0
+offset_left = -9.0
+offset_top = -10.0
+offset_right = 153.0
+offset_bottom = 152.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_ymdah")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yfjg7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_715f1")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_j4wkk")
+theme_override_styles/focus = SubResource("StyleBoxTexture_2tnqe")
+text = "x"
+script = ExtResource("32_x25em")
+
+[connection signal="area_entered" from="center/IndexBody" to="." method="_on_index_body_area_entered"]
+[connection signal="mouse_entered" from="BackToMenu" to="BackToMenu" method="_on_mouse_entered"]

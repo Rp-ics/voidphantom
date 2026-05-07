@@ -1,0 +1,333 @@
+[gd_scene format=3 uid="uid://dji1t72sjyxbm"]
+
+[ext_resource type="Texture2D" uid="uid://bft7wnryhrob4" path="res://Gres/Assets/Background/bgstar_9.png" id="1_r0kn3"]
+[ext_resource type="Script" uid="uid://bsucfwrbi253q" path="res://Multiplayer/Scripts/PvPLobbyUI.gd" id="1_yhpsh"]
+[ext_resource type="Texture2D" uid="uid://diq7xkhnherr5" path="res://Gres/Assets/BGame/galaxy11.png" id="2_752c0"]
+[ext_resource type="Texture2D" uid="uid://lnenok3u67yr" path="res://Gres/Assets/UI/Buttons/button_normal1.png" id="3_1oksc"]
+[ext_resource type="Texture2D" uid="uid://bqfje4k1r0qub" path="res://Gres/Assets/UI/Buttons/button_hover1.png" id="4_ppcl8"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="5_kfs8a"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="6_gh4gv"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="7_yhpsh"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="8_v6oer"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="9_vrge7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a08wv"]
+blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_08mjw"]
+resource_name = "loop"
+length = 16.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4, 7, 8, 11, 12, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0.725, 0.8, 1), Color(0, 0.725, 0.8, 1), Color(0.0546875, 0, 1, 1), Color(0.0546875, 0, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1oksc"]
+_data = {
+&"loop": SubResource("Animation_08mjw")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ev5w0"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gh4gv"]
+texture = ExtResource("3_1oksc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhpsh"]
+texture = ExtResource("3_1oksc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v6oer"]
+texture = ExtResource("4_ppcl8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vrge7"]
+texture = ExtResource("3_1oksc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0p7h"]
+texture = ExtResource("4_ppcl8")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g0p7h"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ylvw"]
+texture = ExtResource("6_gh4gv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1hh80"]
+texture = ExtResource("7_yhpsh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vaik4"]
+texture = ExtResource("8_v6oer")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2342a"]
+texture = ExtResource("9_vrge7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qaxm8"]
+texture = ExtResource("6_gh4gv")
+
+[node name="PvPLobbyUI" type="Control" unique_id=1028302109]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yhpsh")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=781033505]
+process_mode = 3
+layout_mode = 0
+offset_left = -2180.0
+offset_top = -1690.0
+offset_right = 2868.0
+offset_bottom = 2142.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect3" unique_id=1716818780]
+process_mode = 3
+layout_mode = 0
+offset_left = 1704.0
+offset_top = 1320.0
+offset_right = 3760.0
+offset_bottom = 2691.0
+texture = ExtResource("1_r0kn3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="paralax" type="TextureRect" parent="ColorRect3" unique_id=58399273]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_a08wv")
+layout_mode = 0
+offset_left = 1940.0
+offset_top = 1478.0
+offset_right = 3476.0
+offset_bottom = 2502.0
+texture = ExtResource("2_752c0")
+
+[node name="LabelStatus" type="Label" parent="." unique_id=2042564766]
+process_mode = 3
+layout_mode = 0
+offset_top = 24.0
+offset_right = 1152.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.725, 0.8, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="loop" type="AnimationPlayer" parent="LabelStatus" unique_id=114677415]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_1oksc")
+autoplay = &"loop"
+
+[node name="PanelMain" type="Control" parent="." unique_id=216206282]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="BtnHost" type="Button" parent="PanelMain" unique_id=1715299021]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_ev5w0")
+layout_mode = 0
+offset_left = 403.0
+offset_top = 240.0
+offset_right = 753.0
+offset_bottom = 352.0
+pivot_offset = Vector2(175, 56)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_gh4gv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yhpsh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v6oer")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vrge7")
+theme_override_styles/focus = SubResource("StyleBoxTexture_g0p7h")
+text = "HOST"
+script = ExtResource("5_kfs8a")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="BtnJoin" type="Button" parent="PanelMain" unique_id=1470113699]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_ev5w0")
+layout_mode = 0
+offset_left = 403.0
+offset_top = 376.0
+offset_right = 753.0
+offset_bottom = 488.0
+pivot_offset = Vector2(175, 56)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_gh4gv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yhpsh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v6oer")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vrge7")
+theme_override_styles/focus = SubResource("StyleBoxTexture_g0p7h")
+text = "JOIN"
+script = ExtResource("5_kfs8a")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="BtnFindPublic" type="Button" parent="PanelMain" unique_id=446272115]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_ev5w0")
+layout_mode = 0
+offset_left = 403.0
+offset_top = 512.0
+offset_right = 753.0
+offset_bottom = 624.0
+pivot_offset = Vector2(175, 56)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_gh4gv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yhpsh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v6oer")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vrge7")
+theme_override_styles/focus = SubResource("StyleBoxTexture_g0p7h")
+text = "FIND GAME"
+script = ExtResource("5_kfs8a")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="LobbyIDInput" type="LineEdit" parent="PanelMain" unique_id=1890751500]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 107.0
+offset_right = 960.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 70
+placeholder_text = "Lobby ID:"
+alignment = 1
+
+[node name="PanelLobby" type="Control" parent="." unique_id=1779155436]
+visible = false
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="LabelLobbyID" type="LineEdit" parent="PanelLobby" unique_id=615935303]
+process_mode = 3
+layout_mode = 0
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 616.0
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 50
+alignment = 1
+editable = false
+flat = true
+
+[node name="PlayerList" type="VBoxContainer" parent="PanelLobby" unique_id=313095092]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 240.0
+offset_right = 1152.0
+offset_bottom = 581.0
+
+[node name="BtnInviteFriend" type="Button" parent="PanelLobby" unique_id=925839220]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_ev5w0")
+layout_mode = 0
+offset_left = 19.0
+offset_top = 176.0
+offset_right = 219.0
+offset_bottom = 226.0
+pivot_offset = Vector2(100, 25)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_gh4gv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yhpsh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v6oer")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vrge7")
+theme_override_styles/focus = SubResource("StyleBoxTexture_g0p7h")
+text = "INVITE"
+script = ExtResource("5_kfs8a")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="BtnReady" type="Button" parent="PanelLobby" unique_id=1839967638]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_ev5w0")
+layout_mode = 0
+offset_left = 227.0
+offset_top = 176.0
+offset_right = 427.0
+offset_bottom = 226.0
+pivot_offset = Vector2(100, 25)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_gh4gv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yhpsh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v6oer")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vrge7")
+theme_override_styles/focus = SubResource("StyleBoxTexture_g0p7h")
+text = "READY"
+script = ExtResource("5_kfs8a")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="BtnStartMatch" type="Button" parent="PanelLobby" unique_id=971059025]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_ev5w0")
+layout_mode = 0
+offset_left = 435.0
+offset_top = 176.0
+offset_right = 635.0
+offset_bottom = 226.0
+pivot_offset = Vector2(100, 25)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_gh4gv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yhpsh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v6oer")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vrge7")
+theme_override_styles/focus = SubResource("StyleBoxTexture_g0p7h")
+text = "START"
+script = ExtResource("5_kfs8a")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="OptionMatchMode" type="OptionButton" parent="PanelLobby" unique_id=999370734]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_ev5w0")
+layout_mode = 0
+offset_left = 19.0
+offset_top = 245.0
+offset_right = 228.375
+offset_bottom = 312.0
+pivot_offset = Vector2(175, 56)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_gh4gv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yhpsh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v6oer")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vrge7")
+theme_override_styles/focus = SubResource("StyleBoxTexture_g0p7h")
+alignment = 1
+
+[node name="BtnLeave" type="Button" parent="PanelLobby" unique_id=556533434]
+material = SubResource("CanvasItemMaterial_g0p7h")
+layout_mode = 0
+offset_left = -14.0
+offset_top = -23.0
+offset_right = 200.0
+offset_bottom = 191.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_7ylvw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1hh80")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vaik4")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_2342a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_qaxm8")
+script = ExtResource("5_kfs8a")
+
+[connection signal="mouse_entered" from="PanelMain/BtnHost" to="PanelMain/BtnHost" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="PanelMain/BtnJoin" to="PanelMain/BtnJoin" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="PanelMain/BtnFindPublic" to="PanelMain/BtnFindPublic" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="PanelLobby/BtnInviteFriend" to="PanelLobby/BtnInviteFriend" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="PanelLobby/BtnReady" to="PanelLobby/BtnReady" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="PanelLobby/BtnStartMatch" to="PanelLobby/BtnStartMatch" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="PanelLobby/BtnLeave" to="PanelLobby/BtnLeave" method="_on_mouse_entered"]

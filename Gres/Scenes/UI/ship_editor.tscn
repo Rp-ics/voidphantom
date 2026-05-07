@@ -1,0 +1,1530 @@
+[gd_scene load_steps=89 format=3 uid="uid://dksv0hd53l5nd"]
+
+[ext_resource type="Script" uid="uid://dug1ifsqp62pp" path="res://Gres/Scripts/UI/ship_editor.gd" id="1_h168b"]
+[ext_resource type="Texture2D" uid="uid://b23e4kychddr2" path="res://Gres/Assets/UI/inentory/body.png" id="2_fisv6"]
+[ext_resource type="PackedScene" uid="uid://5ntd7d60ykyh" path="res://Gres/Scenes/UI/audio_manager.tscn" id="2_mbn0i"]
+[ext_resource type="AudioStream" uid="uid://d1urox2plsv84" path="res://Gres/Music/BGM/bg1.ogg" id="3_mkftf"]
+[ext_resource type="Texture2D" uid="uid://doop2djq0tqdp" path="res://Gres/Assets/UI/inentory/slot.png" id="3_nowrk"]
+[ext_resource type="AudioStream" uid="uid://bk26rjldhx5v0" path="res://Gres/Music/BGM/bg2.ogg" id="4_0cuqh"]
+[ext_resource type="Texture2D" uid="uid://ce2t1ko0gxdid" path="res://Gres/Assets/Icons/parts/body_icon.png" id="4_nvqxn"]
+[ext_resource type="Texture2D" uid="uid://ctjtxy0mwaq0m" path="res://Gres/Assets/Icons/parts/wings_icon.png" id="5_eiu68"]
+[ext_resource type="AudioStream" uid="uid://b1qa4lvgn3178" path="res://Gres/Music/BGM/bg3.ogg" id="5_wh7ym"]
+[ext_resource type="AudioStream" uid="uid://dyqahqcb4ykue" path="res://Gres/Music/BGM/bg4.ogg" id="6_ckicy"]
+[ext_resource type="Texture2D" uid="uid://b4vwsewqefufo" path="res://Gres/Assets/Icons/parts/propulsor_icon.png" id="6_hsd3n"]
+[ext_resource type="AudioStream" uid="uid://75bjef4wh8a" path="res://Gres/Music/BGM/bg5.ogg" id="7_yx5tu"]
+[ext_resource type="Texture2D" uid="uid://bg0m621u3igdt" path="res://Gres/Assets/UI/Buttons/audio_icn_holder_norm.png" id="8_er5tc"]
+[ext_resource type="AudioStream" uid="uid://d3ibrjqakk8dy" path="res://Gres/Music/BGM/bg6.ogg" id="8_xtpcu"]
+[ext_resource type="AudioStream" uid="uid://cvdgw6d4bng11" path="res://Gres/Music/BGM/bg7.ogg" id="9_2e5tu"]
+[ext_resource type="Texture2D" uid="uid://dxdvtvuie7c" path="res://Gres/Assets/UI/Buttons/audio_icn_holder_hold.png" id="9_5scnj"]
+[ext_resource type="AudioStream" uid="uid://d05bw82xay7fv" path="res://Gres/Music/BGM/bg8.ogg" id="10_mjba2"]
+[ext_resource type="AudioStream" uid="uid://d3fuopoacf8tc" path="res://Gres/Music/BGM/bg9.ogg" id="11_41760"]
+[ext_resource type="AudioStream" uid="uid://dl6g8ueupyt5h" path="res://Gres/Music/BGM/bg10.ogg" id="12_oxx10"]
+[ext_resource type="AudioStream" uid="uid://8ea3v3f6k8e7" path="res://Gres/Music/BGM/bg11.ogg" id="13_e8wtt"]
+[ext_resource type="AudioStream" uid="uid://cgogerbyy7jjb" path="res://Gres/Music/BGM/bg12.ogg" id="14_q875d"]
+[ext_resource type="AudioStream" uid="uid://2hylgivywekw" path="res://Gres/Music/BGM/bg13.ogg" id="15_g0ajr"]
+[ext_resource type="AudioStream" uid="uid://238ipc1nmhge" path="res://Gres/Music/BGM/bg14.ogg" id="16_2c7ka"]
+[ext_resource type="AudioStream" uid="uid://b762jix3keavo" path="res://Gres/Music/BGM/bg15.ogg" id="17_ymnlc"]
+[ext_resource type="AudioStream" uid="uid://b1ubd4snx41ws" path="res://Gres/Music/BGM/bg16.ogg" id="18_le7ug"]
+[ext_resource type="AudioStream" uid="uid://bd0ljabudebvp" path="res://Gres/Music/BGM/bg17.ogg" id="19_7g8gs"]
+[ext_resource type="AudioStream" uid="uid://bfyu3ybsiy7te" path="res://Gres/Music/BGM/bg18.ogg" id="20_pom18"]
+[ext_resource type="AudioStream" uid="uid://cnsjvus1yleeo" path="res://Gres/Music/BGM/bg19.ogg" id="21_cywae"]
+[ext_resource type="AudioStream" uid="uid://b35utltd7wc43" path="res://Gres/Music/BGM/bg20.ogg" id="22_vwn3t"]
+[ext_resource type="AudioStream" uid="uid://bl4uvgma70gmx" path="res://Gres/Music/BGM/bg21.ogg" id="23_wqlsu"]
+[ext_resource type="AudioStream" uid="uid://c57qaqrvhhw38" path="res://Gres/Music/BGM/bg22.ogg" id="24_hou61"]
+[ext_resource type="AudioStream" uid="uid://dej46xjftjh8d" path="res://Gres/Music/BGM/bg23.ogg" id="25_mnwam"]
+[ext_resource type="AudioStream" uid="uid://dh53xpqbvuy8k" path="res://Gres/Music/BGM/bg24.ogg" id="26_oqqsq"]
+[ext_resource type="AudioStream" uid="uid://dgg303q1vhr2j" path="res://Gres/Music/BGM/bg25.ogg" id="27_nhxw6"]
+[ext_resource type="AudioStream" uid="uid://bhf701o17yarp" path="res://Gres/Music/BGM/bg26.ogg" id="28_ilbja"]
+[ext_resource type="AudioStream" uid="uid://brrqivx2yci6x" path="res://Gres/Music/BGM/bg27.ogg" id="29_dpm6e"]
+[ext_resource type="AudioStream" uid="uid://dc0mwjbmt0iqh" path="res://Gres/Music/BGM/bg28.ogg" id="30_5nyi7"]
+[ext_resource type="AudioStream" uid="uid://b25l86087pan" path="res://Gres/Music/BGM/bg29.ogg" id="31_hiphd"]
+[ext_resource type="AudioStream" uid="uid://duggkgjmp4aaq" path="res://Gres/Music/BGM/bg30.ogg" id="32_b8ocq"]
+[ext_resource type="Shader" uid="uid://1abiepe6jn2y" path="res://Gres/Shaders/ColorShader.gdshader" id="39_g0ajr"]
+[ext_resource type="Script" uid="uid://bcqsa7i1yhtif" path="res://Gres/Scripts/UI/body_editor_man.gd" id="41_g0ajr"]
+[ext_resource type="Script" uid="uid://b47wwwv7obcnx" path="res://Gres/Scripts/UI/player_editor.gd" id="41_q875d"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="41_yx5tu"]
+[ext_resource type="Texture2D" uid="uid://dr0f62j56vht8" path="res://Gres/Assets/Icons/arrow/a1.png" id="42_g0ajr"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="42_xtpcu"]
+[ext_resource type="Texture2D" uid="uid://cxuug35qhirs0" path="res://Gres/Assets/Icons/arrow/a3.png" id="43_2c7ka"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="43_2e5tu"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="44_mjba2"]
+[ext_resource type="Texture2D" uid="uid://bu6c2cvdksjwh" path="res://Gres/Assets/player/body/body_1.png" id="45_2e5tu"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="45_41760"]
+[ext_resource type="Texture2D" uid="uid://fkyrqc7ba7js" path="res://Gres/Assets/Icons/arrow/a4.png" id="45_le7ug"]
+[ext_resource type="Texture2D" uid="uid://bh1q3ymbp7ij7" path="res://Gres/Assets/player/propuls/prop_1.png" id="46_mjba2"]
+[ext_resource type="Texture2D" uid="uid://mcohnwcsaccg" path="res://Gres/Assets/player/wings/wing_1.png" id="47_41760"]
+[ext_resource type="Texture2D" uid="uid://bhaumi4gsqfax" path="res://Gres/Assets/Icons/reset_1.png" id="49_ymnlc"]
+[ext_resource type="Texture2D" uid="uid://cm6kr6fb052un" path="res://Gres/Assets/Icons/reset_2.png" id="50_le7ug"]
+[ext_resource type="Script" uid="uid://c34j3p2l3o2g3" path="res://Gres/Scripts/UI/wings_editor_man.gd" id="52_7g8gs"]
+[ext_resource type="Texture2D" uid="uid://dgjl2uds8yb86" path="res://Gres/Assets/player/wings/wing_7.png" id="53_pom18"]
+[ext_resource type="Script" uid="uid://b4jprgh3oj7ov" path="res://Gres/Scripts/UI/prop_editor_man.gd" id="54_pom18"]
+[ext_resource type="Texture2D" uid="uid://bft7wnryhrob4" path="res://Gres/Assets/Background/bgstar_9.png" id="59_cywae"]
+
+[sub_resource type="Animation" id="Animation_oxx10"]
+resource_name = "anim"
+length = 7.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 6, 6.2, 6.4, 6.6, 6.8, 7, 7.2, 7.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["P", "PH", "PHA", "PHAN", "PHA", "PHAN", "PHANT", "PHANTO", "PHANT", "PHANTO", "PHANTOM", "PHANTOM B", "PHANTOM BU", "PHANTOM BUI", "PHANTOM BUIL", "PHANTOM BUILD", "P ANTOM BUILD", "PHA T M B ILD", "PHANTOM BU L ", " HA TO  B ILD", "PHANTOM BUILD", "", "PHANTOM BUILD", ""]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q875d"]
+_data = {
+&"anim": SubResource("Animation_oxx10")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2c7ka"]
+texture = ExtResource("41_yx5tu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0ajr"]
+texture = ExtResource("44_mjba2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q875d"]
+texture = ExtResource("43_2e5tu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e8wtt"]
+texture = ExtResource("42_xtpcu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxx10"]
+texture = ExtResource("41_yx5tu")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1gdp"]
+bg_color = Color(1, 1, 1, 0.122)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hi1o"]
+bg_color = Color(1, 1, 1, 0.254)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5scnj"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er5tc"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_yx5tu"]
+resource_name = "close"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:z_index")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2e5tu"]
+_data = {
+&"close": SubResource("Animation_yx5tu")
+}
+
+[sub_resource type="Shader" id="Shader_q875d"]
+code = "shader_type canvas_item;
+
+// Controlli RGB
+uniform float red_factor : hint_range(0.0, 2.0) = 1.0;
+uniform float green_factor : hint_range(0.0, 2.0) = 1.0;
+uniform float blue_factor : hint_range(0.0, 2.0) = 1.0;
+
+// Controlli Saturazione, Contrasto, Luminosità e Hue
+uniform float saturation : hint_range(0.0, 2.0) = 1.0; 
+uniform float brightness : hint_range(-1.0, 1.0) = 0.0;
+uniform float contrast : hint_range(0.0, 2.0) = 1.0;
+uniform float hue_shift : hint_range(-1.0, 1.0) = 0.0;
+uniform float gamma : hint_range(0.1, 3.0) = 1.0;
+
+// --- RGB → HSL ---
+vec3 rgb2hsl(vec3 color) {
+    float max_color = max(max(color.r, color.g), color.b);
+    float min_color = min(min(color.r, color.g), color.b);
+    float delta = max_color - min_color;
+
+    float lightness = (max_color + min_color) * 0.5;
+    float hue = 0.0;
+    float sat = 0.0;
+
+    if (delta > 0.0) {
+        sat = (lightness < 0.5) ? (delta / (max_color + min_color)) : (delta / (2.0 - max_color - min_color));
+        
+        if (max_color == color.r) {
+            hue = (color.g - color.b) / delta + (color.g < color.b ? 6.0 : 0.0);
+        } else if (max_color == color.g) {
+            hue = (color.b - color.r) / delta + 2.0;
+        } else {
+            hue = (color.r - color.g) / delta + 4.0;
+        }
+        hue /= 6.0;
+    }
+    return vec3(hue, sat, lightness);
+}
+
+// --- HSL → RGB ---
+vec3 hsl2rgb(vec3 hsl) {
+    float hue = hsl.x;
+    float sat = hsl.y;
+    float lightness = hsl.z;
+
+    float chroma = (1.0 - abs(2.0 * lightness - 1.0)) * sat;
+    float h = hue * 6.0;
+    float x = chroma * (1.0 - abs(mod(h, 2.0) - 1.0));
+
+    vec3 result;
+    if (h < 1.0) result = vec3(chroma, x, 0.0);
+    else if (h < 2.0) result = vec3(x, chroma, 0.0);
+    else if (h < 3.0) result = vec3(0.0, chroma, x);
+    else if (h < 4.0) result = vec3(0.0, x, chroma);
+    else if (h < 5.0) result = vec3(x, 0.0, chroma);
+    else result = vec3(chroma, 0.0, x);
+
+    float m = lightness - chroma * 0.5;
+    return result + vec3(m);
+}
+
+void fragment() {
+    // Usiamo direttamente la texture dello Sprite2D
+    vec4 tex_color = texture(TEXTURE, UV);
+
+    // RGB multipliers
+    tex_color.r *= red_factor;
+    tex_color.g *= green_factor;
+    tex_color.b *= blue_factor;
+
+    // Convert to HSL
+    vec3 hsl = rgb2hsl(tex_color.rgb);
+
+    // Hue shift & saturation
+    hsl.x = mod(hsl.x + hue_shift, 1.0);
+    hsl.y *= saturation;
+
+    // Back to RGB
+    vec3 final_rgb = hsl2rgb(hsl);
+
+    // Brightness, contrast, gamma
+    final_rgb = final_rgb * contrast + vec3(brightness);
+    final_rgb = pow(final_rgb, vec3(gamma));
+
+    COLOR = vec4(final_rgb, tex_color.a);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0ajr"]
+shader = SubResource("Shader_q875d")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2c7ka"]
+shader = ExtResource("39_g0ajr")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ymnlc"]
+shader = ExtResource("39_g0ajr")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="Shader" id="Shader_pom18"]
+code = "shader_type canvas_item;
+
+// Controlli RGB
+uniform float red_factor : hint_range(0.0, 2.0) = 1.0;
+uniform float green_factor : hint_range(0.0, 2.0) = 1.0;
+uniform float blue_factor : hint_range(0.0, 2.0) = 1.0;
+
+// Controlli Saturazione, Contrasto, Luminosità e Hue
+uniform float saturation : hint_range(0.0, 2.0) = 1.0; 
+uniform float brightness : hint_range(-1.0, 1.0) = 0.0;
+uniform float contrast : hint_range(0.0, 2.0) = 1.0;
+uniform float hue_shift : hint_range(-1.0, 1.0) = 0.0;
+uniform float gamma : hint_range(0.1, 3.0) = 1.0;
+
+// --- RGB → HSL ---
+vec3 rgb2hsl(vec3 color) {
+    float max_color = max(max(color.r, color.g), color.b);
+    float min_color = min(min(color.r, color.g), color.b);
+    float delta = max_color - min_color;
+
+    float lightness = (max_color + min_color) * 0.5;
+    float hue = 0.0;
+    float sat = 0.0;
+
+    if (delta > 0.0) {
+        sat = (lightness < 0.5) ? (delta / (max_color + min_color)) : (delta / (2.0 - max_color - min_color));
+        
+        if (max_color == color.r) {
+            hue = (color.g - color.b) / delta + (color.g < color.b ? 6.0 : 0.0);
+        } else if (max_color == color.g) {
+            hue = (color.b - color.r) / delta + 2.0;
+        } else {
+            hue = (color.r - color.g) / delta + 4.0;
+        }
+        hue /= 6.0;
+    }
+    return vec3(hue, sat, lightness);
+}
+
+// --- HSL → RGB ---
+vec3 hsl2rgb(vec3 hsl) {
+    float hue = hsl.x;
+    float sat = hsl.y;
+    float lightness = hsl.z;
+
+    float chroma = (1.0 - abs(2.0 * lightness - 1.0)) * sat;
+    float h = hue * 6.0;
+    float x = chroma * (1.0 - abs(mod(h, 2.0) - 1.0));
+
+    vec3 result;
+    if (h < 1.0) result = vec3(chroma, x, 0.0);
+    else if (h < 2.0) result = vec3(x, chroma, 0.0);
+    else if (h < 3.0) result = vec3(0.0, chroma, x);
+    else if (h < 4.0) result = vec3(0.0, x, chroma);
+    else if (h < 5.0) result = vec3(x, 0.0, chroma);
+    else result = vec3(chroma, 0.0, x);
+
+    float m = lightness - chroma * 0.5;
+    return result + vec3(m);
+}
+
+void fragment() {
+    // Usiamo direttamente la texture dello Sprite2D
+    vec4 tex_color = texture(TEXTURE, UV);
+
+    // RGB multipliers
+    tex_color.r *= red_factor;
+    tex_color.g *= green_factor;
+    tex_color.b *= blue_factor;
+
+    // Convert to HSL
+    vec3 hsl = rgb2hsl(tex_color.rgb);
+
+    // Hue shift & saturation
+    hsl.x = mod(hsl.x + hue_shift, 1.0);
+    hsl.y *= saturation;
+
+    // Back to RGB
+    vec3 final_rgb = hsl2rgb(hsl);
+
+    // Brightness, contrast, gamma
+    final_rgb = final_rgb * contrast + vec3(brightness);
+    final_rgb = pow(final_rgb, vec3(gamma));
+
+    COLOR = vec4(final_rgb, tex_color.a);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cywae"]
+shader = SubResource("Shader_pom18")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="Shader" id="Shader_vwn3t"]
+code = "shader_type canvas_item;
+
+// Controlli RGB
+uniform float red_factor : hint_range(0.0, 2.0) = 1.0;
+uniform float green_factor : hint_range(0.0, 2.0) = 1.0;
+uniform float blue_factor : hint_range(0.0, 2.0) = 1.0;
+
+// Controlli Saturazione, Contrasto, Luminosità e Hue
+uniform float saturation : hint_range(0.0, 2.0) = 1.0; 
+uniform float brightness : hint_range(-1.0, 1.0) = 0.0;
+uniform float contrast : hint_range(0.0, 2.0) = 1.0;
+uniform float hue_shift : hint_range(-1.0, 1.0) = 0.0;
+uniform float gamma : hint_range(0.1, 3.0) = 1.0;
+
+// --- RGB → HSL ---
+vec3 rgb2hsl(vec3 color) {
+    float max_color = max(max(color.r, color.g), color.b);
+    float min_color = min(min(color.r, color.g), color.b);
+    float delta = max_color - min_color;
+
+    float lightness = (max_color + min_color) * 0.5;
+    float hue = 0.0;
+    float sat = 0.0;
+
+    if (delta > 0.0) {
+        sat = (lightness < 0.5) ? (delta / (max_color + min_color)) : (delta / (2.0 - max_color - min_color));
+        
+        if (max_color == color.r) {
+            hue = (color.g - color.b) / delta + (color.g < color.b ? 6.0 : 0.0);
+        } else if (max_color == color.g) {
+            hue = (color.b - color.r) / delta + 2.0;
+        } else {
+            hue = (color.r - color.g) / delta + 4.0;
+        }
+        hue /= 6.0;
+    }
+    return vec3(hue, sat, lightness);
+}
+
+// --- HSL → RGB ---
+vec3 hsl2rgb(vec3 hsl) {
+    float hue = hsl.x;
+    float sat = hsl.y;
+    float lightness = hsl.z;
+
+    float chroma = (1.0 - abs(2.0 * lightness - 1.0)) * sat;
+    float h = hue * 6.0;
+    float x = chroma * (1.0 - abs(mod(h, 2.0) - 1.0));
+
+    vec3 result;
+    if (h < 1.0) result = vec3(chroma, x, 0.0);
+    else if (h < 2.0) result = vec3(x, chroma, 0.0);
+    else if (h < 3.0) result = vec3(0.0, chroma, x);
+    else if (h < 4.0) result = vec3(0.0, x, chroma);
+    else if (h < 5.0) result = vec3(x, 0.0, chroma);
+    else result = vec3(chroma, 0.0, x);
+
+    float m = lightness - chroma * 0.5;
+    return result + vec3(m);
+}
+
+void fragment() {
+    // Usiamo direttamente la texture dello Sprite2D
+    vec4 tex_color = texture(TEXTURE, UV);
+
+    // RGB multipliers
+    tex_color.r *= red_factor;
+    tex_color.g *= green_factor;
+    tex_color.b *= blue_factor;
+
+    // Convert to HSL
+    vec3 hsl = rgb2hsl(tex_color.rgb);
+
+    // Hue shift & saturation
+    hsl.x = mod(hsl.x + hue_shift, 1.0);
+    hsl.y *= saturation;
+
+    // Back to RGB
+    vec3 final_rgb = hsl2rgb(hsl);
+
+    // Brightness, contrast, gamma
+    final_rgb = final_rgb * contrast + vec3(brightness);
+    final_rgb = pow(final_rgb, vec3(gamma));
+
+    COLOR = vec4(final_rgb, tex_color.a);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wqlsu"]
+shader = SubResource("Shader_vwn3t")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="Shader" id="Shader_hou61"]
+code = "shader_type canvas_item;
+
+// Controlli RGB
+uniform float red_factor : hint_range(0.0, 2.0) = 1.0;
+uniform float green_factor : hint_range(0.0, 2.0) = 1.0;
+uniform float blue_factor : hint_range(0.0, 2.0) = 1.0;
+
+// Controlli Saturazione, Contrasto, Luminosità e Hue
+uniform float saturation : hint_range(0.0, 2.0) = 1.0; 
+uniform float brightness : hint_range(-1.0, 1.0) = 0.0;
+uniform float contrast : hint_range(0.0, 2.0) = 1.0;
+uniform float hue_shift : hint_range(-1.0, 1.0) = 0.0;
+uniform float gamma : hint_range(0.1, 3.0) = 1.0;
+
+// --- RGB → HSL ---
+vec3 rgb2hsl(vec3 color) {
+    float max_color = max(max(color.r, color.g), color.b);
+    float min_color = min(min(color.r, color.g), color.b);
+    float delta = max_color - min_color;
+
+    float lightness = (max_color + min_color) * 0.5;
+    float hue = 0.0;
+    float sat = 0.0;
+
+    if (delta > 0.0) {
+        sat = (lightness < 0.5) ? (delta / (max_color + min_color)) : (delta / (2.0 - max_color - min_color));
+        
+        if (max_color == color.r) {
+            hue = (color.g - color.b) / delta + (color.g < color.b ? 6.0 : 0.0);
+        } else if (max_color == color.g) {
+            hue = (color.b - color.r) / delta + 2.0;
+        } else {
+            hue = (color.r - color.g) / delta + 4.0;
+        }
+        hue /= 6.0;
+    }
+    return vec3(hue, sat, lightness);
+}
+
+// --- HSL → RGB ---
+vec3 hsl2rgb(vec3 hsl) {
+    float hue = hsl.x;
+    float sat = hsl.y;
+    float lightness = hsl.z;
+
+    float chroma = (1.0 - abs(2.0 * lightness - 1.0)) * sat;
+    float h = hue * 6.0;
+    float x = chroma * (1.0 - abs(mod(h, 2.0) - 1.0));
+
+    vec3 result;
+    if (h < 1.0) result = vec3(chroma, x, 0.0);
+    else if (h < 2.0) result = vec3(x, chroma, 0.0);
+    else if (h < 3.0) result = vec3(0.0, chroma, x);
+    else if (h < 4.0) result = vec3(0.0, x, chroma);
+    else if (h < 5.0) result = vec3(x, 0.0, chroma);
+    else result = vec3(chroma, 0.0, x);
+
+    float m = lightness - chroma * 0.5;
+    return result + vec3(m);
+}
+
+void fragment() {
+    // Usiamo direttamente la texture dello Sprite2D
+    vec4 tex_color = texture(TEXTURE, UV);
+
+    // RGB multipliers
+    tex_color.r *= red_factor;
+    tex_color.g *= green_factor;
+    tex_color.b *= blue_factor;
+
+    // Convert to HSL
+    vec3 hsl = rgb2hsl(tex_color.rgb);
+
+    // Hue shift & saturation
+    hsl.x = mod(hsl.x + hue_shift, 1.0);
+    hsl.y *= saturation;
+
+    // Back to RGB
+    vec3 final_rgb = hsl2rgb(hsl);
+
+    // Brightness, contrast, gamma
+    final_rgb = final_rgb * contrast + vec3(brightness);
+    final_rgb = pow(final_rgb, vec3(gamma));
+
+    COLOR = vec4(final_rgb, tex_color.a);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mnwam"]
+shader = SubResource("Shader_hou61")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk3hp"]
+bg_color = Color(1, 0.398438, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gw8c"]
+bg_color = Color(1, 0.632813, 0, 1)
+
+[sub_resource type="Theme" id="Theme_1hi1o"]
+HSlider/icons/grabber = ExtResource("8_er5tc")
+HSlider/icons/grabber_disabled = ExtResource("8_er5tc")
+HSlider/icons/grabber_highlight = ExtResource("9_5scnj")
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_xk3hp")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_8gw8c")
+
+[sub_resource type="Animation" id="Animation_vwn3t"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("trsbg:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("trsbg:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pom18"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("trsbg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("trsbg:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vwn3t"]
+_data = {
+&"close": SubResource("Animation_vwn3t"),
+&"open": SubResource("Animation_pom18")
+}
+
+[node name="ShipEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h168b")
+
+[node name="AudioManager" parent="." instance=ExtResource("2_mbn0i")]
+playlist = Array[AudioStream]([ExtResource("3_mkftf"), ExtResource("4_0cuqh"), ExtResource("5_wh7ym"), ExtResource("6_ckicy"), ExtResource("7_yx5tu"), ExtResource("8_xtpcu"), ExtResource("9_2e5tu"), ExtResource("10_mjba2"), ExtResource("11_41760"), ExtResource("12_oxx10"), ExtResource("13_e8wtt"), ExtResource("14_q875d"), ExtResource("15_g0ajr"), ExtResource("16_2c7ka"), ExtResource("17_ymnlc"), ExtResource("18_le7ug"), ExtResource("19_7g8gs"), ExtResource("20_pom18"), ExtResource("21_cywae"), ExtResource("22_vwn3t"), ExtResource("23_wqlsu"), ExtResource("24_hou61"), ExtResource("25_mnwam"), ExtResource("26_oqqsq"), ExtResource("27_nhxw6"), ExtResource("28_ilbja"), ExtResource("29_dpm6e"), ExtResource("30_5nyi7"), ExtResource("31_hiphd"), ExtResource("32_b8ocq")])
+
+[node name="BodyBG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fisv6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -99.0
+offset_right = 1295.0
+offset_bottom = 785.0
+color = Color(0, 0, 0, 0)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0, 0.90625, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.25, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "PHANTOM BUILD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="anim" type="AnimationPlayer" parent="Title"]
+libraries = {
+&"": SubResource("AnimationLibrary_q875d")
+}
+autoplay = "anim"
+
+[node name="ClosEditor" type="Button" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -7.0
+offset_right = 168.0
+offset_bottom = 167.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxTexture_2c7ka")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_g0ajr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q875d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8wtt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_oxx10")
+text = "x"
+script = ExtResource("45_41760")
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(351.5, 197.5)
+scale = Vector2(12, 12)
+texture = ExtResource("3_nowrk")
+metadata/_edit_group_ = true
+
+[node name="icon" type="TextureRect" parent="Body"]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+texture = ExtResource("4_nvqxn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BodyB" type="Button" parent="Body"]
+offset_left = -6.13139
+offset_top = -6.0292
+offset_right = 5.927
+offset_bottom = 6.02919
+theme_override_styles/focus = SubResource("StyleBoxFlat_j1gdp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1hi1o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5scnj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_er5tc")
+
+[node name="Wings" type="Sprite2D" parent="."]
+position = Vector2(584.5, 197.5)
+scale = Vector2(12, 12)
+texture = ExtResource("3_nowrk")
+metadata/_edit_group_ = true
+
+[node name="icon" type="TextureRect" parent="Wings"]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+texture = ExtResource("5_eiu68")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WingsB" type="Button" parent="Wings"]
+offset_left = -6.13139
+offset_top = -6.0292
+offset_right = 5.927
+offset_bottom = 6.02919
+theme_override_styles/focus = SubResource("StyleBoxFlat_j1gdp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1hi1o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5scnj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_er5tc")
+
+[node name="Prop" type="Sprite2D" parent="."]
+position = Vector2(825.5, 197.5)
+scale = Vector2(12, 12)
+texture = ExtResource("3_nowrk")
+metadata/_edit_group_ = true
+
+[node name="icon" type="TextureRect" parent="Prop"]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+texture = ExtResource("6_hsd3n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PropB" type="Button" parent="Prop"]
+offset_left = -6.13139
+offset_top = -6.0292
+offset_right = 5.927
+offset_bottom = 6.02919
+theme_override_styles/focus = SubResource("StyleBoxFlat_j1gdp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1hi1o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5scnj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_er5tc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="close" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2e5tu")
+}
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(569, 459)
+scale = Vector2(5, 5)
+script = ExtResource("41_q875d")
+
+[node name="Body" type="Sprite2D" parent="Player"]
+material = SubResource("ShaderMaterial_g0ajr")
+rotation = 1.5708
+texture = ExtResource("45_2e5tu")
+
+[node name="Wing" type="Sprite2D" parent="Player"]
+material = SubResource("ShaderMaterial_2c7ka")
+rotation = 1.5708
+texture = ExtResource("47_41760")
+
+[node name="Prop" type="Sprite2D" parent="Player"]
+material = SubResource("ShaderMaterial_ymnlc")
+rotation = 1.5708
+texture = ExtResource("46_mjba2")
+
+[node name="BodyMan" type="Node2D" parent="."]
+visible = false
+script = ExtResource("41_g0ajr")
+
+[node name="BodyBG" type="TextureRect" parent="BodyMan"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fisv6")
+
+[node name="Player" type="Node2D" parent="BodyMan"]
+position = Vector2(580, 473)
+scale = Vector2(6, 6)
+script = ExtResource("41_q875d")
+
+[node name="Body" type="Sprite2D" parent="BodyMan/Player"]
+material = SubResource("ShaderMaterial_cywae")
+rotation = 1.5708
+texture = ExtResource("45_2e5tu")
+
+[node name="Wing" type="Sprite2D" parent="BodyMan/Player"]
+material = SubResource("ShaderMaterial_wqlsu")
+rotation = 1.5708
+texture = ExtResource("47_41760")
+
+[node name="Prop" type="Sprite2D" parent="BodyMan/Player"]
+material = SubResource("ShaderMaterial_mnwam")
+rotation = 1.5708
+texture = ExtResource("46_mjba2")
+
+[node name="BodyIcon" type="Sprite2D" parent="BodyMan"]
+position = Vector2(575.5, 173.5)
+scale = Vector2(12, 12)
+texture = ExtResource("3_nowrk")
+metadata/_edit_group_ = true
+
+[node name="icon" type="TextureRect" parent="BodyMan/BodyIcon"]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+texture = ExtResource("4_nvqxn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Right" type="TextureButton" parent="BodyMan/BodyIcon"]
+offset_left = 8.79167
+offset_top = -7.54167
+offset_right = 17.6667
+offset_bottom = 8.45833
+texture_normal = ExtResource("42_g0ajr")
+texture_pressed = ExtResource("43_2c7ka")
+texture_hover = ExtResource("43_2c7ka")
+texture_disabled = ExtResource("45_le7ug")
+texture_focused = ExtResource("45_le7ug")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Left" type="TextureButton" parent="BodyMan/BodyIcon"]
+offset_left = -17.875
+offset_top = -7.54167
+offset_right = -9.0
+offset_bottom = 8.45833
+texture_normal = ExtResource("42_g0ajr")
+texture_pressed = ExtResource("43_2c7ka")
+texture_hover = ExtResource("43_2c7ka")
+texture_disabled = ExtResource("45_le7ug")
+texture_focused = ExtResource("45_le7ug")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="CloseBody" type="Button" parent="BodyMan"]
+offset_left = -6.0
+offset_top = -7.0
+offset_right = 168.0
+offset_bottom = 167.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxTexture_2c7ka")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_g0ajr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q875d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8wtt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_oxx10")
+text = "x"
+script = ExtResource("45_41760")
+
+[node name="WingsMan" type="Node2D" parent="."]
+visible = false
+script = ExtResource("52_7g8gs")
+
+[node name="BodyBG" type="TextureRect" parent="WingsMan"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fisv6")
+
+[node name="Player" type="Node2D" parent="WingsMan"]
+position = Vector2(580, 473)
+scale = Vector2(6, 6)
+script = ExtResource("41_q875d")
+
+[node name="Body" type="Sprite2D" parent="WingsMan/Player"]
+material = SubResource("ShaderMaterial_cywae")
+rotation = 1.5708
+texture = ExtResource("45_2e5tu")
+
+[node name="Wing" type="Sprite2D" parent="WingsMan/Player"]
+material = SubResource("ShaderMaterial_wqlsu")
+rotation = 1.5708
+texture = ExtResource("47_41760")
+
+[node name="Prop" type="Sprite2D" parent="WingsMan/Player"]
+material = SubResource("ShaderMaterial_mnwam")
+rotation = 1.5708
+texture = ExtResource("46_mjba2")
+
+[node name="WingsIcon" type="Sprite2D" parent="WingsMan"]
+position = Vector2(575.5, 173.5)
+scale = Vector2(12, 12)
+texture = ExtResource("3_nowrk")
+metadata/_edit_group_ = true
+
+[node name="icon" type="TextureRect" parent="WingsMan/WingsIcon"]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+texture = ExtResource("53_pom18")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Right" type="TextureButton" parent="WingsMan/WingsIcon"]
+offset_left = 8.79167
+offset_top = -7.54167
+offset_right = 17.6667
+offset_bottom = 8.45833
+texture_normal = ExtResource("42_g0ajr")
+texture_pressed = ExtResource("43_2c7ka")
+texture_hover = ExtResource("43_2c7ka")
+texture_disabled = ExtResource("45_le7ug")
+texture_focused = ExtResource("45_le7ug")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Left" type="TextureButton" parent="WingsMan/WingsIcon"]
+offset_left = -17.875
+offset_top = -7.54167
+offset_right = -9.0
+offset_bottom = 8.45833
+texture_normal = ExtResource("42_g0ajr")
+texture_pressed = ExtResource("43_2c7ka")
+texture_hover = ExtResource("43_2c7ka")
+texture_disabled = ExtResource("45_le7ug")
+texture_focused = ExtResource("45_le7ug")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="CloseBody" type="Button" parent="WingsMan"]
+offset_left = -6.0
+offset_top = -7.0
+offset_right = 168.0
+offset_bottom = 167.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxTexture_2c7ka")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_g0ajr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q875d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8wtt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_oxx10")
+text = "x"
+script = ExtResource("45_41760")
+
+[node name="PropMan" type="Node2D" parent="."]
+visible = false
+script = ExtResource("54_pom18")
+
+[node name="BodyBG" type="TextureRect" parent="PropMan"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fisv6")
+
+[node name="Player" type="Node2D" parent="PropMan"]
+position = Vector2(580, 473)
+scale = Vector2(6, 6)
+script = ExtResource("41_q875d")
+
+[node name="Body" type="Sprite2D" parent="PropMan/Player"]
+material = SubResource("ShaderMaterial_cywae")
+rotation = 1.5708
+texture = ExtResource("45_2e5tu")
+
+[node name="Wing" type="Sprite2D" parent="PropMan/Player"]
+material = SubResource("ShaderMaterial_wqlsu")
+rotation = 1.5708
+texture = ExtResource("47_41760")
+
+[node name="Prop" type="Sprite2D" parent="PropMan/Player"]
+material = SubResource("ShaderMaterial_mnwam")
+rotation = 1.5708
+texture = ExtResource("46_mjba2")
+
+[node name="WingsIcon" type="Sprite2D" parent="PropMan"]
+position = Vector2(575.5, 173.5)
+scale = Vector2(12, 12)
+texture = ExtResource("3_nowrk")
+metadata/_edit_group_ = true
+
+[node name="icon" type="TextureRect" parent="PropMan/WingsIcon"]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+texture = ExtResource("53_pom18")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Right" type="TextureButton" parent="PropMan/WingsIcon"]
+offset_left = 8.79167
+offset_top = -7.54167
+offset_right = 17.6667
+offset_bottom = 8.45833
+texture_normal = ExtResource("42_g0ajr")
+texture_pressed = ExtResource("43_2c7ka")
+texture_hover = ExtResource("43_2c7ka")
+texture_disabled = ExtResource("45_le7ug")
+texture_focused = ExtResource("45_le7ug")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Left" type="TextureButton" parent="PropMan/WingsIcon"]
+offset_left = -17.875
+offset_top = -7.54167
+offset_right = -9.0
+offset_bottom = 8.45833
+texture_normal = ExtResource("42_g0ajr")
+texture_pressed = ExtResource("43_2c7ka")
+texture_hover = ExtResource("43_2c7ka")
+texture_disabled = ExtResource("45_le7ug")
+texture_focused = ExtResource("45_le7ug")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="CloseBody" type="Button" parent="PropMan"]
+offset_left = -6.0
+offset_top = -7.0
+offset_right = 168.0
+offset_bottom = 167.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxTexture_2c7ka")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_g0ajr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q875d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8wtt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_oxx10")
+text = "x"
+script = ExtResource("45_41760")
+
+[node name="ColorsMan" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+
+[node name="SlideR" type="HSlider" parent="ColorsMan"]
+offset_left = 125.0
+offset_top = 345.0
+offset_right = 380.0
+offset_bottom = 361.0
+theme = SubResource("Theme_1hi1o")
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="nameR" type="Label" parent="ColorsMan/SlideR"]
+layout_mode = 0
+offset_top = -34.0
+offset_right = 510.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "RED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueR" type="Label" parent="ColorsMan/SlideR"]
+layout_mode = 0
+offset_left = -108.0
+offset_top = -9.0
+offset_right = 98.0
+offset_bottom = 52.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.0546875, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetR" type="TextureButton" parent="ColorsMan/SlideR"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -12.0
+offset_right = 297.0
+offset_bottom = 25.0
+texture_normal = ExtResource("49_ymnlc")
+texture_pressed = ExtResource("49_ymnlc")
+texture_hover = ExtResource("50_le7ug")
+texture_disabled = ExtResource("49_ymnlc")
+texture_focused = ExtResource("49_ymnlc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SlideG" type="HSlider" parent="ColorsMan"]
+offset_left = 125.0
+offset_top = 425.0
+offset_right = 380.0
+offset_bottom = 441.0
+theme = SubResource("Theme_1hi1o")
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="nameG" type="Label" parent="ColorsMan/SlideG"]
+layout_mode = 0
+offset_top = -34.0
+offset_right = 510.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.101563, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0.03125, 0, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "GREEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueG" type="Label" parent="ColorsMan/SlideG"]
+layout_mode = 0
+offset_left = -108.0
+offset_top = -9.0
+offset_right = 98.0
+offset_bottom = 52.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.0546875, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetG" type="TextureButton" parent="ColorsMan/SlideG"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -12.0
+offset_right = 297.0
+offset_bottom = 25.0
+texture_normal = ExtResource("49_ymnlc")
+texture_pressed = ExtResource("49_ymnlc")
+texture_hover = ExtResource("50_le7ug")
+texture_disabled = ExtResource("49_ymnlc")
+texture_focused = ExtResource("49_ymnlc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SlideB" type="HSlider" parent="ColorsMan"]
+offset_left = 125.0
+offset_top = 505.0
+offset_right = 380.0
+offset_bottom = 521.0
+theme = SubResource("Theme_1hi1o")
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="nameB" type="Label" parent="ColorsMan/SlideB"]
+layout_mode = 0
+offset_top = -34.0
+offset_right = 510.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0.132813, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "BLUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueB" type="Label" parent="ColorsMan/SlideB"]
+layout_mode = 0
+offset_left = -108.0
+offset_top = -9.0
+offset_right = 98.0
+offset_bottom = 52.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.0546875, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetB" type="TextureButton" parent="ColorsMan/SlideB"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -12.0
+offset_right = 297.0
+offset_bottom = 25.0
+texture_normal = ExtResource("49_ymnlc")
+texture_pressed = ExtResource("49_ymnlc")
+texture_hover = ExtResource("50_le7ug")
+texture_disabled = ExtResource("49_ymnlc")
+texture_focused = ExtResource("49_ymnlc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Slide_saturation" type="HSlider" parent="ColorsMan"]
+offset_left = 125.0
+offset_top = 585.0
+offset_right = 380.0
+offset_bottom = 601.0
+theme = SubResource("Theme_1hi1o")
+max_value = 2.0
+step = 0.01
+
+[node name="nameSat" type="Label" parent="ColorsMan/Slide_saturation"]
+layout_mode = 0
+offset_top = -34.0
+offset_right = 510.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_outline_color = Color(0.6875, 0, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "SATURATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueSat" type="Label" parent="ColorsMan/Slide_saturation"]
+layout_mode = 0
+offset_left = -108.0
+offset_top = -9.0
+offset_right = 98.0
+offset_bottom = 52.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.0546875, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetSat" type="TextureButton" parent="ColorsMan/Slide_saturation"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -12.0
+offset_right = 297.0
+offset_bottom = 25.0
+texture_normal = ExtResource("49_ymnlc")
+texture_pressed = ExtResource("49_ymnlc")
+texture_hover = ExtResource("50_le7ug")
+texture_disabled = ExtResource("49_ymnlc")
+texture_focused = ExtResource("49_ymnlc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Slide_brightness" type="HSlider" parent="ColorsMan"]
+offset_left = 777.0
+offset_top = 345.0
+offset_right = 1032.0
+offset_bottom = 361.0
+theme = SubResource("Theme_1hi1o")
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+
+[node name="nameBri" type="Label" parent="ColorsMan/Slide_brightness"]
+layout_mode = 0
+offset_top = -34.0
+offset_right = 510.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_outline_color = Color(0.992188, 0, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "BRIGHTNESS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueBri" type="Label" parent="ColorsMan/Slide_brightness"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = -9.0
+offset_right = 467.0
+offset_bottom = 52.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.0546875, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetBri" type="TextureButton" parent="ColorsMan/Slide_brightness"]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -12.0
+offset_right = -7.0
+offset_bottom = 25.0
+texture_normal = ExtResource("49_ymnlc")
+texture_pressed = ExtResource("49_ymnlc")
+texture_hover = ExtResource("50_le7ug")
+texture_disabled = ExtResource("49_ymnlc")
+texture_focused = ExtResource("49_ymnlc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Slide_contrast" type="HSlider" parent="ColorsMan"]
+offset_left = 777.0
+offset_top = 425.0
+offset_right = 1032.0
+offset_bottom = 441.0
+theme = SubResource("Theme_1hi1o")
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="nameCont" type="Label" parent="ColorsMan/Slide_contrast"]
+layout_mode = 0
+offset_top = -34.0
+offset_right = 510.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_outline_color = Color(1, 0, 0.890625, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "CONTRAST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueCont" type="Label" parent="ColorsMan/Slide_contrast"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = -9.0
+offset_right = 467.0
+offset_bottom = 52.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.0546875, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetCont" type="TextureButton" parent="ColorsMan/Slide_contrast"]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -12.0
+offset_right = -7.0
+offset_bottom = 25.0
+texture_normal = ExtResource("49_ymnlc")
+texture_pressed = ExtResource("49_ymnlc")
+texture_hover = ExtResource("50_le7ug")
+texture_disabled = ExtResource("49_ymnlc")
+texture_focused = ExtResource("49_ymnlc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Slide_hue_shift" type="HSlider" parent="ColorsMan"]
+offset_left = 777.0
+offset_top = 505.0
+offset_right = 1032.0
+offset_bottom = 521.0
+theme = SubResource("Theme_1hi1o")
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+
+[node name="nameHue" type="Label" parent="ColorsMan/Slide_hue_shift"]
+layout_mode = 0
+offset_top = -34.0
+offset_right = 510.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_outline_color = Color(1, 0, 0.679688, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "HUE SHIFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueHue" type="Label" parent="ColorsMan/Slide_hue_shift"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = -9.0
+offset_right = 467.0
+offset_bottom = 52.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.0546875, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetHue" type="TextureButton" parent="ColorsMan/Slide_hue_shift"]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -12.0
+offset_right = -7.0
+offset_bottom = 25.0
+texture_normal = ExtResource("49_ymnlc")
+texture_pressed = ExtResource("49_ymnlc")
+texture_hover = ExtResource("50_le7ug")
+texture_disabled = ExtResource("49_ymnlc")
+texture_focused = ExtResource("49_ymnlc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Slide_gamma" type="HSlider" parent="ColorsMan"]
+offset_left = 777.0
+offset_top = 585.0
+offset_right = 1032.0
+offset_bottom = 601.0
+theme = SubResource("Theme_1hi1o")
+min_value = 0.1
+max_value = 3.0
+step = 0.01
+value = 0.1
+
+[node name="nameGam" type="Label" parent="ColorsMan/Slide_gamma"]
+layout_mode = 0
+offset_top = -34.0
+offset_right = 510.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_outline_color = Color(1, 0, 0.421875, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "GAMMA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueGam" type="Label" parent="ColorsMan/Slide_gamma"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = -9.0
+offset_right = 467.0
+offset_bottom = 52.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.0546875, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetGam" type="TextureButton" parent="ColorsMan/Slide_gamma"]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -12.0
+offset_right = -7.0
+offset_bottom = 25.0
+texture_normal = ExtResource("49_ymnlc")
+texture_pressed = ExtResource("49_ymnlc")
+texture_hover = ExtResource("50_le7ug")
+texture_disabled = ExtResource("49_ymnlc")
+texture_focused = ExtResource("49_ymnlc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Trs" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vwn3t")
+}
+autoplay = "open"
+
+[node name="trsbg" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+layout_mode = 0
+offset_left = -136.0
+offset_top = -158.0
+offset_right = 1344.0
+offset_bottom = 810.0
+texture = ExtResource("59_cywae")
+
+[connection signal="mouse_entered" from="ClosEditor" to="ClosEditor" method="_on_mouse_entered"]
+[connection signal="animation_finished" from="close" to="." method="_on_close_animation_finished"]
+[connection signal="mouse_entered" from="BodyMan/CloseBody" to="BodyMan/CloseBody" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="WingsMan/CloseBody" to="WingsMan/CloseBody" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="PropMan/CloseBody" to="PropMan/CloseBody" method="_on_mouse_entered"]
+[connection signal="animation_finished" from="Trs" to="." method="_on_trs_animation_finished"]

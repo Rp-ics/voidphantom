@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg3422p0hwwht"]
+
+[ext_resource type="Script" uid="uid://dxu4drat07he1" path="res://Gres/Scripts/Effects/blood_link_fx.gd" id="1_5uah0"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5uah0")
+
+[node name="Line" type="Line2D" parent="."]

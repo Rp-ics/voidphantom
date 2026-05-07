@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c5j5lu2p3oe25"]
+
+[ext_resource type="Texture2D" uid="uid://7pbe7vbwmi5g" path="res://Gres/Assets/Effects/twirl_03.png" id="1_7aqen"]
+[ext_resource type="Script" uid="uid://deixcrjyuul1t" path="res://Gres/Scripts/Effects/shield_aeg.gd" id="2_a08i3"]
+
+[sub_resource type="Gradient" id="Gradient_v1rsf"]
+offsets = PackedFloat32Array(0, 0.5053192, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wskfs"]
+radius = 43.011627
+
+[node name="Node2D" type="Node2D" unique_id=1266941059]
+script = ExtResource("2_a08i3")
+
+[node name="ShieldAeg" type="CPUParticles2D" parent="." unique_id=1919530681]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_7aqen")
+lifetime = 0.4
+speed_scale = 0.4
+local_coords = true
+gravity = Vector2(0, 0)
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_v1rsf")
+
+[node name="ShieldReflect" type="Area2D" parent="." unique_id=1967110550]
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldReflect" unique_id=134393539]
+shape = SubResource("CircleShape2D_wskfs")
+debug_color = Color(0, 0.60038817, 0.70000815, 0)
+
+[connection signal="area_entered" from="ShieldReflect" to="." method="_on_shield_reflect_area_entered"]

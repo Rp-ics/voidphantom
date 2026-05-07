@@ -1,0 +1,307 @@
+[gd_scene format=3 uid="uid://dnrxfbji0slkt"]
+
+[ext_resource type="Texture2D" uid="uid://b23e4kychddr2" path="res://Gres/Assets/UI/inentory/body.png" id="1_h11wc"]
+[ext_resource type="Script" uid="uid://ck1lnye0q57fq" path="res://Gres/Scripts/UI/craft_edit_ui.gd" id="1_n20x5"]
+[ext_resource type="PackedScene" uid="uid://5ntd7d60ykyh" path="res://Gres/Scenes/UI/audio_manager.tscn" id="2_glroh"]
+[ext_resource type="Texture2D" uid="uid://bqfje4k1r0qub" path="res://Gres/Assets/UI/Buttons/button_hover1.png" id="2_n20x5"]
+[ext_resource type="AudioStream" uid="uid://d1urox2plsv84" path="res://Gres/Music/BGM/bg1.ogg" id="3_mtxn1"]
+[ext_resource type="Texture2D" uid="uid://lnenok3u67yr" path="res://Gres/Assets/UI/Buttons/button_normal1.png" id="3_vo82v"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="4_1s0el"]
+[ext_resource type="AudioStream" uid="uid://bk26rjldhx5v0" path="res://Gres/Music/BGM/bg2.ogg" id="4_rekka"]
+[ext_resource type="Texture2D" uid="uid://bft7wnryhrob4" path="res://Gres/Assets/Background/bgstar_9.png" id="5_neghh"]
+[ext_resource type="AudioStream" uid="uid://b1qa4lvgn3178" path="res://Gres/Music/BGM/bg3.ogg" id="5_vl1ii"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="6_q0n8d"]
+[ext_resource type="AudioStream" uid="uid://dyqahqcb4ykue" path="res://Gres/Music/BGM/bg4.ogg" id="6_wo4js"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="7_en0vw"]
+[ext_resource type="AudioStream" uid="uid://75bjef4wh8a" path="res://Gres/Music/BGM/bg5.ogg" id="7_i7iu3"]
+[ext_resource type="AudioStream" uid="uid://d3ibrjqakk8dy" path="res://Gres/Music/BGM/bg6.ogg" id="8_n71yo"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="8_u0x0x"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="9_5i2ov"]
+[ext_resource type="AudioStream" uid="uid://cvdgw6d4bng11" path="res://Gres/Music/BGM/bg7.ogg" id="9_cntwx"]
+[ext_resource type="AudioStream" uid="uid://d05bw82xay7fv" path="res://Gres/Music/BGM/bg8.ogg" id="10_ypd8y"]
+[ext_resource type="AudioStream" uid="uid://d3fuopoacf8tc" path="res://Gres/Music/BGM/bg9.ogg" id="11_iyxgs"]
+[ext_resource type="AudioStream" uid="uid://dl6g8ueupyt5h" path="res://Gres/Music/BGM/bg10.ogg" id="12_fr41l"]
+[ext_resource type="AudioStream" uid="uid://8ea3v3f6k8e7" path="res://Gres/Music/BGM/bg11.ogg" id="13_5ey5r"]
+[ext_resource type="AudioStream" uid="uid://cgogerbyy7jjb" path="res://Gres/Music/BGM/bg12.ogg" id="14_8a33m"]
+[ext_resource type="AudioStream" uid="uid://2hylgivywekw" path="res://Gres/Music/BGM/bg13.ogg" id="15_4er4n"]
+[ext_resource type="AudioStream" uid="uid://238ipc1nmhge" path="res://Gres/Music/BGM/bg14.ogg" id="16_dg1fs"]
+[ext_resource type="AudioStream" uid="uid://b762jix3keavo" path="res://Gres/Music/BGM/bg15.ogg" id="17_qq3mc"]
+[ext_resource type="AudioStream" uid="uid://b1ubd4snx41ws" path="res://Gres/Music/BGM/bg16.ogg" id="18_jc2tj"]
+[ext_resource type="AudioStream" uid="uid://bd0ljabudebvp" path="res://Gres/Music/BGM/bg17.ogg" id="19_7rbmc"]
+[ext_resource type="AudioStream" uid="uid://bfyu3ybsiy7te" path="res://Gres/Music/BGM/bg18.ogg" id="20_h0nl7"]
+[ext_resource type="AudioStream" uid="uid://cnsjvus1yleeo" path="res://Gres/Music/BGM/bg19.ogg" id="21_635jn"]
+[ext_resource type="AudioStream" uid="uid://b35utltd7wc43" path="res://Gres/Music/BGM/bg20.ogg" id="22_7yxdp"]
+[ext_resource type="AudioStream" uid="uid://bl4uvgma70gmx" path="res://Gres/Music/BGM/bg21.ogg" id="23_wcven"]
+[ext_resource type="AudioStream" uid="uid://c57qaqrvhhw38" path="res://Gres/Music/BGM/bg22.ogg" id="24_tiske"]
+[ext_resource type="AudioStream" uid="uid://dej46xjftjh8d" path="res://Gres/Music/BGM/bg23.ogg" id="25_7fqei"]
+[ext_resource type="AudioStream" uid="uid://dh53xpqbvuy8k" path="res://Gres/Music/BGM/bg24.ogg" id="26_gdt2h"]
+[ext_resource type="AudioStream" uid="uid://dgg303q1vhr2j" path="res://Gres/Music/BGM/bg25.ogg" id="27_n07sk"]
+[ext_resource type="AudioStream" uid="uid://bhf701o17yarp" path="res://Gres/Music/BGM/bg26.ogg" id="28_pxqao"]
+[ext_resource type="AudioStream" uid="uid://brrqivx2yci6x" path="res://Gres/Music/BGM/bg27.ogg" id="29_sawsn"]
+[ext_resource type="AudioStream" uid="uid://dc0mwjbmt0iqh" path="res://Gres/Music/BGM/bg28.ogg" id="30_k37d3"]
+[ext_resource type="AudioStream" uid="uid://b25l86087pan" path="res://Gres/Music/BGM/bg29.ogg" id="31_gmk74"]
+[ext_resource type="AudioStream" uid="uid://duggkgjmp4aaq" path="res://Gres/Music/BGM/bg30.ogg" id="32_qjoae"]
+[ext_resource type="Shader" uid="uid://bfbpdc86tm83f" path="res://Gres/Shaders/portal1.gdshader" id="34_rekka"]
+[ext_resource type="Texture2D" uid="uid://bi4fjx66x1uup" path="res://Gres/Assets/obj/Black_hole_1.png" id="35_vl1ii"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wo4js"]
+shader = ExtResource("34_rekka")
+shader_parameter/portal_texture = ExtResource("35_vl1ii")
+shader_parameter/portal_tint = Color(0, 0.015625, 1, 1)
+shader_parameter/vortex_effect_radius = 0.45
+shader_parameter/twist_strength = 8.0
+shader_parameter/pulsation_speed = 0.7
+shader_parameter/breath_magnitude = -0.055
+shader_parameter/overall_rotation_speed = 0.25
+shader_parameter/texture_scroll_speed_x = 0.08
+shader_parameter/texture_scroll_speed_y = 0.03
+shader_parameter/edge_softness = 0.44
+
+[sub_resource type="Animation" id="Animation_htpd8"]
+resource_name = "close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgtrs:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bgtrs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eelop"]
+resource_name = "open"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgtrs:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bgtrs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_htpd8"]
+_data = {
+&"close": SubResource("Animation_htpd8"),
+&"open": SubResource("Animation_eelop")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q0n8d"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2a00q"]
+texture = ExtResource("3_vo82v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ccga"]
+texture = ExtResource("3_vo82v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5i2ov"]
+texture = ExtResource("2_n20x5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0x0x"]
+texture = ExtResource("3_vo82v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_en0vw"]
+texture = ExtResource("2_n20x5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t442k"]
+texture = ExtResource("6_q0n8d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hl6ka"]
+texture = ExtResource("9_5i2ov")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t5mb8"]
+texture = ExtResource("8_u0x0x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ijcs"]
+texture = ExtResource("7_en0vw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0cto6"]
+texture = ExtResource("6_q0n8d")
+
+[node name="CraftEditUI" type="Control" unique_id=537528836]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n20x5")
+
+[node name="AudioManager" parent="." unique_id=631107680 instance=ExtResource("2_glroh")]
+process_mode = 3
+playlist = Array[AudioStream]([ExtResource("3_mtxn1"), ExtResource("4_rekka"), ExtResource("5_vl1ii"), ExtResource("6_wo4js"), ExtResource("7_i7iu3"), ExtResource("8_n71yo"), ExtResource("9_cntwx"), ExtResource("10_ypd8y"), ExtResource("11_iyxgs"), ExtResource("12_fr41l"), ExtResource("13_5ey5r"), ExtResource("14_8a33m"), ExtResource("15_4er4n"), ExtResource("16_dg1fs"), ExtResource("17_qq3mc"), ExtResource("18_jc2tj"), ExtResource("19_7rbmc"), ExtResource("20_h0nl7"), ExtResource("21_635jn"), ExtResource("22_7yxdp"), ExtResource("23_wcven"), ExtResource("24_tiske"), ExtResource("25_7fqei"), ExtResource("26_gdt2h"), ExtResource("27_n07sk"), ExtResource("28_pxqao"), ExtResource("29_sawsn"), ExtResource("30_k37d3"), ExtResource("31_gmk74"), ExtResource("32_qjoae")])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=415974400]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105103, 0.105963, 0.160156, 1)
+
+[node name="BG" type="TextureRect" parent="." unique_id=1883126712]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h11wc")
+
+[node name="Title" type="Label" parent="." unique_id=1638185251]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 1149.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0, 1, 0.789063, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "SHIP & GUNS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1907777375]
+material = SubResource("ShaderMaterial_wo4js")
+layout_mode = 0
+offset_left = -21.0
+offset_top = -306.0
+offset_right = 1180.0
+offset_bottom = 1039.12
+
+[node name="Info" type="RichTextLabel" parent="." unique_id=1864494097]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 326.0
+offset_right = 1122.0
+offset_bottom = 623.0
+
+[node name="trs" type="AnimationPlayer" parent="." unique_id=2067885338]
+libraries/ = SubResource("AnimationLibrary_htpd8")
+autoplay = &"open"
+
+[node name="bgtrs" type="TextureRect" parent="." unique_id=542236509]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -168.0
+offset_top = -160.0
+offset_right = 1312.0
+offset_bottom = 808.0
+texture = ExtResource("5_neghh")
+
+[node name="Craft" type="Button" parent="." unique_id=797286940]
+material = SubResource("CanvasItemMaterial_q0n8d")
+layout_mode = 0
+offset_left = 387.0
+offset_top = 168.0
+offset_right = 737.0
+offset_bottom = 280.0
+pivot_offset = Vector2(175, 56)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_2a00q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3ccga")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5i2ov")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_u0x0x")
+theme_override_styles/focus = SubResource("StyleBoxTexture_en0vw")
+text = "CRAFTING"
+script = ExtResource("4_1s0el")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="Shop" type="Button" parent="." unique_id=1877290410]
+material = SubResource("CanvasItemMaterial_q0n8d")
+layout_mode = 0
+offset_left = 387.0
+offset_top = 312.0
+offset_right = 737.0
+offset_bottom = 424.0
+pivot_offset = Vector2(175, 56)
+theme_override_colors/font_color = Color(0.9132659, 0.41796875, 1, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_2a00q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3ccga")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5i2ov")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_u0x0x")
+theme_override_styles/focus = SubResource("StyleBoxTexture_en0vw")
+text = "Void Shop"
+script = ExtResource("4_1s0el")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="Edit" type="Button" parent="." unique_id=1289167745]
+material = SubResource("CanvasItemMaterial_q0n8d")
+layout_mode = 0
+offset_left = 387.0
+offset_top = 448.0
+offset_right = 737.0
+offset_bottom = 560.0
+pivot_offset = Vector2(175, 56)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_2a00q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3ccga")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5i2ov")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_u0x0x")
+theme_override_styles/focus = SubResource("StyleBoxTexture_en0vw")
+text = "EDITOR"
+script = ExtResource("4_1s0el")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="CloseButton" type="Button" parent="." unique_id=1952104653]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 187.0
+offset_bottom = 186.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_t442k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hl6ka")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t5mb8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_8ijcs")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0cto6")
+text = "x"
+script = ExtResource("4_1s0el")
+
+[connection signal="animation_finished" from="trs" to="." method="_on_trs_animation_finished"]
+[connection signal="mouse_entered" from="Craft" to="Craft" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Shop" to="Shop" method="_on_mouse_entered"]
+[connection signal="pressed" from="Shop" to="." method="_on_shop_pressed"]
+[connection signal="mouse_entered" from="Edit" to="Edit" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="CloseButton" to="CloseButton" method="_on_mouse_entered"]

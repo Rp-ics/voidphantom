@@ -1,0 +1,138 @@
+[gd_scene load_steps=9 format=3 uid="uid://bb1uajjylo5bb"]
+
+[ext_resource type="Script" uid="uid://ba76opt4x32a7" path="res://Gres/Scripts/Effects/value_drop.gd" id="1_vyyyp"]
+[ext_resource type="Texture2D" uid="uid://c4s7ulv1wquuh" path="res://Gres/Assets/Icons/parts/gold_icon.png" id="2_n3nde"]
+[ext_resource type="Texture2D" uid="uid://nethps8gpiq7" path="res://Gres/Assets/Effects/Particles_1D.png" id="3_ra1cx"]
+[ext_resource type="Texture2D" uid="uid://b2nhhity5frxl" path="res://Gres/Assets/Icons/craft/cryst_1.png" id="4_oxp2o"]
+[ext_resource type="Texture2D" uid="uid://bcsi0qw81d6r0" path="res://Gres/Assets/Icons/craft/cryst_2.png" id="5_owe55"]
+[ext_resource type="Texture2D" uid="uid://csnkktechwhdr" path="res://Gres/Assets/Icons/craft/cryst_3.png" id="6_c02k2"]
+[ext_resource type="Texture2D" uid="uid://dg4qnf3yrx3nj" path="res://Gres/Assets/Icons/craft/cryst_4.png" id="7_yafno"]
+
+[sub_resource type="Gradient" id="Gradient_oew4i"]
+offsets = PackedFloat32Array(0, 0.475138, 0.541436, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="valueDrop" type="Node2D"]
+script = ExtResource("1_vyyyp")
+
+[node name="explossionG" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+texture = ExtResource("2_n3nde")
+lifetime = 0.2
+one_shot = true
+speed_scale = 0.2
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_oew4i")
+
+[node name="explossionS1" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 60
+texture = ExtResource("3_ra1cx")
+lifetime = 0.2
+one_shot = true
+speed_scale = 0.2
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_oew4i")
+
+[node name="explossionS2" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("4_oxp2o")
+lifetime = 0.2
+one_shot = true
+speed_scale = 0.2
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.05
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_oew4i")
+
+[node name="explossionS3" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("5_owe55")
+lifetime = 0.2
+one_shot = true
+speed_scale = 0.2
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.05
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_oew4i")
+
+[node name="explossionS4" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("6_c02k2")
+lifetime = 0.2
+one_shot = true
+speed_scale = 0.2
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.05
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_oew4i")
+
+[node name="explossionS5" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("7_yafno")
+lifetime = 0.2
+one_shot = true
+speed_scale = 0.2
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.05
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_oew4i")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

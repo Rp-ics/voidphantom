@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0hp8n1bv0tt6"]
+
+[ext_resource type="Script" uid="uid://drre5t2tlvec" path="res://Gres/Scripts/Bullets/Common/blaster_bullet_c_1.gd" id="1_m2qc6"]
+[ext_resource type="Texture2D" uid="uid://t07f0c36r5v6" path="res://Gres/Assets/player/bullets/exploding_shot_bulletC.png" id="2_s5i6h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wokqo"]
+
+[node name="BlasterBulletC1" type="Area2D"]
+collision_layer = 32
+collision_mask = 30
+script = ExtResource("1_m2qc6")
+
+[node name="texture" type="Sprite2D" parent="."]
+texture = ExtResource("2_s5i6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wokqo")
+
+[node name="Destroy" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Destroy" to="." method="_on_destroy_timeout"]

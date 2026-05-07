@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://5ntd7d60ykyh"]
+
+[ext_resource type="Script" uid="uid://udor1gqg3k6j" path="res://Gres/Scripts/UI/VoluManager.gd" id="1_l4r8l"]
+
+[node name="AudioManager" type="AudioStreamPlayer"]
+script = ExtResource("1_l4r8l")

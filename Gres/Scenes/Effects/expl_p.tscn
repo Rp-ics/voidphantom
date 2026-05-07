@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg5i2wr402g6r"]
+
+[ext_resource type="Script" uid="uid://b3u0iydcvyg4b" path="res://Gres/Scripts/Effects/expl_p.gd" id="1_huy00"]
+[ext_resource type="Texture2D" uid="uid://b04msbmgh1i0b" path="res://Gres/Assets/obj/explos_1.png" id="2_ot3el"]
+
+[sub_resource type="Animation" id="Animation_huy00"]
+resource_name = "expl"
+length = 0.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explos:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Explos:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j7s7w"]
+_data = {
+&"expl": SubResource("Animation_huy00")
+}
+
+[node name="ExplP" type="Node2D"]
+script = ExtResource("1_huy00")
+
+[node name="Explos" type="Sprite2D" parent="."]
+texture = ExtResource("2_ot3el")
+hframes = 6
+
+[node name="expl" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_j7s7w")
+}
+autoplay = "expl"
+
+[connection signal="animation_finished" from="expl" to="." method="_on_expl_animation_finished"]

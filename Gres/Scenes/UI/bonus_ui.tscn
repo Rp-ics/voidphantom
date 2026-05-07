@@ -1,0 +1,145 @@
+[gd_scene load_steps=8 format=3 uid="uid://d01ijujmsg1i6"]
+
+[ext_resource type="Texture2D" uid="uid://doop2djq0tqdp" path="res://Gres/Assets/UI/inentory/slot.png" id="1_2w0cb"]
+[ext_resource type="Script" uid="uid://cplhtuq3nf8ny" path="res://Gres/Scripts/UI/bonus_ui.gd" id="1_qp0oy"]
+[ext_resource type="Texture2D" uid="uid://5bf1w0cxr1vi" path="res://Gres/Assets/Icons/shield_1.png" id="1_sa3r8"]
+[ext_resource type="Texture2D" uid="uid://cjat4v4qbih0l" path="res://Gres/Assets/Icons/heart_1.png" id="2_qp0oy"]
+[ext_resource type="Texture2D" uid="uid://beg3t5oothfu0" path="res://Gres/Assets/Icons/stamina_1.png" id="3_0il20"]
+[ext_resource type="Texture2D" uid="uid://ba2124p80egpe" path="res://Gres/Assets/Icons/time_slow_1.png" id="5_jybvb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6d41w"]
+texture = ExtResource("1_2w0cb")
+
+[node name="BonusUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 210.0
+script = ExtResource("1_qp0oy")
+
+[node name="BonusContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 268.0
+offset_bottom = 64.0
+columns = 4
+
+[node name="heal" type="Panel" parent="BonusContainer"]
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6d41w")
+
+[node name="icon" type="TextureRect" parent="BonusContainer/heal"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_qp0oy")
+stretch_mode = 5
+
+[node name="Time" type="Label" parent="BonusContainer/heal"]
+modulate = Color(1, 1, 1, 0.647059)
+layout_mode = 0
+offset_top = 40.0
+offset_right = 320.0
+offset_bottom = 160.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 100
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stamina" type="Panel" parent="BonusContainer"]
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6d41w")
+
+[node name="icon" type="TextureRect" parent="BonusContainer/stamina"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("3_0il20")
+stretch_mode = 5
+
+[node name="Time" type="Label" parent="BonusContainer/stamina"]
+modulate = Color(1, 1, 1, 0.647059)
+layout_mode = 0
+offset_top = 40.0
+offset_right = 320.0
+offset_bottom = 160.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 100
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shield" type="Panel" parent="BonusContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6d41w")
+
+[node name="icon" type="TextureRect" parent="BonusContainer/shield"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_sa3r8")
+stretch_mode = 5
+
+[node name="Time" type="Label" parent="BonusContainer/shield"]
+modulate = Color(1, 1, 1, 0.647059)
+layout_mode = 0
+offset_top = 40.0
+offset_right = 320.0
+offset_bottom = 160.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 100
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="time" type="Panel" parent="BonusContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6d41w")
+
+[node name="icon" type="TextureRect" parent="BonusContainer/time"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("5_jybvb")
+stretch_mode = 5
+
+[node name="Time" type="Label" parent="BonusContainer/time"]
+modulate = Color(1, 1, 1, 0.647059)
+layout_mode = 0
+offset_top = 40.0
+offset_right = 320.0
+offset_bottom = 160.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 100
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ImmuneCD" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
+
+[node name="ImmuneSec" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+ignore_time_scale = true
+
+[node name="TimeCd" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
+
+[node name="TimeSec" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+ignore_time_scale = true
+
+[connection signal="timeout" from="ImmuneCD" to="." method="_on_immune_cd_timeout"]
+[connection signal="timeout" from="ImmuneSec" to="." method="_on_immune_sec_timeout"]
+[connection signal="timeout" from="TimeCd" to="." method="_on_time_cd_timeout"]
+[connection signal="timeout" from="TimeSec" to="." method="_on_time_sec_timeout"]

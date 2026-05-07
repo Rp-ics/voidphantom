@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi2o1it2fq3aw"]
+
+[ext_resource type="Script" uid="uid://mvknxwkg6mpk" path="res://Gres/Scripts/Effects/hp_drain.gd" id="1_pfv1e"]
+[ext_resource type="Texture2D" uid="uid://bihxc70tc2ofl" path="res://Gres/Assets/Effects/Particles_1A.png" id="2_f243m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f0aei"]
+radius = 7.0
+
+[sub_resource type="Gradient" id="Gradient_qrmxd"]
+offsets = PackedFloat32Array(0, 0.524324, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Effect" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_pfv1e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f0aei")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 30
+texture = ExtResource("2_f243m")
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 0.95
+initial_velocity_max = 2.45
+angular_velocity_max = 360.0
+scale_amount_min = 0.0
+scale_amount_max = 0.65
+color_ramp = SubResource("Gradient_qrmxd")
+
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]

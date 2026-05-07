@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4bkhy538ebry"]
+
+[ext_resource type="Script" uid="uid://def70hvxil62l" path="res://Gres/Scripts/UI/mouse.gd" id="1_lccye"]
+[ext_resource type="Texture2D" uid="uid://gwptwr0j8bye" path="res://Gres/Assets/Mouse/Normal/m_1.png" id="2_gnttv"]
+
+[node name="Mouse" type="CanvasLayer"]
+process_mode = 3
+
+[node name="Mouse" type="Node2D" parent="."]
+script = ExtResource("1_lccye")
+
+[node name="M1" type="Sprite2D" parent="Mouse"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(7, 8)
+texture = ExtResource("2_gnttv")

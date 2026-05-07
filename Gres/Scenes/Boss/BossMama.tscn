@@ -1,0 +1,217 @@
+[gd_scene load_steps=10 format=3 uid="uid://bkje08agtdwy1"]
+
+[ext_resource type="Script" uid="uid://bli52q0v2xuqy" path="res://Gres/Scripts/enemies/enemy.gd" id="1_h7cdh"]
+[ext_resource type="Texture2D" uid="uid://sxgugd37o5oc" path="res://Gres/Assets/Enemy/part/body/e_body_1.png" id="2_x8irf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8sob"]
+size = Vector2(461, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sw0eg"]
+radius = 134.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a8sob"]
+radius = 63.0079
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wj0c3"]
+radius = 677.166
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hn8qr"]
+radius = 20.5
+
+[sub_resource type="Animation" id="Animation_wj0c3"]
+resource_name = "dead"
+length = 1.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BodySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(53, -55)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../WingsSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-103, 8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../PropSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(42, 84)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../BodySprite:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.45735]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../WingsSprite:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.00356]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../PropSprite:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../BodySprite:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.7, 0.8, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 1), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../WingsSprite:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.7, 0.8, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 1), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../PropSprite:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.7, 0.8, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 1), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mt16o"]
+_data = {
+&"dead": SubResource("Animation_wj0c3")
+}
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(4, 4)
+collision_layer = 2
+collision_mask = 124
+script = ExtResource("1_h7cdh")
+
+[node name="BodySprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_x8irf")
+
+[node name="WingsSprite" type="Sprite2D" parent="."]
+
+[node name="PropSprite" type="Sprite2D" parent="."]
+
+[node name="Canon" type="Node2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="BulletSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="FireArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea"]
+position = Vector2(220.5, 0)
+shape = SubResource("RectangleShape2D_a8sob")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="DodgeArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DodgeArea"]
+shape = SubResource("CircleShape2D_sw0eg")
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="StopArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StopArea"]
+shape = SubResource("CircleShape2D_a8sob")
+debug_color = Color(1, 0, 0, 0.42)
+
+[node name="FocusArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FocusArea"]
+shape = SubResource("CircleShape2D_wj0c3")
+debug_color = Color(0.03125, 1, 0, 0.42)
+
+[node name="PlayerColl" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("CircleShape2D_hn8qr")
+debug_color = Color(1, 0, 0.773438, 0.42)
+
+[node name="AIController" type="Node2D" parent="."]
+
+[node name="VisibilityRay" type="RayCast2D" parent="."]
+target_position = Vector2(50, 0)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="dead" type="AnimationPlayer" parent="."]
+root_node = NodePath("../StopArea")
+libraries = {
+&"": SubResource("AnimationLibrary_mt16o")
+}
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[node name="DodgeTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="FireArea" to="." method="_on_fire_area_body_entered"]
+[connection signal="body_exited" from="FireArea" to="." method="_on_fire_area_body_exited"]
+[connection signal="area_entered" from="DodgeArea" to="." method="_on_dodge_area_area_entered"]
+[connection signal="body_entered" from="StopArea" to="." method="_on_stop_area_body_entered"]
+[connection signal="body_exited" from="StopArea" to="." method="_on_stop_area_body_exited"]
+[connection signal="body_entered" from="FocusArea" to="." method="_on_focus_area_entered"]
+[connection signal="body_exited" from="FocusArea" to="." method="_on_focus_area_exited"]
+[connection signal="animation_finished" from="dead" to="." method="_on_dead_animation_finished"]
+[connection signal="timeout" from="FireTimer" to="." method="_on_FireTimer_timeout"]

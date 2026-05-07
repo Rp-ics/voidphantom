@@ -1,0 +1,677 @@
+[gd_scene load_steps=40 format=3 uid="uid://tpaly7srufrj"]
+
+[ext_resource type="Script" uid="uid://cl740cvmo1jma" path="res://Gres/Scripts/skills/cancer_cards.gd" id="1_wqi23"]
+[ext_resource type="Texture2D" uid="uid://bx0xc2ecateyc" path="res://Gres/Assets/Icons/zodiac/arrow.png" id="2_wqi23"]
+[ext_resource type="Texture2D" uid="uid://dxh0lww3ea6lq" path="res://Gres/Assets/Effects/Star.png" id="3_eiib8"]
+[ext_resource type="Shader" uid="uid://1abiepe6jn2y" path="res://Gres/Shaders/ColorShader.gdshader" id="4_s7kdm"]
+[ext_resource type="Texture2D" uid="uid://bwk6kjjhsjoef" path="res://Gres/Assets/Icons/skill/gold_icon.png" id="5_wqi23"]
+[ext_resource type="Texture2D" uid="uid://cgytg8jxywqjf" path="res://Gres/Assets/Icons/skill/icon_torn_1.png" id="6_1aeq5"]
+[ext_resource type="Texture2D" uid="uid://bw3g8i14r40ld" path="res://Gres/Assets/Icons/skill/gold_1_icon.png" id="7_jpif7"]
+[ext_resource type="Texture2D" uid="uid://bln0620nlmj8" path="res://Gres/Assets/Icons/skill/drop_icon.png" id="8_eiib8"]
+[ext_resource type="Texture2D" uid="uid://cy0pmbjkfivoq" path="res://Gres/Assets/Icons/skill/shiled_health.png" id="9_gwcm5"]
+[ext_resource type="Texture2D" uid="uid://ptxe50lhu7tt" path="res://Gres/Assets/UI/Buttons/button_hold.png" id="10_j7mpb"]
+[ext_resource type="Texture2D" uid="uid://diu6rp7ollok5" path="res://Gres/Assets/UI/Buttons/button_disabled.png" id="11_fgiyv"]
+[ext_resource type="Texture2D" uid="uid://bomskic2yknhy" path="res://Gres/Assets/UI/Buttons/button_pressed.png" id="12_8kka2"]
+[ext_resource type="Texture2D" uid="uid://h4jesxhig3ru" path="res://Gres/Assets/UI/Buttons/button_normal.png" id="13_ohpnm"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="14_j53tx"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="15_73aov"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="16_tdwty"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="17_e6pq2"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="18_x48tg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o34w0"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_vy23k"]
+offsets = PackedFloat32Array(0, 0.491525, 1)
+colors = PackedColorArray(1, 0, 0, 0, 0.945313, 1, 0, 0.491525, 1, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2tl8"]
+shader = ExtResource("4_s7kdm")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.226276
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fdpq"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rq6oe"]
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Animation" id="Animation_5c6yb"]
+resource_name = "loop"
+length = 4.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card1:material:shader_parameter/brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card2:material:shader_parameter/brightness")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Card3:material:shader_parameter/brightness")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3xnyg"]
+_data = {
+&"loop": SubResource("Animation_5c6yb")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihevl"]
+shader = ExtResource("4_s7kdm")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_78rf2"]
+texture = ExtResource("10_j7mpb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rhpjo"]
+texture = ExtResource("11_fgiyv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nc85s"]
+texture = ExtResource("10_j7mpb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vbrwf"]
+texture = ExtResource("12_8kka2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0aa7"]
+texture = ExtResource("13_ohpnm")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgfs3"]
+bg_color = Color(0.115441, 0.0243835, 0.367188, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p8qac"]
+texture = ExtResource("15_73aov")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur2eq"]
+texture = ExtResource("16_tdwty")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cf0or"]
+texture = ExtResource("17_e6pq2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfwv5"]
+texture = ExtResource("18_x48tg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jivim"]
+texture = ExtResource("15_73aov")
+
+[sub_resource type="Animation" id="Animation_o34w0"]
+resource_name = "confirm"
+length = 3.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("confirm/Card:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("confirm/Card/Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("confirm/Card/Info:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("confirm/confirm:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("confirm/Label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("confirm/CloseConfirm:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("confirm/Card:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, 8), Vector2(8, 8), Vector2(15, 15)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("confirm/Card/Sprite:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("confirm/Card/Info:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.05, 0.05)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("confirm/confirm:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("confirm/Label:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("confirm/CloseConfirm:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("confirm/Card:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1597, 1051), Vector2(1597, 1051), Vector2(2042, 1207)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("confirm/Card/Sprite:material:shader_parameter/gamma")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 3.0, 0.1, 1.0, 1.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("confirm/Card/Sprite:material:shader_parameter/contrast")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 2.0, 1.0, 0.0, 1.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("confirm/Card/Sprite:material:shader_parameter/brightness")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("confirm/Card/Sprite:material:shader_parameter/saturation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0, 2.0, 0.0, 1.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath(".:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 3, 3.2, 3.3, 3.4, 3.5, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r3wet"]
+_data = {
+&"confirm": SubResource("Animation_o34w0")
+}
+
+[node name="Cancer" type="Node2D"]
+z_index = 100
+script = ExtResource("1_wqi23")
+
+[node name="Card" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -351.0
+offset_top = -251.0
+offset_right = 1387.0
+offset_bottom = 878.0
+color = Color(0, 0, 0, 1)
+
+[node name="Unclocker" type="TextureRect" parent="Card"]
+modulate = Color(1, 1, 1, 0.508)
+layout_mode = 0
+offset_left = -25.0
+offset_top = -218.0
+offset_right = 363.64
+offset_bottom = 59.0031
+scale = Vector2(4.805, 4.805)
+texture = ExtResource("2_wqi23")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="particle_1" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_o34w0")
+position = Vector2(146, 162)
+amount = 60
+texture = ExtResource("3_eiib8")
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 30.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 80.36
+initial_velocity_max = 187.5
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+orbit_velocity_max = 0.1
+angle_min = -360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+color_ramp = SubResource("Gradient_vy23k")
+
+[node name="particle_2" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_o34w0")
+position = Vector2(594, 162)
+amount = 60
+texture = ExtResource("3_eiib8")
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 30.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 80.36
+initial_velocity_max = 187.5
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+orbit_velocity_max = 0.1
+angle_min = -360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+color_ramp = SubResource("Gradient_vy23k")
+
+[node name="particle_3" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_o34w0")
+position = Vector2(1010, 162)
+amount = 60
+texture = ExtResource("3_eiib8")
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 30.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 80.36
+initial_velocity_max = 187.5
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+orbit_velocity_max = 0.1
+angle_min = -360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+color_ramp = SubResource("Gradient_vy23k")
+
+[node name="Card1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_g2tl8")
+position = Vector2(148, 155)
+scale = Vector2(8, 8)
+texture = ExtResource("5_wqi23")
+
+[node name="Sprite2D" type="Sprite2D" parent="Card1"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_1aeq5")
+flip_h = true
+
+[node name="Info" type="RichTextLabel" parent="Card1"]
+offset_left = -16.0
+offset_top = 18.5
+offset_right = 624.0
+offset_bottom = 601.833
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "+34% Critical Chance
+
+Adds permanent Critical Chance, stacks with other effects.
+"
+
+[node name="Card1" type="Button" parent="Card1"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_1fdpq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1fdpq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rq6oe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1fdpq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1fdpq")
+
+[node name="Card2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_g2tl8")
+position = Vector2(588, 155)
+scale = Vector2(8, 8)
+texture = ExtResource("7_jpif7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Card2"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_1aeq5")
+
+[node name="Info" type="RichTextLabel" parent="Card2"]
+offset_left = -16.0
+offset_top = 18.5
+offset_right = 624.0
+offset_bottom = 601.833
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "+3.0x Critical Damage
+
+Adds permanent Critical Damage, stacks with other effects.
+"
+
+[node name="Card2" type="Button" parent="Card2"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_1fdpq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1fdpq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rq6oe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1fdpq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1fdpq")
+
+[node name="Card3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_g2tl8")
+position = Vector2(1004, 155)
+scale = Vector2(8, 8)
+texture = ExtResource("8_eiib8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Card3"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_1aeq5")
+flip_v = true
+
+[node name="Info" type="RichTextLabel" parent="Card3"]
+offset_left = -16.0
+offset_top = 18.5
+offset_right = 624.0
+offset_bottom = 601.833
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "40% chance: each Crit heals +3 HP
+
+Each critical hit has a 40% chance to heal 3 HP."
+
+[node name="Card2" type="Button" parent="Card3"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_1fdpq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1fdpq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rq6oe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1fdpq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1fdpq")
+
+[node name="loop" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3xnyg")
+}
+autoplay = "loop"
+
+[node name="confirm" type="ColorRect" parent="."]
+visible = false
+offset_left = -1448.0
+offset_top = -904.0
+offset_right = 2780.0
+offset_bottom = 1942.0
+color = Color(0, 0, 0, 0.856)
+
+[node name="Card" type="Sprite2D" parent="confirm"]
+position = Vector2(1597, 1058)
+scale = Vector2(8, 8)
+texture = ExtResource("9_gwcm5")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="confirm/Card"]
+material = SubResource("ShaderMaterial_ihevl")
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_1aeq5")
+
+[node name="Info" type="RichTextLabel" parent="confirm/Card"]
+offset_left = 20.25
+offset_top = -15.0
+offset_right = 1147.75
+offset_bottom = 1482.5
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "40% chance: each Crit heals +3 HP
+
+Each critical hit has a 40% chance to heal 3 HP."
+
+[node name="particle_4" type="CPUParticles2D" parent="confirm/Card"]
+material = SubResource("CanvasItemMaterial_o34w0")
+position = Vector2(-0.375, -0.75)
+scale = Vector2(0.0666667, 0.0666667)
+amount = 60
+texture = ExtResource("3_eiib8")
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 30.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 80.36
+initial_velocity_max = 187.5
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+orbit_velocity_max = 0.1
+angle_min = -360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+color_ramp = SubResource("Gradient_vy23k")
+
+[node name="confirm" type="Button" parent="confirm"]
+layout_mode = 0
+offset_left = 1358.0
+offset_top = 1207.0
+offset_right = 1838.0
+offset_bottom = 1399.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxTexture_78rf2")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rhpjo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nc85s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vbrwf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_f0aa7")
+text = "CONFIRM"
+script = ExtResource("14_j53tx")
+
+[node name="Label" type="Label" parent="confirm"]
+layout_mode = 0
+offset_left = 2222.0
+offset_top = 995.0
+offset_right = 2938.0
+offset_bottom = 1643.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.945313, 1, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgfs3")
+text = "Once purchased, you cannot go back; the skill is permanent. "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CloseConfirm" type="Button" parent="confirm"]
+layout_mode = 0
+offset_left = 2466.0
+offset_top = 878.0
+offset_right = 2628.0
+offset_bottom = 1040.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxTexture_p8qac")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ur2eq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cf0or")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wfwv5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jivim")
+script = ExtResource("14_j53tx")
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r3wet")
+}
+
+[connection signal="mouse_entered" from="confirm/confirm" to="confirm/confirm" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="confirm/CloseConfirm" to="confirm/CloseConfirm" method="_on_mouse_entered"]
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]

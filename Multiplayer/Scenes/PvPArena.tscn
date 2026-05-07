@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://b74n1fwwypvri"]
+
+[ext_resource type="Script" uid="uid://bggc4pwuv8ydj" path="res://Multiplayer/Scripts/Pvparena.gd" id="1_p6uqs"]
+[ext_resource type="Texture2D" uid="uid://lnenok3u67yr" path="res://Gres/Assets/UI/Buttons/button_normal1.png" id="2_vfvln"]
+[ext_resource type="Texture2D" uid="uid://bqfje4k1r0qub" path="res://Gres/Assets/UI/Buttons/button_hover1.png" id="3_m5nau"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="4_hu08s"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6a5ge"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xpcl5"]
+texture = ExtResource("2_vfvln")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qq6dv"]
+texture = ExtResource("2_vfvln")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r7xgh"]
+texture = ExtResource("3_m5nau")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ayam"]
+texture = ExtResource("2_vfvln")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qhaoo"]
+texture = ExtResource("3_m5nau")
+
+[node name="PvPArena" type="Node" unique_id=1686068841]
+editor_description = "Node  \"PvPArena\"
+├── Node2D  \"World\"  (metti la mappa arena qui)
+├── Node  \"PlayerContainer\"
+├── Node2D  \"SpawnPoints\"
+│   ├── Node2D  \"Spawn1\"  (posizionalo nell'arena)
+│   ├── Node2D  \"Spawn2\"
+│   ├── Node2D  \"Spawn3\"
+│   └── Node2D  \"Spawn4\"
+└── CanvasLayer  \"UI\"
+    ├── Label  \"TimerLabel\"
+    ├── Label  \"SuddenDeathLabel\"
+    ├── Label  \"CountdownLabel\"
+    ├── Control  \"ScoreBoard\"
+    └── Control  \"WinnerPanel\"
+        ├── Label  \"WinnerLabel\"
+        ├── Button  \"BtnRematch\"
+        └── Button  \"BtnLeave\""
+script = ExtResource("1_p6uqs")
+
+[node name="World" type="Node2D" parent="." unique_id=248247302]
+
+[node name="PlayerContainer" type="Node" parent="." unique_id=1300033803]
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=115649809]
+
+[node name="Spawn1" type="Node2D" parent="SpawnPoints" unique_id=323580112]
+
+[node name="Spawn2" type="Node2D" parent="SpawnPoints" unique_id=1064375691]
+
+[node name="Spawn3" type="Node2D" parent="SpawnPoints" unique_id=789942588]
+
+[node name="Spawn4" type="Node2D" parent="SpawnPoints" unique_id=571428868]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1354956430]
+
+[node name="TimerLabel" type="Label" parent="UI" unique_id=1977769954]
+offset_right = 1152.0
+offset_bottom = 77.0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SuddenDeathLabel" type="Label" parent="UI" unique_id=1945330142]
+offset_right = 1152.0
+offset_bottom = 77.0
+vertical_alignment = 1
+
+[node name="CountdownLabel" type="Label" parent="UI" unique_id=221380873]
+offset_right = 1152.0
+offset_bottom = 77.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreBoard" type="Control" parent="UI" unique_id=86213464]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="WinnerPanel" type="Control" parent="UI" unique_id=956221750]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="BtnRematch" type="Button" parent="UI/WinnerPanel" unique_id=740713185]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_6a5ge")
+layout_mode = 0
+offset_left = 403.0
+offset_top = 136.0
+offset_right = 753.0
+offset_bottom = 248.0
+pivot_offset = Vector2(175, 56)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_xpcl5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qq6dv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r7xgh")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_1ayam")
+theme_override_styles/focus = SubResource("StyleBoxTexture_qhaoo")
+text = "REMATCH"
+script = ExtResource("4_hu08s")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="BtnLeave" type="Button" parent="UI/WinnerPanel" unique_id=2060783361]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_6a5ge")
+layout_mode = 0
+offset_left = 403.0
+offset_top = 264.0
+offset_right = 753.0
+offset_bottom = 376.0
+pivot_offset = Vector2(175, 56)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_xpcl5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qq6dv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r7xgh")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_1ayam")
+theme_override_styles/focus = SubResource("StyleBoxTexture_qhaoo")
+text = "LEAVE"
+script = ExtResource("4_hu08s")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[connection signal="mouse_entered" from="UI/WinnerPanel/BtnRematch" to="UI/WinnerPanel/BtnRematch" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="UI/WinnerPanel/BtnLeave" to="UI/WinnerPanel/BtnLeave" method="_on_mouse_entered"]

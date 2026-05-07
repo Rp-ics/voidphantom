@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://csdyk0aqiyka8"]
+
+[ext_resource type="Texture2D" uid="uid://dq4q1geud541w" path="res://Gres/Assets/Icons/pfp/pfp_1.png" id="1_2bcxa"]
+[ext_resource type="Texture2D" uid="uid://ioycp3tpm3k5" path="res://Gres/Assets/Icons/skill/icon_empty.png" id="1_t2usm"]
+[ext_resource type="Script" uid="uid://bsosk710yk7u5" path="res://Gres/Scripts/UI/pfp_button.gd" id="2_t44c8"]
+[ext_resource type="Texture2D" uid="uid://qhpfr6mk2sjg" path="res://Gres/Assets/Icons/lock.png" id="4_xp1u2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jxw6c"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2usm"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_08f41"]
+texture = ExtResource("4_xp1u2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp1u2"]
+bg_color = Color(1, 1, 1, 0.459)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxw6c"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08f41"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="PFPButton" type="TextureRect"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_t2usm")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_t44c8")
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 93.0
+offset_bottom = 94.0
+texture = ExtResource("1_2bcxa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Equip" type="Button" parent="."]
+material = SubResource("CanvasItemMaterial_jxw6c")
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_t2usm")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_08f41")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xp1u2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jxw6c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_08f41")
+
+[connection signal="pressed" from="Equip" to="." method="_on_equip_pressed"]

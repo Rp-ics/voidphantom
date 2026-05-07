@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://ckmwoab7wxqxe"]
+
+[ext_resource type="Script" uid="uid://c0ixilhwslkwn" path="res://Gres/Scripts/Weapons/bullet/player_bullet.gd" id="1_l5m1m"]
+[ext_resource type="Texture2D" uid="uid://nsglftguo6ow" path="res://Gres/Assets/player/bullets/blaster_bulletC.png" id="2_l5m1m"]
+[ext_resource type="Shader" uid="uid://dr1qmeqdwpjeq" path="res://Gres/Shaders/black_hole.gdshader" id="3_ls8ke"]
+[ext_resource type="Texture2D" uid="uid://c4n8snkdh21vp" path="res://Gres/Assets/Icons/dice.png" id="4_8xpms"]
+[ext_resource type="Texture2D" uid="uid://7thcxrb7vaut" path="res://Gres/Assets/Icons/ghosts_s.png" id="5_8xpms"]
+[ext_resource type="Shader" uid="uid://bbtt03fdkxw2g" path="res://Gres/Scenes/weapons/bullet/fire_2.gdshader" id="6_5nrj1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_icrln"]
+radius = 8.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5nrj1"]
+shader = ExtResource("3_ls8ke")
+shader_parameter/resolution = Vector2(64, 64)
+shader_parameter/colorResolution = 100.0
+shader_parameter/distortionIntensity = -10.0
+shader_parameter/spiralDistortionIntensity = 1.0
+shader_parameter/holeSize = 0.0
+shader_parameter/image = ExtResource("4_8xpms")
+shader_parameter/rotations = 1.0
+shader_parameter/depth = 0.5
+shader_parameter/spiralIntensity = 1.0
+shader_parameter/shrinkSpeed = 0.2
+shader_parameter/roationSpeed = 0.1
+
+[sub_resource type="Gradient" id="Gradient_5nrj1"]
+offsets = PackedFloat32Array(0, 0.54210526, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mt3nf"]
+shader = ExtResource("6_5nrj1")
+shader_parameter/fire_color = Color(1, 0.33, 0.068, 1)
+shader_parameter/fire_power_factor = 0.0
+shader_parameter/fire_intensity = 2.0
+shader_parameter/fire_start = 1.0
+shader_parameter/ball_size = 1.01
+shader_parameter/roughness = 0.675
+shader_parameter/detail = 6
+shader_parameter/scale = 4.0
+shader_parameter/lacunarity = 2.0
+
+[sub_resource type="Gradient" id="Gradient_8xpms"]
+offsets = PackedFloat32Array(0, 0.49473685, 1)
+colors = PackedColorArray(1, 0, 0, 0, 1, 0, 0, 1, 0.9920456, 0, 0, 0)
+
+[node name="PlayerBullet" type="Area2D" unique_id=1155070133 groups=["p_bullet"]]
+collision_layer = 32
+collision_mask = 30
+script = ExtResource("1_l5m1m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=596788301]
+shape = SubResource("CircleShape2D_icrln")
+debug_color = Color(0, 1, 0.0859375, 0.42)
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1050206642]
+texture = ExtResource("2_l5m1m")
+
+[node name="Killer" type="Timer" parent="." unique_id=1866387060]
+wait_time = 40.0
+one_shot = true
+autostart = true
+
+[node name="BlackHole" type="ColorRect" parent="." unique_id=218621165]
+visible = false
+material = SubResource("ShaderMaterial_5nrj1")
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 21.0
+
+[node name="part" type="CPUParticles2D" parent="BlackHole" unique_id=908103966]
+position = Vector2(20, 19)
+emitting = false
+texture = ExtResource("5_8xpms")
+gravity = Vector2(0, 0)
+angular_velocity_min = 313.04
+angular_velocity_max = 313.04
+angle_min = -360.0
+angle_max = 36.0
+scale_amount_min = 0.15
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_5nrj1")
+
+[node name="Colapse" type="ColorRect" parent="." unique_id=1472935754]
+visible = false
+material = SubResource("ShaderMaterial_mt3nf")
+offset_left = -59.0
+offset_top = -34.0
+offset_right = 9.0
+offset_bottom = 34.0
+
+[node name="eclipse" type="CPUParticles2D" parent="." unique_id=519238352]
+emitting = false
+amount = 30
+lifetime = 0.5
+emission_shape = 1
+emission_sphere_radius = 23.26
+gravity = Vector2(0, 0)
+angular_velocity_min = -413.22
+angular_velocity_max = 338.09
+angle_min = -300.6
+angle_max = 313.0
+scale_amount_max = 4.05
+color_ramp = SubResource("Gradient_8xpms")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Killer" to="." method="_on_killer_timeout"]

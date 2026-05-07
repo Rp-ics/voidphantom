@@ -1,0 +1,1360 @@
+[gd_scene load_steps=83 format=3 uid="uid://dxx3hsqx7q0bm"]
+
+[ext_resource type="Texture2D" uid="uid://43s6ybnwt5sn" path="res://Gres/Assets/Effects/Star_02A.png" id="1_en8tx"]
+[ext_resource type="Script" uid="uid://biix6n4cux0es" path="res://Gres/Scripts/skills/skill_tree.gd" id="1_nanvd"]
+[ext_resource type="Texture2D" uid="uid://sff7nvx0yv1w" path="res://Gres/Assets/BGame/galaxy9.png" id="1_wngtg"]
+[ext_resource type="Texture2D" uid="uid://blge7hhsyv61o" path="res://Gres/Assets/BGame/stars_1.png" id="2_to2pg"]
+[ext_resource type="Shader" uid="uid://vvro8am1w7ue" path="res://Gres/Shaders/glow.gdshader" id="2_v0kvg"]
+[ext_resource type="Script" uid="uid://dxttp8wuxaxc3" path="res://Gres/Scripts/skills/aries.gd" id="4_p066g"]
+[ext_resource type="Texture2D" uid="uid://ddh3xbuy402qy" path="res://Gres/Assets/UI/Bar/const1.png" id="4_to2pg"]
+[ext_resource type="Texture2D" uid="uid://bwa0lioio733f" path="res://Gres/Assets/UI/Bar/const2.png" id="5_nanvd"]
+[ext_resource type="Texture2D" uid="uid://4nhsbuj86ihd" path="res://Gres/Assets/Effects/Star_03A.png" id="8_km7p6"]
+[ext_resource type="Texture2D" uid="uid://dr0f62j56vht8" path="res://Gres/Assets/Icons/arrow/a1.png" id="8_txs8t"]
+[ext_resource type="Texture2D" uid="uid://fkyrqc7ba7js" path="res://Gres/Assets/Icons/arrow/a4.png" id="9_km7p6"]
+[ext_resource type="Texture2D" uid="uid://cxuug35qhirs0" path="res://Gres/Assets/Icons/arrow/a3.png" id="10_qk8qp"]
+[ext_resource type="Script" uid="uid://b3ffurhwh54fs" path="res://Gres/Scripts/skills/taurus.gd" id="10_wecft"]
+[ext_resource type="Script" uid="uid://dd34fijsvagph" path="res://Gres/Scripts/skills/gemini.gd" id="11_hkm7u"]
+[ext_resource type="Script" uid="uid://bwuf0j4rvwgn2" path="res://Gres/Scripts/UI/textureButton.gd" id="11_opos2"]
+[ext_resource type="Script" uid="uid://c44egfvlpakkk" path="res://Gres/Scripts/skills/cancer.gd" id="12_u5r0s"]
+[ext_resource type="Script" uid="uid://bfn7io8vr0vru" path="res://Gres/Scripts/skills/leo.gd" id="13_tkwdi"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="13_vd41k"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="14_p066g"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="15_g1bdo"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="16_x8unj"]
+[ext_resource type="Texture2D" uid="uid://h4jesxhig3ru" path="res://Gres/Assets/UI/Buttons/button_normal.png" id="18_wag1v"]
+[ext_resource type="Texture2D" uid="uid://bomskic2yknhy" path="res://Gres/Assets/UI/Buttons/button_pressed.png" id="19_wecft"]
+[ext_resource type="Texture2D" uid="uid://ptxe50lhu7tt" path="res://Gres/Assets/UI/Buttons/button_hold.png" id="20_hkm7u"]
+[ext_resource type="Texture2D" uid="uid://diu6rp7ollok5" path="res://Gres/Assets/UI/Buttons/button_disabled.png" id="21_cos1o"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="22_5belc"]
+[ext_resource type="PackedScene" uid="uid://5ntd7d60ykyh" path="res://Gres/Scenes/UI/audio_manager.tscn" id="25_vt6we"]
+[ext_resource type="AudioStream" uid="uid://d1urox2plsv84" path="res://Gres/Music/BGM/bg1.ogg" id="26_u5r0s"]
+[ext_resource type="AudioStream" uid="uid://bk26rjldhx5v0" path="res://Gres/Music/BGM/bg2.ogg" id="27_tkwdi"]
+[ext_resource type="AudioStream" uid="uid://b1qa4lvgn3178" path="res://Gres/Music/BGM/bg3.ogg" id="28_wdjpv"]
+[ext_resource type="AudioStream" uid="uid://dyqahqcb4ykue" path="res://Gres/Music/BGM/bg4.ogg" id="29_1twhc"]
+[ext_resource type="AudioStream" uid="uid://75bjef4wh8a" path="res://Gres/Music/BGM/bg5.ogg" id="30_rurxl"]
+[ext_resource type="AudioStream" uid="uid://d3ibrjqakk8dy" path="res://Gres/Music/BGM/bg6.ogg" id="31_3chxb"]
+[ext_resource type="AudioStream" uid="uid://cvdgw6d4bng11" path="res://Gres/Music/BGM/bg7.ogg" id="32_23b1d"]
+[ext_resource type="AudioStream" uid="uid://d05bw82xay7fv" path="res://Gres/Music/BGM/bg8.ogg" id="33_rxfh6"]
+[ext_resource type="AudioStream" uid="uid://d3fuopoacf8tc" path="res://Gres/Music/BGM/bg9.ogg" id="34_0f46p"]
+[ext_resource type="AudioStream" uid="uid://dl6g8ueupyt5h" path="res://Gres/Music/BGM/bg10.ogg" id="35_qampt"]
+[ext_resource type="AudioStream" uid="uid://8ea3v3f6k8e7" path="res://Gres/Music/BGM/bg11.ogg" id="36_hadqr"]
+[ext_resource type="AudioStream" uid="uid://cgogerbyy7jjb" path="res://Gres/Music/BGM/bg12.ogg" id="37_h7w0d"]
+[ext_resource type="AudioStream" uid="uid://2hylgivywekw" path="res://Gres/Music/BGM/bg13.ogg" id="38_foexd"]
+[ext_resource type="AudioStream" uid="uid://238ipc1nmhge" path="res://Gres/Music/BGM/bg14.ogg" id="39_uckut"]
+[ext_resource type="AudioStream" uid="uid://b762jix3keavo" path="res://Gres/Music/BGM/bg15.ogg" id="40_c2kin"]
+[ext_resource type="AudioStream" uid="uid://b1ubd4snx41ws" path="res://Gres/Music/BGM/bg16.ogg" id="41_msk1l"]
+[ext_resource type="AudioStream" uid="uid://bd0ljabudebvp" path="res://Gres/Music/BGM/bg17.ogg" id="42_nkgqs"]
+[ext_resource type="AudioStream" uid="uid://bfyu3ybsiy7te" path="res://Gres/Music/BGM/bg18.ogg" id="43_rlyln"]
+[ext_resource type="AudioStream" uid="uid://cnsjvus1yleeo" path="res://Gres/Music/BGM/bg19.ogg" id="44_ysfxx"]
+[ext_resource type="AudioStream" uid="uid://b35utltd7wc43" path="res://Gres/Music/BGM/bg20.ogg" id="45_yiqco"]
+[ext_resource type="AudioStream" uid="uid://bl4uvgma70gmx" path="res://Gres/Music/BGM/bg21.ogg" id="46_1q1hu"]
+[ext_resource type="AudioStream" uid="uid://c57qaqrvhhw38" path="res://Gres/Music/BGM/bg22.ogg" id="47_xxhna"]
+[ext_resource type="AudioStream" uid="uid://dej46xjftjh8d" path="res://Gres/Music/BGM/bg23.ogg" id="48_ohbjw"]
+[ext_resource type="AudioStream" uid="uid://dh53xpqbvuy8k" path="res://Gres/Music/BGM/bg24.ogg" id="49_uxxka"]
+[ext_resource type="AudioStream" uid="uid://dgg303q1vhr2j" path="res://Gres/Music/BGM/bg25.ogg" id="50_ggu7x"]
+[ext_resource type="AudioStream" uid="uid://bhf701o17yarp" path="res://Gres/Music/BGM/bg26.ogg" id="51_d6ea5"]
+[ext_resource type="AudioStream" uid="uid://brrqivx2yci6x" path="res://Gres/Music/BGM/bg27.ogg" id="52_6vleh"]
+[ext_resource type="AudioStream" uid="uid://dc0mwjbmt0iqh" path="res://Gres/Music/BGM/bg28.ogg" id="53_a6ogk"]
+[ext_resource type="AudioStream" uid="uid://b25l86087pan" path="res://Gres/Music/BGM/bg29.ogg" id="54_alxr2"]
+[ext_resource type="AudioStream" uid="uid://duggkgjmp4aaq" path="res://Gres/Music/BGM/bg30.ogg" id="55_hhjip"]
+[ext_resource type="Texture2D" uid="uid://bft7wnryhrob4" path="res://Gres/Assets/Background/bgstar_9.png" id="56_xce22"]
+
+[sub_resource type="Gradient" id="Gradient_werl2"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hkm7u"]
+gradient = SubResource("Gradient_werl2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_to2pg"]
+shader = ExtResource("2_v0kvg")
+shader_parameter/gradient = SubResource("GradientTexture2D_hkm7u")
+shader_parameter/spread = 0.5
+shader_parameter/cutoff = 4.82
+shader_parameter/size = 0.235
+shader_parameter/speed = 6.0
+shader_parameter/ray1_density = -11.27
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = -15.0
+shader_parameter/core_intensity = 2.0
+shader_parameter/hdr = true
+shader_parameter/seed = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1ab0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ckmy2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kf4gr"]
+texture = ExtResource("8_km7p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nanvd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_to2pg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vt6we"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u5r0s"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_egvgk"]
+texture = ExtResource("13_vd41k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sl8dk"]
+texture = ExtResource("16_x8unj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tomss"]
+texture = ExtResource("15_g1bdo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l060j"]
+texture = ExtResource("14_p066g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_llxqr"]
+texture = ExtResource("13_vd41k")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi8n6"]
+bg_color = Color(0, 0, 0, 0.746)
+border_width_bottom = 10
+border_color = Color(0, 0.976785, 1, 0.171)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pm3dw"]
+texture = ExtResource("20_hkm7u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_forb2"]
+texture = ExtResource("21_cos1o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_usw3e"]
+texture = ExtResource("20_hkm7u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rej5d"]
+texture = ExtResource("19_wecft")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0buit"]
+texture = ExtResource("18_wag1v")
+
+[sub_resource type="Animation" id="Animation_htpd8"]
+resource_name = "close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgtrs:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bgtrs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eelop"]
+resource_name = "open"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgtrs:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bgtrs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_htpd8"]
+_data = {
+&"close": SubResource("Animation_htpd8"),
+&"open": SubResource("Animation_eelop")
+}
+
+[node name="SkillTree" type="Node2D" node_paths=PackedStringArray("markers")]
+script = ExtResource("1_nanvd")
+markers = [NodePath("Pos_1"), NodePath("Pos_2"), NodePath("Pos_3"), NodePath("Pos_4"), NodePath("Pos_5")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2032.0
+offset_top = -1695.0
+offset_right = 8323.1
+offset_bottom = 6384.0
+color = Color(0, 0, 0, 1)
+
+[node name="Galaxy" type="Parallax2D" parent="."]
+repeat_size = Vector2(2000, 1200)
+
+[node name="Sprite2D" type="Sprite2D" parent="Galaxy"]
+position = Vector2(168, 32)
+texture = ExtResource("1_wngtg")
+
+[node name="Stars" type="Parallax2D" parent="."]
+repeat_size = Vector2(200, 400)
+
+[node name="Sprite2D" type="Sprite2D" parent="Stars"]
+texture = ExtResource("2_to2pg")
+
+[node name="ParallaxBackground" type="Node2D" parent="."]
+
+[node name="Constellations" type="Node2D" parent="."]
+
+[node name="Aries" type="Node2D" parent="Constellations"]
+script = ExtResource("4_p066g")
+
+[node name="star_min_1" type="Sprite2D" parent="Constellations/Aries"]
+position = Vector2(4, 6)
+texture = ExtResource("1_en8tx")
+
+[node name="PB1" type="TextureProgressBar" parent="Constellations/Aries"]
+offset_left = -2.20369
+offset_top = 3.20638
+offset_right = 271.499
+offset_bottom = 13.8497
+rotation = 0.375246
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB2" type="TextureProgressBar" parent="Constellations/Aries"]
+offset_left = 245.0
+offset_top = 98.0
+offset_right = 460.013
+offset_bottom = 108.643
+rotation = -0.10472
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB3" type="TextureProgressBar" parent="Constellations/Aries"]
+offset_left = 457.0
+offset_top = 67.0
+offset_right = 525.67
+offset_bottom = 76.3072
+rotation = -0.689405
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB4" type="TextureProgressBar" parent="Constellations/Aries"]
+visible = false
+offset_left = 344.759
+offset_top = 171.0
+offset_right = 413.428
+offset_bottom = 180.307
+rotation = 1.20428
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="star_max_2" type="Sprite2D" parent="Constellations/Aries"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(250.5, 89.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_en8tx")
+
+[node name="glow_1" type="Sprite2D" parent="Constellations/Aries/star_max_2"]
+material = SubResource("ShaderMaterial_to2pg")
+scale = Vector2(1.88, 1.88)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_3" type="Sprite2D" parent="Constellations/Aries"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(453.759, 75)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_4" type="Sprite2D" parent="Constellations/Aries"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(521.759, 11)
+texture = ExtResource("1_en8tx")
+
+[node name="A1" type="Button" parent="Constellations/Aries"]
+offset_left = -36.0
+offset_top = -35.0
+offset_right = 43.5918
+offset_bottom = 43.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A2" type="Button" parent="Constellations/Aries"]
+offset_left = 201.0
+offset_top = 40.0
+offset_right = 301.0
+offset_bottom = 138.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+disabled = true
+
+[node name="A3" type="Button" parent="Constellations/Aries"]
+offset_left = 421.0
+offset_top = 42.0
+offset_right = 486.0
+offset_bottom = 107.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+disabled = true
+
+[node name="A4" type="Button" parent="Constellations/Aries"]
+offset_left = 489.0
+offset_top = -22.0
+offset_right = 554.0
+offset_bottom = 43.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+disabled = true
+
+[node name="Taurus" type="Node2D" parent="Constellations"]
+position = Vector2(989, 52)
+script = ExtResource("10_wecft")
+
+[node name="PB1" type="TextureProgressBar" parent="Constellations/Taurus"]
+offset_left = 1822.5
+offset_top = 2036.5
+offset_right = 1890.47
+offset_bottom = 2047.14
+rotation = 1.03847
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB2" type="TextureProgressBar" parent="Constellations/Taurus"]
+offset_left = 1556.76
+offset_top = 1887.86
+offset_right = 1848.31
+offset_bottom = 1898.5
+rotation = 0.471239
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB3" type="TextureProgressBar" parent="Constellations/Taurus"]
+offset_left = 1428.5
+offset_top = 1788.5
+offset_right = 1575.35
+offset_bottom = 1799.14
+rotation = 0.637045
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB4" type="TextureProgressBar" parent="Constellations/Taurus"]
+offset_left = 1247.24
+offset_top = 1780.95
+offset_right = 1413.44
+offset_bottom = 1791.6
+rotation = 0.0174533
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB5" type="TextureProgressBar" parent="Constellations/Taurus"]
+offset_left = 1120.78
+offset_top = 1883.39
+offset_right = 1279.14
+offset_bottom = 1894.03
+rotation = -0.750492
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB6" type="TextureProgressBar" parent="Constellations/Taurus"]
+offset_left = 927.922
+offset_top = 1876.44
+offset_right = 1125.41
+offset_bottom = 1887.08
+rotation = 0.0698132
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB7" type="TextureProgressBar" parent="Constellations/Taurus"]
+offset_left = 1275.0
+offset_top = 1553.0
+offset_right = 1546.78
+offset_bottom = 1563.64
+rotation = 0.986111
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB8" type="TextureProgressBar" parent="Constellations/Taurus"]
+offset_left = 1190.5
+offset_top = 1483.5
+offset_right = 1284.81
+offset_bottom = 1494.14
+rotation = 0.671952
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB9" type="TextureProgressBar" parent="Constellations/Taurus"]
+offset_left = 943.5
+offset_top = 1352.5
+offset_right = 1217.2
+offset_bottom = 1363.14
+rotation = 0.479966
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="star_min_1" type="Sprite2D" parent="Constellations/Taurus"]
+position = Vector2(1856.5, 2101.5)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_2" type="Sprite2D" parent="Constellations/Taurus"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(1805.5, 2025.5)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_3" type="Sprite2D" parent="Constellations/Taurus"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(1417.5, 1777.5)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_4" type="Sprite2D" parent="Constellations/Taurus"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(1249.5, 1781.5)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_5" type="Sprite2D" parent="Constellations/Taurus"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(1131.5, 1882.5)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_6" type="Sprite2D" parent="Constellations/Taurus"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(1264.5, 1551.5)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_7" type="Sprite2D" parent="Constellations/Taurus"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(1178.5, 1482.5)
+texture = ExtResource("1_en8tx")
+
+[node name="star_max_3" type="Sprite2D" parent="Constellations/Taurus"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(946.5, 1352.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_en8tx")
+metadata/_edit_group_ = true
+
+[node name="glow_1" type="Sprite2D" parent="Constellations/Taurus/star_max_3"]
+material = SubResource("ShaderMaterial_to2pg")
+scale = Vector2(1.88, 1.88)
+texture = ExtResource("1_en8tx")
+
+[node name="star_max_1" type="Sprite2D" parent="Constellations/Taurus"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(1548.5, 1887.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_en8tx")
+metadata/_edit_group_ = true
+
+[node name="glow_1" type="Sprite2D" parent="Constellations/Taurus/star_max_1"]
+material = SubResource("ShaderMaterial_to2pg")
+scale = Vector2(1.88, 1.88)
+texture = ExtResource("1_en8tx")
+
+[node name="star_max_2" type="Sprite2D" parent="Constellations/Taurus"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(926.5, 1869.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_en8tx")
+metadata/_edit_group_ = true
+
+[node name="glow_1" type="Sprite2D" parent="Constellations/Taurus/star_max_2"]
+material = SubResource("ShaderMaterial_to2pg")
+scale = Vector2(1.88, 1.88)
+texture = ExtResource("1_en8tx")
+
+[node name="A1" type="Button" parent="Constellations/Taurus"]
+offset_left = 1832.0
+offset_top = 2077.0
+offset_right = 1880.0
+offset_bottom = 2125.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A2" type="Button" parent="Constellations/Taurus"]
+offset_left = 1773.0
+offset_top = 1992.0
+offset_right = 1837.0
+offset_bottom = 2056.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A3" type="Button" parent="Constellations/Taurus"]
+offset_left = 1498.0
+offset_top = 1835.0
+offset_right = 1598.0
+offset_bottom = 1935.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A4" type="Button" parent="Constellations/Taurus"]
+offset_left = 1386.0
+offset_top = 1744.0
+offset_right = 1450.0
+offset_bottom = 1808.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A5" type="Button" parent="Constellations/Taurus"]
+offset_left = 1217.0
+offset_top = 1749.0
+offset_right = 1281.0
+offset_bottom = 1813.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A6" type="Button" parent="Constellations/Taurus"]
+offset_left = 1099.0
+offset_top = 1850.0
+offset_right = 1163.0
+offset_bottom = 1914.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A7" type="Button" parent="Constellations/Taurus"]
+offset_left = 876.0
+offset_top = 1817.0
+offset_right = 976.0
+offset_bottom = 1917.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A8" type="Button" parent="Constellations/Taurus"]
+offset_left = 1233.0
+offset_top = 1518.0
+offset_right = 1297.0
+offset_bottom = 1582.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A9" type="Button" parent="Constellations/Taurus"]
+offset_left = 1146.0
+offset_top = 1451.0
+offset_right = 1210.0
+offset_bottom = 1515.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A10" type="Button" parent="Constellations/Taurus"]
+offset_left = 895.0
+offset_top = 1302.0
+offset_right = 995.0
+offset_bottom = 1402.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="Gemini" type="Node2D" parent="Constellations"]
+position = Vector2(989, 52)
+script = ExtResource("11_hkm7u")
+
+[node name="PB1" type="TextureProgressBar" parent="Constellations/Gemini"]
+offset_left = 2556.0
+offset_top = 409.0
+offset_right = 2641.8
+offset_bottom = 414.643
+rotation = 3.07178
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB2" type="TextureProgressBar" parent="Constellations/Gemini"]
+offset_left = 2449.78
+offset_top = 417.599
+offset_right = 2568.97
+offset_bottom = 423.242
+rotation = -2.40855
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB3" type="TextureProgressBar" parent="Constellations/Gemini"]
+offset_left = 2367.0
+offset_top = 332.0
+offset_right = 2538.45
+offset_bottom = 337.643
+rotation = 2.97579
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB4" type="TextureProgressBar" parent="Constellations/Gemini"]
+offset_left = 2191.0
+offset_top = 369.0
+offset_right = 2290.29
+offset_bottom = 374.643
+rotation = 1.49226
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB5" type="TextureProgressBar" parent="Constellations/Gemini"]
+offset_left = 2457.0
+offset_top = 429.0
+offset_right = 2525.22
+offset_bottom = 434.643
+rotation = 1.43117
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB6" type="TextureProgressBar" parent="Constellations/Gemini"]
+offset_left = 2471.0
+offset_top = 501.0
+offset_right = 2596.55
+offset_bottom = 506.643
+rotation = 1.7017
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB7" type="TextureProgressBar" parent="Constellations/Gemini"]
+offset_left = 2453.0
+offset_top = 648.0
+offset_right = 2578.55
+offset_bottom = 653.643
+rotation = 0.811578
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB8" type="TextureProgressBar" parent="Constellations/Gemini"]
+offset_left = 2457.0
+offset_top = 644.0
+offset_right = 2748.14
+offset_bottom = 649.643
+rotation = 3.15032
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB9" type="TextureProgressBar" parent="Constellations/Gemini"]
+offset_left = 2046.79
+offset_top = 592.844
+offset_right = 2165.87
+offset_bottom = 598.487
+rotation = 0.340339
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="star_min_1" type="Sprite2D" parent="Constellations/Gemini"]
+position = Vector2(2557, 402)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_2" type="Sprite2D" parent="Constellations/Gemini"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(2452, 416)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_3" type="Sprite2D" parent="Constellations/Gemini"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(2358, 328)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_4" type="Sprite2D" parent="Constellations/Gemini"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(2190, 361)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_5" type="Sprite2D" parent="Constellations/Gemini"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(2467, 501)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_7" type="Sprite2D" parent="Constellations/Gemini"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(2544, 746)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_8" type="Sprite2D" parent="Constellations/Gemini"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(2173, 637)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_9" type="Sprite2D" parent="Constellations/Gemini"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(2043, 592)
+texture = ExtResource("1_en8tx")
+
+[node name="star_max_1" type="Sprite2D" parent="Constellations/Gemini"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(2196, 492)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_en8tx")
+metadata/_edit_group_ = true
+
+[node name="glow_1" type="Sprite2D" parent="Constellations/Gemini/star_max_1"]
+material = SubResource("ShaderMaterial_to2pg")
+scale = Vector2(1.88, 1.88)
+texture = ExtResource("1_en8tx")
+
+[node name="star_max_2" type="Sprite2D" parent="Constellations/Gemini"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(2441, 629)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_en8tx")
+metadata/_edit_group_ = true
+
+[node name="glow_1" type="Sprite2D" parent="Constellations/Gemini/star_max_2"]
+material = SubResource("ShaderMaterial_to2pg")
+scale = Vector2(1.88, 1.88)
+texture = ExtResource("1_en8tx")
+
+[node name="A1" type="Button" parent="Constellations/Gemini"]
+offset_left = 2533.0
+offset_top = 377.0
+offset_right = 2581.0
+offset_bottom = 425.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A2" type="Button" parent="Constellations/Gemini"]
+offset_left = 2417.0
+offset_top = 380.0
+offset_right = 2487.0
+offset_bottom = 450.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A3" type="Button" parent="Constellations/Gemini"]
+offset_left = 2324.0
+offset_top = 293.0
+offset_right = 2394.0
+offset_bottom = 363.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A4" type="Button" parent="Constellations/Gemini"]
+offset_left = 2158.0
+offset_top = 329.0
+offset_right = 2222.0
+offset_bottom = 393.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A5" type="Button" parent="Constellations/Gemini"]
+offset_left = 2145.0
+offset_top = 441.0
+offset_right = 2245.0
+offset_bottom = 541.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A6" type="Button" parent="Constellations/Gemini"]
+offset_left = 2443.0
+offset_top = 476.0
+offset_right = 2491.0
+offset_bottom = 524.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A7" type="Button" parent="Constellations/Gemini"]
+offset_left = 2391.0
+offset_top = 577.0
+offset_right = 2491.0
+offset_bottom = 677.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A8" type="Button" parent="Constellations/Gemini"]
+offset_left = 2509.0
+offset_top = 710.0
+offset_right = 2579.0
+offset_bottom = 780.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A9" type="Button" parent="Constellations/Gemini"]
+offset_left = 2138.0
+offset_top = 600.0
+offset_right = 2208.0
+offset_bottom = 670.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A10" type="Button" parent="Constellations/Gemini"]
+offset_left = 2008.0
+offset_top = 556.0
+offset_right = 2078.0
+offset_bottom = 626.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="Cancer" type="Node2D" parent="Constellations"]
+position = Vector2(989, 52)
+script = ExtResource("12_u5r0s")
+
+[node name="PB1" type="TextureProgressBar" parent="Constellations/Cancer"]
+offset_left = 4677.0
+offset_top = -729.0
+offset_right = 4838.26
+offset_bottom = -723.357
+rotation = 1.63188
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB2" type="TextureProgressBar" parent="Constellations/Cancer"]
+offset_left = 4665.0
+offset_top = -561.0
+offset_right = 4720.55
+offset_bottom = -555.357
+rotation = 1.63188
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB3" type="TextureProgressBar" parent="Constellations/Cancer"]
+offset_left = 4655.0
+offset_top = -483.0
+offset_right = 4916.98
+offset_bottom = -477.357
+rotation = -0.15708
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB4" type="TextureProgressBar" parent="Constellations/Cancer"]
+offset_left = 4645.0
+offset_top = -487.0
+offset_right = 4798.78
+offset_bottom = -481.357
+rotation = 4.04916
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="star_min_1" type="Sprite2D" parent="Constellations/Cancer"]
+position = Vector2(4673, -725)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_2" type="Sprite2D" parent="Constellations/Cancer"]
+modulate = Color(1, 1, 1, 0.301961)
+position = Vector2(4663, -568)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_3" type="Sprite2D" parent="Constellations/Cancer"]
+modulate = Color(1, 1, 1, 0.301961)
+position = Vector2(4897, -521)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_4" type="Sprite2D" parent="Constellations/Cancer"]
+modulate = Color(1, 1, 1, 0.301961)
+position = Vector2(4548, -618)
+texture = ExtResource("1_en8tx")
+
+[node name="star_max_1" type="Sprite2D" parent="Constellations/Cancer"]
+modulate = Color(1, 1, 1, 0.301961)
+position = Vector2(4648, -489)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_en8tx")
+metadata/_edit_group_ = true
+
+[node name="glow_1" type="Sprite2D" parent="Constellations/Cancer/star_max_1"]
+material = SubResource("ShaderMaterial_to2pg")
+scale = Vector2(1.88, 1.88)
+texture = ExtResource("1_en8tx")
+
+[node name="A1" type="Button" parent="Constellations/Cancer"]
+offset_left = 4641.0
+offset_top = -758.0
+offset_right = 4705.0
+offset_bottom = -694.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A2" type="Button" parent="Constellations/Cancer"]
+offset_left = 4639.0
+offset_top = -593.0
+offset_right = 4687.0
+offset_bottom = -545.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A3" type="Button" parent="Constellations/Cancer"]
+offset_left = 4598.0
+offset_top = -540.0
+offset_right = 4698.0
+offset_bottom = -440.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A4" type="Button" parent="Constellations/Cancer"]
+offset_left = 4873.0
+offset_top = -546.0
+offset_right = 4921.0
+offset_bottom = -498.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A5" type="Button" parent="Constellations/Cancer"]
+offset_left = 4513.0
+offset_top = -654.0
+offset_right = 4583.0
+offset_bottom = -584.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+disabled = true
+
+[node name="Leo" type="Node2D" parent="Constellations"]
+position = Vector2(989, 52)
+script = ExtResource("13_tkwdi")
+
+[node name="PB1" type="TextureProgressBar" parent="Constellations/Leo"]
+offset_left = 4098.0
+offset_top = 505.0
+offset_right = 4298.0
+offset_bottom = 511.0
+rotation = -0.15708
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB2" type="TextureProgressBar" parent="Constellations/Leo"]
+offset_left = 4291.0
+offset_top = 460.0
+offset_right = 4497.0
+offset_bottom = 466.0
+rotation = 1.63188
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB3" type="TextureProgressBar" parent="Constellations/Leo"]
+offset_left = 4274.0
+offset_top = 683.0
+offset_right = 4535.98
+offset_bottom = 688.643
+rotation = -1.02974
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="PB4" type="TextureProgressBar" parent="Constellations/Leo"]
+offset_left = 4271.0
+offset_top = 677.0
+offset_right = 4424.78
+offset_bottom = 682.643
+rotation = 3.70882
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("4_to2pg")
+texture_progress = ExtResource("5_nanvd")
+
+[node name="star_min_1" type="Sprite2D" parent="Constellations/Leo"]
+position = Vector2(4105, 507)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_2" type="Sprite2D" parent="Constellations/Leo"]
+modulate = Color(1, 1, 1, 0.301961)
+position = Vector2(4286, 475)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_3" type="Sprite2D" parent="Constellations/Leo"]
+modulate = Color(1, 1, 1, 0.301961)
+position = Vector2(4407, 470)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_en8tx")
+
+[node name="star_min_4" type="Sprite2D" parent="Constellations/Leo"]
+modulate = Color(1, 1, 1, 0.301961)
+position = Vector2(4139, 590)
+texture = ExtResource("1_en8tx")
+
+[node name="star_max_1" type="Sprite2D" parent="Constellations/Leo"]
+modulate = Color(1, 1, 1, 0.301961)
+position = Vector2(4277, 677)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_en8tx")
+metadata/_edit_group_ = true
+
+[node name="glow_1" type="Sprite2D" parent="Constellations/Leo/star_max_1"]
+material = SubResource("ShaderMaterial_to2pg")
+scale = Vector2(1.88, 1.88)
+texture = ExtResource("1_en8tx")
+
+[node name="A1" type="Button" parent="Constellations/Leo"]
+offset_left = 4073.0
+offset_top = 474.0
+offset_right = 4137.0
+offset_bottom = 538.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A2" type="Button" parent="Constellations/Leo"]
+offset_left = 4262.0
+offset_top = 450.0
+offset_right = 4310.0
+offset_bottom = 498.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A3" type="Button" parent="Constellations/Leo"]
+offset_left = 4227.0
+offset_top = 626.0
+offset_right = 4327.0
+offset_bottom = 726.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A4" type="Button" parent="Constellations/Leo"]
+offset_left = 4383.0
+offset_top = 445.0
+offset_right = 4431.0
+offset_bottom = 493.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+
+[node name="A5" type="Button" parent="Constellations/Leo"]
+offset_left = 4104.0
+offset_top = 554.0
+offset_right = 4174.0
+offset_bottom = 624.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+disabled = true
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(213, 132)
+scale = Vector2(2, 2)
+
+[node name="Next" type="TextureButton" parent="Buttons"]
+modulate = Color(1, 1, 1, 0.32)
+material = SubResource("CanvasItemMaterial_vt6we")
+offset_left = 220.0
+offset_top = -28.5
+offset_right = 288.0
+offset_bottom = 33.5
+pivot_offset = Vector2(34, 31)
+texture_normal = ExtResource("8_txs8t")
+texture_pressed = ExtResource("9_km7p6")
+texture_hover = ExtResource("10_qk8qp")
+texture_disabled = ExtResource("8_txs8t")
+texture_focused = ExtResource("10_qk8qp")
+stretch_mode = 5
+script = ExtResource("11_opos2")
+
+[node name="Back" type="TextureButton" parent="Buttons"]
+modulate = Color(1, 1, 1, 0.32)
+material = SubResource("CanvasItemMaterial_vt6we")
+offset_left = -289.5
+offset_top = -28.5
+offset_right = -221.5
+offset_bottom = 33.5
+pivot_offset = Vector2(34, 31)
+texture_normal = ExtResource("8_txs8t")
+texture_pressed = ExtResource("9_km7p6")
+texture_hover = ExtResource("10_qk8qp")
+texture_disabled = ExtResource("8_txs8t")
+texture_focused = ExtResource("10_qk8qp")
+stretch_mode = 5
+flip_h = true
+script = ExtResource("11_opos2")
+
+[node name="close" type="Button" parent="Buttons"]
+modulate = Color(1, 1, 1, 0.204)
+material = SubResource("CanvasItemMaterial_u5r0s")
+offset_left = -307.5
+offset_top = -183.0
+offset_right = -232.5
+offset_bottom = -108.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxTexture_egvgk")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_sl8dk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tomss")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l060j")
+theme_override_styles/normal = SubResource("StyleBoxTexture_llxqr")
+script = ExtResource("22_5belc")
+
+[node name="InfoSkills" type="RichTextLabel" parent="Buttons"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -281.5
+offset_top = -151.5
+offset_right = 654.333
+offset_bottom = 359.333
+scale = Vector2(0.6, 0.6)
+theme_override_font_sizes/normal_font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_gi8n6")
+bbcode_enabled = true
+text = "\"[color=#c4f9ff]Critical Hit [/color][color=#ff8400]+10%
+[color=#c4f9ff]Critical Damage [/color][color=#ff8400]+1.0[/color]
+[color=#a3afff]Chance of opening the chest on the first hit[/color][color=#ff4d00] +50%
+
+Critical Hit:  20%
+Critical Damage: x2.6"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="CloseInfo" type="TextureButton" parent="Buttons/InfoSkills"]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 5.83333
+offset_right = 925.5
+offset_bottom = 51.3333
+texture_normal = ExtResource("13_vd41k")
+texture_pressed = ExtResource("14_p066g")
+texture_hover = ExtResource("15_g1bdo")
+texture_disabled = ExtResource("16_x8unj")
+texture_focused = ExtResource("14_p066g")
+stretch_mode = 0
+
+[node name="price" type="RichTextLabel" parent="Buttons/InfoSkills"]
+layout_mode = 0
+offset_top = 323.333
+offset_right = 949.167
+offset_bottom = 391.667
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[img=60]res://Gres/Assets/obj/tablet_2.png[/img]5/2 -[img=80]res://Gres/Assets/Icons/parts/gold_icon.png[/img]2500/2000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Upgrade" type="Button" parent="Buttons/InfoSkills"]
+layout_mode = 0
+offset_left = 224.167
+offset_top = 343.333
+offset_right = 704.167
+offset_bottom = 535.333
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxTexture_pm3dw")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_forb2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_usw3e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rej5d")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0buit")
+text = "BUY A STAR"
+script = ExtResource("22_5belc")
+
+[node name="Pos_1" type="Marker2D" parent="."]
+position = Vector2(213, 132)
+
+[node name="Pos_2" type="Marker2D" parent="."]
+position = Vector2(2334, 1764)
+
+[node name="Pos_3" type="Marker2D" parent="."]
+position = Vector2(3275, 611)
+
+[node name="Pos_4" type="Marker2D" parent="."]
+position = Vector2(5637, -435)
+
+[node name="Pos_5" type="Marker2D" parent="."]
+position = Vector2(5261, 659)
+
+[node name="Aries_Pos" type="Marker2D" parent="."]
+position = Vector2(-364, -176)
+
+[node name="Taurus_Pos" type="Marker2D" parent="."]
+position = Vector2(1780, 1473)
+
+[node name="Gemini_Pos" type="Marker2D" parent="."]
+position = Vector2(2699, 381)
+
+[node name="Cancer_Pos" type="Marker2D" parent="."]
+position = Vector2(5053, -752)
+
+[node name="Leo_Pos" type="Marker2D" parent="."]
+position = Vector2(4677, 342)
+
+[node name="Updater" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="AudioManager" parent="." instance=ExtResource("25_vt6we")]
+playlist = Array[AudioStream]([ExtResource("26_u5r0s"), ExtResource("27_tkwdi"), ExtResource("28_wdjpv"), ExtResource("29_1twhc"), ExtResource("30_rurxl"), ExtResource("31_3chxb"), ExtResource("32_23b1d"), ExtResource("33_rxfh6"), ExtResource("34_0f46p"), ExtResource("35_qampt"), ExtResource("36_hadqr"), ExtResource("37_h7w0d"), ExtResource("38_foexd"), ExtResource("39_uckut"), ExtResource("40_c2kin"), ExtResource("41_msk1l"), ExtResource("42_nkgqs"), ExtResource("43_rlyln"), ExtResource("44_ysfxx"), ExtResource("45_yiqco"), ExtResource("46_1q1hu"), ExtResource("47_xxhna"), ExtResource("48_ohbjw"), ExtResource("49_uxxka"), ExtResource("50_ggu7x"), ExtResource("51_d6ea5"), ExtResource("52_6vleh"), ExtResource("53_a6ogk"), ExtResource("54_alxr2"), ExtResource("55_hhjip")])
+
+[node name="trs" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_htpd8")
+}
+autoplay = "open"
+
+[node name="bgtrs" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -2135.0
+offset_top = -1983.0
+offset_right = 8674.0
+offset_bottom = 6737.0
+texture = ExtResource("56_xce22")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(5261, 659)
+
+[connection signal="mouse_entered" from="Buttons/close" to="Buttons/close" method="_on_mouse_entered"]
+[connection signal="pressed" from="Buttons/InfoSkills/CloseInfo" to="." method="_on_close_info_pressed"]
+[connection signal="mouse_entered" from="Buttons/InfoSkills/Upgrade" to="Buttons/InfoSkills/Upgrade" method="_on_mouse_entered"]
+[connection signal="animation_finished" from="trs" to="." method="_on_trs_animation_finished"]

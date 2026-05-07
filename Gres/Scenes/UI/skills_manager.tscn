@@ -1,0 +1,498 @@
+[gd_scene load_steps=47 format=3 uid="uid://budrq4yhlxgfa"]
+
+[ext_resource type="Script" uid="uid://h777jxks0f5m" path="res://Gres/Scripts/UI/skills_manager.gd" id="1_1aovv"]
+[ext_resource type="Texture2D" uid="uid://b23e4kychddr2" path="res://Gres/Assets/UI/inentory/body.png" id="2_jivu3"]
+[ext_resource type="Texture2D" uid="uid://bb736wq4yxbba" path="res://Gres/Assets/UI/inentory/text_holder.png" id="3_1l1qa"]
+[ext_resource type="Texture2D" uid="uid://dc8j2esrv7nh7" path="res://Gres/Assets/Icons/skill/bg_icon.png" id="3_m67r8"]
+[ext_resource type="Texture2D" uid="uid://5bf1w0cxr1vi" path="res://Gres/Assets/Icons/shield_1.png" id="4_5d7nd"]
+[ext_resource type="Texture2D" uid="uid://c7j5ciahuq33w" path="res://Gres/Assets/Icons/shield_2.png" id="6_y1unh"]
+[ext_resource type="Texture2D" uid="uid://beg3t5oothfu0" path="res://Gres/Assets/Icons/stamina_1.png" id="7_5rl71"]
+[ext_resource type="Texture2D" uid="uid://txnn6vh0v1ay" path="res://Gres/Assets/Icons/stamina_3.png" id="8_6qyh1"]
+[ext_resource type="Texture2D" uid="uid://cta8751n808e7" path="res://Gres/Assets/Icons/stamina_2.png" id="9_1l1qa"]
+[ext_resource type="Texture2D" uid="uid://cjat4v4qbih0l" path="res://Gres/Assets/Icons/heart_1.png" id="10_ln4gb"]
+[ext_resource type="Texture2D" uid="uid://id4rm0hk1eb8" path="res://Gres/Assets/Icons/heart_3.png" id="11_sch71"]
+[ext_resource type="Texture2D" uid="uid://dwpkmdxkb3ohl" path="res://Gres/Assets/Icons/heart_2.png" id="12_sfjko"]
+[ext_resource type="Texture2D" uid="uid://ba2124p80egpe" path="res://Gres/Assets/Icons/time_slow_1.png" id="13_lor5q"]
+[ext_resource type="Texture2D" uid="uid://cqpjkbv3oa8q6" path="res://Gres/Assets/Icons/time_slow_3.png" id="14_1wm0y"]
+[ext_resource type="Texture2D" uid="uid://bc8t21ld4g5vl" path="res://Gres/Assets/Icons/time_slow_2.png" id="15_nhmxs"]
+[ext_resource type="Texture2D" uid="uid://b3duyddcmgpek" path="res://Gres/Assets/Icons/incognito_skill1.png" id="16_m67r8"]
+[ext_resource type="Texture2D" uid="uid://gf5cy1eecmkk" path="res://Gres/Assets/Icons/incognito_skill2.png" id="17_5d7nd"]
+[ext_resource type="Texture2D" uid="uid://5bjkhaxowgof" path="res://Gres/Assets/Icons/craft/Zorvium.png" id="17_5rl71"]
+[ext_resource type="Texture2D" uid="uid://mkhw2gh1niw" path="res://Gres/Assets/Icons/craft/Voldrite.png" id="17_m67r8"]
+[ext_resource type="Texture2D" uid="uid://6artgbgd1rk1" path="res://Gres/Assets/Icons/craft/Felnyth.png" id="19_6qyh1"]
+[ext_resource type="Texture2D" uid="uid://dgukokinycgk4" path="res://Gres/Assets/Icons/craft/Eldrosium.png" id="20_1l1qa"]
+[ext_resource type="Texture2D" uid="uid://cexnd3ykax18i" path="res://Gres/Assets/Icons/gold_1.png" id="21_ln4gb"]
+[ext_resource type="Texture2D" uid="uid://dp0051x4tl6uu" path="res://Gres/Assets/UI/inentory/info_holder.png" id="22_6qyh1"]
+[ext_resource type="Texture2D" uid="uid://h4jesxhig3ru" path="res://Gres/Assets/UI/Buttons/button_normal.png" id="24_1wm0y"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="24_p2lq7"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="25_16at2"]
+[ext_resource type="Texture2D" uid="uid://bomskic2yknhy" path="res://Gres/Assets/UI/Buttons/button_pressed.png" id="25_nhmxs"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="26_mipwy"]
+[ext_resource type="Texture2D" uid="uid://ptxe50lhu7tt" path="res://Gres/Assets/UI/Buttons/button_hold.png" id="26_x2vle"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="27_memab"]
+[ext_resource type="Texture2D" uid="uid://diu6rp7ollok5" path="res://Gres/Assets/UI/Buttons/button_disabled.png" id="27_nfi12"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="28_vhtxn"]
+[ext_resource type="Texture2D" uid="uid://cm08cphexu6v" path="res://Gres/Assets/UI/inentory/light/skills_progress.png" id="29_nhmxs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vhtxn"]
+texture = ExtResource("3_m67r8")
+
+[sub_resource type="Animation" id="Animation_6u0rk"]
+resource_name = "loop"
+length = 2.2
+loop_mode = 2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k6w66"]
+_data = {
+&"loop": SubResource("Animation_6u0rk")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qb82x"]
+texture = ExtResource("24_p2lq7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q3dqb"]
+texture = ExtResource("25_16at2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yn4lq"]
+texture = ExtResource("26_mipwy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_imr36"]
+texture = ExtResource("27_memab")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p6yda"]
+texture = ExtResource("24_p2lq7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p2lq7"]
+texture = ExtResource("24_1wm0y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16at2"]
+texture = ExtResource("25_nhmxs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mipwy"]
+texture = ExtResource("26_x2vle")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_memab"]
+texture = ExtResource("27_nfi12")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_abuaa"]
+texture = ExtResource("26_x2vle")
+
+[node name="SkillsManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1aovv")
+
+[node name="Body" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jivu3")
+
+[node name="TextHolder" type="Sprite2D" parent="."]
+position = Vector2(576.5, 57)
+scale = Vector2(11.367926, 4.7999997)
+texture = ExtResource("3_1l1qa")
+
+[node name="SkillGrid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 97.0
+offset_right = 668.0
+offset_bottom = 626.0
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 150
+columns = 4
+
+[node name="Skill1" type="Panel" parent="SkillGrid"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vhtxn")
+
+[node name="icon" type="TextureRect" parent="SkillGrid/Skill1"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(3.0234375, 3.0234375)
+texture = ExtResource("3_m67r8")
+
+[node name="ShieldB" type="TextureButton" parent="SkillGrid/Skill1"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 33.0
+offset_right = 166.0
+offset_bottom = 173.0
+texture_normal = ExtResource("4_5d7nd")
+texture_pressed = ExtResource("4_5d7nd")
+texture_hover = ExtResource("6_y1unh")
+texture_disabled = ExtResource("4_5d7nd")
+texture_focused = ExtResource("4_5d7nd")
+stretch_mode = 5
+
+[node name="Skill2" type="Panel" parent="SkillGrid"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vhtxn")
+
+[node name="icon" type="TextureRect" parent="SkillGrid/Skill2"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(3.0234375, 3.0234375)
+texture = ExtResource("3_m67r8")
+
+[node name="StaminaB" type="TextureButton" parent="SkillGrid/Skill2"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 31.0
+offset_right = 166.0
+offset_bottom = 171.0
+texture_normal = ExtResource("7_5rl71")
+texture_pressed = ExtResource("8_6qyh1")
+texture_hover = ExtResource("9_1l1qa")
+texture_disabled = ExtResource("7_5rl71")
+texture_focused = ExtResource("8_6qyh1")
+stretch_mode = 5
+
+[node name="Skill3" type="Panel" parent="SkillGrid"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vhtxn")
+
+[node name="icon" type="TextureRect" parent="SkillGrid/Skill3"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(3.0234375, 3.0234375)
+texture = ExtResource("3_m67r8")
+
+[node name="HeartB" type="TextureButton" parent="SkillGrid/Skill3"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 28.0
+offset_right = 166.0
+offset_bottom = 168.0
+texture_normal = ExtResource("10_ln4gb")
+texture_pressed = ExtResource("11_sch71")
+texture_hover = ExtResource("12_sfjko")
+texture_disabled = ExtResource("11_sch71")
+texture_focused = ExtResource("11_sch71")
+stretch_mode = 5
+
+[node name="Skill4" type="Panel" parent="SkillGrid"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vhtxn")
+
+[node name="icon" type="TextureRect" parent="SkillGrid/Skill4"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(3.0234375, 3.0234375)
+texture = ExtResource("3_m67r8")
+
+[node name="TimeB" type="TextureButton" parent="SkillGrid/Skill4"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 28.0
+offset_right = 166.0
+offset_bottom = 168.0
+texture_normal = ExtResource("13_lor5q")
+texture_pressed = ExtResource("14_1wm0y")
+texture_hover = ExtResource("15_nhmxs")
+texture_disabled = ExtResource("14_1wm0y")
+texture_focused = ExtResource("14_1wm0y")
+stretch_mode = 5
+
+[node name="Skill5" type="Panel" parent="SkillGrid"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vhtxn")
+
+[node name="icon" type="TextureRect" parent="SkillGrid/Skill5"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(3.0234375, 3.0234375)
+texture = ExtResource("3_m67r8")
+
+[node name="IncognitoB" type="TextureButton" parent="SkillGrid/Skill5"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 30.0
+offset_right = 166.0
+offset_bottom = 170.0
+texture_normal = ExtResource("16_m67r8")
+texture_pressed = ExtResource("16_m67r8")
+texture_hover = ExtResource("17_5d7nd")
+texture_disabled = ExtResource("16_m67r8")
+texture_focused = ExtResource("16_m67r8")
+stretch_mode = 5
+
+[node name="Zorvium" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 30.0
+offset_right = 168.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 60
+text = "99"
+vertical_alignment = 1
+
+[node name="icon" type="Sprite2D" parent="Zorvium"]
+position = Vector2(-35.4375, 25.0625)
+scale = Vector2(1.8398438, 1.8398438)
+texture = ExtResource("17_5rl71")
+
+[node name="Voldrite" type="Label" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 30.0
+offset_right = 320.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 60
+text = "99"
+vertical_alignment = 1
+
+[node name="icon" type="Sprite2D" parent="Voldrite"]
+position = Vector2(-35.4375, 25.0625)
+scale = Vector2(1.8398438, 1.8398438)
+texture = ExtResource("17_m67r8")
+
+[node name="Felnyth" type="Label" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 30.0
+offset_right = 472.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 60
+text = "99"
+vertical_alignment = 1
+
+[node name="icon" type="Sprite2D" parent="Felnyth"]
+position = Vector2(-35.4375, 25.0625)
+scale = Vector2(1.8398438, 1.8398438)
+texture = ExtResource("19_6qyh1")
+
+[node name="Eldrosium" type="Label" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 30.0
+offset_right = 624.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 60
+text = "99"
+vertical_alignment = 1
+
+[node name="icon" type="Sprite2D" parent="Eldrosium"]
+position = Vector2(-35.4375, 25.0625)
+scale = Vector2(1.8398438, 1.8398438)
+texture = ExtResource("20_1l1qa")
+
+[node name="gold" type="Label" parent="."]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 30.0
+offset_right = 1026.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 60
+text = "999999999"
+vertical_alignment = 1
+
+[node name="GoldIcon" type="Sprite2D" parent="gold"]
+position = Vector2(-33.75, 25.249992)
+scale = Vector2(1.3359374, 1.3359374)
+texture = ExtResource("21_ln4gb")
+hframes = 22
+frame = 12
+
+[node name="loop" type="AnimationPlayer" parent="gold/GoldIcon"]
+libraries = {
+&"": SubResource("AnimationLibrary_k6w66")
+}
+autoplay = "loop"
+
+[node name="InfoHolder" type="Sprite2D" parent="."]
+position = Vector2(902.5, 360.00003)
+scale = Vector2(9.14, 8.089999)
+texture = ExtResource("22_6qyh1")
+
+[node name="BackAudio" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1038.0
+offset_top = -2.0
+offset_right = 1152.0
+offset_bottom = 112.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_qb82x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q3dqb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yn4lq")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_imr36")
+theme_override_styles/focus = SubResource("StyleBoxTexture_p6yda")
+text = "x"
+script = ExtResource("28_vhtxn")
+
+[node name="InfoSkills" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 112.0
+offset_right = 1114.0
+offset_bottom = 608.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[color=#cc99ff]????? ???[/color]
+
+[color=#aaaaaa]???? ?????????????? ??
+????? ????? ???????
+?????? ??? ????
+???????? ??????????[/color]
+
+[color=#ffd700]Level ?:[/color] ???? [color=#00ffcc]??[/color]
+
+[color=#df03fc]UPGRADES[/color]
+[color=#ffd700]Level ?:[/color] ???? +[color=#00ffcc]??[/color]
+[color=#ffd700]Level ?:[/color] ???? +[color=#00ffcc]??[/color]  [color=#ffaa00]+??[/color] ?????
+[color=#ffd700]Level ?:[/color] ???? +[color=#00ffcc]??[/color] 
+[color=#ffd700]Level ?:[/color] ???? +[color=#00ffcc]??[/color]  [color=#ffaa00]+??[/color] ??????
+"
+
+[node name="UpdateMan" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -26.0
+offset_top = -14.0
+offset_right = 1192.0
+offset_bottom = 675.0
+color = Color(0, 0, 0, 0.768)
+
+[node name="man" type="Node2D" parent="UpdateMan"]
+position = Vector2(592, 299)
+
+[node name="UpdateHolder" type="Sprite2D" parent="UpdateMan/man"]
+modulate = Color(1, 1, 1, 0.762)
+position = Vector2(5, 28.999908)
+scale = Vector2(10.450001, 9.249507)
+texture = ExtResource("22_6qyh1")
+
+[node name="Update" type="Button" parent="UpdateMan/man"]
+offset_left = -241.0
+offset_top = 45.0
+offset_right = 239.0
+offset_bottom = 237.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_p2lq7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16at2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mipwy")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_memab")
+theme_override_styles/focus = SubResource("StyleBoxTexture_abuaa")
+text = "UPDATE"
+script = ExtResource("28_vhtxn")
+
+[node name="Close" type="Button" parent="UpdateMan/man"]
+offset_left = -241.0
+offset_top = 165.00003
+offset_right = 239.0
+offset_bottom = 357.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_p2lq7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16at2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mipwy")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_memab")
+theme_override_styles/focus = SubResource("StyleBoxTexture_abuaa")
+text = "CLOSE"
+script = ExtResource("28_vhtxn")
+
+[node name="icon" type="TextureRect" parent="UpdateMan/man"]
+offset_left = -113.0
+offset_top = -188.00003
+offset_right = -37.258423
+offset_bottom = -112.25842
+scale = Vector2(3.0234375, 3.0234375)
+texture = ExtResource("3_m67r8")
+
+[node name="Texture" type="TextureRect" parent="UpdateMan/man/icon"]
+layout_mode = 0
+offset_left = 10.583977
+offset_top = 11.245472
+offset_right = 28.415386
+offset_bottom = 29.076881
+scale = Vector2(3.0234375, 3.0234375)
+texture = ExtResource("7_5rl71")
+expand_mode = 1
+
+[node name="Cost" type="Label" parent="UpdateMan/man"]
+offset_left = -68.0
+offset_top = 26.0
+offset_right = 113.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 60
+text = "9999"
+vertical_alignment = 1
+
+[node name="GoldIcon" type="Sprite2D" parent="UpdateMan/man/Cost"]
+position = Vector2(-33.75, 25.249992)
+scale = Vector2(1.3359374, 1.3359374)
+texture = ExtResource("21_ln4gb")
+hframes = 22
+frame = 1
+
+[node name="loop" type="AnimationPlayer" parent="UpdateMan/man/Cost/GoldIcon"]
+libraries = {
+&"": SubResource("AnimationLibrary_k6w66")
+}
+autoplay = "loop"
+
+[node name="SkillsProgress" type="Sprite2D" parent="UpdateMan/man"]
+position = Vector2(0, -205.99997)
+scale = Vector2(3, 3)
+texture = ExtResource("29_nhmxs")
+hframes = 17
+frame = 2
+
+[node name="CenterP" type="Marker2D" parent="."]
+position = Vector2(566, 285)
+
+[node name="LeftP" type="Marker2D" parent="."]
+position = Vector2(296, 285)
+
+[connection signal="mouse_entered" from="BackAudio" to="BackAudio" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="UpdateMan/man/Update" to="UpdateMan/man/Update" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="UpdateMan/man/Close" to="UpdateMan/man/Close" method="_on_mouse_entered"]

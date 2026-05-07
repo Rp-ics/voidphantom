@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://chisk4qu6p40"]
+
+[ext_resource type="Script" uid="uid://x1txdv4kgqxg" path="res://Gres/Scripts/obj/solarius_laser.gd" id="1_bwm5m"]
+[ext_resource type="Texture2D" uid="uid://bmhy54vm4ocyy" path="res://Gres/Assets/obj/sol_mine.png" id="2_qfnhd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfnhd"]
+
+[sub_resource type="Animation" id="Animation_01sxn"]
+resource_name = "expl"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uhjsu"]
+_data = {
+&"expl": SubResource("Animation_01sxn")
+}
+
+[node name="SolariusLaser" type="Area2D" unique_id=2045611334]
+collision_layer = 2
+collision_mask = 33
+script = ExtResource("1_bwm5m")
+
+[node name="SolMine" type="Sprite2D" parent="." unique_id=1303741624]
+visible = false
+texture = ExtResource("2_qfnhd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=184114893]
+shape = SubResource("RectangleShape2D_qfnhd")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=1878184897]
+wait_time = 6.0
+one_shot = true
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=212489396]
+libraries/ = SubResource("AnimationLibrary_uhjsu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

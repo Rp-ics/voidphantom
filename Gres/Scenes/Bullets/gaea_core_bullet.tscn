@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlkj6v66o5hcc"]
+
+[ext_resource type="Script" uid="uid://brrl0itw8210q" path="res://Gres/Scripts/Bullets/gaea_core_bullet.gd" id="1_2yrbu"]
+[ext_resource type="Texture2D" uid="uid://bwytxi1iybf1x" path="res://Gres/Assets/Effects/64x64_Aura_3.png" id="2_td2nd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1bvt"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2yrbu"]
+radius = 37.0
+
+[sub_resource type="Animation" id="Animation_f4i2h"]
+resource_name = "charge"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("charge:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("charge:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.1, 0.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("charge:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.7853982, 0.7853982, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_drjuv"]
+_data = {
+&"charge": SubResource("Animation_f4i2h")
+}
+
+[node name="GaeaCoreBullet" type="Area2D" groups=["p_bullet"]]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_2yrbu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_td2nd")
+
+[node name="charge" type="Sprite2D" parent="."]
+texture = ExtResource("2_td2nd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c1bvt")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Explode" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2yrbu")
+disabled = true
+debug_color = Color(1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_drjuv")
+}
+autoplay = "charge"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

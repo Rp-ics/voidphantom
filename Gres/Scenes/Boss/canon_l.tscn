@@ -1,0 +1,317 @@
+[gd_scene load_steps=20 format=3 uid="uid://m704br8gksgi"]
+
+[ext_resource type="Script" uid="uid://10076360vxku" path="res://Gres/Scripts/boss/canon_l.gd" id="1_7u2if"]
+[ext_resource type="Texture2D" uid="uid://cvejjguvk7p1b" path="res://Gres/Assets/Enemy/Boss/Red_Eye_2.png" id="2_rpjuu"]
+[ext_resource type="Shader" uid="uid://1abiepe6jn2y" path="res://Gres/Shaders/ColorShader.gdshader" id="3_6fvip"]
+[ext_resource type="Texture2D" uid="uid://d238uutfrf6tw" path="res://Gres/Assets/Enemy/Boss/Red_Eye_phase_2_2.png" id="5_4o43x"]
+[ext_resource type="Texture2D" uid="uid://brehxf4i511yy" path="res://Gres/Assets/Effects/slash_02.png" id="6_7u2if"]
+[ext_resource type="Texture2D" uid="uid://fs713v4o87l1" path="res://Gres/Assets/Enemy/Boss/Red_Eye_phase_3_2.png" id="6_hq81o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ubri8"]
+shader = ExtResource("3_6fvip")
+shader_parameter/red_factor = 1.0
+shader_parameter/green_factor = 1.0
+shader_parameter/blue_factor = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue_shift = 0.0
+shader_parameter/gamma = 1.0
+
+[sub_resource type="Animation" id="Animation_51oc5"]
+resource_name = "loop"
+length = 0.8
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HPLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.2, 0.39, 0.4, 0.59, 0.6, 0.78999996, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-42.999996, -13.999999), Vector2(-42.999996, -13.999999), Vector2(-44.999996, -13.999999), Vector2(-44.999996, -13.999999), Vector2(-43.333332, -13.999999), Vector2(-43.333332, -13.999999), Vector2(-45.166664, -13.999999), Vector2(-45.166664, -13.999999), Vector2(-42.999996, -13.999999)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HPLabel2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.19999999, 0.39, 0.39999998, 0.59, 0.59999996, 0.78999996, 0.79999995),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(15, 11), Vector2(15, 11), Vector2(17.000002, 11), Vector2(17.000002, 11), Vector2(14.993, 11), Vector2(14.993, 11), Vector2(16.996502, 11), Vector2(16.996502, 11), Vector2(15, 11)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eoqnp"]
+_data = {
+&"loop": SubResource("Animation_51oc5")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0u2jr"]
+radius = 10.090966
+height = 88.0
+
+[sub_resource type="Animation" id="Animation_cd0vq"]
+resource_name = "hurt"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/gamma")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 3.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5cgtx"]
+_data = {
+&"hurt": SubResource("Animation_cd0vq")
+}
+
+[sub_resource type="Animation" id="Animation_t6que"]
+resource_name = "phase_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.43333337, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_rpjuu")]
+}
+
+[sub_resource type="Animation" id="Animation_qdmfg"]
+resource_name = "phase_2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 1, 1.1333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_rpjuu"), ExtResource("5_4o43x"), ExtResource("2_rpjuu"), ExtResource("5_4o43x")]
+}
+
+[sub_resource type="Animation" id="Animation_ddwk6"]
+resource_name = "phase_3"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_4o43x"), ExtResource("6_hq81o"), ExtResource("5_4o43x"), ExtResource("6_hq81o")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vvh4b"]
+_data = {
+&"phase_1": SubResource("Animation_t6que"),
+&"phase_2": SubResource("Animation_qdmfg"),
+&"phase_3": SubResource("Animation_ddwk6")
+}
+
+[sub_resource type="Animation" id="Animation_4o43x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.32421875, 0.32421875, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6fvip"]
+resource_name = "loop"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.32421875, 0.32421875, 1), Color(1, 0, 0, 1), Color(1, 0.32421875, 0.32421875, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hq81o"]
+_data = {
+&"RESET": SubResource("Animation_4o43x"),
+&"loop": SubResource("Animation_6fvip")
+}
+
+[node name="CanonL" type="Node2D"]
+script = ExtResource("1_7u2if")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ubri8")
+rotation = -1.5707964
+texture = ExtResource("2_rpjuu")
+hframes = 2
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(53, 4)
+
+[node name="Muzzle2" type="Marker2D" parent="."]
+position = Vector2(40, 4)
+
+[node name="dir" type="Marker2D" parent="."]
+position = Vector2(80, 4)
+
+[node name="TimerFire" type="Timer" parent="."]
+
+[node name="TimerCooldown" type="Timer" parent="."]
+
+[node name="PhaseChecker" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="loop" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_eoqnp")
+}
+autoplay = "loop"
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 160
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+rotation = 1.5184364
+shape = SubResource("CapsuleShape2D_0u2jr")
+
+[node name="hurt" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_5cgtx")
+}
+
+[node name="phaser" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vvh4b")
+}
+autoplay = "phase_1"
+
+[node name="Shield" type="Sprite2D" parent="."]
+modulate = Color(1, 0.32421875, 0.32421875, 1)
+position = Vector2(-5, 2)
+rotation = -1.5707964
+scale = Vector2(0.1300088, 0.5043838)
+texture = ExtResource("6_7u2if")
+
+[node name="loop" type="AnimationPlayer" parent="Shield"]
+libraries = {
+&"": SubResource("AnimationLibrary_hq81o")
+}
+autoplay = "loop"
+
+[node name="HPLabel" type="Label" parent="."]
+offset_left = -42.999996
+offset_top = -13.999999
+offset_right = 129.0
+offset_bottom = 191.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 100
+text = "6666"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HPLabel2" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 11.0
+offset_right = 434.99988
+offset_bottom = 112.0
+rotation = -1.5707964
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(1, 0, 0, 0.4)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 100
+text = "6666"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="timeout" from="PhaseChecker" to="." method="_on_phase_checker_timeout"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="animation_finished" from="hurt" to="." method="_on_hurt_animation_finished"]

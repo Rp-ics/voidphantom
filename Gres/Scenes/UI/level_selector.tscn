@@ -1,0 +1,532 @@
+[gd_scene load_steps=78 format=3 uid="uid://ddd0u3d8c7olr"]
+
+[ext_resource type="Texture2D" uid="uid://diq7xkhnherr5" path="res://Gres/Assets/BGame/galaxy11.png" id="1_7pu45"]
+[ext_resource type="Texture2D" uid="uid://duvccb3lp1u5t" path="res://Gres/Assets/planets/p_1.png" id="1_cb4bu"]
+[ext_resource type="Texture2D" uid="uid://blge7hhsyv61o" path="res://Gres/Assets/BGame/stars_1.png" id="1_h1luv"]
+[ext_resource type="Script" uid="uid://buvruhtlwmkxe" path="res://Gres/Scripts/UI/level_selector.gd" id="1_u3kep"]
+[ext_resource type="Texture2D" uid="uid://dt3xy0d4tkc30" path="res://Gres/Assets/planets/p_2.png" id="2_02o81"]
+[ext_resource type="PackedScene" uid="uid://5ntd7d60ykyh" path="res://Gres/Scenes/UI/audio_manager.tscn" id="2_buv8k"]
+[ext_resource type="Texture2D" uid="uid://dm76s8op3c4gg" path="res://Gres/Assets/BGame/galaxy10.png" id="2_sck1g"]
+[ext_resource type="Texture2D" uid="uid://q65miexfny7v" path="res://Gres/Assets/planets/p_3.png" id="3_cj2x5"]
+[ext_resource type="AudioStream" uid="uid://d1urox2plsv84" path="res://Gres/Music/BGM/bg1.ogg" id="3_tqule"]
+[ext_resource type="Texture2D" uid="uid://cuwm4ec77sq0t" path="res://Gres/Assets/planets/p_6.png" id="4_2krqb"]
+[ext_resource type="AudioStream" uid="uid://bk26rjldhx5v0" path="res://Gres/Music/BGM/bg2.ogg" id="4_slfte"]
+[ext_resource type="Texture2D" uid="uid://dj1vi0lc11vxa" path="res://Gres/Assets/planets/p_7.png" id="5_0nsgg"]
+[ext_resource type="AudioStream" uid="uid://b1qa4lvgn3178" path="res://Gres/Music/BGM/bg3.ogg" id="5_c6j2e"]
+[ext_resource type="Texture2D" uid="uid://d06cuqhnst8rs" path="res://Gres/Assets/planets/p_5.png" id="6_cj2x5"]
+[ext_resource type="AudioStream" uid="uid://dyqahqcb4ykue" path="res://Gres/Music/BGM/bg4.ogg" id="6_jialf"]
+[ext_resource type="Texture2D" uid="uid://6r5arj2t5egi" path="res://Gres/Assets/planets/pbj_1.png" id="7_2krqb"]
+[ext_resource type="AudioStream" uid="uid://75bjef4wh8a" path="res://Gres/Music/BGM/bg5.ogg" id="7_6u5mx"]
+[ext_resource type="AudioStream" uid="uid://d3ibrjqakk8dy" path="res://Gres/Music/BGM/bg6.ogg" id="8_0gudn"]
+[ext_resource type="AudioStream" uid="uid://cvdgw6d4bng11" path="res://Gres/Music/BGM/bg7.ogg" id="9_p617y"]
+[ext_resource type="AudioStream" uid="uid://d05bw82xay7fv" path="res://Gres/Music/BGM/bg8.ogg" id="10_cair7"]
+[ext_resource type="AudioStream" uid="uid://d3fuopoacf8tc" path="res://Gres/Music/BGM/bg9.ogg" id="11_gomwg"]
+[ext_resource type="AudioStream" uid="uid://dl6g8ueupyt5h" path="res://Gres/Music/BGM/bg10.ogg" id="12_brqux"]
+[ext_resource type="AudioStream" uid="uid://8ea3v3f6k8e7" path="res://Gres/Music/BGM/bg11.ogg" id="13_is2xe"]
+[ext_resource type="AudioStream" uid="uid://cgogerbyy7jjb" path="res://Gres/Music/BGM/bg12.ogg" id="14_7jh76"]
+[ext_resource type="Texture2D" uid="uid://dr0f62j56vht8" path="res://Gres/Assets/Icons/arrow/a1.png" id="14_ctet1"]
+[ext_resource type="Texture2D" uid="uid://cib77c530riw7" path="res://Gres/Assets/player/body/body_7.png" id="14_rhavw"]
+[ext_resource type="Texture2D" uid="uid://fkyrqc7ba7js" path="res://Gres/Assets/Icons/arrow/a4.png" id="15_a86ki"]
+[ext_resource type="AudioStream" uid="uid://2hylgivywekw" path="res://Gres/Music/BGM/bg13.ogg" id="15_ajmot"]
+[ext_resource type="Texture2D" uid="uid://uhdjg8i7wifn" path="res://Gres/Assets/player/wings/wing_10.png" id="16_2gqwc"]
+[ext_resource type="AudioStream" uid="uid://238ipc1nmhge" path="res://Gres/Music/BGM/bg14.ogg" id="16_5msux"]
+[ext_resource type="Script" uid="uid://bwuf0j4rvwgn2" path="res://Gres/Scripts/UI/textureButton.gd" id="16_ctet1"]
+[ext_resource type="Texture2D" uid="uid://cxuug35qhirs0" path="res://Gres/Assets/Icons/arrow/a3.png" id="16_qwise"]
+[ext_resource type="Texture2D" uid="uid://0s3dlnc1b0mn" path="res://Gres/Assets/player/propuls/prop_9.png" id="17_bjbl6"]
+[ext_resource type="AudioStream" uid="uid://b762jix3keavo" path="res://Gres/Music/BGM/bg15.ogg" id="17_g3y03"]
+[ext_resource type="AudioStream" uid="uid://b1ubd4snx41ws" path="res://Gres/Music/BGM/bg16.ogg" id="18_b8bbm"]
+[ext_resource type="AudioStream" uid="uid://bd0ljabudebvp" path="res://Gres/Music/BGM/bg17.ogg" id="19_yarpn"]
+[ext_resource type="AudioStream" uid="uid://bfyu3ybsiy7te" path="res://Gres/Music/BGM/bg18.ogg" id="20_806o1"]
+[ext_resource type="AudioStream" uid="uid://cnsjvus1yleeo" path="res://Gres/Music/BGM/bg19.ogg" id="21_yk45i"]
+[ext_resource type="AudioStream" uid="uid://b35utltd7wc43" path="res://Gres/Music/BGM/bg20.ogg" id="22_777c6"]
+[ext_resource type="AudioStream" uid="uid://bl4uvgma70gmx" path="res://Gres/Music/BGM/bg21.ogg" id="23_s05vp"]
+[ext_resource type="AudioStream" uid="uid://c57qaqrvhhw38" path="res://Gres/Music/BGM/bg22.ogg" id="24_v4y3u"]
+[ext_resource type="AudioStream" uid="uid://dej46xjftjh8d" path="res://Gres/Music/BGM/bg23.ogg" id="25_fdt1l"]
+[ext_resource type="AudioStream" uid="uid://dh53xpqbvuy8k" path="res://Gres/Music/BGM/bg24.ogg" id="26_8seoh"]
+[ext_resource type="AudioStream" uid="uid://dgg303q1vhr2j" path="res://Gres/Music/BGM/bg25.ogg" id="27_4ewo1"]
+[ext_resource type="AudioStream" uid="uid://bhf701o17yarp" path="res://Gres/Music/BGM/bg26.ogg" id="28_adn86"]
+[ext_resource type="AudioStream" uid="uid://brrqivx2yci6x" path="res://Gres/Music/BGM/bg27.ogg" id="29_2oi85"]
+[ext_resource type="AudioStream" uid="uid://dc0mwjbmt0iqh" path="res://Gres/Music/BGM/bg28.ogg" id="30_no1xv"]
+[ext_resource type="AudioStream" uid="uid://b25l86087pan" path="res://Gres/Music/BGM/bg29.ogg" id="31_ryjal"]
+[ext_resource type="AudioStream" uid="uid://duggkgjmp4aaq" path="res://Gres/Music/BGM/bg30.ogg" id="32_soywp"]
+[ext_resource type="Texture2D" uid="uid://t6u58nf1kru7" path="res://Gres/Assets/Icons/easy_skull.png" id="49_777c6"]
+[ext_resource type="Texture2D" uid="uid://dyrpt7rylak0r" path="res://Gres/Assets/Icons/easy_skull_hover.png" id="50_s05vp"]
+[ext_resource type="Texture2D" uid="uid://ctn8yxm07jxc8" path="res://Gres/Assets/Icons/easy_skull_disabled.png" id="51_v4y3u"]
+[ext_resource type="Texture2D" uid="uid://bn2oofiecthe0" path="res://Gres/Assets/Icons/normal_skull.png" id="52_fdt1l"]
+[ext_resource type="Texture2D" uid="uid://bq8ub3kk1spha" path="res://Gres/Assets/Icons/normal_skull_hover.png" id="53_8seoh"]
+[ext_resource type="Texture2D" uid="uid://bmjvqd1p0c8hr" path="res://Gres/Assets/Icons/normal_skull_disabled.png" id="54_4ewo1"]
+[ext_resource type="Texture2D" uid="uid://dulpgahy25wnj" path="res://Gres/Assets/Icons/hard_skull.png" id="55_adn86"]
+[ext_resource type="Texture2D" uid="uid://cyhsvsblrdu1n" path="res://Gres/Assets/Icons/hard_skull_hover.png" id="56_2oi85"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="56_8seoh"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="57_4ewo1"]
+[ext_resource type="Texture2D" uid="uid://co0a2h4ik6ni" path="res://Gres/Assets/Icons/hard_skull_disabled.png" id="57_no1xv"]
+[ext_resource type="Texture2D" uid="uid://ct5dvyjh0jj8o" path="res://Gres/Assets/player/canon/canon_31.png" id="57_yk45i"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="58_adn86"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="59_2oi85"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="60_no1xv"]
+[ext_resource type="Texture2D" uid="uid://dxh0lww3ea6lq" path="res://Gres/Assets/Effects/Star.png" id="60_yk45i"]
+
+[sub_resource type="Animation" id="Animation_777c6"]
+resource_name = "fade"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.00126443),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s05vp"]
+_data = {
+&"fade": SubResource("Animation_777c6")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rhavw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryjal"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8seoh"]
+bg_color = Color(0.029, 0, 0.371, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ryjal"]
+texture = ExtResource("56_8seoh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_soywp"]
+texture = ExtResource("57_4ewo1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ns4iy"]
+texture = ExtResource("58_adn86")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_40e6c"]
+texture = ExtResource("59_2oi85")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jv3r"]
+texture = ExtResource("56_8seoh")
+
+[sub_resource type="Curve" id="Curve_777c6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.47343, 0.966292), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_s05vp"]
+offsets = PackedFloat32Array(0.00552486, 0.546961, 0.994475)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="LevelSelector" type="Control" node_paths=PackedStringArray("markers")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u3kep")
+markers = [NodePath("lvl1"), NodePath("lvl2")]
+
+[node name="AudioManager" parent="." instance=ExtResource("2_buv8k")]
+playlist = Array[AudioStream]([ExtResource("3_tqule"), ExtResource("4_slfte"), ExtResource("5_c6j2e"), ExtResource("6_jialf"), ExtResource("7_6u5mx"), ExtResource("8_0gudn"), ExtResource("9_p617y"), ExtResource("10_cair7"), ExtResource("11_gomwg"), ExtResource("12_brqux"), ExtResource("13_is2xe"), ExtResource("14_7jh76"), ExtResource("15_ajmot"), ExtResource("16_5msux"), ExtResource("17_g3y03"), ExtResource("18_b8bbm"), ExtResource("19_yarpn"), ExtResource("20_806o1"), ExtResource("21_yk45i"), ExtResource("22_777c6"), ExtResource("23_s05vp"), ExtResource("24_v4y3u"), ExtResource("25_fdt1l"), ExtResource("26_8seoh"), ExtResource("27_4ewo1"), ExtResource("28_adn86"), ExtResource("29_2oi85"), ExtResource("30_no1xv"), ExtResource("31_ryjal"), ExtResource("32_soywp")])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1694.0
+offset_top = -1340.0
+offset_right = 7131.0
+offset_bottom = 2179.0
+color = Color(0, 0, 0, 1)
+
+[node name="Fade" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1694.0
+offset_top = -1340.0
+offset_right = 3266.0
+offset_bottom = 2398.0
+color = Color(0, 0, 0, 1)
+
+[node name="fade" type="AnimationPlayer" parent="Fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_s05vp")
+}
+
+[node name="Bgstar9" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.403)
+layout_mode = 0
+offset_left = -1088.0
+offset_top = -850.0
+offset_right = 19493.0
+offset_bottom = 6151.0
+scale = Vector2(0.387695, 0.387695)
+texture = ExtResource("1_7pu45")
+stretch_mode = 1
+
+[node name="Bgstar10" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.723)
+layout_mode = 0
+offset_left = -848.0
+offset_top = -730.0
+offset_right = 13436.0
+offset_bottom = 2156.0
+scale = Vector2(0.558594, 0.558594)
+texture = ExtResource("2_sck1g")
+stretch_mode = 1
+
+[node name="Planets" type="Node2D" parent="."]
+
+[node name="P1" type="Sprite2D" parent="Planets"]
+position = Vector2(-680.5, -57.5)
+scale = Vector2(2.39583, 2.39583)
+texture = ExtResource("1_cb4bu")
+
+[node name="P2" type="Sprite2D" parent="Planets"]
+position = Vector2(642, -77)
+scale = Vector2(2.45833, 2.45833)
+texture = ExtResource("2_02o81")
+
+[node name="P3" type="Sprite2D" parent="Planets"]
+position = Vector2(-200, 90)
+scale = Vector2(2.45833, 2.45833)
+texture = ExtResource("3_cj2x5")
+
+[node name="P4" type="Sprite2D" parent="Planets"]
+position = Vector2(1821, -131)
+scale = Vector2(2.45833, 2.45833)
+texture = ExtResource("4_2krqb")
+
+[node name="P5" type="Sprite2D" parent="Planets"]
+position = Vector2(2801, -291)
+scale = Vector2(3.35417, 3.35417)
+texture = ExtResource("5_0nsgg")
+
+[node name="P6" type="Sprite2D" parent="Planets"]
+position = Vector2(3802, 104)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_cj2x5")
+
+[node name="Pbj1" type="Sprite2D" parent="Planets/P6"]
+position = Vector2(0.400002, 2.38419e-06)
+texture = ExtResource("7_2krqb")
+
+[node name="Stars" type="Sprite2D" parent="."]
+position = Vector2(219.667, 163)
+scale = Vector2(0.445333, 0.445333)
+texture = ExtResource("1_h1luv")
+
+[node name="Stars1" type="TextureRect" parent="Stars"]
+offset_left = -3945.0
+offset_top = -2713.0
+offset_right = 15519.0
+offset_bottom = 4527.0
+texture = ExtResource("1_h1luv")
+stretch_mode = 1
+flip_h = true
+
+[node name="lvl1" type="Marker2D" parent="."]
+position = Vector2(-678, -58)
+
+[node name="lvl2" type="Marker2D" parent="."]
+position = Vector2(-200, 90)
+
+[node name="lvl3" type="Marker2D" parent="."]
+position = Vector2(642, -80)
+
+[node name="lvl4" type="Marker2D" parent="."]
+position = Vector2(1819, -130)
+
+[node name="lvl5" type="Marker2D" parent="."]
+position = Vector2(2801, -293)
+
+[node name="lvl6" type="Marker2D" parent="."]
+position = Vector2(3802, 104)
+
+[node name="Name_lvl_1" type="Label" parent="."]
+layout_mode = 0
+offset_left = -966.0
+offset_top = -151.0
+offset_right = 186.0
+offset_bottom = -90.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.125, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0.101563, 0, 1, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 60
+text = "Drowned Citadel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name_lvl_2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 354.0
+offset_top = -172.0
+offset_right = 1506.0
+offset_bottom = -111.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.44016, 0.464844, 0.148895, 1)
+theme_override_colors/font_outline_color = Color(0.34375, 0.288528, 0.217529, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 60
+text = "Hoculus Wastes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name_lvl_3" type="Label" parent="."]
+layout_mode = 0
+offset_left = -484.0
+offset_top = -8.0
+offset_right = 666.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.613281, 0.172485, 0.172485, 1)
+theme_override_colors/font_outline_color = Color(1, 0.492188, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 60
+text = "Molten Bloodreach"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name_lvl_4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1531.0
+offset_top = -227.0
+offset_right = 2683.0
+offset_bottom = -165.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.171875, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 60
+text = "Echoing Magmasea"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name_lvl_5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2514.0
+offset_top = -394.0
+offset_right = 3668.0
+offset_bottom = -333.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.0078125, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.882813, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 60
+text = "Blazebroadcast Realm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name_lvl_6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3515.0
+offset_top = 17.0
+offset_right = 4665.0
+offset_bottom = 78.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 0, 0.960938, 1)
+theme_override_colors/font_outline_color = Color(0.664063, 0, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 60
+text = "Amethyst Hivefront"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(-678, -58)
+
+[node name="Next" type="TextureButton" parent="Buttons"]
+offset_left = 56.0
+offset_top = -30.0
+offset_right = 124.0
+offset_bottom = 32.0
+pivot_offset = Vector2(34, 31)
+texture_normal = ExtResource("14_ctet1")
+texture_pressed = ExtResource("15_a86ki")
+texture_hover = ExtResource("16_qwise")
+texture_disabled = ExtResource("14_ctet1")
+texture_focused = ExtResource("16_qwise")
+stretch_mode = 5
+script = ExtResource("16_ctet1")
+
+[node name="Back" type="TextureButton" parent="Buttons"]
+offset_left = -128.0
+offset_top = -30.0
+offset_right = -60.0
+offset_bottom = 32.0
+pivot_offset = Vector2(34, 31)
+texture_normal = ExtResource("14_ctet1")
+texture_pressed = ExtResource("15_a86ki")
+texture_hover = ExtResource("16_qwise")
+texture_disabled = ExtResource("14_ctet1")
+texture_focused = ExtResource("16_qwise")
+stretch_mode = 5
+flip_h = true
+script = ExtResource("16_ctet1")
+
+[node name="Select" type="Button" parent="Buttons"]
+offset_left = -63.0
+offset_top = -60.0
+offset_right = 57.0
+offset_bottom = 60.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_rhavw")
+flat = true
+
+[node name="dificulty" type="Node2D" parent="Buttons"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="container" type="RichTextLabel" parent="Buttons/dificulty"]
+offset_left = -105.0
+offset_top = 75.0
+offset_right = 105.0
+offset_bottom = 148.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ryjal")
+
+[node name="Easy" type="TextureButton" parent="Buttons/dificulty"]
+offset_left = -100.0
+offset_top = 75.0
+offset_right = -27.0
+offset_bottom = 148.0
+texture_normal = ExtResource("49_777c6")
+texture_pressed = ExtResource("49_777c6")
+texture_hover = ExtResource("50_s05vp")
+texture_disabled = ExtResource("51_v4y3u")
+texture_focused = ExtResource("49_777c6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Normal" type="TextureButton" parent="Buttons/dificulty"]
+offset_left = -36.0
+offset_top = 75.0
+offset_right = 37.0
+offset_bottom = 148.0
+disabled = true
+texture_normal = ExtResource("52_fdt1l")
+texture_pressed = ExtResource("52_fdt1l")
+texture_hover = ExtResource("53_8seoh")
+texture_disabled = ExtResource("54_4ewo1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Hard" type="TextureButton" parent="Buttons/dificulty"]
+offset_left = 28.0
+offset_top = 75.0
+offset_right = 101.0
+offset_bottom = 148.0
+disabled = true
+texture_normal = ExtResource("55_adn86")
+texture_pressed = ExtResource("55_adn86")
+texture_hover = ExtResource("56_2oi85")
+texture_disabled = ExtResource("57_no1xv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="InfoMap" type="Node2D" parent="Buttons/dificulty"]
+
+[node name="DropInfo" type="RichTextLabel" parent="Buttons/dificulty/InfoMap"]
+visible = false
+offset_left = -128.0
+offset_top = -152.0
+offset_right = 124.0
+offset_bottom = -30.0
+theme_override_colors/default_color = Color(0, 0.71875, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8seoh")
+bbcode_enabled = true
+text = "[center]
+[table=4]
+
+[cell]2%[/cell]
+[cell][img=20]res://Gres/Assets/Icons/pfp/icons/wrath_1.png[/img][/cell]
+
+[cell]5%[/cell]
+[cell][img=20]res://Gres/Assets/Icons/pfp/icons/wrath_2.png[/img][/cell]
+
+[cell]15%[/cell]
+[cell][img=25]res://Gres/Assets/Icons/parts/crystal_pack_2.png[/img][/cell]
+
+[cell]70%[/cell]
+[cell][img=20]res://Gres/Assets/obj/tablet_2.png[/img][/cell]
+
+[cell]100%[/cell]
+[cell][img=20]res://Gres/Assets/Icons/parts/gold_icon_1.png[/img][/cell]
+
+[cell]0.1%[/cell]
+[cell][img=20]res://Gres/Assets/Icons/exotic_icon.png[/img][/cell]
+[/table]
+[/center]"
+
+[node name="CloseDG" type="Button" parent="Buttons"]
+offset_left = -312.0
+offset_top = -188.0
+offset_right = -188.0
+offset_bottom = -64.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxTexture_ryjal")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_soywp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ns4iy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_40e6c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6jv3r")
+text = "x"
+script = ExtResource("60_no1xv")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-678, -58)
+zoom = Vector2(2, 2)
+
+[node name="Body" type="Sprite2D" parent="Camera"]
+position = Vector2(0, 2)
+rotation = 1.5708
+texture = ExtResource("14_rhavw")
+
+[node name="Canon" type="Sprite2D" parent="Camera/Body"]
+texture = ExtResource("57_yk45i")
+
+[node name="Wings" type="Sprite2D" parent="Camera/Body"]
+texture = ExtResource("16_2gqwc")
+
+[node name="Prop" type="Sprite2D" parent="Camera/Body"]
+texture = ExtResource("17_bjbl6")
+
+[node name="stars" type="CPUParticles2D" parent="Camera"]
+amount = 40
+texture = ExtResource("60_yk45i")
+lifetime = 2.0
+speed_scale = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(400, 400)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+scale_amount_min = 0.01
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_777c6")
+color_ramp = SubResource("Gradient_s05vp")
+
+[connection signal="pressed" from="Buttons/Select" to="." method="_on_select_pressed"]
+[connection signal="mouse_entered" from="Buttons/CloseDG" to="Buttons/CloseDG" method="_on_mouse_entered"]
+[connection signal="pressed" from="Buttons/CloseDG" to="." method="_on_close_dg_pressed"]

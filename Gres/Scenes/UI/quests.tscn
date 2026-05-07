@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://dpiwxwo7ex0hs"]
+
+[ext_resource type="Script" uid="uid://bdq50inrxnuup" path="res://Gres/Scripts/UI/quests.gd" id="1_fs428"]
+[ext_resource type="Texture2D" uid="uid://b23e4kychddr2" path="res://Gres/Assets/UI/inentory/body.png" id="2_vhxg8"]
+[ext_resource type="Texture2D" uid="uid://ikmrelc84kus" path="res://Gres/Assets/UI/inentory/liner.png" id="3_yt1nv"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="4_gwvi1"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="5_6u4xv"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="6_dqxr0"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="7_1wm3y"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="8_586ex"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d6y7i"]
+texture = ExtResource("4_gwvi1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0co7j"]
+texture = ExtResource("5_6u4xv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpb66"]
+texture = ExtResource("6_dqxr0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qkfvk"]
+texture = ExtResource("7_1wm3y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stcf8"]
+texture = ExtResource("4_gwvi1")
+
+[node name="Quests" type="Control" unique_id=1618258809]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fs428")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1234992266]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_vhxg8")
+
+[node name="Title" type="Label" parent="BG" unique_id=428126867]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 1152.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0, 1, 0.859375, 1)
+theme_override_constants/outline_size = 21
+theme_override_font_sizes/font_size = 60
+text = "Daily Missions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sep" type="TextureRect" parent="BG" unique_id=1979619684]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 1152.0
+offset_bottom = 278.0
+texture = ExtResource("3_yt1nv")
+
+[node name="sep2" type="TextureRect" parent="BG" unique_id=2142012703]
+layout_mode = 0
+offset_top = 268.0
+offset_right = 1152.0
+offset_bottom = 462.0
+texture = ExtResource("3_yt1nv")
+
+[node name="sep3" type="TextureRect" parent="BG" unique_id=1699667299]
+layout_mode = 0
+offset_top = 452.0
+offset_right = 1152.0
+offset_bottom = 646.0
+texture = ExtResource("3_yt1nv")
+
+[node name="Grid" type="GridContainer" parent="." unique_id=2085430722]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 106.0
+offset_right = 1170.0
+offset_bottom = 610.0
+theme_override_constants/v_separation = 42
+
+[node name="Quest1" type="RichTextLabel" parent="Grid" unique_id=1367891063]
+custom_minimum_size = Vector2(1140, 140)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 34
+bbcode_enabled = true
+text = "Death collector III"
+
+[node name="Button" type="Button" parent="Grid/Quest1" unique_id=921379921]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 21.0
+offset_right = 1029.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 30
+text = "CLAIM"
+
+[node name="Quest2" type="RichTextLabel" parent="Grid" unique_id=1883434618]
+custom_minimum_size = Vector2(1140, 140)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 34
+bbcode_enabled = true
+text = "Death collector III"
+
+[node name="Button" type="Button" parent="Grid/Quest2" unique_id=949427926]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 21.0
+offset_right = 1029.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 30
+text = "CLAIM"
+
+[node name="Quest3" type="RichTextLabel" parent="Grid" unique_id=448010181]
+custom_minimum_size = Vector2(1140, 140)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 34
+bbcode_enabled = true
+text = "Death collector III"
+
+[node name="Button" type="Button" parent="Grid/Quest3" unique_id=1208847868]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 21.0
+offset_right = 1029.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 30
+text = "CLAIM"
+
+[node name="SpecialCoinLabel" type="RichTextLabel" parent="." unique_id=49268975]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 16.0
+offset_right = 1152.0
+offset_bottom = 84.0
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+
+[node name="CloseButton" type="Button" parent="." unique_id=973407497]
+layout_mode = 0
+offset_top = -14.0
+offset_right = 124.0
+offset_bottom = 110.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_d6y7i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0co7j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vpb66")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qkfvk")
+theme_override_styles/focus = SubResource("StyleBoxTexture_stcf8")
+text = "x"
+script = ExtResource("8_586ex")
+
+[node name="Timer" type="Timer" parent="." unique_id=35461507]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="mouse_entered" from="CloseButton" to="CloseButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

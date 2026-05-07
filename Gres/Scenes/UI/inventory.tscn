@@ -1,0 +1,308 @@
+[gd_scene format=3 uid="uid://dppgeynuf774u"]
+
+[ext_resource type="Texture2D" uid="uid://b23e4kychddr2" path="res://Gres/Assets/UI/inentory/body.png" id="1_1cayn"]
+[ext_resource type="Script" uid="uid://bxjlnw6r2623h" path="res://Gres/Scripts/UI/inventory_options.gd" id="1_581yf"]
+[ext_resource type="Texture2D" uid="uid://dp0051x4tl6uu" path="res://Gres/Assets/UI/inentory/info_holder.png" id="2_iykgm"]
+[ext_resource type="Texture2D" uid="uid://bb736wq4yxbba" path="res://Gres/Assets/UI/inentory/text_holder.png" id="4_atdgj"]
+[ext_resource type="Script" uid="uid://dltgiyg162158" path="res://Gres/Scripts/UI/gun_info_txt.gd" id="4_iykgm"]
+[ext_resource type="Script" uid="uid://b4lg8f2pclcbc" path="res://Gres/Scripts/UI/inventory_grid.gd" id="5_0smeu"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="6_qfwqe"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="7_581yf"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="9_7k51i"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="9_581yf"]
+[ext_resource type="Texture2D" uid="uid://b0esrea42pi2b" path="res://Gres/Assets/UI/Buttons/check_btn_active.png" id="11_7k51i"]
+[ext_resource type="Texture2D" uid="uid://w1j3tv7yliqy" path="res://Gres/Assets/UI/Buttons/check_btn_active1.png" id="11_ru32q"]
+[ext_resource type="Texture2D" uid="uid://c1ysh3dp16455" path="res://Gres/Assets/UI/Buttons/check_btn_deactivated.png" id="12_84gsf"]
+[ext_resource type="Texture2D" uid="uid://bwktcqtlutydf" path="res://Gres/Assets/UI/Buttons/check_btn_deactivated1.png" id="12_jpiwi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_581yf"]
+bg_color = Color(0.02584, 0, 0.160078, 0.922)
+
+[sub_resource type="Animation" id="Animation_581yf"]
+resource_name = "show"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7k51i"]
+_data = {
+&"show": SubResource("Animation_581yf")
+}
+
+[sub_resource type="Theme" id="Theme_ru32q"]
+CheckBox/icons/checked = ExtResource("11_ru32q")
+CheckBox/icons/unchecked = ExtResource("12_jpiwi")
+CheckButton/icons/checked = ExtResource("11_7k51i")
+CheckButton/icons/checked_mirrored = ExtResource("12_84gsf")
+CheckButton/icons/unchecked = ExtResource("12_84gsf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7k51i"]
+
+[node name="Inventory" type="Control" unique_id=2079265387]
+process_mode = 3
+z_index = 6
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_581yf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=367348134]
+process_mode = 3
+layout_mode = 0
+offset_left = -941.0
+offset_top = -699.0
+offset_right = 905.0
+offset_bottom = 678.0
+color = Color(0.136719, 0.136719, 0.136719, 1)
+
+[node name="Body" type="Sprite2D" parent="." unique_id=619805898]
+process_mode = 3
+scale = Vector2(8, 8)
+texture = ExtResource("1_1cayn")
+
+[node name="text_holder" type="Sprite2D" parent="." unique_id=231499528]
+process_mode = 3
+position = Vector2(0, -312)
+scale = Vector2(8, 8)
+texture = ExtResource("4_atdgj")
+
+[node name="InvL" type="Label" parent="text_holder" unique_id=328384588]
+process_mode = 3
+offset_left = -52.0
+offset_top = -6.0
+offset_right = 993.0
+offset_bottom = 132.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0.015625, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 0.929688, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="info_holder" type="Sprite2D" parent="." unique_id=1081896824]
+process_mode = 3
+position = Vector2(224, 0)
+scale = Vector2(8, 8)
+texture = ExtResource("2_iykgm")
+script = ExtResource("4_iykgm")
+
+[node name="GunInfo" type="RichTextLabel" parent="info_holder" unique_id=289855879]
+process_mode = 3
+offset_left = -22.0
+offset_top = -30.0
+offset_right = 860.0
+offset_bottom = 1172.0
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Gun Name[/center]
+
+Information about this gun, like bullet speed, fire rate, damage and more much"
+
+[node name="ScrollSlot" type="ScrollContainer" parent="." unique_id=809903967]
+process_mode = 3
+layout_mode = 0
+offset_left = -405.0
+offset_top = -149.0
+offset_right = 15.0
+offset_bottom = 241.0
+
+[node name="InventoryGrid" type="GridContainer" parent="ScrollSlot" unique_id=1428452689]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 120
+theme_override_constants/v_separation = 5
+columns = 3
+script = ExtResource("5_0smeu")
+
+[node name="Close_Inventory" type="TextureButton" parent="." unique_id=1543844498]
+process_mode = 3
+layout_mode = 0
+offset_left = 308.0
+offset_top = -352.0
+offset_right = 388.0
+offset_bottom = -272.0
+texture_normal = ExtResource("6_qfwqe")
+texture_pressed = ExtResource("7_581yf")
+texture_hover = ExtResource("9_581yf")
+texture_disabled = ExtResource("9_7k51i")
+texture_focused = ExtResource("7_581yf")
+stretch_mode = 5
+
+[node name="EquippL" type="RichTextLabel" parent="." unique_id=1880030969]
+process_mode = 3
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -424.0
+offset_top = -92.0
+offset_right = 424.0
+offset_bottom = 28.0
+theme_override_colors/font_outline_color = Color(0, 0.585938, 0.00919118, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_581yf")
+bbcode_enabled = true
+text = "EQUIPPED Blaster: Epic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="show" type="AnimationPlayer" parent="EquippL" unique_id=880785850]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_7k51i")
+
+[node name="All" type="CheckBox" parent="." unique_id=43359309]
+process_mode = 3
+layout_mode = 0
+offset_left = -397.0
+offset_top = -229.0
+offset_right = -357.0
+offset_bottom = -189.0
+pivot_offset = Vector2(20, 20)
+theme = SubResource("Theme_ru32q")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7k51i")
+button_pressed = true
+
+[node name="Label" type="Label" parent="All" unique_id=1395024361]
+process_mode = 3
+layout_mode = 0
+offset_left = 5.0
+offset_top = -16.0
+offset_right = 635.0
+offset_bottom = 145.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.078125, 1, 0, 1)
+theme_override_font_sizes/font_size = 160
+text = "All"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Common" type="CheckBox" parent="." unique_id=1751094852]
+process_mode = 3
+layout_mode = 0
+offset_left = -317.0
+offset_top = -229.0
+offset_right = -245.0
+offset_bottom = -157.0
+pivot_offset = Vector2(20, 20)
+theme = SubResource("Theme_ru32q")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7k51i")
+
+[node name="Label" type="Label" parent="Common" unique_id=402914193]
+process_mode = 3
+layout_mode = 0
+offset_left = 3.0
+offset_top = -16.0
+offset_right = 658.0
+offset_bottom = 145.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 160
+text = "Common"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rare" type="CheckBox" parent="." unique_id=168697822]
+process_mode = 3
+layout_mode = 0
+offset_left = -237.0
+offset_top = -229.0
+offset_right = -165.0
+offset_bottom = -157.0
+pivot_offset = Vector2(20, 20)
+theme = SubResource("Theme_ru32q")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7k51i")
+
+[node name="Label" type="Label" parent="Rare" unique_id=1760871205]
+process_mode = 3
+layout_mode = 0
+offset_left = 3.0
+offset_top = -16.0
+offset_right = 643.0
+offset_bottom = 145.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 0.65625, 0, 1)
+theme_override_font_sizes/font_size = 160
+text = "Rare"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Epic" type="CheckBox" parent="." unique_id=1659441724]
+process_mode = 3
+layout_mode = 0
+offset_left = -157.0
+offset_top = -229.0
+offset_right = -85.0
+offset_bottom = -157.0
+pivot_offset = Vector2(20, 20)
+theme = SubResource("Theme_ru32q")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7k51i")
+
+[node name="Label" type="Label" parent="Epic" unique_id=1749837156]
+process_mode = 3
+layout_mode = 0
+offset_left = 4.0
+offset_top = -16.0
+offset_right = 654.0
+offset_bottom = 145.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.828125, 0, 1, 1)
+theme_override_font_sizes/font_size = 160
+text = "Epic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Legendary" type="CheckBox" parent="." unique_id=921624441]
+process_mode = 3
+layout_mode = 0
+offset_left = -77.0
+offset_top = -229.0
+offset_right = -5.0
+offset_bottom = -157.0
+pivot_offset = Vector2(20, 20)
+theme = SubResource("Theme_ru32q")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7k51i")
+
+[node name="Label" type="Label" parent="Legendary" unique_id=1699885242]
+process_mode = 3
+layout_mode = 0
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 886.0
+offset_bottom = 145.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 0, 0.1875, 1)
+theme_override_font_sizes/font_size = 160
+text = "Legendary"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Close_Inventory" to="." method="_on_close_inventory_pressed"]
