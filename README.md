@@ -74,6 +74,14 @@ If this code helps you or you enjoy the gameplay:
     [✔] Steam Achievements Integration
 
     [✔] Expanded Crafting Recipes
+    
+    [✔] Simple inventory (basic)
+    
+    [✔] Global PvP Multiplayer (Lobby)
+    
+    [✔] Multiplayer modes
+    
+    [✔] Custom player (color,aspect, etc)
 
     [ ] Community-suggested Bosses & Content
 
