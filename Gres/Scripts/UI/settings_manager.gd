@@ -1,7 +1,5 @@
 extends Node2D
 
-
-
 func _ready() -> void:
 	# Sincronizza l'UI con il valore salvato nei GlobalStats
 	match GlobalStats.graphic:

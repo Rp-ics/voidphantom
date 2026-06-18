@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://bq1l5dhuydgoa"]
+
+[ext_resource type="Script" uid="uid://bw87s3bi58q8l" path="res://Gres/Scripts/enemies/mini_boss/minion_base.gd" id="1_06818"]
+[ext_resource type="Texture2D" uid="uid://b3mnqm07j1cjm" path="res://Gres/Assets/Enemy/obj/drone_scarabeo.png" id="1_g1tff"]
+
+[sub_resource type="Animation" id="Animation_06818"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_iqtj0"]
+resource_name = "loop"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jpyg"]
+_data = {
+&"RESET": SubResource("Animation_06818"),
+&"loop": SubResource("Animation_iqtj0")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1tff"]
+radius = 9.0
+height = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_06818"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06818"]
+size = Vector2(191, 20)
+
+[sub_resource type="Animation" id="Animation_g1tff"]
+resource_name = "death"
+
+[sub_resource type="Animation" id="Animation_5jpyg"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_7ctfd"]
+resource_name = "walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ec1t5"]
+_data = {
+&"death": SubResource("Animation_g1tff"),
+&"idle": SubResource("Animation_5jpyg"),
+&"walk": SubResource("Animation_7ctfd")
+}
+
+[node name="MinionBase" type="CharacterBody2D" unique_id=1040513704]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_06818")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1994557247]
+texture = ExtResource("1_g1tff")
+hframes = 2
+
+[node name="loop" type="AnimationPlayer" parent="Sprite2D" unique_id=531028411]
+libraries/ = SubResource("AnimationLibrary_5jpyg")
+autoplay = &"loop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=916109849]
+shape = SubResource("CapsuleShape2D_g1tff")
+debug_color = Color(0, 0.60038817, 0.70000815, 0)
+
+[node name="HitBox" type="Area2D" parent="." unique_id=475027700]
+collision_layer = 2
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1819685057]
+shape = SubResource("CircleShape2D_06818")
+debug_color = Color(0.21802102, 1, 0, 0)
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=469619958]
+collision_layer = 2
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1543949758]
+shape = SubResource("CircleShape2D_06818")
+debug_color = Color(0.21802102, 1, 0, 0)
+
+[node name="DashArea" type="Area2D" parent="." unique_id=982985172]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DashArea" unique_id=65867321]
+position = Vector2(85.5, 0)
+shape = SubResource("RectangleShape2D_06818")
+debug_color = Color(0.21875, 1, 0, 0.41960785)
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=189163275]
+one_shot = true
+
+[node name="DashTimer" type="Timer" parent="." unique_id=1600127380]
+wait_time = 5.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1450764488]
+libraries/ = SubResource("AnimationLibrary_ec1t5")

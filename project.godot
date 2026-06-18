@@ -14,10 +14,6 @@ version="0.13"
 publicKey="f855616147708803"
 privateKey="3e9474f24c4cbd1d"
 
-[animation]
-
-compatibility/default_parent_skeleton_in_mesh_instance_3d=true
-
 [application]
 
 config/name="VoidPhantom"
@@ -46,8 +42,14 @@ MissionManager="*res://Gres/Scripts/MissionManager.gd"
 TimeManager="*res://Gres/Scripts/TimeManager.gd"
 GlobalMouseManager="*res://Gres/Scripts/GlobalMouseManager.gd"
 BloodLink="*res://Gres/Scripts/BloodLinkManager.gd.gd"
+MatchmakingManager="*res://Gres/Multiplayer/script/MatchmakingManager.gd"
 SilentWolf="*uid://dt0fch7477n2t"
 GlobalScoreboard="*uid://bbw421e8rk2q2"
+GameModes="*uid://02c8actqnuut"
+
+[debug]
+
+settings/physics_interpolation/enable_warnings=false
 
 [display]
 
@@ -57,7 +59,7 @@ window/vsync/use_vsync=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
+enabled=PackedStringArray("res://addons/godotsteam/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
 
 [file_customization]
 
@@ -81,6 +83,8 @@ drone=""
 boss=""
 weapon_ui=""
 wall_skill=""
+bullet_spawner=""
+mp_player=""
 
 [gui]
 
@@ -174,6 +178,7 @@ locale/translations_pot_files=PackedStringArray("res://Gres/Scenes/UI/pause_ui.t
 2d_physics/layer_6="p_bullet"
 2d_physics/layer_7="e_bullet"
 2d_physics/layer_8="expl_damage"
+2d_physics/layer_9="mu_p_bullet"
 
 [rendering]
 
@@ -186,3 +191,4 @@ renderer/rendering_method.mobile="gl_compatibility"
 initialization/app_id=0
 initialization/initialize_on_startup=false
 initialization/embed_callbacks=false
+multiplayer_peer/max_channels=4

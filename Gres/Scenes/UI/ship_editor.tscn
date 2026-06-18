@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://dksv0hd53l5nd"]
+[gd_scene format=3 uid="uid://dksv0hd53l5nd"]
 
 [ext_resource type="Script" uid="uid://dug1ifsqp62pp" path="res://Gres/Scripts/UI/ship_editor.gd" id="1_h168b"]
 [ext_resource type="Texture2D" uid="uid://b23e4kychddr2" path="res://Gres/Assets/UI/inentory/body.png" id="2_fisv6"]
@@ -58,7 +58,7 @@
 [ext_resource type="Script" uid="uid://c34j3p2l3o2g3" path="res://Gres/Scripts/UI/wings_editor_man.gd" id="52_7g8gs"]
 [ext_resource type="Texture2D" uid="uid://dgjl2uds8yb86" path="res://Gres/Assets/player/wings/wing_7.png" id="53_pom18"]
 [ext_resource type="Script" uid="uid://b4jprgh3oj7ov" path="res://Gres/Scripts/UI/prop_editor_man.gd" id="54_pom18"]
-[ext_resource type="Texture2D" uid="uid://bft7wnryhrob4" path="res://Gres/Assets/Background/bgstar_9.png" id="59_cywae"]
+[ext_resource type="Texture2D" uid="uid://sff7nvx0yv1w" path="res://Gres/Assets/BGame/galaxy9.png" id="59_cywae"]
 
 [sub_resource type="Animation" id="Animation_oxx10"]
 resource_name = "anim"

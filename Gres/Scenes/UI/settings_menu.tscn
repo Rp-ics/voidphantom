@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://demnvwi1mqv3c"]
 
-[ext_resource type="Script" uid="uid://dww5nskmeq0f2" path="res://Gres/Scripts/UI/settings_man_menu.gd" id="1_wg0wn"]
+[ext_resource type="Script" uid="uid://73s505pl3tnu" path="res://Gres/Scripts/UI/settings_menu.gd" id="1_qy5h8"]
 [ext_resource type="Texture2D" uid="uid://b23e4kychddr2" path="res://Gres/Assets/UI/inentory/body.png" id="2_qy5h8"]
 [ext_resource type="Texture2D" uid="uid://b2nhhity5frxl" path="res://Gres/Assets/Icons/craft/cryst_1.png" id="3_wa6gw"]
 [ext_resource type="Texture2D" uid="uid://bcsi0qw81d6r0" path="res://Gres/Assets/Icons/craft/cryst_2.png" id="4_nhd31"]
@@ -27,6 +27,22 @@
 [ext_resource type="Texture2D" uid="uid://rexer0verj2b" path="res://Gres/Assets/UI/Buttons/check_btn_hover.png" id="25_h5yag"]
 [ext_resource type="Texture2D" uid="uid://c1ysh3dp16455" path="res://Gres/Assets/UI/Buttons/check_btn_deactivated.png" id="26_g74yl"]
 [ext_resource type="Script" uid="uid://bvvd6f7ijp1b1" path="res://Gres/Scripts/UI/graphic_man.gd" id="27_ytmde"]
+[ext_resource type="Script" uid="uid://do5au33eh7nhi" path="res://Gres/Scripts/UI/gamep_manager.gd" id="28_wa6gw"]
+[ext_resource type="Script" uid="uid://r4wxdum32udm" path="res://Gres/Scripts/UI/key_map.gd" id="29_nhd31"]
+[ext_resource type="Texture2D" uid="uid://ikmrelc84kus" path="res://Gres/Assets/UI/inentory/liner.png" id="30_6d25v"]
+[ext_resource type="Script" uid="uid://d27hcocoxk1w" path="res://Gres/Scripts/UI/map_settings.gd" id="31_2f5qn"]
+[ext_resource type="PackedScene" uid="uid://cc1evx6x57hgd" path="res://Gres/Scenes/UI/mini_map_example.tscn" id="32_o6nmh"]
+[ext_resource type="Script" uid="uid://d2x4pw3ee0we5" path="res://Gres/Scripts/UI/gui_manager.gd" id="33_4yng7"]
+[ext_resource type="Texture2D" uid="uid://bxmse4ioylbap" path="res://Gres/Assets/UI/Bar/playerHPB_under.png" id="34_1w5sh"]
+[ext_resource type="Texture2D" uid="uid://clv5cfp7uu7c8" path="res://Gres/Assets/UI/Bar/playerHPB.png" id="35_7wawe"]
+[ext_resource type="Texture2D" uid="uid://bmnnd6dpj2k21" path="res://Gres/Assets/UI/Buttons/show.png" id="36_qpoqq"]
+[ext_resource type="Texture2D" uid="uid://dxyrqvd5thqh" path="res://Gres/Assets/UI/Buttons/hide.png" id="37_w5vu4"]
+[ext_resource type="Texture2D" uid="uid://6xupahsi84sm" path="res://Gres/Assets/UI/Bar/playerSTMB.png" id="38_13etd"]
+[ext_resource type="Texture2D" uid="uid://ioycp3tpm3k5" path="res://Gres/Assets/Icons/skill/icon_empty.png" id="39_mte6e"]
+[ext_resource type="Texture2D" uid="uid://va6b4y3jwrxn" path="res://Gres/Assets/Icons/pfp/pfp_8.png" id="40_dh7nf"]
+[ext_resource type="Texture2D" uid="uid://cgytg8jxywqjf" path="res://Gres/Assets/Icons/skill/icon_torn_1.png" id="41_lv2ql"]
+[ext_resource type="Script" uid="uid://3kxwv4m48n4m" path="res://Gres/Scripts/UI/special_icon.gd" id="42_htm82"]
+[ext_resource type="PackedScene" uid="uid://csdyk0aqiyka8" path="res://Gres/Scenes/UI/pfp_button.tscn" id="43_irlpn"]
 [ext_resource type="Script" uid="uid://bhcijngc8ynb1" path="res://Gres/Scripts/UI/UpdateShip.gd" id="44_eh4vj"]
 [ext_resource type="Texture2D" uid="uid://cexnd3ykax18i" path="res://Gres/Assets/Icons/gold_1.png" id="45_jym1q"]
 [ext_resource type="Texture2D" uid="uid://dp0051x4tl6uu" path="res://Gres/Assets/UI/inentory/info_holder.png" id="46_vrpnb"]
@@ -45,64 +61,37 @@
 [ext_resource type="Texture2D" uid="uid://6x4foj61ompy" path="res://Gres/Assets/Icons/parts/canon_icon.png" id="59_wnw1u"]
 [ext_resource type="Texture2D" uid="uid://cm08cphexu6v" path="res://Gres/Assets/UI/inentory/light/skills_progress.png" id="60_thm2u"]
 [ext_resource type="Script" uid="uid://cn2jqlosniog5" path="res://Gres/Scripts/UI/stats_man.gd" id="61_pwn3u"]
+[ext_resource type="PackedScene" uid="uid://dpiwxwo7ex0hs" path="res://Gres/Scenes/UI/quests.tscn" id="62_uphb0"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fspeg"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_owx6d"]
 texture = ExtResource("11_qpoqq")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6f5a"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j405b"]
 texture = ExtResource("10_7wawe")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oiw6f"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cy1ym"]
 texture = ExtResource("8_4yng7")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vhmcx"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_abhaq"]
 texture = ExtResource("9_1w5sh")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ambo"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjh58"]
 texture = ExtResource("8_4yng7")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bwcpc"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1u4ja"]
 texture = ExtResource("13_13etd")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btqx0"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djvq3"]
 texture = ExtResource("16_lv2ql")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tukmr"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g01cv"]
 texture = ExtResource("15_dh7nf")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qb1nb"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w23ro"]
 texture = ExtResource("14_mte6e")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqykb"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tywlq"]
 texture = ExtResource("13_13etd")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg0wn"]
-bg_color = Color(1, 0.398438, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qy5h8"]
-bg_color = Color(1, 0.632813, 0, 1)
-
-[sub_resource type="Theme" id="Theme_m7gve"]
-HSlider/icons/grabber = ExtResource("22_k5imv")
-HSlider/icons/grabber_disabled = ExtResource("22_k5imv")
-HSlider/icons/grabber_highlight = ExtResource("23_yag1d")
-HSlider/icons/tick = null
-HSlider/styles/grabber_area = SubResource("StyleBoxFlat_wg0wn")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_qy5h8")
-
-[sub_resource type="Theme" id="Theme_ydkc4"]
-CheckButton/icons/checked = ExtResource("24_kqkro")
-CheckButton/icons/checked_disabled_mirrored = ExtResource("25_h5yag")
-CheckButton/icons/unchecked = ExtResource("26_g74yl")
-CheckButton/icons/unchecked_disabled_mirrored = ExtResource("26_g74yl")
-CheckButton/icons/unchecked_mirrored = ExtResource("26_g74yl")
-
-[sub_resource type="Theme" id="Theme_q7d3c"]
-CheckButton/icons/checked = ExtResource("24_kqkro")
-CheckButton/icons/checked_disabled_mirrored = ExtResource("25_h5yag")
-CheckButton/icons/unchecked = ExtResource("26_g74yl")
-CheckButton/icons/unchecked_disabled_mirrored = ExtResource("26_g74yl")
-CheckButton/icons/unchecked_mirrored = ExtResource("26_g74yl")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s05c"]
 bg_color = Color(1, 0.398438, 0, 1)
@@ -110,7 +99,7 @@ bg_color = Color(1, 0.398438, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7qli"]
 bg_color = Color(1, 0.632813, 0, 1)
 
-[sub_resource type="Theme" id="Theme_i0t51"]
+[sub_resource type="Theme" id="Theme_5k1v6"]
 HSlider/icons/grabber = ExtResource("22_k5imv")
 HSlider/icons/grabber_disabled = ExtResource("22_k5imv")
 HSlider/icons/grabber_highlight = ExtResource("23_yag1d")
@@ -118,35 +107,40 @@ HSlider/icons/tick = null
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_6s05c")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_w7qli")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oh066"]
-texture = ExtResource("11_qpoqq")
+[sub_resource type="Theme" id="Theme_8soy1"]
+CheckButton/icons/checked = ExtResource("24_kqkro")
+CheckButton/icons/checked_disabled_mirrored = ExtResource("25_h5yag")
+CheckButton/icons/unchecked = ExtResource("26_g74yl")
+CheckButton/icons/unchecked_disabled_mirrored = ExtResource("26_g74yl")
+CheckButton/icons/unchecked_mirrored = ExtResource("26_g74yl")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oph73"]
-texture = ExtResource("10_7wawe")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xk3hp"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dxqr"]
-texture = ExtResource("8_4yng7")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gw8c"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ea3yl"]
-texture = ExtResource("9_1w5sh")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7dmve"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wh28o"]
-texture = ExtResource("8_4yng7")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvvte"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2xv4g"]
-texture = ExtResource("13_13etd")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ypxq"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qgdob"]
-texture = ExtResource("16_lv2ql")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dmve"]
+bg_color = Color(0, 0, 0, 0.961)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v78jc"]
-texture = ExtResource("15_dh7nf")
+[sub_resource type="CircleShape2D" id="CircleShape2D_lad33"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bbe78"]
-texture = ExtResource("14_mte6e")
+[sub_resource type="Theme" id="Theme_tywlq"]
+CheckButton/icons/checked = ExtResource("36_qpoqq")
+CheckButton/icons/checked_disabled = ExtResource("36_qpoqq")
+CheckButton/icons/checked_mirrored = ExtResource("36_qpoqq")
+CheckButton/icons/unchecked = ExtResource("37_w5vu4")
+CheckButton/icons/unchecked_disabled_mirrored = ExtResource("37_w5vu4")
+CheckButton/icons/unchecked_mirrored = ExtResource("37_w5vu4")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61vv6"]
-texture = ExtResource("13_13etd")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri33c"]
+bg_color = Color(0.00500488, 0, 0.640625, 0.636)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="Animation" id="Animation_6u0rk"]
 resource_name = "loop"
@@ -193,30 +187,30 @@ _data = {
 &"update": SubResource("Animation_k6w66")
 }
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1r6fc"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7scl"]
 texture = ExtResource("11_qpoqq")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b0krx"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7i3uu"]
 texture = ExtResource("11_qpoqq")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kx4no"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t1j3q"]
 texture = ExtResource("8_4yng7")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_noym3"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1j26t"]
 texture = ExtResource("9_1w5sh")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1i3y"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_peo30"]
 texture = ExtResource("11_qpoqq")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_negf1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66m0l"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(1, 1, 1, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfe8c"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cs4i6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(1, 1, 1, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep2dj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_437me"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 1
 border_width_top = 1
@@ -228,7 +222,7 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ye3k1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kosp"]
 bg_color = Color(0, 1, 1, 0.141176)
 border_width_left = 1
 border_width_top = 1
@@ -240,7 +234,7 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujq54"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u0rk"]
 bg_color = Color(0.195313, 1, 0, 0.498039)
 
 [sub_resource type="Animation" id="Animation_k4syg"]
@@ -275,13 +269,46 @@ _data = {
 &"show": SubResource("Animation_k4syg")
 }
 
-[node name="SettingsMan" type="Node2D" unique_id=2143354924]
+[sub_resource type="Animation" id="Animation_a63e1"]
+resource_name = "show"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.00039164594),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmuxr"]
+_data = {
+&"show": SubResource("Animation_a63e1")
+}
+
+[node name="Manager" type="Node2D" unique_id=692747242]
 process_mode = 3
 visible = false
-z_index = 1
-script = ExtResource("1_wg0wn")
+script = ExtResource("1_qy5h8")
 
-[node name="Body" type="TextureRect" parent="." unique_id=880794107]
+[node name="Body" type="TextureRect" parent="." unique_id=505107021]
 process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -292,12 +319,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qy5h8")
 
-[node name="VoidShard" type="Label" parent="." unique_id=902428262]
+[node name="VoidShard" type="Label" parent="." unique_id=1475816463]
 process_mode = 3
 offset_left = 184.0
-offset_top = 287.0
+offset_top = 303.0
 offset_right = 220.0
-offset_bottom = 322.0
+offset_bottom = 338.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
@@ -307,18 +334,18 @@ text = "99"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Icon" type="Sprite2D" parent="VoidShard" unique_id=1759275251]
+[node name="Icon" type="Sprite2D" parent="VoidShard" unique_id=1339941893]
 process_mode = 3
 position = Vector2(-28, 15)
 scale = Vector2(0.765625, 0.765625)
 texture = ExtResource("3_wa6gw")
 
-[node name="MagmaShard" type="Label" parent="." unique_id=1611919133]
+[node name="MagmaShard" type="Label" parent="." unique_id=1030457514]
 process_mode = 3
 offset_left = 384.0
-offset_top = 287.0
+offset_top = 303.0
 offset_right = 420.0
-offset_bottom = 322.0
+offset_bottom = 338.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
@@ -328,18 +355,18 @@ text = "99"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Icon" type="Sprite2D" parent="MagmaShard" unique_id=100235157]
+[node name="Icon" type="Sprite2D" parent="MagmaShard" unique_id=2092882251]
 process_mode = 3
 position = Vector2(-28, 15)
 scale = Vector2(0.765625, 0.765625)
 texture = ExtResource("4_nhd31")
 
-[node name="IceShard" type="Label" parent="." unique_id=486322216]
+[node name="IceShard" type="Label" parent="." unique_id=181706047]
 process_mode = 3
 offset_left = 576.0
-offset_top = 287.0
+offset_top = 303.0
 offset_right = 612.0
-offset_bottom = 322.0
+offset_bottom = 338.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
@@ -349,18 +376,18 @@ text = "99"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Icon" type="Sprite2D" parent="IceShard" unique_id=655212069]
+[node name="Icon" type="Sprite2D" parent="IceShard" unique_id=732121062]
 process_mode = 3
 position = Vector2(-28, 15)
 scale = Vector2(0.765625, 0.765625)
 texture = ExtResource("5_6d25v")
 
-[node name="LightShard" type="Label" parent="." unique_id=1687745164]
+[node name="LightShard" type="Label" parent="." unique_id=201926667]
 process_mode = 3
 offset_left = 776.0
-offset_top = 287.0
+offset_top = 303.0
 offset_right = 812.0
-offset_bottom = 322.0
+offset_bottom = 338.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
@@ -370,18 +397,18 @@ text = "99"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Icon" type="Sprite2D" parent="LightShard" unique_id=1532047607]
+[node name="Icon" type="Sprite2D" parent="LightShard" unique_id=371896619]
 process_mode = 3
 position = Vector2(-28, 15)
 scale = Vector2(0.765625, 0.765625)
 texture = ExtResource("6_2f5qn")
 
-[node name="Tablet" type="Label" parent="." unique_id=442214124]
+[node name="Tablet" type="Label" parent="." unique_id=1531076469]
 process_mode = 3
 offset_left = 968.0
-offset_top = 287.0
+offset_top = 303.0
 offset_right = 1004.0
-offset_bottom = 322.0
+offset_bottom = 338.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 0.5625, 0, 1)
@@ -391,16 +418,16 @@ text = "99"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Icon" type="Sprite2D" parent="Tablet" unique_id=1675655610]
+[node name="Icon" type="Sprite2D" parent="Tablet" unique_id=1652769122]
 process_mode = 3
 position = Vector2(-28, 15)
 scale = Vector2(0.765625, 0.765625)
 texture = ExtResource("7_o6nmh")
 
-[node name="ButtonsManager" type="Node2D" parent="." unique_id=1711552195]
+[node name="ButtonsManager" type="Node2D" parent="." unique_id=616153163]
 process_mode = 3
 
-[node name="Upgrade" type="Button" parent="ButtonsManager" unique_id=1691949829]
+[node name="Upgrade" type="Button" parent="ButtonsManager" unique_id=77911741]
 offset_left = -72.0
 offset_top = 83.0
 offset_right = 408.0
@@ -408,15 +435,15 @@ offset_bottom = 275.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(240, 96)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_fspeg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_w6f5a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_oiw6f")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vhmcx")
-theme_override_styles/focus = SubResource("StyleBoxTexture_5ambo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
 text = "UPGRADE"
 script = ExtResource("12_w5vu4")
 
-[node name="Settings" type="Button" parent="ButtonsManager" unique_id=940498410]
+[node name="Settings" type="Button" parent="ButtonsManager" unique_id=728912823]
 offset_left = 200.0
 offset_top = 83.0
 offset_right = 680.0
@@ -424,32 +451,32 @@ offset_bottom = 275.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(240, 96)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_fspeg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_w6f5a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_oiw6f")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vhmcx")
-theme_override_styles/focus = SubResource("StyleBoxTexture_5ambo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
 text = "SETTINGS"
 script = ExtResource("12_w5vu4")
 
-[node name="Stats" type="Button" parent="ButtonsManager" unique_id=1896098718]
+[node name="Missions" type="Button" parent="ButtonsManager" unique_id=122854485]
 offset_left = 472.0
 offset_top = 83.0
 offset_right = 952.0
 offset_bottom = 275.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(240, 96)
+theme_override_colors/font_color = Color(0.796875, 1, 0.83813477, 1)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_fspeg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_w6f5a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_oiw6f")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vhmcx")
-theme_override_styles/focus = SubResource("StyleBoxTexture_5ambo")
-text = "STATS"
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
+text = "MISSIONS"
 script = ExtResource("12_w5vu4")
 
-[node name="Menu" type="Button" parent="ButtonsManager" unique_id=1643642835]
-visible = false
+[node name="Menu" type="Button" parent="ButtonsManager" unique_id=1677767969]
 offset_left = 744.0
 offset_top = 83.0
 offset_right = 1224.0
@@ -457,15 +484,15 @@ offset_bottom = 275.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(240, 96)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_fspeg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_w6f5a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_oiw6f")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vhmcx")
-theme_override_styles/focus = SubResource("StyleBoxTexture_5ambo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
 text = "MENU"
 script = ExtResource("12_w5vu4")
 
-[node name="TitleLabel" type="Label" parent="ButtonsManager" unique_id=588285785]
+[node name="TitleLabel" type="Label" parent="ButtonsManager" unique_id=1952131067]
 offset_top = 8.0
 offset_right = 1152.0
 offset_bottom = 131.0
@@ -474,7 +501,7 @@ text = "PAUSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BackSett" type="Button" parent="ButtonsManager" unique_id=32407095]
+[node name="BackSett" type="Button" parent="ButtonsManager" unique_id=1188025036]
 offset_left = 1016.0
 offset_top = -8.0
 offset_right = 1178.0
@@ -482,20 +509,20 @@ offset_bottom = 154.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(60, 60)
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxTexture_bwcpc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_btqx0")
-theme_override_styles/hover = SubResource("StyleBoxTexture_tukmr")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_qb1nb")
-theme_override_styles/focus = SubResource("StyleBoxTexture_jqykb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1u4ja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djvq3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g01cv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_w23ro")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tywlq")
 text = "x"
 script = ExtResource("12_w5vu4")
 
-[node name="SettingsMan" type="Node2D" parent="." unique_id=1283692660]
+[node name="SettingsMan" type="Node2D" parent="." unique_id=1870912935]
 process_mode = 3
 visible = false
 script = ExtResource("17_htm82")
 
-[node name="Body" type="TextureRect" parent="SettingsMan" unique_id=335167715]
+[node name="Body" type="TextureRect" parent="SettingsMan" unique_id=1562571611]
 process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -506,10 +533,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qy5h8")
 
-[node name="ButtonsManager" type="Node2D" parent="SettingsMan" unique_id=26344627]
+[node name="ButtonsManager" type="Node2D" parent="SettingsMan" unique_id=1845722348]
 process_mode = 3
 
-[node name="GameP" type="Button" parent="SettingsMan/ButtonsManager" unique_id=1934799560]
+[node name="GameP" type="Button" parent="SettingsMan/ButtonsManager" unique_id=1451961706]
 offset_left = -8.0
 offset_top = -13.0
 offset_right = 472.0
@@ -517,15 +544,15 @@ offset_bottom = 179.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(240, 96)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_fspeg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_w6f5a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_oiw6f")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vhmcx")
-theme_override_styles/focus = SubResource("StyleBoxTexture_5ambo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
 text = "GAMEPLAY"
 script = ExtResource("12_w5vu4")
 
-[node name="Audio" type="Button" parent="SettingsMan/ButtonsManager" unique_id=1990874497]
+[node name="Audio" type="Button" parent="SettingsMan/ButtonsManager" unique_id=425796925]
 offset_left = 264.0
 offset_top = -13.0
 offset_right = 744.0
@@ -533,15 +560,15 @@ offset_bottom = 179.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(240, 96)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_fspeg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_w6f5a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_oiw6f")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vhmcx")
-theme_override_styles/focus = SubResource("StyleBoxTexture_5ambo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
 text = "AUDIO"
 script = ExtResource("12_w5vu4")
 
-[node name="Graphic" type="Button" parent="SettingsMan/ButtonsManager" unique_id=1776578308]
+[node name="Graphic" type="Button" parent="SettingsMan/ButtonsManager" unique_id=665775107]
 offset_left = 536.0
 offset_top = -13.0
 offset_right = 1016.0
@@ -549,15 +576,15 @@ offset_bottom = 179.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(240, 96)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_fspeg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_w6f5a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_oiw6f")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vhmcx")
-theme_override_styles/focus = SubResource("StyleBoxTexture_5ambo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
 text = "GRAPHIC"
 script = ExtResource("12_w5vu4")
 
-[node name="UI" type="Button" parent="SettingsMan/ButtonsManager" unique_id=1491510486]
+[node name="UI" type="Button" parent="SettingsMan/ButtonsManager" unique_id=1904081056]
 visible = false
 offset_left = 744.0
 offset_top = 59.0
@@ -566,15 +593,15 @@ offset_bottom = 251.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(240, 96)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_fspeg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_w6f5a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_oiw6f")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vhmcx")
-theme_override_styles/focus = SubResource("StyleBoxTexture_5ambo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
 text = "UI"
 script = ExtResource("12_w5vu4")
 
-[node name="TitleLabel" type="Label" parent="SettingsMan/ButtonsManager" unique_id=898101972]
+[node name="TitleLabel" type="Label" parent="SettingsMan/ButtonsManager" unique_id=1216388270]
 visible = false
 offset_top = 8.0
 offset_right = 1152.0
@@ -584,7 +611,7 @@ text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BackSett" type="Button" parent="SettingsMan/ButtonsManager" unique_id=1030196315]
+[node name="BackSett" type="Button" parent="SettingsMan/ButtonsManager" unique_id=1279172012]
 offset_left = 968.0
 offset_top = 8.0
 offset_right = 1144.0
@@ -592,22 +619,22 @@ offset_bottom = 184.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(60, 60)
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxTexture_bwcpc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_btqx0")
-theme_override_styles/hover = SubResource("StyleBoxTexture_tukmr")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_qb1nb")
-theme_override_styles/focus = SubResource("StyleBoxTexture_jqykb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1u4ja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djvq3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g01cv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_w23ro")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tywlq")
 text = "x"
 script = ExtResource("12_w5vu4")
 
-[node name="AudioMan" type="Control" parent="SettingsMan" unique_id=1638508450]
+[node name="AudioMan" type="Control" parent="SettingsMan" unique_id=1020816239]
 process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("18_irlpn")
 
-[node name="Body" type="TextureRect" parent="SettingsMan/AudioMan" unique_id=281805168]
+[node name="Body" type="TextureRect" parent="SettingsMan/AudioMan" unique_id=784744318]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -618,7 +645,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qy5h8")
 
-[node name="Title" type="Label" parent="SettingsMan/AudioMan" unique_id=559526285]
+[node name="Title" type="Label" parent="SettingsMan/AudioMan" unique_id=432669822]
 layout_mode = 0
 offset_top = 54.0
 offset_right = 1152.0
@@ -628,45 +655,45 @@ text = "AUDIO SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="H1" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=64375417]
+[node name="H1" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=279571422]
 visible = false
 position = Vector2(565, 190)
 scale = Vector2(2.5, 2)
 texture = ExtResource("19_uphb0")
 
-[node name="H2" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=1307621227]
+[node name="H2" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=398820831]
 position = Vector2(565, 206)
 scale = Vector2(2.5, 2)
 texture = ExtResource("19_uphb0")
 
-[node name="H3" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=2130005658]
+[node name="H3" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=1200924635]
 position = Vector2(565, 286)
 scale = Vector2(2.5, 2)
 texture = ExtResource("19_uphb0")
 
-[node name="I1" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=318342394]
+[node name="I1" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=25360388]
 visible = false
 position = Vector2(412, 190)
 texture = ExtResource("20_2y7pi")
 
-[node name="I2" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=2107141474]
+[node name="I2" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=750866187]
 position = Vector2(412, 206)
 texture = ExtResource("21_pcrdx")
 
-[node name="I3" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=637183979]
+[node name="I3" type="Sprite2D" parent="SettingsMan/AudioMan" unique_id=160429724]
 position = Vector2(412, 286)
 texture = ExtResource("20_2y7pi")
 
-[node name="MasterSlider" type="HSlider" parent="SettingsMan/AudioMan" unique_id=122988370]
+[node name="MasterSlider" type="HSlider" parent="SettingsMan/AudioMan" unique_id=1204061390]
 visible = false
 layout_mode = 0
 offset_left = 451.0
 offset_top = 182.0
 offset_right = 678.0
 offset_bottom = 198.0
-theme = SubResource("Theme_m7gve")
+theme = SubResource("Theme_5k1v6")
 
-[node name="MasterLabel" type="Label" parent="SettingsMan/AudioMan" unique_id=1974896201]
+[node name="MasterLabel" type="Label" parent="SettingsMan/AudioMan" unique_id=779938184]
 visible = false
 layout_mode = 0
 offset_top = 142.0
@@ -677,15 +704,15 @@ text = "Master Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MusicSlider" type="HSlider" parent="SettingsMan/AudioMan" unique_id=738104562]
+[node name="MusicSlider" type="HSlider" parent="SettingsMan/AudioMan" unique_id=1423063111]
 layout_mode = 0
 offset_left = 451.0
 offset_top = 198.0
 offset_right = 678.0
 offset_bottom = 214.0
-theme = SubResource("Theme_m7gve")
+theme = SubResource("Theme_5k1v6")
 
-[node name="MusicLabel" type="Label" parent="SettingsMan/AudioMan" unique_id=926271755]
+[node name="MusicLabel" type="Label" parent="SettingsMan/AudioMan" unique_id=1196775959]
 layout_mode = 0
 offset_left = -2.0
 offset_top = 158.0
@@ -696,15 +723,15 @@ text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EffectsSlider" type="HSlider" parent="SettingsMan/AudioMan" unique_id=1520819945]
+[node name="EffectsSlider" type="HSlider" parent="SettingsMan/AudioMan" unique_id=262296628]
 layout_mode = 0
 offset_left = 451.0
 offset_top = 278.0
 offset_right = 678.0
 offset_bottom = 294.0
-theme = SubResource("Theme_m7gve")
+theme = SubResource("Theme_5k1v6")
 
-[node name="EffectsLabel" type="Label" parent="SettingsMan/AudioMan" unique_id=328752635]
+[node name="EffectsLabel" type="Label" parent="SettingsMan/AudioMan" unique_id=113536261]
 layout_mode = 0
 offset_top = 238.0
 offset_right = 1152.0
@@ -714,17 +741,17 @@ text = "Effects"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MuteCheck" type="CheckButton" parent="SettingsMan/AudioMan" unique_id=865083170]
+[node name="MuteCheck" type="CheckButton" parent="SettingsMan/AudioMan" unique_id=1857229075]
 layout_mode = 0
 offset_left = 428.0
 offset_top = 354.0
 offset_right = 597.0
 offset_bottom = 394.0
-theme = SubResource("Theme_ydkc4")
+theme = SubResource("Theme_8soy1")
 theme_override_font_sizes/font_size = 30
 text = "Mute All"
 
-[node name="BackAudio" type="Button" parent="SettingsMan/AudioMan" unique_id=1639598748]
+[node name="BackAudio" type="Button" parent="SettingsMan/AudioMan" unique_id=1821966353]
 layout_mode = 0
 offset_left = 1016.0
 offset_top = -8.0
@@ -733,22 +760,22 @@ offset_bottom = 154.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(60, 60)
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxTexture_bwcpc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_btqx0")
-theme_override_styles/hover = SubResource("StyleBoxTexture_tukmr")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_qb1nb")
-theme_override_styles/focus = SubResource("StyleBoxTexture_jqykb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1u4ja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djvq3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g01cv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_w23ro")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tywlq")
 text = "x"
 script = ExtResource("12_w5vu4")
 
-[node name="GraphicMan" type="Control" parent="SettingsMan" unique_id=879930292]
+[node name="GraphicMan" type="Control" parent="SettingsMan" unique_id=1444988409]
 process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("27_ytmde")
 
-[node name="Body" type="TextureRect" parent="SettingsMan/GraphicMan" unique_id=491027717]
+[node name="Body" type="TextureRect" parent="SettingsMan/GraphicMan" unique_id=873064368]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -759,12 +786,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qy5h8")
 
-[node name="H1" type="Sprite2D" parent="SettingsMan/GraphicMan" unique_id=421245896]
+[node name="H1" type="Sprite2D" parent="SettingsMan/GraphicMan" unique_id=861859485]
 position = Vector2(577.5, 174.5)
 scale = Vector2(11.4434, 4.33333)
 texture = ExtResource("19_uphb0")
 
-[node name="Title" type="Label" parent="SettingsMan/GraphicMan" unique_id=1136744696]
+[node name="Title" type="Label" parent="SettingsMan/GraphicMan" unique_id=1361604134]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 1152.0
@@ -776,7 +803,7 @@ text = "Graphics Settings "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResolutionLabel" type="Label" parent="SettingsMan/GraphicMan" unique_id=33518258]
+[node name="ResolutionLabel" type="Label" parent="SettingsMan/GraphicMan" unique_id=2060325109]
 layout_mode = 0
 offset_left = 900.0
 offset_top = 162.0
@@ -788,172 +815,24 @@ text = "Resolution
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResolutionOption" type="OptionButton" parent="SettingsMan/GraphicMan" unique_id=65859089]
+[node name="ResolutionOption" type="OptionButton" parent="SettingsMan/GraphicMan" unique_id=1475600885]
 layout_mode = 0
-offset_left = 952.0
-offset_top = 216.0
+offset_left = 863.0
+offset_top = 456.0
 offset_right = 1112.0
-offset_bottom = 253.0
+offset_bottom = 493.0
 
-[node name="FullscreenCheck" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=20133321]
+[node name="FullscreenCheck" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=230826854]
 layout_mode = 0
 offset_left = 56.0
 offset_top = 152.0
 offset_right = 267.0
 offset_bottom = 192.0
-theme = SubResource("Theme_ydkc4")
+theme = SubResource("Theme_8soy1")
 theme_override_font_sizes/font_size = 30
 text = "Full screen"
 
-[node name="VSyncCheck" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=1927695336]
-layout_mode = 0
-offset_left = 315.0
-offset_top = 152.0
-offset_right = 526.0
-offset_bottom = 192.0
-theme = SubResource("Theme_ydkc4")
-theme_override_font_sizes/font_size = 30
-text = "V-Sync"
-
-[node name="BloomLabel" type="Label" parent="SettingsMan/GraphicMan" unique_id=154752234]
-visible = false
-layout_mode = 0
-offset_left = 526.0
-offset_top = 146.0
-offset_right = 822.0
-offset_bottom = 205.0
-theme_override_font_sizes/font_size = 30
-text = "Bloom Qual 100%"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BloomSlider" type="HSlider" parent="SettingsMan/GraphicMan" unique_id=692572185]
-visible = false
-layout_mode = 0
-offset_left = 560.0
-offset_top = 225.0
-offset_right = 787.0
-offset_bottom = 241.0
-theme = SubResource("Theme_m7gve")
-
-[node name="ParticleLabel" type="Label" parent="SettingsMan/GraphicMan" unique_id=1814879758]
-layout_mode = 0
-offset_left = 567.0
-offset_top = 146.0
-offset_right = 839.0
-offset_bottom = 205.0
-theme_override_font_sizes/font_size = 30
-text = "Particle Qual 100%"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ParticleSlider" type="HSlider" parent="SettingsMan/GraphicMan" unique_id=346400680]
-layout_mode = 0
-offset_left = 584.0
-offset_top = 225.0
-offset_right = 811.0
-offset_bottom = 241.0
-theme = SubResource("Theme_m7gve")
-
-[node name="ApplyButton" type="Button" parent="SettingsMan/GraphicMan" unique_id=887192365]
-layout_mode = 0
-offset_left = 359.0
-offset_top = 452.0
-offset_right = 839.0
-offset_bottom = 644.0
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(240, 96)
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_fspeg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_w6f5a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_oiw6f")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vhmcx")
-theme_override_styles/focus = SubResource("StyleBoxTexture_5ambo")
-text = "SAVE"
-script = ExtResource("12_w5vu4")
-
-[node name="BackGraph" type="Button" parent="SettingsMan/GraphicMan" unique_id=140185788]
-layout_mode = 0
-offset_left = 1016.0
-offset_top = -8.0
-offset_right = 1178.0
-offset_bottom = 154.0
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(60, 60)
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxTexture_bwcpc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_btqx0")
-theme_override_styles/hover = SubResource("StyleBoxTexture_tukmr")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_qb1nb")
-theme_override_styles/focus = SubResource("StyleBoxTexture_jqykb")
-text = "x"
-script = ExtResource("12_w5vu4")
-
-[node name="GraphicMan2" type="Control" parent="SettingsMan" unique_id=1679350737]
-process_mode = 3
-visible = false
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("27_ytmde")
-
-[node name="Body" type="TextureRect" parent="SettingsMan/GraphicMan2" unique_id=1749718978]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_qy5h8")
-
-[node name="H1" type="Sprite2D" parent="SettingsMan/GraphicMan2" unique_id=50860406]
-position = Vector2(577.5, 174.5)
-scale = Vector2(11.4434, 4.33333)
-texture = ExtResource("19_uphb0")
-
-[node name="Title" type="Label" parent="SettingsMan/GraphicMan2" unique_id=175733265]
-layout_mode = 0
-offset_top = 8.0
-offset_right = 1152.0
-offset_bottom = 99.0
-theme_override_colors/font_outline_color = Color(0.03125, 0, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 70
-text = "Graphics Settings "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ResolutionLabel" type="Label" parent="SettingsMan/GraphicMan2" unique_id=1013316061]
-layout_mode = 0
-offset_left = 900.0
-offset_top = 162.0
-offset_right = 1159.0
-offset_bottom = 225.0
-theme_override_font_sizes/font_size = 30
-text = "Resolution
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ResolutionOption" type="OptionButton" parent="SettingsMan/GraphicMan2" unique_id=39803048]
-layout_mode = 0
-offset_left = 952.0
-offset_top = 216.0
-offset_right = 1112.0
-offset_bottom = 253.0
-
-[node name="FullscreenCheck" type="CheckButton" parent="SettingsMan/GraphicMan2" unique_id=1424295386]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 152.0
-offset_right = 267.0
-offset_bottom = 192.0
-theme = SubResource("Theme_q7d3c")
-theme_override_font_sizes/font_size = 30
-text = "Full screen"
-
-[node name="anim" type="Label" parent="SettingsMan/GraphicMan2" unique_id=1295316477]
+[node name="anim" type="Label" parent="SettingsMan/GraphicMan" unique_id=1167196756]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 220.0
@@ -965,48 +844,48 @@ text = "Animation Quality"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationLow" type="CheckButton" parent="SettingsMan/GraphicMan2" unique_id=931313351]
+[node name="AnimationLow" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=1295720124]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 272.0
 offset_right = 179.0
 offset_bottom = 312.0
-theme = SubResource("Theme_q7d3c")
+theme = SubResource("Theme_8soy1")
 theme_override_font_sizes/font_size = 30
 text = "Normal"
 
-[node name="AnimationHight" type="CheckButton" parent="SettingsMan/GraphicMan2" unique_id=958811768]
+[node name="AnimationHight" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=2065765825]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 320.0
 offset_right = 179.0
 offset_bottom = 360.0
-theme = SubResource("Theme_q7d3c")
+theme = SubResource("Theme_8soy1")
 theme_override_font_sizes/font_size = 30
 text = "Hight"
 
-[node name="ShowFPS" type="CheckButton" parent="SettingsMan/GraphicMan2" unique_id=164482388]
+[node name="ShowFPS" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=584240427]
 visible = false
 layout_mode = 0
 offset_left = 304.0
 offset_top = 232.0
 offset_right = 496.0
 offset_bottom = 272.0
-theme = SubResource("Theme_q7d3c")
+theme = SubResource("Theme_8soy1")
 theme_override_font_sizes/font_size = 30
 text = "Show FPS"
 
-[node name="VSyncCheck" type="CheckButton" parent="SettingsMan/GraphicMan2" unique_id=831347028]
+[node name="VSyncCheck" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=1603127844]
 layout_mode = 0
 offset_left = 315.0
 offset_top = 152.0
 offset_right = 526.0
 offset_bottom = 192.0
-theme = SubResource("Theme_q7d3c")
+theme = SubResource("Theme_8soy1")
 theme_override_font_sizes/font_size = 30
 text = "V-Sync"
 
-[node name="BloomLabel" type="Label" parent="SettingsMan/GraphicMan2" unique_id=890062368]
+[node name="BloomLabel" type="Label" parent="SettingsMan/GraphicMan" unique_id=541415999]
 visible = false
 layout_mode = 0
 offset_left = 526.0
@@ -1018,16 +897,16 @@ text = "Bloom Qual 100%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BloomSlider" type="HSlider" parent="SettingsMan/GraphicMan2" unique_id=575702257]
+[node name="BloomSlider" type="HSlider" parent="SettingsMan/GraphicMan" unique_id=1961604547]
 visible = false
 layout_mode = 0
 offset_left = 560.0
 offset_top = 225.0
 offset_right = 787.0
 offset_bottom = 241.0
-theme = SubResource("Theme_i0t51")
+theme = SubResource("Theme_5k1v6")
 
-[node name="ParticleLabel" type="Label" parent="SettingsMan/GraphicMan2" unique_id=705685081]
+[node name="ParticleLabel" type="Label" parent="SettingsMan/GraphicMan" unique_id=169762950]
 layout_mode = 0
 offset_left = 567.0
 offset_top = 146.0
@@ -1038,15 +917,15 @@ text = "Particle Qual 100%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ParticleSlider" type="HSlider" parent="SettingsMan/GraphicMan2" unique_id=738631381]
+[node name="ParticleSlider" type="HSlider" parent="SettingsMan/GraphicMan" unique_id=1428978767]
 layout_mode = 0
 offset_left = 584.0
 offset_top = 225.0
 offset_right = 811.0
 offset_bottom = 241.0
-theme = SubResource("Theme_i0t51")
+theme = SubResource("Theme_5k1v6")
 
-[node name="ApplyButton" type="Button" parent="SettingsMan/GraphicMan2" unique_id=991690583]
+[node name="ApplyButton" type="Button" parent="SettingsMan/GraphicMan" unique_id=847078688]
 layout_mode = 0
 offset_left = 359.0
 offset_top = 452.0
@@ -1055,15 +934,15 @@ offset_bottom = 644.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(240, 96)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_oh066")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_oph73")
-theme_override_styles/hover = SubResource("StyleBoxTexture_8dxqr")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ea3yl")
-theme_override_styles/focus = SubResource("StyleBoxTexture_wh28o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
 text = "SAVE"
 script = ExtResource("12_w5vu4")
 
-[node name="BackGraph" type="Button" parent="SettingsMan/GraphicMan2" unique_id=1479265181]
+[node name="BackGraph" type="Button" parent="SettingsMan/GraphicMan" unique_id=685137494]
 layout_mode = 0
 offset_left = 1016.0
 offset_top = -8.0
@@ -1072,20 +951,101 @@ offset_bottom = 154.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(60, 60)
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxTexture_2xv4g")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_qgdob")
-theme_override_styles/hover = SubResource("StyleBoxTexture_v78jc")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_bbe78")
-theme_override_styles/focus = SubResource("StyleBoxTexture_61vv6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1u4ja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djvq3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g01cv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_w23ro")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tywlq")
 text = "x"
 script = ExtResource("12_w5vu4")
 
-[node name="UpgradeMan" type="Node2D" parent="." unique_id=244064487]
+[node name="MaxFPS" type="LineEdit" parent="SettingsMan/GraphicMan" unique_id=437689522]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 228.0
+offset_right = 558.0
+offset_bottom = 265.0
+placeholder_text = "60"
+alignment = 1
+
+[node name="info" type="Label" parent="SettingsMan/GraphicMan/MaxFPS" unique_id=1442813900]
+modulate = Color(1, 1, 1, 0.066)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 41.0
+offset_right = 183.0
+offset_bottom = 105.0
+text = "Limit FPS
+Insert max FPS
+0 = no limit"
+
+[node name="FPS" type="Label" parent="SettingsMan/GraphicMan/MaxFPS" unique_id=1240186305]
+layout_mode = 0
+offset_left = -73.0
+offset_bottom = 37.0
+text = "MAX FPS"
+vertical_alignment = 1
+
+[node name="StretchKeep" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=1949435521]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 211.0
+offset_right = 1099.0
+offset_bottom = 251.0
+theme = SubResource("Theme_8soy1")
+theme_override_font_sizes/font_size = 30
+text = "Stretch Keep"
+
+[node name="StretchIgnore" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=301633696]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 259.0
+offset_right = 1136.0
+offset_bottom = 299.0
+theme = SubResource("Theme_8soy1")
+theme_override_font_sizes/font_size = 30
+text = "Stretch Ignore"
+
+[node name="StretchKeepW" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=639408921]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 307.0
+offset_right = 1134.0
+offset_bottom = 347.0
+theme = SubResource("Theme_8soy1")
+theme_override_font_sizes/font_size = 30
+text = "Stretch Keep W"
+
+[node name="StretchKeepH" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=1293821078]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 355.0
+offset_right = 1127.0
+offset_bottom = 395.0
+theme = SubResource("Theme_8soy1")
+theme_override_font_sizes/font_size = 30
+text = "Stretch Keep H"
+
+[node name="StretchExpand" type="CheckButton" parent="SettingsMan/GraphicMan" unique_id=1179882903]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 403.0
+offset_right = 1134.0
+offset_bottom = 443.0
+theme = SubResource("Theme_8soy1")
+theme_override_font_sizes/font_size = 30
+text = "Stretch Expand"
+
+[node name="GamepMan" type="Control" parent="SettingsMan" unique_id=1593829432]
 process_mode = 3
 visible = false
-script = ExtResource("44_eh4vj")
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("28_wa6gw")
 
-[node name="Body" type="TextureRect" parent="UpgradeMan" unique_id=1571190528]
+[node name="Body" type="TextureRect" parent="SettingsMan/GamepMan" unique_id=771628756]
+process_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1095,7 +1055,1046 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qy5h8")
 
-[node name="gold" type="Label" parent="UpgradeMan" unique_id=106368329]
+[node name="ButtonsManager" type="Node2D" parent="SettingsMan/GamepMan" unique_id=1430160232]
+process_mode = 3
+
+[node name="KeyMap" type="Button" parent="SettingsMan/GamepMan/ButtonsManager" unique_id=1665787423]
+offset_left = -8.0
+offset_top = -13.0
+offset_right = 472.0
+offset_bottom = 179.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
+text = "INPUT MAP"
+script = ExtResource("12_w5vu4")
+
+[node name="GUI" type="Button" parent="SettingsMan/GamepMan/ButtonsManager" unique_id=1626928892]
+offset_left = 264.0
+offset_top = -13.0
+offset_right = 744.0
+offset_bottom = 179.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
+text = "GUI"
+script = ExtResource("12_w5vu4")
+
+[node name="Map" type="Button" parent="SettingsMan/GamepMan/ButtonsManager" unique_id=2026048820]
+offset_left = 536.0
+offset_top = -13.0
+offset_right = 1016.0
+offset_bottom = 179.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
+text = "MAP"
+script = ExtResource("12_w5vu4")
+
+[node name="BackGM" type="Button" parent="SettingsMan/GamepMan/ButtonsManager" unique_id=347359889]
+offset_left = 969.0
+offset_top = 9.0
+offset_right = 1143.0
+offset_bottom = 183.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_1u4ja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djvq3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g01cv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_w23ro")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tywlq")
+text = "x"
+script = ExtResource("12_w5vu4")
+
+[node name="CameraL" type="Label" parent="SettingsMan/GamepMan" unique_id=681667185]
+process_mode = 3
+layout_mode = 0
+offset_top = 168.0
+offset_right = 1152.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 60
+text = "PLAYER CAMERA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextHolder" type="Sprite2D" parent="SettingsMan/GamepMan/CameraL" unique_id=1051649032]
+process_mode = 3
+position = Vector2(577.5, 119.25)
+scale = Vector2(11.4434, 4.63333)
+texture = ExtResource("19_uphb0")
+
+[node name="TextHolder2" type="Sprite2D" parent="SettingsMan/GamepMan/CameraL" unique_id=802857016]
+process_mode = 3
+position = Vector2(577.5, 225.25)
+scale = Vector2(11.4434, 4.63333)
+texture = ExtResource("19_uphb0")
+
+[node name="TextHolder3" type="Sprite2D" parent="SettingsMan/GamepMan/CameraL" unique_id=1783546002]
+process_mode = 3
+position = Vector2(294, 333.25)
+scale = Vector2(6.09434, 4.63333)
+texture = ExtResource("19_uphb0")
+
+[node name="ShakeStrL" type="Label" parent="SettingsMan/GamepMan/CameraL" unique_id=1082621480]
+process_mode = 3
+layout_mode = 0
+offset_left = 48.0
+offset_top = 101.0
+offset_right = 517.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 40
+text = "SHAKE STRENGTH"
+horizontal_alignment = 1
+
+[node name="ShakeInfo" type="Button" parent="SettingsMan/GamepMan/CameraL/ShakeStrL" unique_id=1055107168]
+process_mode = 3
+layout_mode = 0
+offset_top = -12.0
+offset_right = 462.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xk3hp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8gw8c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7dmve")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rvvte")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1ypxq")
+
+[node name="ShakeStr" type="HSlider" parent="SettingsMan/GamepMan/CameraL" unique_id=526477143]
+process_mode = 3
+layout_mode = 0
+offset_left = 48.0
+offset_top = 165.0
+offset_right = 510.0
+offset_bottom = 181.0
+theme = SubResource("Theme_5k1v6")
+max_value = 50.0
+value = 20.0
+
+[node name="SmoothSpdL" type="Label" parent="SettingsMan/GamepMan/CameraL" unique_id=29965095]
+process_mode = 3
+layout_mode = 0
+offset_left = 48.0
+offset_top = 205.0
+offset_right = 517.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 40
+text = "SMOOTHING SPEED"
+horizontal_alignment = 1
+
+[node name="SmoothSpdInfo" type="Button" parent="SettingsMan/GamepMan/CameraL/SmoothSpdL" unique_id=57217769]
+process_mode = 3
+layout_mode = 0
+offset_top = -12.0
+offset_right = 462.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xk3hp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8gw8c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7dmve")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rvvte")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1ypxq")
+
+[node name="SmoothSpd" type="HSlider" parent="SettingsMan/GamepMan/CameraL" unique_id=1443334552]
+process_mode = 3
+layout_mode = 0
+offset_left = 48.0
+offset_top = 269.0
+offset_right = 510.0
+offset_bottom = 285.0
+theme = SubResource("Theme_5k1v6")
+min_value = 2.0
+max_value = 20.0
+value = 2.0
+
+[node name="LookDisL" type="Label" parent="SettingsMan/GamepMan/CameraL" unique_id=1395865448]
+process_mode = 3
+layout_mode = 0
+offset_left = 48.0
+offset_top = 317.0
+offset_right = 526.0
+offset_bottom = 358.0
+theme_override_font_sizes/font_size = 40
+text = "LOOKAHEAD DISTANCE"
+horizontal_alignment = 1
+
+[node name="LookDisInfo" type="Button" parent="SettingsMan/GamepMan/CameraL/LookDisL" unique_id=3456737]
+process_mode = 3
+layout_mode = 0
+offset_top = -12.0
+offset_right = 462.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xk3hp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8gw8c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7dmve")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rvvte")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1ypxq")
+
+[node name="LookDis" type="HSlider" parent="SettingsMan/GamepMan/CameraL" unique_id=1602753182]
+process_mode = 3
+layout_mode = 0
+offset_left = 48.0
+offset_top = 381.0
+offset_right = 510.0
+offset_bottom = 397.0
+theme = SubResource("Theme_5k1v6")
+max_value = 50.0
+
+[node name="LookSpdL" type="Label" parent="SettingsMan/GamepMan/CameraL" unique_id=1862711984]
+process_mode = 3
+layout_mode = 0
+offset_left = 648.0
+offset_top = 101.0
+offset_right = 1110.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 40
+text = "LOOKAHEAD SPEED"
+horizontal_alignment = 1
+
+[node name="LookSpdInfo" type="Button" parent="SettingsMan/GamepMan/CameraL/LookSpdL" unique_id=1515587746]
+process_mode = 3
+layout_mode = 0
+offset_top = -12.0
+offset_right = 462.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xk3hp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8gw8c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7dmve")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rvvte")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1ypxq")
+
+[node name="LookSpd" type="HSlider" parent="SettingsMan/GamepMan/CameraL" unique_id=1636569008]
+process_mode = 3
+layout_mode = 0
+offset_left = 648.0
+offset_top = 165.0
+offset_right = 1110.0
+offset_bottom = 181.0
+theme = SubResource("Theme_5k1v6")
+min_value = 2.0
+max_value = 15.0
+value = 2.0
+
+[node name="ShakeDecL" type="Label" parent="SettingsMan/GamepMan/CameraL" unique_id=2094720851]
+process_mode = 3
+layout_mode = 0
+offset_left = 648.0
+offset_top = 205.0
+offset_right = 1110.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 40
+text = "SHAKE DECAY"
+horizontal_alignment = 1
+
+[node name="ShakeDecInfo" type="Button" parent="SettingsMan/GamepMan/CameraL/ShakeDecL" unique_id=719403090]
+process_mode = 3
+layout_mode = 0
+offset_top = -12.0
+offset_right = 462.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xk3hp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8gw8c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7dmve")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rvvte")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1ypxq")
+
+[node name="ShakeDec" type="HSlider" parent="SettingsMan/GamepMan/CameraL" unique_id=609363936]
+process_mode = 3
+layout_mode = 0
+offset_left = 648.0
+offset_top = 269.0
+offset_right = 1110.0
+offset_bottom = 285.0
+theme = SubResource("Theme_5k1v6")
+min_value = 1.0
+max_value = 15.0
+value = 1.0
+
+[node name="Reset" type="Button" parent="SettingsMan/GamepMan/CameraL" unique_id=1722859750]
+process_mode = 3
+layout_mode = 0
+offset_left = 624.0
+offset_top = 269.0
+offset_right = 1104.0
+offset_bottom = 461.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
+text = "RESET"
+script = ExtResource("12_w5vu4")
+
+[node name="InfoS" type="RichTextLabel" parent="SettingsMan/GamepMan/CameraL" unique_id=1523186924]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = -146.0
+offset_right = 1125.0
+offset_bottom = 85.0
+theme_override_font_sizes/normal_font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_7dmve")
+text = "info rich label"
+vertical_alignment = 1
+
+[node name="KeyMap" type="Control" parent="SettingsMan/GamepMan" unique_id=1171255535]
+process_mode = 3
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("29_nhd31")
+label_font_size = 30
+label_font_color = Color(1, 0, 0, 1)
+button_font_size = 30
+button_font_color = Color(0, 0.976563, 1, 1)
+
+[node name="Body" type="TextureRect" parent="SettingsMan/GamepMan/KeyMap" unique_id=183910874]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qy5h8")
+
+[node name="Separ1" type="Sprite2D" parent="SettingsMan/GamepMan/KeyMap" unique_id=1764794134]
+position = Vector2(568, 69.875)
+scale = Vector2(11.6226, 5.18334)
+texture = ExtResource("19_uphb0")
+
+[node name="Liner" type="Sprite2D" parent="SettingsMan/GamepMan/KeyMap" unique_id=395881217]
+position = Vector2(578.5, 128.25)
+scale = Vector2(10.9528, 4.16667)
+texture = ExtResource("30_6d25v")
+
+[node name="Liner2" type="Sprite2D" parent="SettingsMan/GamepMan/KeyMap" unique_id=999180640]
+position = Vector2(576, 188.25)
+scale = Vector2(10.8679, 4.16667)
+texture = ExtResource("30_6d25v")
+
+[node name="Liner3" type="Sprite2D" parent="SettingsMan/GamepMan/KeyMap" unique_id=710307118]
+position = Vector2(576, 247.25)
+scale = Vector2(10.8679, 4.16667)
+texture = ExtResource("30_6d25v")
+
+[node name="Liner4" type="Sprite2D" parent="SettingsMan/GamepMan/KeyMap" unique_id=157252714]
+position = Vector2(576, 305.25)
+scale = Vector2(10.8679, 4.16667)
+texture = ExtResource("30_6d25v")
+
+[node name="Liner5" type="Sprite2D" parent="SettingsMan/GamepMan/KeyMap" unique_id=942082789]
+position = Vector2(576, 363.25)
+scale = Vector2(10.8679, 4.16667)
+texture = ExtResource("30_6d25v")
+
+[node name="Liner6" type="Sprite2D" parent="SettingsMan/GamepMan/KeyMap" unique_id=1278348476]
+position = Vector2(575, 421.25)
+scale = Vector2(10.8868, 4.16667)
+texture = ExtResource("30_6d25v")
+
+[node name="Liner7" type="Sprite2D" parent="SettingsMan/GamepMan/KeyMap" unique_id=595308922]
+position = Vector2(575, 479.25)
+scale = Vector2(10.8868, 4.16667)
+texture = ExtResource("30_6d25v")
+
+[node name="BindingsGrid" type="GridContainer" parent="SettingsMan/GamepMan/KeyMap" unique_id=1919301439]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 114.0
+offset_right = 675.0
+offset_bottom = 624.0
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="ResetButton" type="Button" parent="SettingsMan/GamepMan/KeyMap" unique_id=1972490264]
+layout_mode = 0
+offset_left = 861.0
+offset_top = 518.0
+offset_right = 1161.0
+offset_bottom = 638.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
+text = "RESET"
+script = ExtResource("12_w5vu4")
+
+[node name="ActionL" type="Label" parent="SettingsMan/GamepMan/KeyMap" unique_id=174588417]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 201.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 30
+text = "Action"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PKL" type="Label" parent="SettingsMan/GamepMan/KeyMap" unique_id=316658363]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 40.0
+offset_right = 420.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 30
+text = "Primary Key"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SKL" type="Label" parent="SettingsMan/GamepMan/KeyMap" unique_id=1456991423]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 42.0
+offset_right = 726.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 30
+text = "Secondary Key"
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="SettingsMan/GamepMan/KeyMap" unique_id=2050862792]
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 5.0
+offset_right = 1167.0
+offset_bottom = 129.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_1u4ja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djvq3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g01cv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_w23ro")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tywlq")
+text = "x"
+script = ExtResource("12_w5vu4")
+
+[node name="MapMan" type="Node2D" parent="SettingsMan/GamepMan" unique_id=835530972]
+process_mode = 3
+visible = false
+script = ExtResource("31_2f5qn")
+
+[node name="Body" type="TextureRect" parent="SettingsMan/GamepMan/MapMan" unique_id=253724939]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qy5h8")
+
+[node name="Container" type="Sprite2D" parent="SettingsMan/GamepMan/MapMan" unique_id=1394981746]
+visible = false
+position = Vector2(315.707, 320)
+scale = Vector2(0.555261, 0.934167)
+
+[node name="TextHolder" type="Sprite2D" parent="SettingsMan/GamepMan/MapMan" unique_id=1623407408]
+position = Vector2(309.167, 65.5)
+scale = Vector2(4.92138, 4.06667)
+texture = ExtResource("19_uphb0")
+
+[node name="TextHolder2" type="Sprite2D" parent="SettingsMan/GamepMan/MapMan" unique_id=819240446]
+position = Vector2(309.167, 145.5)
+scale = Vector2(4.92138, 4.06667)
+texture = ExtResource("19_uphb0")
+
+[node name="TextHolder3" type="Sprite2D" parent="SettingsMan/GamepMan/MapMan" unique_id=1111593126]
+position = Vector2(309.167, 253.5)
+scale = Vector2(4.92138, 4.06667)
+texture = ExtResource("19_uphb0")
+
+[node name="MapTitle" type="Label" parent="SettingsMan/GamepMan/MapMan" unique_id=1597574879]
+offset_left = 48.0
+offset_top = 46.0
+offset_right = 570.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 40
+text = "MAP SETTINGS"
+horizontal_alignment = 1
+
+[node name="RadiusL" type="Label" parent="SettingsMan/GamepMan/MapMan" unique_id=715565244]
+offset_left = 112.0
+offset_top = 126.0
+offset_right = 500.0
+offset_bottom = 167.0
+theme_override_font_sizes/font_size = 40
+text = "Radius: 900 px"
+horizontal_alignment = 1
+
+[node name="MiniMap" parent="SettingsMan/GamepMan/MapMan" unique_id=870368746 instance=ExtResource("32_o6nmh")]
+offset_left = 316.0
+offset_top = 320.0
+offset_right = 316.0
+offset_bottom = 320.0
+player_path = NodePath("../player")
+
+[node name="RadarRadius" type="HSlider" parent="SettingsMan/GamepMan/MapMan" unique_id=915296398]
+offset_left = 80.0
+offset_top = 190.0
+offset_right = 542.0
+offset_bottom = 206.0
+theme = SubResource("Theme_5k1v6")
+min_value = 20.0
+max_value = 270.0
+value = 50.0
+
+[node name="RangeL" type="Label" parent="SettingsMan/GamepMan/MapMan" unique_id=1617579514]
+offset_left = 112.0
+offset_top = 238.0
+offset_right = 500.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 40
+text = "Radius: 900 px"
+horizontal_alignment = 1
+
+[node name="RadarRange" type="HSlider" parent="SettingsMan/GamepMan/MapMan" unique_id=1612204852]
+offset_left = 80.0
+offset_top = 301.0
+offset_right = 542.0
+offset_bottom = 317.0
+theme = SubResource("Theme_5k1v6")
+min_value = 10.0
+max_value = 400.0
+value = 10.0
+
+[node name="enemy_1" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan" unique_id=586551220 groups=["enemy_ex"]]
+position = Vector2(320, 310)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=751234509]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_2" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=12329694 groups=["enemy_ex"]]
+position = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_2" unique_id=1077730537]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_3" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=99073010 groups=["enemy_ex"]]
+position = Vector2(3, -21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_3" unique_id=929374128]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_4" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=113346750 groups=["enemy_ex"]]
+position = Vector2(-21, -21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_4" unique_id=2102672874]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_5" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=626951671 groups=["enemy_ex"]]
+position = Vector2(-45, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_5" unique_id=1585114687]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_6" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1141336614 groups=["enemy_ex"]]
+position = Vector2(-45, 43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_6" unique_id=1019933428]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_7" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1042094269 groups=["enemy_ex"]]
+position = Vector2(-17, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_7" unique_id=267596134]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_8" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=802410425 groups=["enemy_ex"]]
+position = Vector2(108, 39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_8" unique_id=562542591]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_9" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1460479493 groups=["enemy_ex"]]
+position = Vector2(93, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_9" unique_id=1388542936]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_10" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=508486661 groups=["enemy_ex"]]
+position = Vector2(93, -184)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_10" unique_id=627940032]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_11" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1282279922 groups=["enemy_ex"]]
+position = Vector2(259, -236)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_11" unique_id=1329990135]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_12" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1825247229 groups=["enemy_ex"]]
+position = Vector2(-5, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_12" unique_id=1515452642]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_13" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1093582360 groups=["enemy_ex"]]
+position = Vector2(-4, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_13" unique_id=1077141304]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_14" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=2041091670 groups=["enemy_ex"]]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_14" unique_id=645684914]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_15" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1432625599 groups=["enemy_ex"]]
+position = Vector2(-8, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_15" unique_id=1099366991]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_16" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=869930661 groups=["enemy_ex"]]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_16" unique_id=2080476497]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_17" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=22332143 groups=["enemy_ex"]]
+position = Vector2(-1, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_17" unique_id=117988121]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_18" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=2137337950 groups=["enemy_ex"]]
+position = Vector2(-5, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_18" unique_id=1269993314]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_19" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=717037214 groups=["enemy_ex"]]
+position = Vector2(-11, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_19" unique_id=934451434]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_20" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1855209156 groups=["enemy_ex"]]
+position = Vector2(206, 190)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_20" unique_id=1681735831]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_21" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1058361090 groups=["enemy_ex"]]
+position = Vector2(-239, 255)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_21" unique_id=71519250]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_22" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1295671379 groups=["enemy_ex"]]
+position = Vector2(-119, 226)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_22" unique_id=1194943518]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_23" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1627806834 groups=["enemy_ex"]]
+position = Vector2(-208, 127)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_23" unique_id=1878734436]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_24" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1588952580 groups=["enemy_ex"]]
+position = Vector2(-191, -36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_24" unique_id=306536473]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_25" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=1988796123 groups=["enemy_ex"]]
+position = Vector2(-84, -197)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_25" unique_id=187230814]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="enemy_26" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan/enemy_1" unique_id=287302179 groups=["enemy_ex"]]
+position = Vector2(32, 170)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/enemy_1/enemy_26" unique_id=96815489]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="player" type="CharacterBody2D" parent="SettingsMan/GamepMan/MapMan" unique_id=2081623362]
+position = Vector2(315, 310)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsMan/GamepMan/MapMan/player" unique_id=1346776991]
+shape = SubResource("CircleShape2D_lad33")
+
+[node name="BackMap" type="Button" parent="SettingsMan/GamepMan/MapMan" unique_id=496581851]
+offset_left = 1036.0
+offset_top = -8.0
+offset_right = 1160.0
+offset_bottom = 116.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_1u4ja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djvq3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g01cv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_w23ro")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tywlq")
+text = "x"
+script = ExtResource("12_w5vu4")
+
+[node name="Move" type="Button" parent="SettingsMan/GamepMan/MapMan" unique_id=1663778884]
+offset_left = 200.0
+offset_top = 361.0
+offset_right = 680.0
+offset_bottom = 553.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
+text = "MOVE"
+script = ExtResource("12_w5vu4")
+
+[node name="Reset" type="Button" parent="SettingsMan/GamepMan/MapMan" unique_id=458630048]
+offset_left = -56.0
+offset_top = 361.0
+offset_right = 424.0
+offset_bottom = 553.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 96)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_owx6d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j405b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cy1ym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_abhaq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bjh58")
+text = "RESET"
+script = ExtResource("12_w5vu4")
+
+[node name="GUIMan" type="Node2D" parent="SettingsMan/GamepMan" unique_id=974567552]
+process_mode = 3
+visible = false
+script = ExtResource("33_4yng7")
+
+[node name="Body" type="TextureRect" parent="SettingsMan/GamepMan/GUIMan" unique_id=964553449]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qy5h8")
+
+[node name="HPBar" type="TextureProgressBar" parent="SettingsMan/GamepMan/GUIMan" unique_id=1524956632]
+offset_left = 129.0
+offset_top = 44.0
+offset_right = 309.0
+offset_bottom = 78.0
+scale = Vector2(2, 2)
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("34_1w5sh")
+texture_progress = ExtResource("35_7wawe")
+
+[node name="HPL" type="Label" parent="SettingsMan/GamepMan/GUIMan/HPBar" unique_id=1755723342]
+layout_mode = 0
+offset_left = -56.0
+offset_right = 60.0
+offset_bottom = 101.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "❤️"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HPCounter" type="Label" parent="SettingsMan/GamepMan/GUIMan/HPBar" unique_id=1121473007]
+layout_mode = 0
+offset_right = 900.0
+offset_bottom = 170.0
+scale = Vector2(0.2, 0.2)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowHideHP" type="CheckButton" parent="SettingsMan/GamepMan/GUIMan/HPBar" unique_id=1981316365]
+layout_mode = 0
+offset_left = 183.0
+offset_top = -1.0
+offset_right = 211.0
+offset_bottom = 23.0
+scale = Vector2(1.5, 1.5)
+theme = SubResource("Theme_tywlq")
+
+[node name="STMBar" type="TextureProgressBar" parent="SettingsMan/GamepMan/GUIMan" unique_id=1143243864]
+offset_left = 129.0
+offset_top = 164.0
+offset_right = 309.0
+offset_bottom = 198.0
+scale = Vector2(2, 2)
+value = 30.0
+nine_patch_stretch = true
+texture_under = ExtResource("34_1w5sh")
+texture_progress = ExtResource("38_13etd")
+
+[node name="HPL2" type="Label" parent="SettingsMan/GamepMan/GUIMan/STMBar" unique_id=2109764241]
+layout_mode = 0
+offset_left = -56.0
+offset_top = -1.0
+offset_right = 60.0
+offset_bottom = 100.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "⚡"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="STCounter" type="Label" parent="SettingsMan/GamepMan/GUIMan/STMBar" unique_id=1098775609]
+layout_mode = 0
+offset_right = 900.0
+offset_bottom = 170.0
+scale = Vector2(0.2, 0.2)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowHideSTM" type="CheckButton" parent="SettingsMan/GamepMan/GUIMan/STMBar" unique_id=1364229807]
+layout_mode = 0
+offset_left = 183.0
+offset_top = -1.0
+offset_right = 211.0
+offset_bottom = 23.0
+scale = Vector2(1.5, 1.5)
+theme = SubResource("Theme_tywlq")
+
+[node name="BackGUI" type="Button" parent="SettingsMan/GamepMan/GUIMan" unique_id=70095431]
+offset_left = 1033.0
+offset_top = -8.0
+offset_right = 1157.0
+offset_bottom = 116.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_1u4ja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djvq3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g01cv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_w23ro")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tywlq")
+text = "x"
+script = ExtResource("12_w5vu4")
+
+[node name="PFPBG" type="TextureRect" parent="SettingsMan/GamepMan/GUIMan" unique_id=1155118111]
+offset_left = 201.0
+offset_top = 289.0
+offset_right = 409.0
+offset_bottom = 497.0
+texture = ExtResource("39_mte6e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PFPIcon" type="TextureRect" parent="SettingsMan/GamepMan/GUIMan/PFPBG" unique_id=1253026490]
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 208.0
+texture = ExtResource("40_dh7nf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PFPCoverChain" type="TextureRect" parent="SettingsMan/GamepMan/GUIMan/PFPBG" unique_id=1217341755]
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 208.0
+texture = ExtResource("41_lv2ql")
+
+[node name="player_name" type="Label" parent="SettingsMan/GamepMan/GUIMan/PFPBG" unique_id=809381408]
+layout_mode = 0
+offset_top = 167.0
+offset_right = 1040.0
+offset_bottom = 372.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 140
+theme_override_styles/normal = SubResource("StyleBoxFlat_ri33c")
+text = "Player Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="Scroll" type="ScrollContainer" parent="SettingsMan/GamepMan/GUIMan" unique_id=574589921]
+custom_minimum_size = Vector2(540, 350)
+offset_left = 570.0
+offset_top = 257.0
+offset_right = 1110.0
+offset_bottom = 607.0
+horizontal_scroll_mode = 0
+
+[node name="Pro_imgs" type="GridContainer" parent="SettingsMan/GamepMan/GUIMan/Scroll" unique_id=1884919694]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+script = ExtResource("42_htm82")
+metadata/_edit_use_anchors_ = true
+
+[node name="icon_1" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1545391737 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+
+[node name="icon_2" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1572985008 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 2
+
+[node name="icon_3" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=686004423 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 3
+
+[node name="icon_4" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=888109815 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 4
+
+[node name="icon_5" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=71883896 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 5
+
+[node name="icon_6" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=637366035 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 6
+
+[node name="icon_7" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1366114319 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 7
+
+[node name="icon_8" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=865556679 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 8
+
+[node name="icon_9" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1199117649 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 9
+
+[node name="icon_10" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=345952984 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 10
+
+[node name="icon_11" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=695550089 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 11
+
+[node name="icon_12" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1511672583 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 12
+
+[node name="icon_13" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=419088014 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 13
+
+[node name="icon_14" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1839381204 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 14
+
+[node name="icon_15" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=982810115 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 15
+
+[node name="icon_16" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1372950186 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 16
+
+[node name="icon_17" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=446759637 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 17
+
+[node name="icon_18" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=465163972 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 18
+
+[node name="icon_19" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=897437945 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 19
+
+[node name="icon_20" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1933052564 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 20
+
+[node name="icon_21" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=2130382724 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 21
+
+[node name="icon_22" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1749471088 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 22
+
+[node name="icon_23" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=518797856 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 23
+
+[node name="icon_24" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1962113473 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 24
+
+[node name="icon_25" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1683917685 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 25
+
+[node name="icon_26" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=2122937053 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 26
+
+[node name="icon_27" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=1376017015 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 27
+
+[node name="icon_28" parent="SettingsMan/GamepMan/GUIMan/Scroll/Pro_imgs" unique_id=995249800 instance=ExtResource("43_irlpn")]
+layout_mode = 2
+pfp_index = 28
+
+[node name="UpgradeMan" type="Node2D" parent="." unique_id=865711343]
+process_mode = 3
+visible = false
+script = ExtResource("44_eh4vj")
+
+[node name="Body" type="TextureRect" parent="UpgradeMan" unique_id=333733029]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qy5h8")
+
+[node name="gold" type="Label" parent="UpgradeMan" unique_id=832798068]
 offset_left = 81.0
 offset_right = 188.0
 offset_bottom = 91.0
@@ -1106,38 +2105,38 @@ theme_override_font_sizes/font_size = 60
 text = "999"
 vertical_alignment = 1
 
-[node name="GoldIcon" type="Sprite2D" parent="UpgradeMan/gold" unique_id=1091865247]
+[node name="GoldIcon" type="Sprite2D" parent="UpgradeMan/gold" unique_id=1490075660]
 position = Vector2(-33, 42)
 scale = Vector2(1.5625, 1.5625)
 texture = ExtResource("45_jym1q")
 hframes = 22
 frame = 10
 
-[node name="loop" type="AnimationPlayer" parent="UpgradeMan/gold/GoldIcon" unique_id=980948371]
+[node name="loop" type="AnimationPlayer" parent="UpgradeMan/gold/GoldIcon" unique_id=163358250]
 libraries/ = SubResource("AnimationLibrary_k6w66")
 autoplay = &"loop"
 
-[node name="InfoHolder" type="Sprite2D" parent="UpgradeMan" unique_id=1867146968]
+[node name="InfoHolder" type="Sprite2D" parent="UpgradeMan" unique_id=1452467408]
 position = Vector2(912, 372.25)
 scale = Vector2(7.4, 7.51538)
 texture = ExtResource("46_vrpnb")
 
-[node name="IconCont" type="Sprite2D" parent="UpgradeMan" unique_id=1236619732]
+[node name="IconCont" type="Sprite2D" parent="UpgradeMan" unique_id=1218393707]
 position = Vector2(448, 290)
 scale = Vector2(15, 15)
 texture = ExtResource("47_xq6rt")
 hframes = 15
 
-[node name="icon" type="Sprite2D" parent="UpgradeMan/IconCont" unique_id=648260090]
+[node name="icon" type="Sprite2D" parent="UpgradeMan/IconCont" unique_id=2116684888]
 position = Vector2(2.44379e-06, -0.033713)
 scale = Vector2(0.21875, 0.217507)
 texture = ExtResource("48_u1lot")
 hframes = 4
 
-[node name="update_anim" type="AnimationPlayer" parent="UpgradeMan/IconCont" unique_id=1573181891]
+[node name="update_anim" type="AnimationPlayer" parent="UpgradeMan/IconCont" unique_id=890754472]
 libraries/ = SubResource("AnimationLibrary_b5vyy")
 
-[node name="CloseUpgrade" type="TextureButton" parent="UpgradeMan" unique_id=1925412052]
+[node name="CloseUpgrade" type="TextureButton" parent="UpgradeMan" unique_id=952701031]
 offset_left = 1024.0
 offset_top = 8.0
 offset_right = 1120.0
@@ -1149,7 +2148,7 @@ texture_disabled = ExtResource("52_4en2q")
 texture_focused = ExtResource("50_m8vqj")
 stretch_mode = 0
 
-[node name="Update" type="Button" parent="UpgradeMan" unique_id=1263081337]
+[node name="Update" type="Button" parent="UpgradeMan" unique_id=1307437632]
 offset_left = 296.0
 offset_top = 490.0
 offset_right = 600.0
@@ -1159,19 +2158,19 @@ theme_override_colors/font_color = Color(0, 0.25, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 0.960938, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_1r6fc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_b0krx")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kx4no")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_noym3")
-theme_override_styles/focus = SubResource("StyleBoxTexture_s1i3y")
+theme_override_styles/normal = SubResource("StyleBoxTexture_p7scl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7i3uu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t1j3q")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_1j26t")
+theme_override_styles/focus = SubResource("StyleBoxTexture_peo30")
 text = "UPGRADE"
 
-[node name="BodyUP" type="Sprite2D" parent="UpgradeMan" unique_id=1301233022]
+[node name="BodyUP" type="Sprite2D" parent="UpgradeMan" unique_id=1953838028]
 position = Vector2(126, 272)
 scale = Vector2(8, 8)
 texture = ExtResource("53_vkm4m")
 
-[node name="icon" type="TextureRect" parent="UpgradeMan/BodyUP" unique_id=1659894040]
+[node name="icon" type="TextureRect" parent="UpgradeMan/BodyUP" unique_id=1458334264]
 offset_left = -6.0
 offset_top = -6.0
 offset_right = 6.0
@@ -1180,34 +2179,34 @@ texture = ExtResource("54_stghv")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="BodySelect" type="Button" parent="UpgradeMan/BodyUP" unique_id=834387482]
+[node name="BodySelect" type="Button" parent="UpgradeMan/BodyUP" unique_id=2130590815]
 offset_left = -7.0
 offset_top = -7.0
 offset_right = 7.0
 offset_bottom = 7.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_negf1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mfe8c")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ep2dj")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ye3k1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_66m0l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cs4i6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_437me")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6kosp")
 
-[node name="Skill1" type="Sprite2D" parent="UpgradeMan/BodyUP" unique_id=198351427]
+[node name="Skill1" type="Sprite2D" parent="UpgradeMan/BodyUP" unique_id=961479940]
 visible = false
 position = Vector2(19.125, 1.875)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("55_nsetj")
 
-[node name="Skill2" type="Sprite2D" parent="UpgradeMan/BodyUP" unique_id=168298974]
+[node name="Skill2" type="Sprite2D" parent="UpgradeMan/BodyUP" unique_id=18826410]
 visible = false
 position = Vector2(61.125, 1.875)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("56_xrck7")
 
-[node name="PropUP" type="Sprite2D" parent="UpgradeMan" unique_id=937125792]
+[node name="PropUP" type="Sprite2D" parent="UpgradeMan" unique_id=1248283005]
 position = Vector2(125, 536)
 scale = Vector2(8, 8)
 texture = ExtResource("53_vkm4m")
 
-[node name="icon" type="TextureRect" parent="UpgradeMan/PropUP" unique_id=1518259355]
+[node name="icon" type="TextureRect" parent="UpgradeMan/PropUP" unique_id=8145934]
 offset_left = -6.0
 offset_top = -6.0
 offset_right = 6.0
@@ -1216,22 +2215,22 @@ texture = ExtResource("57_h6j6w")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PropSelect" type="Button" parent="UpgradeMan/PropUP" unique_id=580397165]
+[node name="PropSelect" type="Button" parent="UpgradeMan/PropUP" unique_id=1789984245]
 offset_left = -7.0
 offset_top = -7.0
 offset_right = 7.0
 offset_bottom = 7.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_negf1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mfe8c")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ep2dj")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ye3k1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_66m0l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cs4i6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_437me")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6kosp")
 
-[node name="WingsUP" type="Sprite2D" parent="UpgradeMan" unique_id=1210034833]
+[node name="WingsUP" type="Sprite2D" parent="UpgradeMan" unique_id=886780520]
 position = Vector2(126, 404)
 scale = Vector2(8, 8)
 texture = ExtResource("53_vkm4m")
 
-[node name="icon" type="TextureRect" parent="UpgradeMan/WingsUP" unique_id=1734434874]
+[node name="icon" type="TextureRect" parent="UpgradeMan/WingsUP" unique_id=615438184]
 offset_left = -6.0
 offset_top = -6.0
 offset_right = 6.0
@@ -1240,22 +2239,22 @@ texture = ExtResource("58_alflc")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="WingSelect" type="Button" parent="UpgradeMan/WingsUP" unique_id=375630035]
+[node name="WingSelect" type="Button" parent="UpgradeMan/WingsUP" unique_id=766787599]
 offset_left = -7.0
 offset_top = -7.0
 offset_right = 7.0
 offset_bottom = 7.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_negf1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mfe8c")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ep2dj")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ye3k1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_66m0l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cs4i6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_437me")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6kosp")
 
-[node name="CanonUP" type="Sprite2D" parent="UpgradeMan" unique_id=301021957]
+[node name="CanonUP" type="Sprite2D" parent="UpgradeMan" unique_id=1404461580]
 position = Vector2(126, 140)
 scale = Vector2(8, 8)
 texture = ExtResource("53_vkm4m")
 
-[node name="icon" type="TextureRect" parent="UpgradeMan/CanonUP" unique_id=750489942]
+[node name="icon" type="TextureRect" parent="UpgradeMan/CanonUP" unique_id=1997339740]
 offset_left = -6.0
 offset_top = -6.0
 offset_right = 6.0
@@ -1264,24 +2263,24 @@ texture = ExtResource("59_wnw1u")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CanonSelect" type="Button" parent="UpgradeMan/CanonUP" unique_id=46977323]
+[node name="CanonSelect" type="Button" parent="UpgradeMan/CanonUP" unique_id=1284326659]
 offset_left = -7.0
 offset_top = -7.0
 offset_right = 7.0
 offset_bottom = 7.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_negf1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mfe8c")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ep2dj")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ye3k1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_66m0l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cs4i6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_437me")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6kosp")
 
-[node name="SkillsProgress" type="Sprite2D" parent="UpgradeMan" unique_id=1353437600]
+[node name="SkillsProgress" type="Sprite2D" parent="UpgradeMan" unique_id=1341243361]
 position = Vector2(448, 122)
 scale = Vector2(3, 3)
 texture = ExtResource("60_thm2u")
 hframes = 17
 frame = 2
 
-[node name="InfoTitle" type="RichTextLabel" parent="UpgradeMan" unique_id=440534988]
+[node name="InfoTitle" type="RichTextLabel" parent="UpgradeMan" unique_id=2113489545]
 offset_left = 744.0
 offset_top = 152.0
 offset_right = 1080.0
@@ -1294,7 +2293,7 @@ bbcode_enabled = true
 text = "??????"
 horizontal_alignment = 1
 
-[node name="InfoDesc" type="RichTextLabel" parent="UpgradeMan" unique_id=2091992622]
+[node name="InfoDesc" type="RichTextLabel" parent="UpgradeMan" unique_id=2118845944]
 offset_left = 744.0
 offset_top = 207.0
 offset_right = 1080.0
@@ -1315,7 +2314,7 @@ text = "??????????
 ??? ??? ????????"
 horizontal_alignment = 1
 
-[node name="price" type="Label" parent="UpgradeMan" unique_id=405089897]
+[node name="price" type="Label" parent="UpgradeMan" unique_id=430933370]
 offset_left = 344.0
 offset_top = 426.0
 offset_right = 552.0
@@ -1329,79 +2328,79 @@ text = "??????"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="UpFX" type="Marker2D" parent="UpgradeMan" unique_id=1322131939]
+[node name="UpFX" type="Marker2D" parent="UpgradeMan" unique_id=294765815]
 position = Vector2(450, 298)
 
-[node name="MoneyPos" type="Marker2D" parent="UpgradeMan" unique_id=1756817366]
+[node name="MoneyPos" type="Marker2D" parent="UpgradeMan" unique_id=2134510893]
 position = Vector2(450, 455)
 
-[node name="indicator" type="Node2D" parent="UpgradeMan" unique_id=1848383439]
+[node name="indicator" type="Node2D" parent="UpgradeMan" unique_id=2019749661]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(482, 298)
 
-[node name="Indicator" type="RichTextLabel" parent="UpgradeMan/indicator" unique_id=2101982779]
+[node name="Indicator" type="RichTextLabel" parent="UpgradeMan/indicator" unique_id=1672141563]
 offset_left = -258.0
 offset_top = -237.0
 offset_right = -154.0
 offset_bottom = -97.0
 theme_override_font_sizes/normal_font_size = 171
-theme_override_styles/normal = SubResource("StyleBoxFlat_ujq54")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6u0rk")
 text = "<"
 scroll_active = false
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Indicator2" type="RichTextLabel" parent="UpgradeMan/indicator" unique_id=1735968442]
+[node name="Indicator2" type="RichTextLabel" parent="UpgradeMan/indicator" unique_id=1355148518]
 offset_left = -258.0
 offset_top = -97.0
 offset_right = -154.0
 offset_bottom = 43.0
 theme_override_font_sizes/normal_font_size = 171
-theme_override_styles/normal = SubResource("StyleBoxFlat_ujq54")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6u0rk")
 text = "<"
 scroll_active = false
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Indicator3" type="RichTextLabel" parent="UpgradeMan/indicator" unique_id=939840990]
+[node name="Indicator3" type="RichTextLabel" parent="UpgradeMan/indicator" unique_id=1874839740]
 offset_left = -258.0
 offset_top = 43.0
 offset_right = -154.0
 offset_bottom = 183.0
 theme_override_font_sizes/normal_font_size = 171
-theme_override_styles/normal = SubResource("StyleBoxFlat_ujq54")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6u0rk")
 text = "<"
 scroll_active = false
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Indicator4" type="RichTextLabel" parent="UpgradeMan/indicator" unique_id=1620348020]
+[node name="Indicator4" type="RichTextLabel" parent="UpgradeMan/indicator" unique_id=1714467639]
 offset_left = -258.0
 offset_top = 183.0
 offset_right = -154.0
 offset_bottom = 323.0
 theme_override_font_sizes/normal_font_size = 171
-theme_override_styles/normal = SubResource("StyleBoxFlat_ujq54")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6u0rk")
 text = "<"
 scroll_active = false
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="show" type="AnimationPlayer" parent="UpgradeMan/indicator" unique_id=1873249046]
+[node name="show" type="AnimationPlayer" parent="UpgradeMan/indicator" unique_id=1743384445]
 libraries/ = SubResource("AnimationLibrary_qroki")
 
-[node name="StatsMan" type="Control" parent="." unique_id=371660391]
+[node name="StatsMan" type="Control" parent="." unique_id=807393824]
 process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("61_pwn3u")
 
-[node name="Body" type="TextureRect" parent="StatsMan" unique_id=1694630766]
+[node name="Body" type="TextureRect" parent="StatsMan" unique_id=1209154049]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1412,7 +2411,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qy5h8")
 
-[node name="StatsInfo" type="RichTextLabel" parent="StatsMan" unique_id=836507731]
+[node name="StatsInfo" type="RichTextLabel" parent="StatsMan" unique_id=1860817100]
 layout_mode = 0
 offset_left = 69.0
 offset_top = 54.0
@@ -1422,7 +2421,7 @@ theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "info player stats"
 
-[node name="Title" type="Label" parent="StatsMan" unique_id=1620269273]
+[node name="Title" type="Label" parent="StatsMan" unique_id=308078334]
 visible = false
 layout_mode = 0
 offset_top = 8.0
@@ -1435,7 +2434,7 @@ text = "PLAYER STATS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StatsBack" type="Button" parent="StatsMan" unique_id=1773737651]
+[node name="StatsBack" type="Button" parent="StatsMan" unique_id=1862761305]
 layout_mode = 0
 offset_left = 1033.0
 offset_top = -8.0
@@ -1444,17 +2443,22 @@ offset_bottom = 116.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(60, 60)
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxTexture_bwcpc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_btqx0")
-theme_override_styles/hover = SubResource("StyleBoxTexture_tukmr")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_qb1nb")
-theme_override_styles/focus = SubResource("StyleBoxTexture_jqykb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1u4ja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djvq3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g01cv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_w23ro")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tywlq")
 text = "x"
 script = ExtResource("12_w5vu4")
 
+[node name="Quests" parent="." unique_id=1618258809 instance=ExtResource("62_uphb0")]
+
+[node name="show" type="AnimationPlayer" parent="Quests" unique_id=786769239]
+libraries/ = SubResource("AnimationLibrary_fmuxr")
+
 [connection signal="mouse_entered" from="ButtonsManager/Upgrade" to="ButtonsManager/Upgrade" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="ButtonsManager/Settings" to="ButtonsManager/Settings" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="ButtonsManager/Stats" to="ButtonsManager/Stats" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="ButtonsManager/Missions" to="ButtonsManager/Missions" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="ButtonsManager/Menu" to="ButtonsManager/Menu" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="ButtonsManager/BackSett" to="ButtonsManager/BackSett" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="SettingsMan/ButtonsManager/GameP" to="SettingsMan/ButtonsManager/GameP" method="_on_mouse_entered"]
@@ -1463,9 +2467,25 @@ script = ExtResource("12_w5vu4")
 [connection signal="mouse_entered" from="SettingsMan/ButtonsManager/UI" to="SettingsMan/ButtonsManager/UI" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="SettingsMan/ButtonsManager/BackSett" to="SettingsMan/ButtonsManager/BackSett" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="SettingsMan/AudioMan/BackAudio" to="SettingsMan/AudioMan/BackAudio" method="_on_mouse_entered"]
+[connection signal="toggled" from="SettingsMan/GraphicMan/AnimationLow" to="SettingsMan" method="_on_animation_low_toggled"]
+[connection signal="toggled" from="SettingsMan/GraphicMan/AnimationHight" to="SettingsMan" method="_on_animation_hight_toggled"]
 [connection signal="mouse_entered" from="SettingsMan/GraphicMan/ApplyButton" to="SettingsMan/GraphicMan/ApplyButton" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="SettingsMan/GraphicMan/BackGraph" to="SettingsMan/GraphicMan/BackGraph" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="SettingsMan/GraphicMan2/ApplyButton" to="SettingsMan/GraphicMan2/ApplyButton" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="SettingsMan/GraphicMan2/BackGraph" to="SettingsMan/GraphicMan2/BackGraph" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="SettingsMan/GamepMan/ButtonsManager/KeyMap" to="SettingsMan/GamepMan/ButtonsManager/KeyMap" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="SettingsMan/GamepMan/ButtonsManager/GUI" to="SettingsMan/GamepMan/ButtonsManager/GUI" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="SettingsMan/GamepMan/ButtonsManager/Map" to="SettingsMan/GamepMan/ButtonsManager/Map" method="_on_mouse_entered"]
+[connection signal="pressed" from="SettingsMan/GamepMan/ButtonsManager/Map" to="SettingsMan/GamepMan" method="_on_map_pressed"]
+[connection signal="mouse_entered" from="SettingsMan/GamepMan/ButtonsManager/BackGM" to="SettingsMan/GamepMan/ButtonsManager/BackGM" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="SettingsMan/GamepMan/CameraL/Reset" to="SettingsMan/GamepMan/CameraL/Reset" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="SettingsMan/GamepMan/KeyMap/ResetButton" to="SettingsMan/GamepMan/KeyMap/ResetButton" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="SettingsMan/GamepMan/KeyMap/BackButton" to="SettingsMan/GamepMan/KeyMap/BackButton" method="_on_mouse_entered"]
+[connection signal="value_changed" from="SettingsMan/GamepMan/MapMan/RadarRadius" to="SettingsMan/GamepMan/MapMan" method="_on_radar_radius_value_changed"]
+[connection signal="value_changed" from="SettingsMan/GamepMan/MapMan/RadarRange" to="SettingsMan/GamepMan/MapMan" method="_on_radar_range_value_changed"]
+[connection signal="mouse_entered" from="SettingsMan/GamepMan/MapMan/BackMap" to="SettingsMan/GamepMan/MapMan/BackMap" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="SettingsMan/GamepMan/MapMan/Move" to="SettingsMan/GamepMan/MapMan/Move" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="SettingsMan/GamepMan/MapMan/Reset" to="SettingsMan/GamepMan/MapMan/Reset" method="_on_mouse_entered"]
+[connection signal="toggled" from="SettingsMan/GamepMan/GUIMan/HPBar/ShowHideHP" to="SettingsMan/GamepMan/GUIMan" method="_on_show_hide_hp_toggled"]
+[connection signal="toggled" from="SettingsMan/GamepMan/GUIMan/STMBar/ShowHideSTM" to="SettingsMan/GamepMan/GUIMan" method="_on_show_hide_stm_toggled"]
+[connection signal="mouse_entered" from="SettingsMan/GamepMan/GUIMan/BackGUI" to="SettingsMan/GamepMan/GUIMan/BackGUI" method="_on_mouse_entered"]
 [connection signal="pressed" from="UpgradeMan/CloseUpgrade" to="UpgradeMan" method="_on_close_upgrade_pressed"]
 [connection signal="mouse_entered" from="StatsMan/StatsBack" to="StatsMan/StatsBack" method="_on_mouse_entered"]

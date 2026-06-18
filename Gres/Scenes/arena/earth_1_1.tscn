@@ -509,6 +509,8 @@ chest_scenes = Array[PackedScene]([ExtResource("2_7q4cx")])
 chest_spawn_points = [NodePath("CSP1"), NodePath("CSP2"), NodePath("CSP3"), NodePath("CSP4"), NodePath("CSP5"), NodePath("CSP6"), NodePath("CSP7")]
 boss_scenes = Array[PackedScene]([ExtResource("3_f7gm4"), ExtResource("4_jk10k"), ExtResource("5_mkm77"), ExtResource("6_jvcim")])
 boss_spawn_points = [NodePath("CSP1"), NodePath("CSP2"), NodePath("CSP3"), NodePath("CSP4"), NodePath("CSP5"), NodePath("CSP6"), NodePath("CSP7")]
+boss_wave_interval_min = 5
+boss_wave_interval_max = 7
 
 [node name="AudioManager" parent="." unique_id=547358688 instance=ExtResource("3_ovxs4")]
 playlist = Array[AudioStream]([ExtResource("4_ml12v"), ExtResource("5_f7gm4"), ExtResource("6_jk10k"), ExtResource("7_mkm77"), ExtResource("8_jvcim"), ExtResource("9_o6as4")])

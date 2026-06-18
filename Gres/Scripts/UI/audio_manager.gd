@@ -11,6 +11,10 @@ extends Control
 
 const CONFIG_PATH = "user://settings.cfg"
 
+# Store pre-mute volumes for restore
+var _pre_mute_music: float = 50.0
+var _pre_mute_effects: float = 10.0
+
 func _ready():
 	$BackAudio.connect("pressed", on_back_pressed)
 	$Title.text = "Audio Settings"
@@ -64,16 +68,20 @@ func _on_effects_changed(value: float) -> void:
 # --- Mute All ---
 func _on_mute_toggled(pressed: bool) -> void:
 	if pressed:
-		#Global.master_volume = 0
+		# Store current volumes before muting
+		_pre_mute_music = music_slider.value
+		_pre_mute_effects = effects_slider.value
+		
 		Global.music_volume = 0
 		Global.effects_volume = 0
-		#_set_bus_volume("Master", 0)
 		_set_bus_volume("Music", 0)
 		_set_bus_volume("Effects", 0)
 	else:
-		#_set_bus_volume("Master", master_slider.value)
-		_set_bus_volume("Music", music_slider.value)
-		_set_bus_volume("Effects", effects_slider.value)
+		# Restore previous volumes
+		Global.music_volume = _pre_mute_music
+		Global.effects_volume = _pre_mute_effects
+		_set_bus_volume("Music", _pre_mute_music)
+		_set_bus_volume("Effects", _pre_mute_effects)
 		
 	sync_sliders_from_globals()
 	_save_settings()

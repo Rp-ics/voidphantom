@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	
 	var img = "res://Gres/Assets/Icons/pfp/pfp_%s.png" % Global.texture_pfp_icon
 	$PFPBG/PFPIcon.texture = load(img)
-	$"../../../../PlayerUI/PFPBG/PFPIcon".texture = load(img)
+	#$"../../../../PlayerUI/PFPBG/PFPIcon".texture = load(img)
 func _on_show_hide_hp_toggled(toggled_on: bool) -> void:
 	Global.hp_show = toggled_on
 

@@ -65,8 +65,13 @@ func _ready():
 	add_child(Scores)
 	Players.set_script(players_script)
 	add_child(Players)
-	#Multiplayer.set_script(multiplayer_script)
-	#add_child(Multiplayer)
+	
+	# === DECOMMENTA QUESTE RIGHE ===
+	var multiplayer_script = load("res://addons/silent_wolf/Multiplayer/Multiplayer.gd")
+	Multiplayer.set_script(multiplayer_script)
+	add_child(Multiplayer)
+	# ===============================
+	
 	print("SW ready end timestamp: " + str(SWUtils.get_timestamp()))
 
 

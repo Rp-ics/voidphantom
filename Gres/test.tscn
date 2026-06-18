@@ -15,7 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://6r5arj2t5egi" path="res://Gres/Assets/planets/pbj_1.png" id="12_0k0ys"]
 [ext_resource type="Texture2D" uid="uid://q65miexfny7v" path="res://Gres/Assets/planets/p_3.png" id="13_ssiny"]
 [ext_resource type="Texture2D" uid="uid://5k2tuksvp5us" path="res://Gres/Assets/planets/p_4.png" id="14_8pb0w"]
-[ext_resource type="PackedScene" uid="uid://1ch0ia0rvjs7" path="res://Gres/Scenes/Boss/fire_boss.tscn" id="16_rnexf"]
+[ext_resource type="PackedScene" uid="uid://csalou2q60sd0" path="res://Gres/Scenes/Boss/boss_insect.tscn" id="16_rnexf"]
+[ext_resource type="Script" uid="uid://bhfx0n8e43pjq" path="res://Gres/Scripts/UI/lvl_ui_manager.gd" id="17_8qgn8"]
+[ext_resource type="PackedScene" uid="uid://ce1w83l6sfcqs" path="res://Gres/Scenes/UI/mini_map.tscn" id="18_dyhra"]
+[ext_resource type="PackedScene" uid="uid://lbby7vtums4i" path="res://Gres/Scenes/UI/pause_ui.tscn" id="19_0q8e0"]
+[ext_resource type="PackedScene" uid="uid://dppgeynuf774u" path="res://Gres/Scenes/UI/inventory.tscn" id="20_8vwhq"]
 
 [sub_resource type="Animation" id="Animation_a66oc"]
 length = 0.001
@@ -482,4 +486,64 @@ libraries/ = SubResource("AnimationLibrary_hvjn7")
 [node name="Player" parent="." unique_id=742984994 instance=ExtResource("1_o1wcv")]
 position = Vector2(373, 134)
 
-[node name="FireBoss" parent="." unique_id=1561548970 instance=ExtResource("16_rnexf")]
+[node name="BossInsect" parent="." unique_id=1117330235 instance=ExtResource("16_rnexf")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1844727758]
+script = ExtResource("17_8qgn8")
+
+[node name="WaveManager" type="Node2D" parent="UI" unique_id=477728276]
+
+[node name="WaveInfo" type="RichTextLabel" parent="UI/WaveManager" unique_id=942628404]
+visible = false
+offset_top = 212.0
+offset_right = 1157.0
+offset_bottom = 427.0
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "wave couter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpawnInfo" type="RichTextLabel" parent="UI/WaveManager" unique_id=217276885]
+visible = false
+offset_top = 557.0
+offset_right = 1157.0
+offset_bottom = 648.0
+theme_override_colors/font_outline_color = Color(1, 0.585938, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "spawn progress info"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KillInfo" type="RichTextLabel" parent="UI/WaveManager" unique_id=622856631]
+visible = false
+offset_top = 557.0
+offset_right = 1150.0
+offset_bottom = 648.0
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "kill information"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MiniMap" parent="UI" unique_id=1423053503 instance=ExtResource("18_dyhra")]
+visible = false
+offset_left = 96.0
+offset_top = 554.0
+offset_right = 96.0
+offset_bottom = 554.0
+player_path = NodePath("../../Player")
+
+[node name="PauseUI" parent="UI" unique_id=179653215 instance=ExtResource("19_0q8e0")]
+visible = false
+
+[node name="Inventory" parent="UI" unique_id=2079265387 instance=ExtResource("20_8vwhq")]
+visible = false
+offset_left = 582.0
+offset_top = 379.0
+offset_right = 582.0
+offset_bottom = 379.0

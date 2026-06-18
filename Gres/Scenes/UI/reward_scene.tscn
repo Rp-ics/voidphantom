@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://063xh3sag6va"]
+
+[ext_resource type="Texture2D" uid="uid://sff7nvx0yv1w" path="res://Gres/Assets/BGame/galaxy9.png" id="1_kkv28"]
+[ext_resource type="Script" uid="uid://b4r5d5lx4q0vi" path="res://Gres/Scripts/UI/reward_scene.gd" id="1_pex4e"]
+
+[sub_resource type="Animation" id="Animation_08mjw"]
+resource_name = "loop"
+length = 16.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4, 7, 8, 11, 12, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0.725, 0.8, 1), Color(0, 0.725, 0.8, 1), Color(0.0546875, 0, 1, 1), Color(0.0546875, 0, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pex4e"]
+_data = {
+&"loop": SubResource("Animation_08mjw")
+}
+
+[node name="RewardScene" type="Control" unique_id=2145673228]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pex4e")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=906736647]
+process_mode = 3
+layout_mode = 0
+offset_left = -2112.0
+offset_top = -1648.0
+offset_right = 2936.0
+offset_bottom = 2184.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect3" unique_id=3454778]
+process_mode = 3
+layout_mode = 0
+offset_left = 1704.0
+offset_top = 1320.0
+offset_right = 3760.0
+offset_bottom = 2691.0
+texture = ExtResource("1_kkv28")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="." unique_id=280128493]
+process_mode = 3
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.725, 0.8, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 80
+text = "BOSS RUSH REWARDS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="loop" type="AnimationPlayer" parent="Title" unique_id=1284236057]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_pex4e")
+autoplay = &"loop"
+
+[node name="info_rewards" type="RichTextLabel" parent="." unique_id=1602742583]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 122.0
+offset_right = 1124.0
+offset_bottom = 615.0
+bbcode_enabled = true
+text = "[img]res://Gres/Assets/Icons/parts/gold_icon_1.png[/img]"

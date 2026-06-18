@@ -1,0 +1,978 @@
+[gd_scene format=3 uid="uid://bjhdanp33cpx3"]
+
+[ext_resource type="Script" uid="uid://d02w84ytlxp44" path="res://Gres/Multiplayer/script/UI/lobby.gd" id="1_4h8ju"]
+[ext_resource type="Texture2D" uid="uid://sff7nvx0yv1w" path="res://Gres/Assets/BGame/galaxy9.png" id="1_823gd"]
+[ext_resource type="Texture2D" uid="uid://diq7xkhnherr5" path="res://Gres/Assets/BGame/galaxy11.png" id="2_aunxf"]
+[ext_resource type="Texture2D" uid="uid://lnenok3u67yr" path="res://Gres/Assets/UI/Buttons/button_normal1.png" id="3_mreud"]
+[ext_resource type="Texture2D" uid="uid://bqfje4k1r0qub" path="res://Gres/Assets/UI/Buttons/button_hover1.png" id="4_4h8ju"]
+[ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="5_ysf8n"]
+[ext_resource type="Texture2D" uid="uid://bg0m621u3igdt" path="res://Gres/Assets/UI/Buttons/audio_icn_holder_norm.png" id="7_ysf8n"]
+[ext_resource type="Texture2D" uid="uid://dxdvtvuie7c" path="res://Gres/Assets/UI/Buttons/audio_icn_holder_hold.png" id="8_7qfo4"]
+[ext_resource type="Texture2D" uid="uid://ift8cfdd8cet" path="res://Gres/Assets/player/weapons/common/rotated/icon_MPgun_1.png" id="9_17oeb"]
+[ext_resource type="Script" uid="uid://5cs86qohi3sa" path="res://Gres/Multiplayer/script/UI/mu_w_shop_manager.gd" id="9_wu1hg"]
+[ext_resource type="Texture2D" uid="uid://bxwhgoxx534c1" path="res://Gres/Assets/player/weapons/common/rotated/icon_MPgun_2.png" id="10_wu1hg"]
+[ext_resource type="Texture2D" uid="uid://duwghwh1vm627" path="res://Gres/Assets/player/weapons/common/rotated/icon_MPgun_3.png" id="11_ll7xs"]
+[ext_resource type="Texture2D" uid="uid://b4tnltkm4xuap" path="res://Gres/Assets/player/weapons/common/rotated/icon_MPgun_4.png" id="12_0dg0j"]
+[ext_resource type="Texture2D" uid="uid://d10keuvdswxfs" path="res://Gres/Assets/player/weapons/common/rotated/icon_MPgun_5.png" id="13_1y081"]
+[ext_resource type="Texture2D" uid="uid://c67jm1djnwnca" path="res://Gres/Assets/player/weapons/common/rotated/icon_MPgun_6.png" id="14_ur47n"]
+[ext_resource type="Texture2D" uid="uid://cd3tfla0rccsu" path="res://Gres/Assets/player/weapons/common/rotated/icon_MPgun_7.png" id="16_mcp6d"]
+[ext_resource type="Texture2D" uid="uid://kc1qydcogc31" path="res://Gres/Assets/player/weapons/common/rotated/icon_MPgun_8.png" id="17_ulnxa"]
+[ext_resource type="Texture2D" uid="uid://cybqpqnxcomth" path="res://Gres/Assets/player/weapons/common/rotated/icon_MPgun_9.png" id="18_gc2yg"]
+[ext_resource type="Texture2D" uid="uid://dbnli1utvsw16" path="res://Gres/Assets/player/weapons/common/rotated/icon_MPgun_10.png" id="19_old4x"]
+[ext_resource type="Script" uid="uid://ctw84wo267vs2" path="res://Gres/Multiplayer/script/UI/PvPSettingsUI.gd" id="22_ll7xs"]
+[ext_resource type="Texture2D" uid="uid://b0oh8yavrull4" path="res://Gres/Assets/UI/inentory/menusb.png" id="23_gc2yg"]
+[ext_resource type="Texture2D" uid="uid://dw2daaqnx7cv5" path="res://Gres/Assets/UI/inentory/plusb.png" id="24_old4x"]
+[ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="25_82y4v"]
+[ext_resource type="Texture2D" uid="uid://c2vsnoi2uvlwk" path="res://Gres/Assets/UI/inentory/close_b_pressed.png" id="26_tvb03"]
+[ext_resource type="Texture2D" uid="uid://bw3bw0kfacubp" path="res://Gres/Assets/UI/inentory/close_b_hover_.png" id="27_feg3v"]
+[ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="28_fiac1"]
+
+[sub_resource type="Animation" id="Animation_08mjw"]
+resource_name = "loop"
+length = 16.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4, 7, 8, 11, 12, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0.725, 0.8, 1), Color(0, 0.725, 0.8, 1), Color(0.0546875, 0, 1, 1), Color(0.0546875, 0, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7qfo4"]
+_data = {
+&"loop": SubResource("Animation_08mjw")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8pfgh"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk3hp"]
+bg_color = Color(1, 0.398438, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gw8c"]
+bg_color = Color(1, 0.632813, 0, 1)
+
+[sub_resource type="Theme" id="Theme_8pfgh"]
+HSlider/icons/grabber = ExtResource("7_ysf8n")
+HSlider/icons/grabber_disabled = ExtResource("7_ysf8n")
+HSlider/icons/grabber_highlight = ExtResource("8_7qfo4")
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_xk3hp")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_8gw8c")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_w0w4l"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vbnw5"]
+texture = ExtResource("3_mreud")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v4381"]
+texture = ExtResource("3_mreud")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nxnvu"]
+texture = ExtResource("4_4h8ju")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hf4q8"]
+texture = ExtResource("3_mreud")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wgd5"]
+texture = ExtResource("4_4h8ju")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4h8ju"]
+bg_color = Color(0.19641912, 0, 1, 0.49400002)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 1, 0.9296875, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_feg3v"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiac1"]
+bg_color = Color(0, 0.9532835, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgpg0"]
+bg_color = Color(0, 0.92947316, 1, 0.15100001)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 1, 0.9765625, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3c416"]
+bg_color = Color(0, 0, 0, 0.54800004)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jin4m"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1f883"]
+texture = ExtResource("3_mreud")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6wg5"]
+texture = ExtResource("3_mreud")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_robrf"]
+texture = ExtResource("4_4h8ju")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pr53u"]
+texture = ExtResource("3_mreud")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_igoyh"]
+texture = ExtResource("4_4h8ju")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s05c"]
+bg_color = Color(1, 0.398438, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7qli"]
+bg_color = Color(1, 0.632813, 0, 1)
+
+[sub_resource type="Theme" id="Theme_tgpg0"]
+HSlider/icons/grabber = ExtResource("7_ysf8n")
+HSlider/icons/grabber_disabled = ExtResource("7_ysf8n")
+HSlider/icons/grabber_highlight = ExtResource("8_7qfo4")
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_6s05c")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_w7qli")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jin4m"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ncxc5"]
+texture = ExtResource("23_gc2yg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r27wg"]
+texture = ExtResource("23_gc2yg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yldpl"]
+texture = ExtResource("23_gc2yg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eehva"]
+texture = ExtResource("23_gc2yg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmd5p"]
+texture = ExtResource("23_gc2yg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b34vr"]
+texture = ExtResource("24_old4x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h21w8"]
+texture = ExtResource("24_old4x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mvk4b"]
+texture = ExtResource("24_old4x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sg8tk"]
+texture = ExtResource("24_old4x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpvoa"]
+texture = ExtResource("24_old4x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aqh6x"]
+texture = ExtResource("25_82y4v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a3t1y"]
+texture = ExtResource("26_tvb03")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xllgl"]
+texture = ExtResource("27_feg3v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tvvim"]
+texture = ExtResource("28_fiac1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_euwhh"]
+texture = ExtResource("25_82y4v")
+
+[sub_resource type="GDScript" id="GDScript_vevw0"]
+script/source = "extends Button
+
+@export var DEFAULT_SCALE := Vector2(0.5, 0.5)
+@export var SHAKE_INTENSITY := 1.0
+@export var tween := \"epic\"
+@export var tweens_avaible := [
+	\"epic\",\"blink\",\"bounce\",\"c_flash\",\"c_pulse\",
+	\"e_pulse\",\"fade_in\",\"fade_out\"
+	]
+@onready var original_position := position
+@onready var current_tween = null
+
+func animate_button_epic() -> void:
+	# Reset al valore di partenza
+	self.scale = DEFAULT_SCALE
+	self.modulate = Color.WHITE
+	self.position = original_position
+	
+	var tw = create_tween()
+	tw.set_parallel(true)
+	
+	# 1. Bagliore esplosivo iniziale con effetto di sovraesposizione
+	tw.tween_property(self, \"scale\", DEFAULT_SCALE * 1.0, 0.2)\\
+		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tw.tween_property(self, \"modulate\", Color(2.0, 1.5, 2.5, 1.0), 0.1)
+	
+	# 2. Effetto di scossa sismica
+	var shake_tween = create_tween()
+	shake_tween.set_loops(4)
+	shake_tween.tween_property(self, \"position\", 
+		original_position + Vector2(randf_range(-SHAKE_INTENSITY, SHAKE_INTENSITY), 
+		randf_range(-SHAKE_INTENSITY, SHAKE_INTENSITY)), 0.05)
+	shake_tween.tween_property(self, \"position\", original_position, 0.05)
+	
+	# 3. Rimbalzo potente con effetto elasticizzato
+	tw.chain().tween_property(self, \"scale\", DEFAULT_SCALE * 0.9, 0.2)\\
+		.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	tw.tween_property(self, \"modulate\", Color(0.8, 0.9, 1.2, 1.0), 0.2)
+	
+	# 4. Ritorno alla normalità con overshoot finale
+	tw.chain().tween_property(self, \"scale\", DEFAULT_SCALE * 1.1, 0.15)\\
+		.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tw.tween_property(self, \"modulate\", Color.WHITE, 0.15)
+	
+	# 5. Effetto di pulsazione finale
+	tw.chain().tween_property(self, \"scale\", DEFAULT_SCALE * 1.05, 0.1)
+	tw.tween_property(self, \"scale\", DEFAULT_SCALE, 0.2)\\
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	
+	# 6. Bagliore residuo
+	tw.chain().tween_property(self, \"modulate\", Color(1.2, 1.1, 1.3, 1.0), 0.3)
+	tw.tween_property(self, \"modulate\", Color.WHITE, 0.5)
+
+func bounce():
+	var tw = create_tween()
+	tw.tween_property($\".\", \"scale\", DEFAULT_SCALE * 1.2, 0.2)
+	tw.tween_property($\".\", \"scale\", DEFAULT_SCALE, 0.2)
+	
+func _on_mouse_entered() -> void:
+	var sfx := AudioStreamPlayer.new()
+	sfx.stream = load(\"res://Gres/Music/SE/fx/mouse_3.ogg\")
+	get_tree().root.add_child(sfx)
+	#sfx.pitch_scale = 1.0 if randi() % 100 < 50 else 0.9
+	sfx.volume_db = Global.effects_volume
+	sfx.play()
+	sfx.connect(\"finished\", Callable(sfx, \"queue_free\"))
+
+	match tween:
+		\"epic\": animate_button_epic()
+		\"bounce\": bounce()
+	
+"
+
+[node name="Lobby" type="Control" unique_id=505135600]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4h8ju")
+
+[node name="c" type="ColorRect" parent="." unique_id=380617806]
+process_mode = 3
+layout_mode = 0
+offset_left = -2112.0
+offset_top = -1648.0
+offset_right = 2936.0
+offset_bottom = 2184.0
+color = Color(0, 0, 0, 1)
+
+[node name="bg" type="TextureRect" parent="c" unique_id=1520055002]
+process_mode = 3
+layout_mode = 0
+offset_left = 1704.0
+offset_top = 1320.0
+offset_right = 3760.0
+offset_bottom = 2691.0
+texture = ExtResource("1_823gd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="." unique_id=1324733314]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.725, 0.8, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 50
+text = "Void Phantom Multiplayer (BETA)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="Title" unique_id=227608822]
+process_mode = 3
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 104.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 49
+text = "Void Phantom Multiplayer (BETA)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subt" type="Label" parent="Title" unique_id=684524374]
+process_mode = 3
+layout_mode = 0
+offset_top = 72.0
+offset_right = 1152.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 20
+text = "This is just a multiplayer test; there are no rewards or achievements—just testing."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="loop" type="AnimationPlayer" parent="Title" unique_id=92975760]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_7qfo4")
+autoplay = &"loop"
+
+[node name="Camera" type="Camera2D" parent="." unique_id=661978515]
+process_mode = 3
+position = Vector2(576, 324)
+
+[node name="paralax" type="TextureRect" parent="Camera" unique_id=1265471332]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_8pfgh")
+offset_left = -768.0
+offset_top = -508.0
+offset_right = 768.0
+offset_bottom = 516.0
+texture = ExtResource("2_aunxf")
+
+[node name="MaxOffset" type="HSlider" parent="." unique_id=2324856]
+visible = false
+layout_mode = 0
+offset_left = 345.0
+offset_top = 622.0
+offset_right = 572.0
+offset_bottom = 638.0
+theme = SubResource("Theme_8pfgh")
+max_value = 200.0
+step = 0.1
+
+[node name="Label" type="Label" parent="MaxOffset" unique_id=1865685214]
+layout_mode = 0
+offset_top = -32.0
+offset_right = 570.0
+offset_bottom = 29.0
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 60
+text = "Max Offset: 600.0"
+
+[node name="SmoothSpeed" type="HSlider" parent="." unique_id=1440728483]
+visible = false
+layout_mode = 0
+offset_left = 593.0
+offset_top = 622.0
+offset_right = 820.0
+offset_bottom = 638.0
+theme = SubResource("Theme_8pfgh")
+max_value = 400.0
+step = 0.1
+
+[node name="Label" type="Label" parent="SmoothSpeed" unique_id=64482950]
+layout_mode = 0
+offset_top = -32.0
+offset_right = 570.0
+offset_bottom = 29.0
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 60
+text = "Smooth Speed: 600.0"
+
+[node name="title_label" type="Label" parent="." unique_id=626092192]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 17.0
+text = "|"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoomCode" type="LineEdit" parent="." unique_id=2085464047]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 8.0
+offset_right = 835.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 40
+text = "ROOM CODE: 458756"
+alignment = 1
+editable = false
+
+[node name="PlayerCount" type="Label" parent="." unique_id=427896751]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 576.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 40
+text = "Players: 0/4"
+vertical_alignment = 1
+
+[node name="LobbySetitings" type="Button" parent="." unique_id=522695342]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_w0w4l")
+layout_mode = 0
+offset_left = 867.0
+offset_top = 16.0
+offset_right = 1098.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0.828125, 0, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_vbnw5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v4381")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nxnvu")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hf4q8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_8wgd5")
+text = "GAME MODE"
+script = ExtResource("5_ysf8n")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="BScroll" type="ScrollContainer" parent="." unique_id=1648375125]
+layout_mode = 0
+offset_left = 835.0
+offset_top = 392.0
+offset_right = 1148.0
+offset_bottom = 696.0
+horizontal_scroll_mode = 0
+
+[node name="Grid" type="GridContainer" parent="BScroll" unique_id=2069642831]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+
+[node name="StartButton" type="Button" parent="BScroll/Grid" unique_id=1667279268]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_w0w4l")
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_vbnw5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v4381")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nxnvu")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hf4q8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_8wgd5")
+text = "Start Game"
+script = ExtResource("5_ysf8n")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="LeaveButton" type="Button" parent="BScroll/Grid" unique_id=190959086]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_w0w4l")
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_vbnw5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v4381")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nxnvu")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hf4q8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_8wgd5")
+text = "Leave"
+script = ExtResource("5_ysf8n")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="PLT" type="Label" parent="." unique_id=1510865713]
+layout_mode = 0
+offset_left = 835.0
+offset_top = 152.0
+offset_right = 1128.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 30
+text = "Players Online"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerList" type="ItemList" parent="." unique_id=1347711499]
+layout_mode = 0
+offset_left = 835.0
+offset_top = 196.0
+offset_right = 1136.0
+offset_bottom = 384.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/panel = SubResource("StyleBoxFlat_4h8ju")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4h8ju")
+theme_override_styles/hovered = SubResource("StyleBoxFlat_4h8ju")
+theme_override_styles/hovered_selected = SubResource("StyleBoxFlat_4h8ju")
+theme_override_styles/hovered_selected_focus = SubResource("StyleBoxFlat_4h8ju")
+theme_override_styles/selected = SubResource("StyleBoxFlat_4h8ju")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_4h8ju")
+theme_override_styles/cursor_unfocused = SubResource("StyleBoxFlat_4h8ju")
+theme_override_styles/cursor = SubResource("StyleBoxFlat_4h8ju")
+item_count = 4
+item_0/text = "Player 1"
+item_1/text = "Player 2"
+item_2/text = "Player 3"
+item_3/text = "Player 4"
+
+[node name="Manager" type="Node2D" parent="." unique_id=332544503]
+script = ExtResource("9_wu1hg")
+
+[node name="Scroll" type="ScrollContainer" parent="Manager" unique_id=1694756966]
+offset_left = 8.0
+offset_top = 104.0
+offset_right = 408.0
+offset_bottom = 512.0
+
+[node name="Weapons" type="GridContainer" parent="Manager/Scroll" unique_id=1110770286]
+layout_mode = 2
+columns = 3
+
+[node name="W1" type="Panel" parent="Manager/Scroll/Weapons" unique_id=311121043]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W1" unique_id=1424747154]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("9_17oeb")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W1" unique_id=2101351895]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_feg3v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiac1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgpg0")
+
+[node name="W2" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1318615161]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W2" unique_id=933762660]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("10_wu1hg")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W2" unique_id=11761706]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_feg3v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiac1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgpg0")
+
+[node name="W3" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1656970009]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W3" unique_id=1901342823]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("11_ll7xs")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W3" unique_id=935071616]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_feg3v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiac1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgpg0")
+
+[node name="W4" type="Panel" parent="Manager/Scroll/Weapons" unique_id=488620497]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W4" unique_id=338380684]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("12_0dg0j")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W4" unique_id=275886046]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_feg3v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiac1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgpg0")
+
+[node name="W5" type="Panel" parent="Manager/Scroll/Weapons" unique_id=2079024054]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W5" unique_id=994954026]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("13_1y081")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W5" unique_id=54661164]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_feg3v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiac1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgpg0")
+
+[node name="W6" type="Panel" parent="Manager/Scroll/Weapons" unique_id=536243343]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W6" unique_id=795397316]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("14_ur47n")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W6" unique_id=1127897946]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_feg3v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiac1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgpg0")
+
+[node name="W7" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1197219157]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W7" unique_id=1436312989]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("16_mcp6d")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W7" unique_id=1358421498]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_feg3v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiac1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgpg0")
+
+[node name="W8" type="Panel" parent="Manager/Scroll/Weapons" unique_id=1963127178]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W8" unique_id=576499243]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("17_ulnxa")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W8" unique_id=1497724695]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_feg3v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiac1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgpg0")
+
+[node name="W9" type="Panel" parent="Manager/Scroll/Weapons" unique_id=46898693]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W9" unique_id=326581351]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("18_gc2yg")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W9" unique_id=877081145]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_feg3v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiac1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgpg0")
+
+[node name="W10" type="Panel" parent="Manager/Scroll/Weapons" unique_id=406319583]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="Manager/Scroll/Weapons/W10" unique_id=550097496]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+pivot_offset = Vector2(65, 65)
+texture = ExtResource("19_old4x")
+
+[node name="Button" type="Button" parent="Manager/Scroll/Weapons/W10" unique_id=1958345702]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_feg3v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiac1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgpg0")
+
+[node name="info" type="RichTextLabel" parent="Manager" unique_id=1878492112]
+offset_left = 416.0
+offset_top = 88.0
+offset_right = 808.0
+offset_bottom = 456.0
+focus_mode = 2
+theme_override_font_sizes/normal_font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_3c416")
+bbcode_enabled = true
+text = "═════════════════════════════════
+[center]◤ PVP HOMING ◢
+═════════════════════════════════
+
+✦ [color=orange]DAMAGE: [/color][color=red]30.0[/color]
+✦ [color=orange]FIRE RATE:[/color][color=red] 0.50s[/color]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[color=green]Seeker[/color]
+
+Moderate damage but bullets track the nearest opponent.
+"
+selection_enabled = true
+
+[node name="price" type="RichTextLabel" parent="Manager" unique_id=198244565]
+offset_left = 448.0
+offset_top = 459.0
+offset_right = 768.0
+offset_bottom = 534.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[img=50]res://Gres/Assets/Icons/exotic.png[/img]  99999999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyGun" type="Button" parent="Manager" unique_id=179370998]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_jin4m")
+offset_left = 448.0
+offset_top = 534.0
+offset_right = 768.0
+offset_bottom = 614.0
+pivot_offset = Vector2(160, 40)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_1f883")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t6wg5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_robrf")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_pr53u")
+theme_override_styles/focus = SubResource("StyleBoxTexture_igoyh")
+text = "GET IT"
+script = ExtResource("5_ysf8n")
+DEFAULT_SCALE = Vector2(1, 1)
+tween = "bounce"
+
+[node name="PVPCoins" type="RichTextLabel" parent="Manager" unique_id=387646112]
+offset_top = 8.0
+offset_right = 256.0
+offset_bottom = 64.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[img=50]res://Gres/Assets/Icons/exotic.png[/img] 999999"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="PvPSettingsUI" type="Control" parent="." unique_id=435552377]
+visible = false
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("22_ll7xs")
+
+[node name="c" type="ColorRect" parent="PvPSettingsUI" unique_id=254245156]
+process_mode = 3
+layout_mode = 0
+offset_left = -2112.0
+offset_top = -1648.0
+offset_right = 2936.0
+offset_bottom = 2184.0
+color = Color(0, 0, 0, 1)
+
+[node name="bg" type="TextureRect" parent="PvPSettingsUI/c" unique_id=677681604]
+process_mode = 3
+layout_mode = 0
+offset_left = 1704.0
+offset_top = 1320.0
+offset_right = 3760.0
+offset_bottom = 2691.0
+texture = ExtResource("1_823gd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="PvPSettingsUI" unique_id=1143542817]
+process_mode = 3
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.725, 0.8, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 50
+text = "Lobby Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="PvPSettingsUI/Title" unique_id=826712282]
+process_mode = 3
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 50.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 49
+text = "Lobby Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="loop" type="AnimationPlayer" parent="PvPSettingsUI/Title" unique_id=691515590]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_7qfo4")
+autoplay = &"loop"
+
+[node name="ModeToggle" type="OptionButton" parent="PvPSettingsUI" unique_id=1803997217]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 100.0
+offset_right = 215.0
+offset_bottom = 120.0
+
+[node name="DurationSlider" type="HSlider" parent="PvPSettingsUI" unique_id=1378076401]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 100.0
+offset_right = 483.0
+offset_bottom = 116.0
+theme = SubResource("Theme_tgpg0")
+
+[node name="DurationLabel" type="Label" parent="PvPSettingsUI" unique_id=1338249679]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 68.0
+offset_right = 483.0
+offset_bottom = 85.0
+text = "Game Duration"
+horizontal_alignment = 1
+
+[node name="ModeLabel" type="Label" parent="PvPSettingsUI" unique_id=177258327]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 68.0
+offset_right = 215.0
+offset_bottom = 85.0
+text = "Game Mode"
+horizontal_alignment = 1
+
+[node name="PointContainer" type="Panel" parent="PvPSettingsUI" unique_id=785850536]
+visible = false
+layout_mode = 0
+offset_left = 483.0
+offset_top = 60.0
+offset_right = 732.0
+offset_bottom = 146.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jin4m")
+
+[node name="PoinLT" type="Label" parent="PvPSettingsUI/PointContainer" unique_id=1817637448]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 3.0
+offset_right = 209.0
+offset_bottom = 29.0
+text = "Max Points"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointDown" type="Button" parent="PvPSettingsUI/PointContainer" unique_id=1395260631]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 19.0
+offset_right = 89.0
+offset_bottom = 83.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(32, 32)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_ncxc5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r27wg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yldpl")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_eehva")
+theme_override_styles/focus = SubResource("StyleBoxTexture_rmd5p")
+script = ExtResource("5_ysf8n")
+
+[node name="PointLabel" type="Label" parent="PvPSettingsUI/PointContainer" unique_id=1499847654]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 35.0
+offset_right = 177.0
+offset_bottom = 69.0
+text = "9999999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointUp" type="Button" parent="PvPSettingsUI/PointContainer" unique_id=1655311819]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 19.0
+offset_right = 225.0
+offset_bottom = 83.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(32, 32)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_b34vr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h21w8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mvk4b")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_sg8tk")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vpvoa")
+script = ExtResource("5_ysf8n")
+
+[node name="PreviewText" type="RichTextLabel" parent="PvPSettingsUI" unique_id=901831129]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 127.0
+offset_right = 1124.0
+offset_bottom = 614.0
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+
+[node name="CloseButton" type="Button" parent="PvPSettingsUI" unique_id=1877478624]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = -8.0
+offset_right = 1178.0
+offset_bottom = 154.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_aqh6x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a3t1y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xllgl")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_tvvim")
+theme_override_styles/focus = SubResource("StyleBoxTexture_euwhh")
+script = SubResource("GDScript_vevw0")
+
+[connection signal="pressed" from="LobbySetitings" to="PvPSettingsUI" method="show_panel"]
+[connection signal="mouse_entered" from="Manager/BuyGun" to="Manager/BuyGun" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="PvPSettingsUI/PointContainer/PointDown" to="PvPSettingsUI/PointContainer/PointDown" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="PvPSettingsUI/PointContainer/PointUp" to="PvPSettingsUI/PointContainer/PointUp" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="PvPSettingsUI/CloseButton" to="PvPSettingsUI/CloseButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="PvPSettingsUI/CloseButton" to="PvPSettingsUI" method="_on_close_button_pressed"]

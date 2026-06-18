@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cm8pawwl1nq27"]
 
 [ext_resource type="Script" uid="uid://wr6pr4fp6fvn" path="res://Gres/Scripts/UI/void_shop.gd" id="1_2ohh8"]
-[ext_resource type="Texture2D" uid="uid://bft7wnryhrob4" path="res://Gres/Assets/Background/bgstar_9.png" id="2_i0me2"]
+[ext_resource type="Texture2D" uid="uid://sff7nvx0yv1w" path="res://Gres/Assets/BGame/galaxy9.png" id="2_i0me2"]
 [ext_resource type="AudioStream" uid="uid://24eys8uqhoqt" path="res://Gres/Music/SE/fx/Absorb2.ogg" id="3_lhh1p"]
 [ext_resource type="PackedScene" uid="uid://5ntd7d60ykyh" path="res://Gres/Scenes/UI/audio_manager.tscn" id="3_py3u5"]
 [ext_resource type="AudioStream" uid="uid://d1urox2plsv84" path="res://Gres/Music/BGM/bg1.ogg" id="4_m0be4"]

@@ -202,7 +202,7 @@ func _buff_on_apply(buff: Dictionary) -> void:
 			_replace_aura(_FrozenAura.new())
 			# Burst draw impatto freeze
 			var fz := _FreezeImpactFX.new()
-			add_child(fz)
+			call_deferred("add_child", fz)
 			# ==================================================
 			# IMPLEMENTA TU: se hai GPUParticles2D $IceParticles
 			# if has_node("IceParticles"): $IceParticles.emitting = true
@@ -229,7 +229,7 @@ func _buff_on_apply(buff: Dictionary) -> void:
 			# FX: fiamme procedurali (nodo draw)
 			if not is_instance_valid(_burn_fx_node):
 				_burn_fx_node = _BurnFX.new()
-				add_child(_burn_fx_node)
+				call_deferred("add_child", _burn_fx_node)
 			# ==================================================
 			# IMPLEMENTA TU: GPUParticles2D $BurnParticles
 			# if has_node("BurnParticles"): $BurnParticles.emitting = true
@@ -269,7 +269,7 @@ func _buff_on_apply(buff: Dictionary) -> void:
 			can_move = false; can_follow = false; can_dodge = false
 			# FX: draw puro — scala mai toccata
 			var es := _EntropyStunFX.new()
-			add_child(es)
+			call_deferred("add_child", es)
 			_fx_ring_burst(Color(0.6, 0.6, 0.6, 0.7), 80.0, 0.3)
 			_fx_tween_modulate(Color(0.7, 0.7, 0.7, 1.0), 0.15)
 
@@ -340,14 +340,17 @@ func _fx_tween_modulate(col: Color, dur: float) -> void:
 func _fx_ring_burst(col: Color, radius: float, dur: float) -> void:
 	var ring := _RingBurst.new()
 	ring.global_position = global_position
-	ring.ring_color = col; ring.max_radius = radius; ring.duration = dur
-	get_parent().add_child(ring)
+	ring.ring_color = col
+	ring.max_radius = radius
+	ring.duration = dur
+	# Usa call_deferred per evitare il problema di "parent busy"
+	get_parent().call_deferred("add_child", ring)
 
 func _fx_crystal_burst(col: Color) -> void:
 	var burst := _CrystalBurst.new()
 	burst.global_position = global_position
 	burst.burst_color = col
-	get_parent().add_child(burst)
+	get_parent().call_deferred("add_child", burst)
 
 func _fx_micro_shake(duration: float) -> void:
 	var tw = create_tween()
@@ -365,7 +368,7 @@ func _fx_mind_control_possession() -> void:
 	tw.tween_property(self, "modulate", Color(0.6, 0.0, 0.9, 1.0), 0.1)
 	# Draw overlay possessione psichica
 	var mc_fx := _MindControlPossessionFX.new()
-	add_child(mc_fx)
+	call_deferred("add_child", mc_fx)
 	# Ring psichico
 	_fx_ring_burst(Color(0.7, 0.0, 1.0, 0.65), 120.0, 0.45)
 
@@ -388,22 +391,25 @@ func flash_damage(amount: float = 0.0) -> void:
 	hit_fx.is_heavy  = is_heavy
 	hit_fx.hit_color = Color(2.2, 0.0, 0.0, 1.0) if is_heavy else Color(1.6, 0.0, 0.0, 1.0)
 	hit_fx.enemy_scale = scale
-	add_child(hit_fx)
+	call_deferred("add_child", hit_fx)
 
 # --- Aura management ---
 func _replace_aura(new_aura: Node2D) -> void:
-	_remove_aura(); _aura_node = new_aura; add_child(_aura_node)
+	_remove_aura()
+	_aura_node = new_aura
+	call_deferred("add_child", _aura_node)
 
 func _remove_aura() -> void:
 	if is_instance_valid(_aura_node): _aura_node.queue_free(); _aura_node = null
 
 # --- Windup skill (indicatore pre-attivazione) ---
 func _spawn_windup(skill_name: String) -> void:
-	if is_instance_valid(_windup_node): _windup_node.queue_free()
+	if is_instance_valid(_windup_node):
+		_windup_node.queue_free()
 	_windup_node = _WindupIndicator.new()
 	_windup_node.skill_name = skill_name
-	_windup_node.duration   = skill_anim_offset
-	add_child(_windup_node)
+	_windup_node.duration = skill_anim_offset
+	call_deferred("add_child", _windup_node)
 
 func _remove_windup() -> void:
 	if is_instance_valid(_windup_node): _windup_node.queue_free(); _windup_node = null

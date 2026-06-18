@@ -242,7 +242,6 @@ func move_to_marker_with_blink(target_index: int):
 	# restart loop camera
 	move_tween.tween_callback(Callable(self, "start_loop"))
 
-
 func _on_next_button_pressed() -> void:
 	if input_locked or current_index >= markers.size() - 1:
 		return
@@ -306,7 +305,7 @@ func on_easy_pressed() -> void:
 			tw.tween_property($Camera/Body, 'scale', Vector2(0.5, 0.5), 2.0)
 			$Fade/fade.play("fade")
 			await get_tree().create_timer(1.8).timeout
-			get_tree().change_scene_to_file("res://Gres/Scenes/arena/earth_1_1.tscn")
+			get_tree().change_scene_to_file("res://Gres/Scenes/arena/earth_1_2.tscn")
 		"level_2": 
 			var tw = create_tween().parallel()
 			tw.tween_property($Camera, 'zoom', Vector2(4.0, 4.0), 2.0)

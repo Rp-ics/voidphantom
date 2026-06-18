@@ -16,6 +16,9 @@ signal player_died
 @export var can_zoom:      bool = true
 @export var current_weapon: String = "Pulse Blaster"
 
+# --- MOVEMENT FEEL ---
+@export var acceleration: float = 18.0 # max speed react
+@export var friction:     float = 12.0 # min speed react
 # ==============================================================
 # NODI
 # ==============================================================
@@ -1190,7 +1193,6 @@ class _SkillCooldownHUD extends Node2D:
 			if tip_angle >= a1 and tip_angle <= a2:
 				var tip := origin + Vector2(cos(tip_angle), sin(tip_angle)) * r
 				draw_circle(tip, 2.0, col_tip, true)
-	
 
 # ==============================================================
 # MORTE EPICA
@@ -1238,7 +1240,6 @@ func on_player_dead() -> void:
 		# Fade out lento
 		var tw_fade = create_tween()
 		tw_fade.tween_property(part, "modulate:a", 0.0, 2.5).set_delay(0.5)
-
 
 # ==============================================================
 # READY
@@ -1345,7 +1346,6 @@ func _cd_for_weapon(ptype: String) -> float:
 		"wall_caster_shot": 15.0,        "phantom_echo_shot": 18.0,
 	}.get(ptype, 20.0)
 
-
 # ==============================================================
 # IMMUNE
 # ==============================================================
@@ -1357,7 +1357,6 @@ func immune() -> void:
 		effect.global_position = global_position
 		$TimeManager/ImmuneShieldCD.wait_time = Global.player_immunity_time
 		$TimeManager/ImmuneShieldCD.start()
-
 
 # ==============================================================
 # PHYSICS PROCESS
@@ -1410,7 +1409,7 @@ func _physics_process(delta: float) -> void:
 			$TimeManager/ShootFreeze.start()
 			_fx_shoot(GlobalWeapons.current_weapon.get("rarity", "common"))
 			canon.shoot()
-	
+
 # ==============================================================
 # AEGIS STORM
 # ==============================================================
@@ -1455,7 +1454,6 @@ func _fire_aegis_burst() -> void:
 		await get_tree().create_timer(0.02).timeout
 	_aegis_charge_time = 0.0
 
-
 # ==============================================================
 # TAKE DAMAGE
 # ==============================================================
@@ -1470,7 +1468,6 @@ func take_damage(amount: float) -> void:
 	if Global.player_hp <= 0:
 		Global.player_hp = 0
 		on_player_dead()
-
 
 # ==============================================================
 # INPUT / MOVIMENTO / DASH / ROTAZIONE
@@ -1492,10 +1489,24 @@ func handle_input() -> void:
 
 func process_movement(delta: float) -> void:
 	var speed_mult := 1.0
-	if has_buff("chrono_speed"): speed_mult = max(speed_mult, 1.2)
+	if has_buff("chrono_speed"):      speed_mult = max(speed_mult, 1.2)
 	if has_meta("sovereign_active"): speed_mult *= 1.3
-	velocity = (last_input_direction if Global._dash_timer > 0 else input_direction) \
-		* (Global.dash_speed if Global._dash_timer > 0 else Global.move_speed * speed_mult)
+
+	# Durante il dash: nessun lerp, velocità diretta (comportamento invariato)
+	if Global._dash_timer > 0:
+		velocity = last_input_direction * Global.dash_speed
+		move_and_slide()
+		return
+
+	# Accelerazione / decelerazione con lerp
+	var target_velocity: Vector2
+	if input_direction != Vector2.ZERO:
+		target_velocity = input_direction * Global.move_speed * speed_mult
+		velocity = velocity.lerp(target_velocity, acceleration * delta)
+	else:
+		# Frena verso zero
+		velocity = velocity.lerp(Vector2.ZERO, friction * delta)
+
 	move_and_slide()
 
 func process_dash(delta: float) -> void:
@@ -1522,7 +1533,6 @@ func _find_nearest_enemy() -> Node2D:
 		if d < min_d: min_d = d; nearest = e
 	return nearest
 
-
 # ==============================================================
 # TIMER CALLBACKS
 # ==============================================================
@@ -1539,8 +1549,6 @@ func _on_timer_hp_reg_timeout() -> void:
 	if Global.player_hp < Global.player_max_hp: Global.player_hp += Global.player_hp_reg
 	$TimeManager/TimerHPReg.start()
 
-
 func _on_shield_reflect_area_entered(area: Area2D) -> void:
 	if _aegis_shield_active:
 		_on_aegis_deflect(area)
-	

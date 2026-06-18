@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b1rvnodnk0mtt"]
+
+[ext_resource type="Script" uid="uid://bskt0x7suqmu4" path="res://Gres/Scripts/Effects/void_beam.gd" id="1_rvrat"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45h26"]
+
+[node name="VoidBeam" type="Node2D" unique_id=1475254403]
+script = ExtResource("1_rvrat")
+
+[node name="HitArea" type="Area2D" parent="." unique_id=1597548145]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=1912641560]
+shape = SubResource("RectangleShape2D_45h26")
+
+[node name="LifetimeTimer" type="Timer" parent="." unique_id=504075134]
+
+[node name="BeamLine" type="Line2D" parent="." unique_id=2144205080]

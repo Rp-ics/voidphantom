@@ -57,7 +57,7 @@ var weapons: Dictionary = {
 			"info": "Ascended beyond physics. Each implosion shred pulls nearby enemies before blasting them apart. Stars fear this gun."
 		}
 	},
-
+	
 	"AEGIS TEMPEST": {
 		"common": {
 			"suffix": "Storm Edge",
@@ -873,7 +873,182 @@ var weapons: Dictionary = {
 			"info": "15% chance on hit to SWAP POSITIONS with the enemy — you teleport where they were, they appear where you were (stunned for 1.5s). You are invincible for 0.8s post-swap. PASSIVE: After each swap, your next 3 shots deal +100% damage. ACTIVE: MASS SWAP — swaps ALL enemies with random positions on screen simultaneously, confusing formations. Cooldown 20s."
 		}
 	},
+	# ============================================================
+	# == PVP WEAPONS (bilanciali, danni e velocità fissi)
+	# ============================================================
 
+	# ----- TIER 1 (danno base, alta cadenza) -----
+	"PVP_RAZOR": {
+		"common": {
+			"suffix": "Quickfang",
+			"texture": "res://Gres/Assets/player/weapons/common/rotated/MPgun_1.png",
+			"bullet_texture": "res://Gres/Assets/Icons/bullet_1.png",
+			"damage": 18.0,
+			"speed": 250.0,
+			"fire_rate": 0.5,
+			"bullet_consume": 1,
+			"projectile_type": "line",
+			"pvp_tier": 1,
+			"info": "High fire rate, low damage. Perfect for aggressive players."
+		}
+	},
+	
+	"PVP_BOLT": {
+		"common": {
+			"suffix": "Thunderstrike",
+			"texture": "res://Gres/Assets/player/weapons/common/rotated/MPgun_2.png",
+			"bullet_texture": "res://Gres/Assets/Icons/bullet_2.png",
+			"damage": 20.0,
+			"speed": 300.0,
+			"fire_rate": 0.49,
+			"bullet_consume": 1,
+			"projectile_type": "line",
+			"pvp_tier": 1,
+			"info": "Slow but hard-hitting. Rewards accuracy."
+		}
+	},
+
+	# ----- TIER 2 (danno medio, effetti leggeri) -----
+	"PVP_SPLITTER": {
+		"rare": {
+			"suffix": "Fracture",
+			"texture": "res://Gres/Assets/player/weapons/common/rotated/MPgun_3.png",
+			"bullet_texture": "res://Gres/Assets/Icons/bullet_skill_1.png",
+			"damage": 25.0,
+			"speed": 310.0,
+			"fire_rate": 0.48,
+			"bullet_consume": 1,
+			"projectile_type": "explode_after",
+			"pvp_tier": 2,
+			"info": "Splits into 4-6 bullets after 400px. Covers more area."
+		}
+	},
+	
+	"PVP_BOUNCE": {
+		"rare": {
+			"suffix": "Ricochet",
+			"texture": "res://Gres/Assets/player/weapons/common/rotated/MPgun_4.png",
+			"bullet_texture": "res://Gres/Assets/Icons/bullet_skill_2.png",
+			"damage": 28.0,
+			"speed": 320.0,
+			"fire_rate": 0.47,
+			"bullet_consume": 1,
+			"projectile_type": "bounce",
+			"pvp_tier": 2,
+			"info": "Bounces off walls once. Great for tight spaces."
+		}
+	},
+
+	# ----- TIER 3 (danno alto, un effetto speciale) -----
+	"PVP_PIERCE": {
+		"epic": {
+			"suffix": "Executioner",
+			"texture": "res://Gres/Assets/player/weapons/common/rotated/MPgun_5.png",
+			"bullet_texture": "res://Gres/Assets/player/bullets/boomerang_bulletC.png",
+			"damage": 30.0,
+			"speed": 330.0,
+			"fire_rate": 0.46,
+			"bullet_consume": 1,
+			"projectile_type": "line",
+			"pvp_tier": 3,
+			"info": "Pierces through the first target hit. Double kills possible."
+		}
+	},
+	
+	"PVP_HOMING": {
+		"epic": {
+			"suffix": "Seeker",
+			"texture": "res://Gres/Assets/player/weapons/common/rotated/MPgun_6.png",
+			"bullet_texture": "res://Gres/Assets/player/bullets/boomerang_bulletE.png",
+			"damage": 32.0,
+			"speed": 340.0,
+			"fire_rate": 0.45,
+			"bullet_consume": 1,
+			"projectile_type": "bounce",
+			"pvp_tier": 3,
+			"info": "Moderate damage but bullets bounce."
+		}
+	},
+
+	# ----- TIER 4 (danno molto alto, effetti forti) -----
+	"PVP_EXPLODE": {
+		"legendary": {
+			"suffix": "Nova",
+			"texture": "res://Gres/Assets/player/weapons/common/rotated/MPgun_7.png",
+			"bullet_texture": "res://Gres/Assets/player/bullets/boomerang_bulletR.png",
+			"damage": 35.0,
+			"speed": 350.0,
+			"fire_rate": 0.44,
+			"bullet_consume": 2,
+			"projectile_type": "explode_after",
+			"pvp_tier": 4,
+			"info": "Delayed explosion on hit. Damages nearby enemies (120px radius)."
+		}
+	},
+	
+	"PVP_FREEZE": {
+		"legendary": {
+			"suffix": "Cryo",
+			"texture": "res://Gres/Assets/player/weapons/common/rotated/MPgun_8.png",
+			"bullet_texture": "res://Gres/Assets/player/bullets/bouncer_bulletC.png",
+			"damage": 40.0,
+			"speed": 360.0,
+			"fire_rate": 0.43,
+			"bullet_consume": 1,
+			"projectile_type": "line",
+			"freeze_chance": 25,
+			"freeze_duration": 1.2,
+			"pvp_tier": 4,
+			"info": "25% chance to freeze the target for 1.2 seconds. Slows movement."
+		}
+	},
+
+	# ----- TIER 5 (danno altissimo, effetti molto forti, alto consumo) -----
+	"PVP_MAGNET": {
+		"legendary": {
+			"suffix": "Singularity",
+			"texture": "res://Gres/Assets/player/weapons/common/rotated/MPgun_9.png",
+			"bullet_texture": "res://Gres/Assets/player/bullets/bouncer_bulletE.png",
+			"damage": 43.0,
+			"speed": 370.0,
+			"fire_rate": 0.42,
+			"bullet_consume": 2,
+			"projectile_type": "graviton_pulse_shot",
+			"pvp_tier": 5,
+			"info": "On hit, pulls the target toward you for 0.8 seconds. Disrupts positioning."
+		}
+	},
+	
+	"PVP_SHOTGUN": {
+		"legendary": {
+			"suffix": "Breaker",
+			"texture": "res://Gres/Assets/player/weapons/common/rotated/MPgun_10.png",
+			"bullet_texture": "res://Gres/Assets/player/bullets/bouncer_bulletR.png",
+			"damage": 50.0,
+			"speed": 380.0,
+			"fire_rate": 0.41,
+			"bullet_consume": 3,
+			"projectile_type": "cone_5",
+			"pvp_tier": 5,
+			"info": "Fires 5 pellets in a spread. Each pellet deals 15 damage. Massive close-range burst."
+		}
+	},
+
+	# == EXCLUSIVE WEAPON (Offline only, single Steam user) ==
+	"OBEY_THE_FIST": {
+		"GOD": {
+			"suffix": "Divine",
+			"texture": "res://Gres/Assets/player/weapons/common/rotated/gun_8E.png",
+			"bullet_texture": "res://Gres/Assets/player/bullets/boomerang_bulletR.png",
+			"damage": 9999999.0,
+			"speed": 9999.0,
+			"fire_rate": 0.01,
+			"bullet_consume": 0,
+			"projectile_type": "fist_of_god",
+			"pvp_tier": 6,
+			"info": "EXCLUSIVE: Obey the Fist! — Devastating single-shot projectile that obliterates everything in its path. Offline mode only."
+		}
+	}
 } # weapons Dictionary end
 
 # arma iniziale

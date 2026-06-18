@@ -5,16 +5,13 @@ var tut_end := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Enemy.hp = 9999999
-	$Player.can_dash = false
-	$Player.can_move = false
-	$Player.can_shoot = false
-	$Player.can_rotate = false
 	var tw = create_tween()
 	tw.tween_property($Movement, 'modulate:a', 1, 2.5)
 	move_tw()
 
 func _process(delta: float) -> void:
+	$DeadArea/up2.position.x = $Player.position.x
+	$DeadArea/down2.position.x = $Player.position.x
 	
 	Global.bullets = 1
 	Global.player_hp = Global.player_max_hp
@@ -27,7 +24,7 @@ func _process(delta: float) -> void:
 		Global.equipped_weapon['name'] = "SOLBREAKER"
 		Global.equipped_weapon['rarity'] = "common"
 		GlobalSteamScript._unlock_achievement("Was Easy")
-		get_tree().change_scene_to_file("res://Gres/Scenes/UI/main_menu.tscn")
+		await GlobalTweens.scene_pixel_dissolve(get_tree(),"res://Gres/Scenes/UI/main_menu.tscn", 100, 0.1)
 		
 func move_tw():
 	GlobalTweens.blink($Movement/A, 5, 0.2)
@@ -83,9 +80,22 @@ func _on_portal_body_entered(body: Node2D) -> void:
 	tut_end = true
 	var tw = create_tween()
 	tw.tween_property($portal/enter, 'modulate:a', 1.0, 0.5)
-
+	
+	# Aspetta la fine del tween prima di cambiare scena
+	tw.tween_callback(func(): 
+		get_tree().change_scene_to_file("res://Gres/Scenes/UI/main_menu.tscn")
+	)
 
 func _on_portal_body_exited(body: Node2D) -> void:
 	tut_end = false
 	var tw = create_tween()
 	tw.tween_property($portal/enter, 'modulate:a', 0.0, 0.5)
+
+
+func _on_enemy_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		get_tree().reload_current_scene()
+
+
+func _on_secure_body_exited(body: Node2D) -> void:
+	$Enemy/walk.play("wakl")

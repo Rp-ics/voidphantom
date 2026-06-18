@@ -211,7 +211,6 @@ func _ready():
 	_load_inventory()
 	await get_tree().create_timer(0.1).timeout
 	add_weapon("SOLBREAKER", "common")
-	if Global.in_tutorial: all()
 	_fix_scroll()
 	
 func _fix_scroll():

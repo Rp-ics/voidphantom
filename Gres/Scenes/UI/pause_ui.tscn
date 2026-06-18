@@ -591,19 +591,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ojxbs")
 
-[node name="FPS_Label" type="Label" parent="." unique_id=81161055]
-visible = false
-modulate = Color(1, 1, 1, 0.187)
-layout_mode = 0
-offset_left = 875.0
-offset_top = 192.0
-offset_right = 1152.0
-offset_bottom = 249.0
-theme_override_font_sizes/font_size = 28
-text = "FPS: 999"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="PlayerUI" type="Node2D" parent="." unique_id=524476057]
 process_mode = 3
 script = ExtResource("8_oan3i")
@@ -1333,10 +1320,10 @@ vertical_alignment = 1
 
 [node name="ResolutionOption" type="OptionButton" parent="Manager/SettingsMan/GraphicMan" unique_id=5649782]
 layout_mode = 0
-offset_left = 952.0
-offset_top = 216.0
+offset_left = 863.0
+offset_top = 456.0
 offset_right = 1112.0
-offset_bottom = 253.0
+offset_bottom = 493.0
 
 [node name="FullscreenCheck" type="CheckButton" parent="Manager/SettingsMan/GraphicMan" unique_id=802626210]
 layout_mode = 0
@@ -1474,6 +1461,83 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_w23ro")
 theme_override_styles/focus = SubResource("StyleBoxTexture_tywlq")
 text = "x"
 script = ExtResource("10_k6w66")
+
+[node name="MaxFPS" type="LineEdit" parent="Manager/SettingsMan/GraphicMan" unique_id=49489070]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 228.0
+offset_right = 558.0
+offset_bottom = 265.0
+placeholder_text = "60"
+alignment = 1
+
+[node name="info" type="Label" parent="Manager/SettingsMan/GraphicMan/MaxFPS" unique_id=275463027]
+modulate = Color(1, 1, 1, 0.066)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 41.0
+offset_right = 183.0
+offset_bottom = 105.0
+text = "Limit FPS
+Insert max FPS
+0 = no limit"
+
+[node name="FPS" type="Label" parent="Manager/SettingsMan/GraphicMan/MaxFPS" unique_id=1682386790]
+layout_mode = 0
+offset_left = -73.0
+offset_bottom = 37.0
+text = "MAX FPS"
+vertical_alignment = 1
+
+[node name="StretchKeep" type="CheckButton" parent="Manager/SettingsMan/GraphicMan" unique_id=849982702]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 211.0
+offset_right = 1099.0
+offset_bottom = 251.0
+theme = SubResource("Theme_8soy1")
+theme_override_font_sizes/font_size = 30
+text = "Stretch Keep"
+
+[node name="StretchIgnore" type="CheckButton" parent="Manager/SettingsMan/GraphicMan" unique_id=853612141]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 259.0
+offset_right = 1136.0
+offset_bottom = 299.0
+theme = SubResource("Theme_8soy1")
+theme_override_font_sizes/font_size = 30
+text = "Stretch Ignore"
+
+[node name="StretchKeepW" type="CheckButton" parent="Manager/SettingsMan/GraphicMan" unique_id=2024854090]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 307.0
+offset_right = 1134.0
+offset_bottom = 347.0
+theme = SubResource("Theme_8soy1")
+theme_override_font_sizes/font_size = 30
+text = "Stretch Keep W"
+
+[node name="StretchKeepH" type="CheckButton" parent="Manager/SettingsMan/GraphicMan" unique_id=29531987]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 355.0
+offset_right = 1127.0
+offset_bottom = 395.0
+theme = SubResource("Theme_8soy1")
+theme_override_font_sizes/font_size = 30
+text = "Stretch Keep H"
+
+[node name="StretchExpand" type="CheckButton" parent="Manager/SettingsMan/GraphicMan" unique_id=1388028401]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 403.0
+offset_right = 1134.0
+offset_bottom = 443.0
+theme = SubResource("Theme_8soy1")
+theme_override_font_sizes/font_size = 30
+text = "Stretch Expand"
 
 [node name="GamepMan" type="Control" parent="Manager/SettingsMan" unique_id=1194056613]
 process_mode = 3
@@ -1795,6 +1859,7 @@ vertical_alignment = 1
 
 [node name="KeyMap" type="Control" parent="Manager/SettingsMan/GamepMan" unique_id=1843332766]
 process_mode = 3
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

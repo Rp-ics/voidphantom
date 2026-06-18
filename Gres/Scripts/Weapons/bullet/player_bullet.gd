@@ -37,6 +37,7 @@ var weapon_info: Dictionary = {}
 
 var _has_hit: bool = false
 
+
 # ============================================================
 # == VARIABILI NUOVE ARMI VOID
 # ============================================================
@@ -1807,8 +1808,8 @@ func _try_spawn_wall() -> void:
 	var player := get_tree().get_first_node_in_group("player")
 	if not is_instance_valid(player): return
 	var wall_pos = player.global_position + player.transform.x * 80.0
-	if ResourceLoader.exists("res://Gres/Scenes/weapons/void_wall.tscn"):
-		var wall = load("res://Gres/Scenes/weapons/void_wall.tscn").instantiate()
+	if ResourceLoader.exists("res://Gres/Scenes/Weapons/void_wall.tscn"):
+		var wall = load("res://Gres/Scenes/Weapons/void_wall.tscn").instantiate()
 		get_tree().current_scene.add_child(wall)
 		wall.global_position = wall_pos
 		wall.rotation = player.rotation

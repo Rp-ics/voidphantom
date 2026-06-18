@@ -19,7 +19,8 @@ func _on_void_mouse_entered() -> void:
 
 func _on_endless_pressed() -> void:
 	mode = "endless"
-	$trs.play("close")
+	$AreanChoice.show()
+	
 func _on_dungeon_pressed() -> void:
 	mode = "dungeon"
 	$trs.play("close")
@@ -35,7 +36,9 @@ func _on_trs_animation_finished(anim_name: StringName) -> void:
 			"menu": get_tree().change_scene_to_file("res://Gres/Scenes/UI/main_menu.tscn")
 			"void1": get_tree().change_scene_to_file("res://Gres/Scenes/arena/arena_void_1.tscn")
 			"void2": get_tree().change_scene_to_file("res://Gres/Scenes/arena/arena_void_2.tscn")
-	
+			"space": get_tree().change_scene_to_file("res://Gres/Scenes/arena/arena.tscn")
+			"earth1": get_tree().change_scene_to_file("res://Gres/Scenes/arena/earth_1_1.tscn")
+		
 func _on_close_button_pressed() -> void:
 	mode = "menu"
 	$trs.play("close")
@@ -53,6 +56,21 @@ func _on_map_2_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	GlobalTweens.blink($VoidChoice)
-	await get_tree().create_timer(0.4).timeout
 	$VoidChoice.hide()
+	$AreanChoice.hide()
+
+
+func _on_areanmap_1_pressed() -> void:
+	mode = "space"
+	$trs.play("close")
+
+
+func _on_arenamap_2_pressed() -> void:
+	mode = "earth1"
+	$trs.play("close")
+
+
+func _on_boss_ride_pressed() -> void:
+	mode = "dungeon"
+	$trs.play("close")
+	

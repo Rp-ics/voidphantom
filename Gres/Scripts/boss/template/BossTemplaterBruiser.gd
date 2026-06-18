@@ -479,10 +479,27 @@ func _fx_rings_contract(color: Color, duration: float) -> void:
 	for i in range(4):
 		var ring = {"radius": 200.0 - i * 30, "alpha": 0.0, "color": color}
 		_draw_rings.append(ring)
-		var tw = create_tween().set_delay(i * 0.08)
-		tw.tween_property(ring, "alpha", 0.8, 0.1)
-		tw.tween_property(ring, "radius", 20.0, duration * 0.85).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
-		tw.parallel().tween_property(ring, "alpha", 0.0, duration * 0.85)
+		
+		var tw = create_tween()
+		# Fade in alpha using tween_method
+		tw.tween_method(
+			func(v): ring["alpha"] = v,
+			0.0, 0.8, 0.1
+		).set_delay(i * 0.08)
+		
+		# Shrink radius
+		tw.tween_method(
+			func(v): ring["radius"] = v,
+			ring["radius"], 20.0, duration * 0.85
+		).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		
+		# Fade out alpha in parallel
+		tw.parallel().tween_method(
+			func(v): ring["alpha"] = v,
+			0.8, 0.0, duration * 0.85
+		)
+		
+		# Cleanup
 		tw.tween_callback(func(): _draw_rings.erase(ring))
 
 func _fx_cracks(count: int, color: Color) -> void:

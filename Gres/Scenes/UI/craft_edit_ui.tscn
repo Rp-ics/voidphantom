@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://lnenok3u67yr" path="res://Gres/Assets/UI/Buttons/button_normal1.png" id="3_vo82v"]
 [ext_resource type="Script" uid="uid://3y0xd6ede8eq" path="res://Gres/Scripts/UI/buttons_manager.gd" id="4_1s0el"]
 [ext_resource type="AudioStream" uid="uid://bk26rjldhx5v0" path="res://Gres/Music/BGM/bg2.ogg" id="4_rekka"]
-[ext_resource type="Texture2D" uid="uid://bft7wnryhrob4" path="res://Gres/Assets/Background/bgstar_9.png" id="5_neghh"]
+[ext_resource type="Texture2D" uid="uid://sff7nvx0yv1w" path="res://Gres/Assets/BGame/galaxy9.png" id="5_neghh"]
 [ext_resource type="AudioStream" uid="uid://b1qa4lvgn3178" path="res://Gres/Music/BGM/bg3.ogg" id="5_vl1ii"]
 [ext_resource type="Texture2D" uid="uid://cmwaixu174620" path="res://Gres/Assets/UI/inentory/close_b_normal.png" id="6_q0n8d"]
 [ext_resource type="AudioStream" uid="uid://dyqahqcb4ykue" path="res://Gres/Music/BGM/bg4.ogg" id="6_wo4js"]

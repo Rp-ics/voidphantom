@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://djiyprvsiwfwh" path="res://Gres/Scenes/chest/chest.tscn" id="7_dyb6p"]
 [ext_resource type="AudioStream" uid="uid://c57qaqrvhhw38" path="res://Gres/Music/BGM/bg22.ogg" id="7_g8i02"]
 [ext_resource type="Texture2D" uid="uid://duvccb3lp1u5t" path="res://Gres/Assets/planets/p_1.png" id="7_mgyvj"]
+[ext_resource type="PackedScene" uid="uid://csalou2q60sd0" path="res://Gres/Scenes/Boss/boss_insect.tscn" id="7_y3lnx"]
 [ext_resource type="Texture2D" uid="uid://cuwm4ec77sq0t" path="res://Gres/Assets/planets/p_6.png" id="8_ut6ap"]
 [ext_resource type="AudioStream" uid="uid://dej46xjftjh8d" path="res://Gres/Music/BGM/bg23.ogg" id="8_y3lnx"]
 [ext_resource type="Texture2D" uid="uid://dj1vi0lc11vxa" path="res://Gres/Assets/planets/p_7.png" id="9_0j46j"]
@@ -381,7 +382,7 @@ wave_delay = 1.0
 max_enemies_on_field_base = 500
 chest_scenes = Array[PackedScene]([ExtResource("7_dyb6p")])
 chest_spawn_points = [NodePath("CSP1"), NodePath("CSP2"), NodePath("CSP3"), NodePath("CSP4"), NodePath("CSP5"), NodePath("CSP6"), NodePath("CSP7")]
-boss_scenes = Array[PackedScene]([ExtResource("3_u6ftn"), ExtResource("4_jxyh8"), ExtResource("5_g8i02"), ExtResource("6_g8i02")])
+boss_scenes = Array[PackedScene]([ExtResource("3_u6ftn"), ExtResource("4_jxyh8"), ExtResource("5_g8i02"), ExtResource("6_g8i02"), ExtResource("7_y3lnx")])
 boss_wave_interval_min = 5
 boss_wave_interval_max = 7
 

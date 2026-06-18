@@ -13,7 +13,7 @@ How quickly the camera catches up to the player.
 [color=#ff3b3b]High[/color] = snappy and responsive but less smooth.""",
 
 	"lookahead_distance": """[color=#ff7b00]LOOKAHEAD DISTANCE – Forward offset[/color]
-How far the camera shifts ahead in the player’s movement direction.
+How far the camera shifts ahead in the player's movement direction.
 [color=#00c8ff]Zero[/color] = always centered.
 [color=#ff3b3b]High[/color] = player appears farther back on screen, giving more view ahead.""",
 
@@ -28,7 +28,6 @@ Controls how quickly the camera shake effect fades.
 [color=#ff3b3b]High[/color] = fast fade-out for a short, punchy effect."""
 }
 
-
 func prew():
 	$CameraL/ShakeStr.value = Global.shake_strength
 	$CameraL/SmoothSpd.value = Global.smoothing_speed
@@ -36,12 +35,11 @@ func prew():
 	$CameraL/LookSpd.value = Global.lookahead_speed
 	$CameraL/ShakeDec.value = Global.shake_decay
 
-	$CameraL/ShakeStrL.text = "SHAKE STRENGTH: " + str(Global.shake_strength)
-	$CameraL/SmoothSpdL.text = "SMOOTHING SPEED: " + str(Global.smoothing_speed)
-	$CameraL/LookDisL.text = "LOOKAHEAD DISTANCE: " + str(Global.lookahead_distance)
-	$CameraL/LookSpdL.text = "LOOKAHEAD SPEED: " + str(Global.lookahead_speed)
-	$CameraL/ShakeDecL.text = "SHAKE DECAY: " + str(Global.shake_decay)
-
+	$CameraL/ShakeStrL.text = "SHAKE STRENGTH: " + _format_float(Global.shake_strength)
+	$CameraL/SmoothSpdL.text = "SMOOTHING SPEED: " + _format_float(Global.smoothing_speed)
+	$CameraL/LookDisL.text = "LOOKAHEAD DISTANCE: " + _format_float(Global.lookahead_distance)
+	$CameraL/LookSpdL.text = "LOOKAHEAD SPEED: " + _format_float(Global.lookahead_speed)
+	$CameraL/ShakeDecL.text = "SHAKE DECAY: " + _format_float(Global.shake_decay)
 
 func _ready() -> void:
 	prew()
@@ -67,12 +65,10 @@ func _ready() -> void:
 	$CameraL/LookSpd.connect("value_changed", _on_lookspd_value_changed)
 	$CameraL/ShakeDec.connect("value_changed", _on_shakedec_value_changed)
 
-
 func on_back_pressed() -> void:
 	var tw = create_tween()
 	tw.tween_property(self, "modulate:a", 0, 0.3)
 	tw.tween_callback(Callable(self, "hide"))
-
 
 func _on_reset_pressed() -> void:
 	var tw = create_tween()
@@ -86,27 +82,25 @@ func _on_reset_pressed() -> void:
 	Global.shake_decay = 5.0
 	prew()
 
-
 func _on_shakestr_value_changed(value: float) -> void:
 	Global.shake_strength = value
-	$CameraL/ShakeStrL.text = "SHAKE STRENGTH: " + str(value)
+	$CameraL/ShakeStrL.text = "SHAKE STRENGTH: " + _format_float(value)
 
 func _on_smootspd_value_changed(value: float) -> void:
 	Global.smoothing_speed = value
-	$CameraL/SmoothSpdL.text = "SMOOTHING SPEED: " + str(value)
+	$CameraL/SmoothSpdL.text = "SMOOTHING SPEED: " + _format_float(value)
 
 func _on_lookdis_value_changed(value: float) -> void:
 	Global.lookahead_distance = value
-	$CameraL/LookDisL.text = "LOOKAHEAD DISTANCE: " + str(value)
+	$CameraL/LookDisL.text = "LOOKAHEAD DISTANCE: " + _format_float(value)
 
 func _on_lookspd_value_changed(value: float) -> void:
 	Global.lookahead_speed = value
-	$CameraL/LookSpdL.text = "LOOKAHEAD SPEED: " + str(value)
+	$CameraL/LookSpdL.text = "LOOKAHEAD SPEED: " + _format_float(value)
 
 func _on_shakedec_value_changed(value: float) -> void:
 	Global.shake_decay = value
-	$CameraL/ShakeDecL.text = "SHAKE DECAY: " + str(value)
-
+	$CameraL/ShakeDecL.text = "SHAKE DECAY: " + _format_float(value)
 
 func _show_info(key: String) -> void:
 	$CameraL/InfoS.bbcode_enabled = true
@@ -116,10 +110,18 @@ func _show_info(key: String) -> void:
 	var tw = create_tween()
 	tw.tween_property($CameraL/InfoS, "modulate:a", 1, 0.3)
 
-
 func _hide_info() -> void:
 	$CameraL/InfoS.hide()
 
-
 func _on_map_pressed() -> void:
 	Global.can_show_map = true
+# ------------------------
+# FORMATTAZIONE FLOAT (max 2 decimali)
+# ------------------------
+func _format_float(value: float) -> String:
+	var formatted = "%.2f" % value
+	if formatted.ends_with(".00"):
+		return formatted.trim_suffix(".00")
+	if formatted.ends_with("0") and formatted.find(".") != -1:
+		return formatted.trim_suffix("0")
+	return formatted

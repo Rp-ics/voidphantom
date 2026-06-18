@@ -62,7 +62,7 @@
 [ext_resource type="AudioStream" uid="uid://doagxyhsnw7tm" path="res://Gres/Music/SE/gun_22.ogg" id="60_6vqvh"]
 [ext_resource type="AudioStream" uid="uid://xr1dkvs4pfdo" path="res://Gres/Music/SE/fx/done_1.ogg" id="61_ciolv"]
 [ext_resource type="AudioStream" uid="uid://b5sjl2clrchck" path="res://Gres/Music/SE/fx/3.ogg" id="61_v6rhx"]
-[ext_resource type="Texture2D" uid="uid://bft7wnryhrob4" path="res://Gres/Assets/Background/bgstar_9.png" id="63_yldnk"]
+[ext_resource type="Texture2D" uid="uid://sff7nvx0yv1w" path="res://Gres/Assets/BGame/galaxy9.png" id="63_yldnk"]
 
 [sub_resource type="Animation" id="Animation_6u0rk"]
 resource_name = "loop"

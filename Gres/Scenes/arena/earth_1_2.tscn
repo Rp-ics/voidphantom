@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dppgeynuf774u" path="res://Gres/Scenes/UI/inventory.tscn" id="19_216a2"]
 [ext_resource type="Texture2D" uid="uid://dwcedf6mbfvv2" path="res://Gres/Assets/BGame/galaxy2.png" id="20_j5d5q"]
 [ext_resource type="PackedScene" uid="uid://b50vk3wb5y3kp" path="res://Gres/Scenes/obj/object.tscn" id="21_g26ba"]
-[ext_resource type="Texture2D" uid="uid://d3dyhb1w2g83j" path="res://Gres/Assets/Background/bgstar_2.png" id="22_yv86l"]
+[ext_resource type="Texture2D" uid="uid://dq3jytyp0ua81" path="res://Gres/Assets/BGame/stars_2.png" id="22_yv86l"]
 [ext_resource type="PackedScene" uid="uid://nr8uyp8iyphr" path="res://Gres/Scenes/player/player.tscn" id="23_6q2lo"]
 [ext_resource type="PackedScene" uid="uid://rwwkdxltul21" path="res://Gres/Scenes/UI/MissionUI.tscn" id="24_8g3c8"]
 [ext_resource type="PackedScene" uid="uid://djiyprvsiwfwh" path="res://Gres/Scenes/chest/chest.tscn" id="24_rlgjo"]

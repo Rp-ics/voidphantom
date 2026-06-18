@@ -44,6 +44,13 @@
 [ext_resource type="Texture2D" uid="uid://bstyougk7b1po" path="res://Gres/Assets/UI/inentory/close_b_deactiv.png" id="40_ra7d1"]
 [ext_resource type="Texture2D" uid="uid://m3o5uj35ebtn" path="res://Gres/Assets/obj/tilesets/map_1.png" id="44_85wru"]
 [ext_resource type="Texture2D" uid="uid://dyegf0qmqwqkb" path="res://Gres/Assets/obj/tilesets/map_2.png" id="45_5q7x8"]
+[ext_resource type="Texture2D" uid="uid://c0uhut63c3yrf" path="res://Gres/Assets/planets/detriti.png" id="45_q784e"]
+[ext_resource type="Texture2D" uid="uid://dt3xy0d4tkc30" path="res://Gres/Assets/planets/p_2.png" id="46_qigr8"]
+[ext_resource type="Texture2D" uid="uid://5k2tuksvp5us" path="res://Gres/Assets/planets/p_4.png" id="47_wpi5i"]
+[ext_resource type="Texture2D" uid="uid://cuwm4ec77sq0t" path="res://Gres/Assets/planets/p_6.png" id="48_a4r2g"]
+[ext_resource type="Texture2D" uid="uid://d06cuqhnst8rs" path="res://Gres/Assets/planets/p_5.png" id="49_xarxe"]
+[ext_resource type="Texture2D" uid="uid://q65miexfny7v" path="res://Gres/Assets/planets/p_3.png" id="50_mksxt"]
+[ext_resource type="Texture2D" uid="uid://duvccb3lp1u5t" path="res://Gres/Assets/planets/p_1.png" id="51_mhtc6"]
 
 [sub_resource type="Gradient" id="Gradient_85wru"]
 offsets = PackedFloat32Array(0.0054347827, 0.52717394, 1)
@@ -101,48 +108,6 @@ texture = ExtResource("34_hbmni")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xbr1w"]
 texture = ExtResource("33_t1cm5")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl4b6"]
-bg_color = Color(0.234375, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_85wru"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_5q7x8"]
-resource_name = "loop"
-length = 5.0
-loop_mode = 1
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 2, 3, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gcm00"]
-_data = {
-&"RESET": SubResource("Animation_85wru"),
-&"loop": SubResource("Animation_5q7x8")
-}
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nl4b6"]
 texture = ExtResource("37_yrdto")
@@ -343,28 +308,11 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_qvxm4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_b8jqd")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_yrdto")
 theme_override_styles/focus = SubResource("StyleBoxTexture_xbr1w")
-disabled = true
 text = "BOSS RIDE"
 script = ExtResource("35_lhgnf")
 DEFAULT_SCALE = Vector2(1, 1)
 tween = "bounce"
 metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Buttons/BossRide" unique_id=2129159445]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 351.0
-offset_bottom = 114.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_nl4b6")
-text = "IN DEVELOPMENT"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/BossRide/Label" unique_id=1557077156]
-libraries/ = SubResource("AnimationLibrary_gcm00")
-autoplay = &"loop"
 
 [node name="Void" type="Button" parent="Buttons" unique_id=436529887]
 material = SubResource("CanvasItemMaterial_4lqjw")
@@ -496,6 +444,122 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_wpi5i")
 text = "x"
 script = ExtResource("35_lhgnf")
 
+[node name="AreanChoice" type="ColorRect" parent="." unique_id=617325786]
+visible = false
+layout_mode = 0
+offset_left = -44.0
+offset_top = -24.0
+offset_right = 1194.0
+offset_bottom = 676.0
+color = Color(0, 0, 0, 1)
+
+[node name="Name2" type="Label" parent="AreanChoice" unique_id=2059492107]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 456.0
+offset_right = 567.0
+offset_bottom = 506.0
+theme_override_colors/font_color = Color(0.5703125, 0, 1, 1)
+theme_override_font_sizes/font_size = 49
+text = "Open Space"
+horizontal_alignment = 1
+
+[node name="Map1" type="Sprite2D" parent="AreanChoice" unique_id=1316285074]
+position = Vector2(405.00003, 299)
+scale = Vector2(1.4980329, 1.498033)
+texture = ExtResource("45_q784e")
+
+[node name="P1" type="Sprite2D" parent="AreanChoice/Map1" unique_id=1633530508]
+position = Vector2(-108.80937, -52.068283)
+scale = Vector2(0.6675421, 0.66754204)
+texture = ExtResource("46_qigr8")
+
+[node name="P2" type="Sprite2D" parent="AreanChoice/Map1" unique_id=740102077]
+position = Vector2(-2.2888184e-05, -24.699059)
+scale = Vector2(0.6675421, 0.66754204)
+texture = ExtResource("47_wpi5i")
+hframes = 3
+
+[node name="P3" type="Sprite2D" parent="AreanChoice/Map1" unique_id=1773262730]
+position = Vector2(-91.45329, 38.049892)
+scale = Vector2(0.6675421, 0.66754204)
+texture = ExtResource("48_a4r2g")
+
+[node name="P4" type="Sprite2D" parent="AreanChoice/Map1" unique_id=1358552350]
+position = Vector2(85.44536, -58.743702)
+scale = Vector2(0.6675421, 0.66754204)
+texture = ExtResource("49_xarxe")
+
+[node name="P5" type="Sprite2D" parent="AreanChoice/Map1" unique_id=43763040]
+position = Vector2(59.411217, 46.0604)
+scale = Vector2(0.6675421, 0.66754204)
+texture = ExtResource("50_mksxt")
+
+[node name="areanmap1" type="Button" parent="AreanChoice/Map1" unique_id=234126633]
+offset_left = -152.19958
+offset_top = -85.44537
+offset_right = 153.53467
+offset_bottom = 132.17332
+flat = true
+
+[node name="Name" type="Label" parent="AreanChoice" unique_id=851270434]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 464.0
+offset_right = 1032.0
+offset_bottom = 520.0
+theme_override_colors/font_color = Color(0, 1, 0.3203125, 1)
+theme_override_font_sizes/font_size = 55
+text = "Earth"
+horizontal_alignment = 1
+
+[node name="map2" type="Sprite2D" parent="AreanChoice" unique_id=1698601443]
+position = Vector2(873, 313)
+scale = Vector2(5.8524165, 5.8524165)
+texture = ExtResource("51_mhtc6")
+
+[node name="arenamap2" type="Button" parent="AreanChoice/map2" unique_id=1704669985]
+offset_left = -32.294373
+offset_top = -27.339142
+offset_right = 40.66693
+offset_bottom = 33.661316
+flat = true
+
+[node name="Title" type="Label" parent="AreanChoice" unique_id=762193400]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 23.0
+offset_right = 1195.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 80
+text = "Void Arena Maps"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="loop" type="AnimationPlayer" parent="AreanChoice/Title" unique_id=135417344]
+libraries/ = SubResource("AnimationLibrary_1is31")
+autoplay = &"loop"
+
+[node name="Back" type="Button" parent="AreanChoice" unique_id=1463067078]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 2.0
+offset_right = 188.0
+offset_bottom = 164.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(60, 60)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_ms1eo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mc7lf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q784e")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qigr8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_wpi5i")
+text = "x"
+script = ExtResource("35_lhgnf")
+
 [node name="trs" type="AnimationPlayer" parent="." unique_id=95682369]
 libraries/ = SubResource("AnimationLibrary_htpd8")
 autoplay = &"open"
@@ -513,6 +577,7 @@ texture = ExtResource("32_dxuot")
 [connection signal="mouse_entered" from="Buttons/Endless" to="Buttons/Endless" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/BossRide" to="." method="_on_dungeon_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/BossRide" to="Buttons/BossRide" method="_on_mouse_entered"]
+[connection signal="pressed" from="Buttons/BossRide" to="." method="_on_boss_ride_pressed"]
 [connection signal="mouse_entered" from="Buttons/Void" to="." method="_on_void_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Void" to="Buttons/Void" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="CloseButton" to="CloseButton" method="_on_mouse_entered"]
@@ -521,4 +586,8 @@ texture = ExtResource("32_dxuot")
 [connection signal="pressed" from="VoidChoice/map2/map2" to="." method="_on_map_2_pressed"]
 [connection signal="mouse_entered" from="VoidChoice/Back" to="VoidChoice/Back" method="_on_mouse_entered"]
 [connection signal="pressed" from="VoidChoice/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="AreanChoice/Map1/areanmap1" to="." method="_on_areanmap_1_pressed"]
+[connection signal="pressed" from="AreanChoice/map2/arenamap2" to="." method="_on_arenamap_2_pressed"]
+[connection signal="mouse_entered" from="AreanChoice/Back" to="AreanChoice/Back" method="_on_mouse_entered"]
+[connection signal="pressed" from="AreanChoice/Back" to="." method="_on_back_pressed"]
 [connection signal="animation_finished" from="trs" to="." method="_on_trs_animation_finished"]

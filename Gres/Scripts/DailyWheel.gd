@@ -57,17 +57,12 @@ func _check_daily_reset():
 		save()
 
 func has_free_spin() -> bool:
-	var today = Time.get_datetime_dict_from_system().day
-
-	if today != last_spin_day:
-		# nuovo giorno → hai 1 spin gratis
-		GlobalStats.free_spin_used_today = false
-		last_spin_day = today
-
-	return not GlobalStats.free_spin_used_today
+	return free_spins > 0
 
 func consume_free_spin():
-	GlobalStats.free_spin_used_today = true
+	if free_spins > 0:
+		free_spins -= 1
+		save()
 
 
 # -----------------------------------

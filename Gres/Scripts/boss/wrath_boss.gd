@@ -4,6 +4,7 @@ class_name GaiaWrath
 # ============================================================
 # === CONFIG BASE =============================================
 # ============================================================
+@export var boss_name = ""
 @export var speed: float = 300.0
 @export var shield_hp: int = 100
 @export var phase_two_threshold := 0.6
@@ -13,6 +14,8 @@ class_name GaiaWrath
 @export var bullet_scene: PackedScene
 @export var explosion_scene: PackedScene
 @export var laser_scene: PackedScene
+@export var can_teleport_die: bool = false
+@export var scene := ""
 
 # ============================================================
 # === ATTACK CONFIG: VORTEX ===================================
@@ -1187,8 +1190,9 @@ func _perform_death_animation() -> void:
 		queue_redraw()
 		await get_tree().process_frame
 		fade_elapsed += get_process_delta_time()
-
-	queue_free()
+	Global.boss_mame = boss_name
+	if can_teleport_die: get_tree().change_scene_to_file(scene)
+	else: queue_free()
 
 func _drop_random_shard() -> void:
 	var shards = ["ice", "magma", "light", "void"]

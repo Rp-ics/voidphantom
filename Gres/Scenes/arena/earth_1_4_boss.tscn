@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://sff7nvx0yv1w" path="res://Gres/Assets/BGame/galaxy9.png" id="4_xdkrc"]
 [ext_resource type="AudioStream" uid="uid://2hylgivywekw" path="res://Gres/Music/BGM/bg13.ogg" id="5_aa2fv"]
 [ext_resource type="Texture2D" uid="uid://dm76s8op3c4gg" path="res://Gres/Assets/BGame/galaxy10.png" id="5_h1tqh"]
-[ext_resource type="Texture2D" uid="uid://dq3jytyp0ua81" path="res://Gres/Assets/BGame/stars_2.png" id="6_m3l7o"]
 [ext_resource type="AudioStream" uid="uid://238ipc1nmhge" path="res://Gres/Music/BGM/bg14.ogg" id="6_ttnp6"]
 [ext_resource type="AudioStream" uid="uid://b762jix3keavo" path="res://Gres/Music/BGM/bg15.ogg" id="7_mjkos"]
 [ext_resource type="Texture2D" uid="uid://blge7hhsyv61o" path="res://Gres/Assets/BGame/stars_1.png" id="7_xv8ba"]
@@ -28,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dppgeynuf774u" path="res://Gres/Scenes/UI/inventory.tscn" id="20_r1el2"]
 [ext_resource type="Texture2D" uid="uid://dwcedf6mbfvv2" path="res://Gres/Assets/BGame/galaxy2.png" id="21_fjiet"]
 [ext_resource type="PackedScene" uid="uid://b50vk3wb5y3kp" path="res://Gres/Scenes/obj/object.tscn" id="22_y48o7"]
-[ext_resource type="Texture2D" uid="uid://d3dyhb1w2g83j" path="res://Gres/Assets/Background/bgstar_2.png" id="23_2cr4y"]
+[ext_resource type="Texture2D" uid="uid://dq3jytyp0ua81" path="res://Gres/Assets/BGame/stars_2.png" id="23_2cr4y"]
 [ext_resource type="PackedScene" uid="uid://rwwkdxltul21" path="res://Gres/Scenes/UI/MissionUI.tscn" id="24_26p43"]
 [ext_resource type="PackedScene" uid="uid://nr8uyp8iyphr" path="res://Gres/Scenes/player/player.tscn" id="26_e2q0t"]
 [ext_resource type="Texture2D" uid="uid://cqy01whhqyp47" path="res://Gres/Assets/obj/tilesets/wulc_1.png" id="33_qlopw"]
@@ -42,7 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://ccg40aol44x82" path="res://Gres/Assets/Enemy/Boss/guardian/pinz_phase1.png" id="38_qlopw"]
 [ext_resource type="PackedScene" uid="uid://bacegrhjosklp" path="res://Gres/Scenes/Boss/wrath_boss.tscn" id="40_do8f0"]
 [ext_resource type="PackedScene" uid="uid://btj413pb1bmox" path="res://Gres/Scenes/enemies/minion_boss.tscn" id="40_puu3o"]
-[ext_resource type="PackedScene" uid="uid://rupg6m325jkj" path="res://Gres/Scenes/enemies/bullets/enemy_bullet_1.tscn" id="41_48urf"]
 [ext_resource type="PackedScene" uid="uid://bh4g7btp07kew" path="res://Gres/Scenes/Effects/expl_e.tscn" id="42_5nats"]
 
 [sub_resource type="Animation" id="Animation_a66oc"]
@@ -638,7 +636,7 @@ motion_offset = Vector2(2, 2)
 [node name="Galaxy10" type="Sprite2D" parent="ParallaxBackground/Layer2" unique_id=1515413345]
 position = Vector2(-26.1602, 155)
 scale = Vector2(0.72168, 0.72168)
-texture = ExtResource("6_m3l7o")
+texture = ExtResource("23_2cr4y")
 
 [node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=831842438]
 visible = false
@@ -3380,9 +3378,10 @@ position = Vector2(58, 56)
 
 [node name="wrath_boss" parent="." unique_id=572082113 instance=ExtResource("40_do8f0")]
 position = Vector2(-1340, -1369)
+boss_name = "wrath"
 minion_scene = ExtResource("40_puu3o")
-bullet_scene = ExtResource("41_48urf")
 explosion_scene = ExtResource("42_5nats")
+scene = "res://Gres/Scenes/UI/level_selector.tscn"
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1846658463]
 position = Vector2(70, -310)

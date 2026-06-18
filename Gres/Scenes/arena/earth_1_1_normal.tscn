@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://qehcchaug6yg"]
+[gd_scene format=3 uid="uid://qehcchaug6yg"]
 
 [ext_resource type="Script" uid="uid://ugs2tchmlsyc" path="res://Gres/Scripts/arena/earth_1.gd" id="1_kdurv"]
 [ext_resource type="PackedScene" uid="uid://djiyprvsiwfwh" path="res://Gres/Scenes/chest/chest.tscn" id="2_tu5q8"]
@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dppgeynuf774u" path="res://Gres/Scenes/UI/inventory.tscn" id="27_2l8m4"]
 [ext_resource type="Texture2D" uid="uid://dwcedf6mbfvv2" path="res://Gres/Assets/BGame/galaxy2.png" id="28_dxod3"]
 [ext_resource type="PackedScene" uid="uid://b50vk3wb5y3kp" path="res://Gres/Scenes/obj/object.tscn" id="29_egcyx"]
-[ext_resource type="Texture2D" uid="uid://d3dyhb1w2g83j" path="res://Gres/Assets/Background/bgstar_2.png" id="30_upmlc"]
+[ext_resource type="Texture2D" uid="uid://dq3jytyp0ua81" path="res://Gres/Assets/BGame/stars_2.png" id="30_upmlc"]
 [ext_resource type="PackedScene" uid="uid://rwwkdxltul21" path="res://Gres/Scenes/UI/MissionUI.tscn" id="31_rflm3"]
 [ext_resource type="PackedScene" uid="uid://nr8uyp8iyphr" path="res://Gres/Scenes/player/player.tscn" id="32_cwqwx"]
 [ext_resource type="Texture2D" uid="uid://cqy01whhqyp47" path="res://Gres/Assets/obj/tilesets/wulc_1.png" id="33_lqgeq"]

@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://cgogerbyy7jjb" path="res://Gres/Music/BGM/bg12.ogg" id="5_aqe5n"]
 [ext_resource type="Texture2D" uid="uid://dm76s8op3c4gg" path="res://Gres/Assets/BGame/galaxy10.png" id="5_i25jk"]
 [ext_resource type="AudioStream" uid="uid://2hylgivywekw" path="res://Gres/Music/BGM/bg13.ogg" id="6_dmfrl"]
-[ext_resource type="Texture2D" uid="uid://dq3jytyp0ua81" path="res://Gres/Assets/BGame/stars_2.png" id="6_fltpx"]
 [ext_resource type="AudioStream" uid="uid://238ipc1nmhge" path="res://Gres/Music/BGM/bg14.ogg" id="7_djkoo"]
 [ext_resource type="Texture2D" uid="uid://blge7hhsyv61o" path="res://Gres/Assets/BGame/stars_1.png" id="7_fe1w5"]
 [ext_resource type="Texture2D" uid="uid://duvccb3lp1u5t" path="res://Gres/Assets/planets/p_1.png" id="8_0lflv"]
@@ -29,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dppgeynuf774u" path="res://Gres/Scenes/UI/inventory.tscn" id="20_6ts86"]
 [ext_resource type="Texture2D" uid="uid://dwcedf6mbfvv2" path="res://Gres/Assets/BGame/galaxy2.png" id="21_5tadj"]
 [ext_resource type="PackedScene" uid="uid://b50vk3wb5y3kp" path="res://Gres/Scenes/obj/object.tscn" id="22_0emk6"]
-[ext_resource type="Texture2D" uid="uid://d3dyhb1w2g83j" path="res://Gres/Assets/Background/bgstar_2.png" id="23_tiqn6"]
+[ext_resource type="Texture2D" uid="uid://dq3jytyp0ua81" path="res://Gres/Assets/BGame/stars_2.png" id="23_tiqn6"]
 [ext_resource type="PackedScene" uid="uid://rwwkdxltul21" path="res://Gres/Scenes/UI/MissionUI.tscn" id="24_dhoin"]
 [ext_resource type="PackedScene" uid="uid://cxgd2jlniswa3" path="res://Gres/Scenes/obj/basenemy.tscn" id="25_64rvg"]
 [ext_resource type="PackedScene" uid="uid://nr8uyp8iyphr" path="res://Gres/Scenes/player/player.tscn" id="26_xsidl"]
@@ -505,7 +504,7 @@ size = Vector2(10000, 20)
 [node name="Arena" type="Node2D" unique_id=1345413818 node_paths=PackedStringArray("chest_spawn_points")]
 script = ExtResource("1_64rvg")
 game_mode = 3
-next_scene = "res://Gres/Scenes/Story/wrath_cutscene.tscn"
+next_scene = "res://Gres/Scenes/arena/earth_1_4_boss.tscn"
 spawn_origin_path = NodePath("Player")
 min_spawn_distance = 700.0
 max_spawn_distance = 1200.0
@@ -558,7 +557,7 @@ motion_offset = Vector2(2, 2)
 [node name="Galaxy10" type="Sprite2D" parent="ParallaxBackground/Layer2" unique_id=1717201500]
 position = Vector2(-26.1602, 155)
 scale = Vector2(0.72168, 0.72168)
-texture = ExtResource("6_fltpx")
+texture = ExtResource("23_tiqn6")
 
 [node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1158725998]
 visible = false

@@ -5,6 +5,7 @@ extends Node
 # ========================
 var autosave_timer : Timer
 var gold := 0
+var pvp_coin := 0
 var tablet := 0
 var void_shard := 0
 var magma_shard := 0
@@ -14,66 +15,61 @@ var spins := 0
 var total_gold_collected := 0
 var max_wave := 0
 var max_game_wave := 0
-var skills_unlocked: int = 0 # how many skills are unlocked G
-var skins_unlocked: int = 0 # how many skins are unloked G
-var died_times: int = 0 # dead count G
+var skills_unlocked: int = 0
+var skins_unlocked: int = 0
+var died_times: int = 0
 var critical: = 0.0
 var critical_damage: = 1.2
 var critical_chest: = false
 var critical_vampire: = false
+
+# ========================
+# PVP SHOP
+# ========================
+var pvp_equipped_weapon: String = "PVP_RAZOR"  # Arma equipaggiata per PvP
+
 # Damage
-var player_damage_lvl: int = 0 # danni ricevuti in questo livello NG
-var player_hit_lvl: int = 0 # danni inflitti in questo livello NG
-var player_min_hp_lvl: int = 80 # hp minimo raggiunto nel livello NG
-var total_hp_bossfight_lvl: int = 80 # hp durante bossfight NG
-var player_damage_total: int = 0 # danni ricevuti totali G
-var player_hit_total: int = 0 # danni inflitti totali G
+var player_damage_lvl: int = 0
+var player_hit_lvl: int = 0
+var player_min_hp_lvl: int = 80
+var total_hp_bossfight_lvl: int = 80
+var player_damage_total: int = 0
+var player_hit_total: int = 0
 
 # === GRAPH === #
 var graphic = "normale"
 var show_fps = false
+
 # ========================
 # === MISSIONS === #
-var daily_missions: Array = []            # missioni attive oggi (lista dizionari)
-var daily_mission_seed: int = 0           # seme per la generazione casuale
-var daily_last_reset_date: String = ""    # "YYYY-MM-DD"
-var special_coin_progress: int = 0        # missioni completate verso la moneta speciale (persiste)
-
-# Valute aggiuntive
-var void_coins: int = 0               # la moneta speciale accumulata (se non esiste già in GlobalStats)
+var daily_missions: Array = []
+var daily_mission_seed: int = 0
+var daily_last_reset_date: String = ""
+var special_coin_progress: int = 0
+var void_coins: int = 0
 
 # === SKILLS === #
-# DAMAGE & DPS
 var damage_percent: float = 0
 var fire_rate_percent: float = 0
 var crit_chance: float = 0
 var projectile_speed_percent: float = 0
 var boss_damage_percent: float = 0
-
 var stars := 0
-
-# MOBILITY / MOVIMENTO
 var move_speed_percent: float = 0
 var dash_distance_percent: float = 0
 var acceleration_percent: float = 0
 var dash_iframes: int = 0
 var deceleration_control_percent: float = 0
-
-# SOSTEGNO / DEFENSE
 var hp_max_plus: int = 0
 var hp_regen_per_10s: int = 0
 var damage_reduction_percent: float = 0
 var low_hp_shield: int = 0
 var knockback_resistance_percent: float = 0
-
-# ABILITIES / COOLDOWNS
 var cooldown_percent: float = 0
 var active_lockout_percent: float = 0
 var ability_energy_regen_percent: float = 0
 var ability_cross_reduction_sec: float = 0
 var first_cast_damage_boost: float = 0
-
-# CONTROL / AOE / STATUS
 var aoe_percent: float = 0
 var slow_on_hit_percent: float = 0
 var status_duration_percent: float = 0
@@ -81,100 +77,96 @@ var ability_aoe_percent: float = 0
 var disarm_chance_percent: float = 0
 
 # ========================
-var kill_mobs_lvl := 0 # NG
-var kill_mini_boss_lvl := 0 # NG
-var kill_mini_boss_total := 0 # G
-var kill_mobs_total := 0 # G
-var kill_boss_total := 0 # G
+var kill_mobs_lvl := 0
+var kill_mini_boss_lvl := 0
+var kill_mini_boss_total := 0
+var kill_mobs_total := 0
+var kill_boss_total := 0
 
 # ========================
 # DAMAGE INFLITTO
 # ========================
-var damage_inf_mob_lvl: int = 0 # Danni inflitti per livello NG
-var damage_inf_miniboss_lvl: int = 0 # Danni inflitti per livello NG
-var damage_inf_boss_lvl: int = 0 # Danni inflitti per livello NG
-var damage_inf_total_lvl: int = 0 # Danni inflitti per livello NG
-
-var damage_inf_mob_total: int = 0 # G
-var damage_inf_miniboss_total: int = 0 # G
-var damage_inf_boss_total: int = 0 # G
-var damage_inf_total: int = 0 # G
+var damage_inf_mob_lvl: int = 0
+var damage_inf_miniboss_lvl: int = 0
+var damage_inf_boss_lvl: int = 0
+var damage_inf_total_lvl: int = 0
+var damage_inf_mob_total: int = 0
+var damage_inf_miniboss_total: int = 0
+var damage_inf_boss_total: int = 0
+var damage_inf_total: int = 0
 
 # ========================
 # DAMAGE RICEVUTO
 # ========================
-var damage_rec_lvl: int = 0 # NG
-var damage_rec_boss_lvl: int = 0 # NG
-var damage_rec_miniboss_lvl: int = 0 # NG
-var damage_rec_total: int = 0 # G
+var damage_rec_lvl: int = 0
+var damage_rec_boss_lvl: int = 0
+var damage_rec_miniboss_lvl: int = 0
+var damage_rec_total: int = 0
 
 # ========================
 # NUCLEAR
 # ========================
-var nuclear_kill_lvl: int = 0 # NG
-var nuclear_kill_total: int = 0 # G
-var nuclear_boss_dmg_lvl: int = 0 # NG
-var nuclear_destroyed_lvl: int = 0 # NG
-var nuclear_active: bool = false # NG
+var nuclear_kill_lvl: int = 0
+var nuclear_kill_total: int = 0
+var nuclear_boss_dmg_lvl: int = 0
+var nuclear_destroyed_lvl: int = 0
+var nuclear_active: bool = false
 
 # ========================
 # BULLETS & BONUS
 # ========================
-var bullets_shoot_lvl: int = 0 # NG
-var bullets_shoot_total: int = 0 # G
-
-var bonus_get_lvl: int = 0 # NG
-var bonus_get_total: int = 0 # G
-
+var bullets_shoot_lvl: int = 0
+var bullets_shoot_total: int = 0
+var bonus_get_lvl: int = 0
+var bonus_get_total: int = 0
 var total_powerups := 0
 var powerups_lvl := 0
 var weapon_collected_total := 0
 var weapon_collected_lvl := 0
+
 # ========================
 # ABILITIES USED
 # ========================
-var skill_used_shield: bool = false # NG
-var skill_used_time: bool = false # NG
-var skill_used_spawn: bool = false # NG
-var skill_used_drone: bool = false # NG
+var skill_used_shield: bool = false
+var skill_used_time: bool = false
+var skill_used_spawn: bool = false
+var skill_used_drone: bool = false
 
 # ========================
 # GAME STATE
 # ========================
-var boss_fight_active: bool = false # NG
-var boss_fight_counter: int = 0 # G
-
-var mob_damaged: bool = false # NG
-var miniboss_damaged: bool = false # NG
-var boss_damaged: bool = false # NG
+var boss_fight_active: bool = false
+var boss_fight_counter: int = 0
+var mob_damaged: bool = false
+var miniboss_damaged: bool = false
+var boss_damaged: bool = false
 
 # ========================
 # TIME
 # ========================
-var play_minutes: int = 0 # G
-var play_seconds: int = 0 # G
-var play_hours: int = 0 # G
+var play_minutes: int = 0
+var play_seconds: int = 0
+var play_hours: int = 0
 @onready var play_timer: Timer = Timer.new()
 
 #-bonus lvl-#
-var heal_bonus := 3 # G
-var shield_bonus := 3 # G
-var stamina_bonus := 3 # G
-var speed_bonus := 3 # G
-var time_slow_bonus := 3 # G
-var freeze_bonus := 3 # G
-
+var heal_bonus := 3
+var shield_bonus := 3
+var stamina_bonus := 3
+var speed_bonus := 3
+var time_slow_bonus := 3
+var freeze_bonus := 3
 var time_slow := false
 var time_slow_time := 4.0
-
-var drop_percent := 2.0 # G
-var craft_drop := 5.0 # G
-var d_g_drop_percent := 10.0 # G
-var gold_moltipl := 2.0 # G
+var drop_percent := 2.0
+var craft_drop := 5.0
+var d_g_drop_percent := 10.0
+var gold_moltipl := 2.0
 var respawn := 0.0
 var huge_dmg := 0.0
 var respawn_god := false
 var double_gold_drop := false
+
 # ========================
 # SHIP LEVELS
 # ========================
@@ -185,74 +177,50 @@ var prop_lvl := 0
 
 # === CRAFT === #
 var total_craft := 0
-
 var owned_weapons := {}
 
 var has_free_spin: bool = false
 var free_spin_used_today: bool = false
 var total_spin: int = 0
+
 # ============================
 # === ACHIEVEMENTS SYSTEM ====
 # ============================
-
-#G Achievement unlocked flags
 var achievements := {
 	"Test": true,
-	# Tutorial #
-	"Was Easy": false,                    #G
-	# Survival / Resilience
-	"Ascent of the Unbroken": false,      #G
-	"Tempest Sovereign": false,           #G
-	"Walker of the Abyss": false,         #G
-	"Solar Tide Immortal": false,         #G
-	"Final Breath Victory": false,        #G
-	"Defile the Fate": false,             #G
-	"Aegis of the Fallen Star": false,    #G
-	"Wave-Master I": false,               #G
-
-	# Combat / Slaughter
-	"Void-King’s Triumph": false,         #G
-	"Leviathan’s Hunger": false,          #G
-	"Celestial Onslaught": false,         #G
-	"Godslayer Marksman": false,          #G
-	"Nuclear Oblivion": false,            #G
-	"Frozen Catastrophe": false,          #G
-	"Arcane Ascendancy": false,           #G
-	"Galactic Destruction": false,        #G
-
-	# Bullets / Barrage
-	"Mirage of Million Shots": false,     #G
-	"Abyssal Deadshot": false,            #G
-
-	# Progression / Time
-	"Phantom of the Twentieth Dawn": false,  #G
-	"Frost-Bound Epoch": false,              #G
-
-	# Collection
-	"Harvest of Power": false,            #G
-	"Astral Collector": false,            #G
-
-	# Crafting
-	"Forge of the Common Star": false,    #G
-	"Forge of the Shattered Moon": false, #G
-	"Forge of the Void-Titan": false,     #G
-
-	# Skill Tree / Stars
-	"Starborn Awakening": false,          #G
-	"Cosmic Armory": false,               #G
-	"Celestial Ascendancy": false,        #G
-	"Stellar Omnipotence": false,         #G
-
-	# Customization
-	"Nebula-Forged Form": false,          #G
-
-	# Special
-	"Herald of the First Light": false,   #G
-	
-	# Unique
+	"Was Easy": false,
+	"Ascent of the Unbroken": false,
+	"Tempest Sovereign": false,
+	"Walker of the Abyss": false,
+	"Solar Tide Immortal": false,
+	"Final Breath Victory": false,
+	"Defile the Fate": false,
+	"Aegis of the Fallen Star": false,
+	"Wave-Master I": false,
+	"Void-King’s Triumph": false,
+	"Leviathan’s Hunger": false,
+	"Celestial Onslaught": false,
+	"Godslayer Marksman": false,
+	"Nuclear Oblivion": false,
+	"Frozen Catastrophe": false,
+	"Arcane Ascendancy": false,
+	"Galactic Destruction": false,
+	"Mirage of Million Shots": false,
+	"Abyssal Deadshot": false,
+	"Phantom of the Twentieth Dawn": false,
+	"Frost-Bound Epoch": false,
+	"Harvest of Power": false,
+	"Astral Collector": false,
+	"Forge of the Common Star": false,
+	"Forge of the Shattered Moon": false,
+	"Forge of the Void-Titan": false,
+	"Starborn Awakening": false,
+	"Cosmic Armory": false,
+	"Celestial Ascendancy": false,
+	"Stellar Omnipotence": false,
+	"Nebula-Forged Form": false,
+	"Herald of the First Light": false,
 	"FIRST LIGHT PIONEER": false,
-	
-	# VOID 
 	"God of NULLBORN": false,
 	"God of OBLIVION": false,
 	"God of MIND": false,
@@ -267,8 +235,44 @@ var void_weapons := {
 	"vg9": false, "vg10": false, "vg11": false, "vg12": false,
 	"vg13": false, "vg14": false, "vg15": false, "vg16": false,
 }
+# Nella sezione delle variabili, vicino a void_weapons
+var pvp_unlocked_weapons := {
+	"PVP_RAZOR": true,  # Gratuita, sempre disponibile
+	"PVP_BOLT": false,
+	"PVP_SPLITTER": false,
+	"PVP_BOUNCE": false,
+	"PVP_PIERCE": false,
+	"PVP_HOMING": false,
+	"PVP_EXPLODE": false,
+	"PVP_FREEZE": false,
+	"PVP_MAGNET": false,
+	"PVP_SHOTGUN": false,
+}
 
-#G Achievement descriptions
+# Funzioni per gestire le armi PvP
+func unlock_pvp_weapon(weapon_name: String) -> void:
+	if pvp_unlocked_weapons.has(weapon_name):
+		pvp_unlocked_weapons[weapon_name] = true
+		save_data_stats()
+		print("[PvP] Arma sbloccata: ", weapon_name)
+
+func is_pvp_weapon_unlocked(weapon_name: String) -> bool:
+	return pvp_unlocked_weapons.get(weapon_name, false)
+
+func get_unlocked_pvp_weapons() -> Array:
+	var unlocked: Array = []
+	for weapon in pvp_unlocked_weapons:
+		if pvp_unlocked_weapons[weapon]:
+			unlocked.append(weapon)
+	return unlocked
+
+func unlock_obey_the_fist() -> void:
+	# Exclusive weapon for Steam ID 76561198030784015 / "Obey the Fist!"
+	if not pvp_unlocked_weapons.has("OBEY_THE_FIST"):
+		pvp_unlocked_weapons["OBEY_THE_FIST"] = true
+		save_data_stats()
+		print("[GlobalStats] 🎁 EXCLUSIVE: OBEY_THE_FIST unlocked!")
+
 var achievement_desc := {
 	"Ascent of the Unbroken": "Survive 5 waves while taking less than 20 damage.",
 	"Tempest Sovereign": "Eliminate 40 enemies without dropping below 60 HP.",
@@ -277,7 +281,6 @@ var achievement_desc := {
 	"Final Breath Victory": "Defeat a boss with less than 10 health.",
 	"Defile the Fate": "Kill a first boss without taking damage.",
 	"Aegis of the Fallen Star": "Beat any boss while staying under 30 HP.",
-
 	"Void-King’s Triumph": "Reach wave 20.",
 	"Leviathan’s Hunger": "Eliminate 30 enemies without being hit.",
 	"Celestial Onslaught": "Kill 250 enemies in a single game.",
@@ -286,29 +289,22 @@ var achievement_desc := {
 	"Frozen Catastrophe": "Accumulate 50 enemies on the field.",
 	"Arcane Ascendancy": "Defeat 4 bosses.",
 	"Galactic Destruction": "Deal 1,000,000 total damage.",
-
 	"Mirage of Million Shots": "Fire 1,000,000 bullets in one run.",
 	"Abyssal Deadshot": "Shoot 10,000,000 bullets and kill 500 enemies and 50 minibosses.",
-
 	"Phantom of the Twentieth Dawn": "Reach wave 20.",
 	"Frost-Bound Epoch": "Play for a total of 168 hours.",
-
 	"Harvest of Power": "Collect 25 power-ups in a single match.",
 	"Astral Collector": "Collect 10 weapons.",
-
 	"Forge of the Common Star": "Craft 10 Common weapons.",
 	"Forge of the Shattered Moon": "Craft 10 Rare weapons.",
 	"Forge of the Void-Titan": "Craft 10 Epic weapons.",
-
 	"Starborn Awakening": "Unlock your first star.",
 	"Cosmic Armory": "Unlock 4 different stars.",
 	"Celestial Ascendancy": "Unlock 10 stars.",
 	"Stellar Omnipotence": "Unlock every available star.",
-
 	"Nebula-Forged Form": "Edit your ship.",
 	"Herald of the First Light": "Reach wave 50, kill a miniboss without damage, and defeat 1500 enemies.",
-	}
-
+}
 
 #================================================#
 func add_owned_weapon(weapon_name: String, rarity: String) -> void:
@@ -320,6 +316,40 @@ func add_owned_weapon(weapon_name: String, rarity: String) -> void:
 func has_weapon(weapon_name: String, rarity: String) -> bool:
 	return owned_weapons.has(rarity) and weapon_name in owned_weapons[rarity]
 
+# ========================
+# PVP SHOP FUNCTIONS
+# ========================
+func add_pvp_weapon(weapon_name: String) -> void:
+	if pvp_unlocked_weapons.has(weapon_name):
+		if not pvp_unlocked_weapons[weapon_name]:
+			pvp_unlocked_weapons[weapon_name] = true
+			save_data_stats()
+			print("[PvP] Arma sbloccata: ", weapon_name)
+	else:
+		print("[PvP] Arma non riconosciuta: ", weapon_name)
+
+func has_pvp_weapon(weapon_name: String) -> bool:
+	return pvp_unlocked_weapons.get(weapon_name, false)
+
+# ========================
+# PVE STATS
+# ========================
+var pve_waves_survived: int = 0
+var pve_enemies_killed: int = 0
+var pve_bosses_killed: int = 0
+var pve_gold_earned: int = 0
+var pve_best_wave: int = 0
+var pve_total_play_time: float = 0.0
+
+func equip_pvp_weapon(weapon_name: String) -> void:
+	if has_pvp_weapon(weapon_name):
+		pvp_equipped_weapon = weapon_name
+		save_data_stats()
+		print("[PvP] Arma equipaggiata: ", weapon_name)
+
+func get_pvp_equipped_weapon() -> String:
+	return pvp_equipped_weapon
+
 func apply_passives_to_player():
 	# RESET variabili
 	damage_percent = 0
@@ -327,43 +357,36 @@ func apply_passives_to_player():
 	crit_chance = 0
 	projectile_speed_percent = 0
 	boss_damage_percent = 0
-
 	move_speed_percent = 0
 	dash_distance_percent = 0
 	acceleration_percent = 0
 	dash_iframes = 0
 	deceleration_control_percent = 0
-
 	hp_max_plus = 0
 	hp_regen_per_10s = 0
 	damage_reduction_percent = 0
 	low_hp_shield = 0
 	knockback_resistance_percent = 0
-
 	cooldown_percent = 0
 	active_lockout_percent = 0
 	ability_energy_regen_percent = 0
 	ability_cross_reduction_sec = 0
 	first_cast_damage_boost = 0
-
 	aoe_percent = 0
 	slow_on_hit_percent = 0
 	status_duration_percent = 0
 	ability_aoe_percent = 0
 	disarm_chance_percent = 0
 
-	# Applica passive sbloccate
 	for skill_id in GlobalSkills.unlocked_skills:
 		var info = GlobalSkills._get_skill_info(skill_id)
 		if info == null:
 			continue
 		if info.type != "passive":
 			continue
-
 		for key in info.effect.keys():
 			self.set(key, self.get(key) + info.effect[key])
 
-	# Applica bonus costellazioni completate
 	for const_key in GlobalSkills.completed_constellations:
 		var bonus = GlobalSkills.SKILLS[const_key].bonus
 		for key in bonus.effect.keys():
@@ -375,13 +398,10 @@ func trigger_active(skill_id: String, player):
 		return false
 	if info.type != "active":
 		return false
-
 	var effect_name = info.effect
-
 	if not player.has_method(effect_name):
 		printerr("Player non ha metodo attivo: ", effect_name)
 		return false
-
 	player.call(effect_name)
 	return true
 
@@ -417,7 +437,6 @@ func save_player_data_cloud():
 		"free_spin_used_today": free_spin_used_today,
 		"max_wave": max_wave,
 		"max_game_wave": max_game_wave,
-		#-kill-#
 		"stars": stars,
 		"kill_mobs_total": kill_mobs_total,
 		"kill_boss_total": kill_boss_total,
@@ -435,7 +454,6 @@ func save_player_data_cloud():
 		"play_minutes": play_minutes,
 		"play_seconds": play_seconds,
 		"play_hours": play_hours,
-		
 		"heal_bonus": heal_bonus,
 		"shield_bonus": shield_bonus,
 		"stamina_bonus": stamina_bonus,
@@ -451,12 +469,13 @@ func save_player_data_cloud():
 		"respawn": respawn,
 		"huge_dmg": huge_dmg,
 		"respawn_god": respawn_god,
-		
 		"body_lvl": body_lvl,
 		"wings_lvl": wings_lvl,
 		"canon_lvl": canon_lvl,
 		"prop_lvl": prop_lvl,
 		"owned_weapons": owned_weapons,
+		"pvp_unlocked_weapons": pvp_unlocked_weapons,
+		"pvp_equipped_weapon": pvp_equipped_weapon,
 	}
 	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -479,7 +498,6 @@ func load_player_data_cloud():
 	var save_data = file.get_var()
 	file.close()
 	
-	# Carica i dati con fallback
 	gold = save_data.get("gold", gold)
 	tablet = save_data.get("tablet", tablet)
 	total_craft = save_data.get("total_craft", total_craft)
@@ -504,8 +522,6 @@ func load_player_data_cloud():
 	free_spin_used_today = save_data.get("free_spin_used_today", free_spin_used_today)
 	max_wave = save_data.get("max_wave", max_wave)
 	max_game_wave = save_data.get("max_game_wave", max_game_wave)
-	
-	#-kill-#
 	kill_mobs_total = save_data.get("kill_mobs_total", kill_mobs_total)
 	kill_boss_total = save_data.get("kill_boss_total", kill_boss_total)
 	kill_mini_boss_total = save_data.get("kill_mini_boss_total", kill_mini_boss_total)
@@ -522,15 +538,12 @@ func load_player_data_cloud():
 	play_minutes = save_data.get("play_minutes", play_minutes)
 	play_seconds = save_data.get("play_seconds", play_seconds)
 	play_hours = save_data.get("play_hours", play_hours)
-	
-	#-bonus drop lvl-#
 	heal_bonus = save_data.get("heal_bonus", heal_bonus)
 	shield_bonus = save_data.get("shield_bonus", shield_bonus)
 	stamina_bonus = save_data.get("stamina_bonus", stamina_bonus)
 	speed_bonus = save_data.get("speed_bonus", speed_bonus)
 	time_slow_bonus = save_data.get("time_slow_bonus", time_slow_bonus)
 	freeze_bonus = save_data.get("freeze_bonus", freeze_bonus)
-	
 	drop_percent = save_data.get("drop_percent", drop_percent)
 	weapon_collected_total = save_data.get("weapon_collected_total", weapon_collected_total)
 	craft_drop = save_data.get("craft_drop", craft_drop)
@@ -540,12 +553,12 @@ func load_player_data_cloud():
 	respawn = save_data.get("respawn", respawn)
 	huge_dmg = save_data.get("huge_dmg", huge_dmg)
 	respawn_god = save_data.get("respawn_god", respawn_god)
-	
 	body_lvl = save_data.get("body_lvl", body_lvl)
 	wings_lvl = save_data.get("wings_lvl", wings_lvl)
 	canon_lvl = save_data.get("canon_lvl", canon_lvl)
 	prop_lvl = save_data.get("prop_lvl", prop_lvl)
 	owned_weapons = save_data.get("owned_weapons", owned_weapons)
+	pvp_equipped_weapon = save_data.get("pvp_equipped_weapon", "PVP_RAZOR")
 
 # --- Salvataggio dati ---
 func save_data_stats():
@@ -579,7 +592,6 @@ func save_data_stats():
 		"has_free_spin": has_free_spin,
 		"free_spin_used_today": free_spin_used_today,
 		"void_weapons": void_weapons,
-		#-kill-#
 		"stars": stars,
 		"kill_mobs_total": kill_mobs_total,
 		"kill_boss_total": kill_boss_total,
@@ -597,7 +609,6 @@ func save_data_stats():
 		"play_minutes": play_minutes,
 		"play_seconds": play_seconds,
 		"play_hours": play_hours,
-		
 		"heal_bonus": heal_bonus,
 		"shield_bonus": shield_bonus,
 		"stamina_bonus": stamina_bonus,
@@ -610,17 +621,21 @@ func save_data_stats():
 		"double_gold_drop": double_gold_drop,
 		"d_g_drop_percent": d_g_drop_percent,
 		"gold_moltipl": gold_moltipl,
-		
 		"body_lvl": body_lvl,
 		"wings_lvl": wings_lvl,
 		"canon_lvl": canon_lvl,
 		"prop_lvl": prop_lvl,
 		"owned_weapons": owned_weapons,
+		"pvp_equipped_weapon": pvp_equipped_weapon,
+		
+		"pvp_unlocked_weapons": pvp_unlocked_weapons,
+		"pvp_coin": pvp_coin,
+		
 	}
 
 	var file = FileAccess.open("user://save_data_stats.save", FileAccess.WRITE)
 	if file:
-		file.store_var(save_data)  # BINARIO
+		file.store_var(save_data)
 		file.close()
 
 # --- Caricamento dati ---
@@ -632,10 +647,9 @@ func load_data_stats():
 	if not file:
 		return
 
-	var save_data = file.get_var()  # LEGGE BINARIO
+	var save_data = file.get_var()
 	file.close()
-	#---------------------------------------------------------------------------------------#
-	# Carica i dati con fallback
+	
 	gold = save_data.get("gold", gold)
 	graphic = save_data.get("graphic", graphic)
 	show_fps = save_data.get("show_fps", show_fps)
@@ -666,8 +680,6 @@ func load_data_stats():
 	has_free_spin = save_data.get("has_free_spin", has_free_spin)
 	free_spin_used_today = save_data.get("free_spin_used_today", free_spin_used_today)
 	void_weapons = save_data.get("void_weapons", void_weapons)
-	
-	#-kill-#
 	kill_mobs_total = save_data.get("kill_mobs_total", kill_mobs_total)
 	kill_boss_total = save_data.get("kill_boss_total", kill_boss_total)
 	kill_mini_boss_total = save_data.get("kill_mini_boss_total", kill_mini_boss_total)
@@ -684,28 +696,44 @@ func load_data_stats():
 	play_minutes = save_data.get("play_minutes", play_minutes)
 	play_seconds = save_data.get("play_seconds", play_seconds)
 	play_hours = save_data.get("play_hours", play_hours)
-	
-	#-bonus drop lvl-#
 	heal_bonus = save_data.get("heal_bonus", heal_bonus)
 	shield_bonus = save_data.get("shield_bonus", shield_bonus)
 	stamina_bonus = save_data.get("stamina_bonus", stamina_bonus)
 	speed_bonus = save_data.get("speed_bonus", speed_bonus)
 	time_slow_bonus = save_data.get("time_slow_bonus", time_slow_bonus)
 	freeze_bonus = save_data.get("freeze_bonus", freeze_bonus)
-	
 	drop_percent = save_data.get("drop_percent", drop_percent)
 	weapon_collected_total = save_data.get("weapon_collected_total", weapon_collected_total)
 	craft_drop = save_data.get("craft_drop", craft_drop)
 	double_gold_drop = save_data.get("double_gold_drop", double_gold_drop)
 	d_g_drop_percent = save_data.get("d_g_drop_percent", d_g_drop_percent)
 	gold_moltipl = save_data.get("gold_moltipl", gold_moltipl)
-	
 	body_lvl = save_data.get("body_lvl", body_lvl)
 	wings_lvl = save_data.get("wings_lvl", wings_lvl)
 	canon_lvl = save_data.get("canon_lvl", canon_lvl)
 	prop_lvl = save_data.get("prop_lvl", prop_lvl)
 	owned_weapons = save_data.get("owned_weapons", owned_weapons)
-
+	pvp_unlocked_weapons = save_data.get("pvp_unlocked_weapons", pvp_unlocked_weapons)
+	
+	var saved_pvp_weapons = save_data.get("pvp_unlocked_weapons", {})
+	# Merge: aggiunge chiavi mancanti (retrocompatibilità con save vecchi)
+	for weapon in pvp_unlocked_weapons.keys():
+		if saved_pvp_weapons.has(weapon):
+			pvp_unlocked_weapons[weapon] = saved_pvp_weapons[weapon]
+		# se la chiave non c'è nel save, resta false (valore di default)
+	
+	# PVP_RAZOR è gratuita: sempre sbloccata
+	pvp_unlocked_weapons["PVP_RAZOR"] = true
+	
+	pvp_coin = save_data.get("pvp_coin", 0)
+	
+	# Assicura che l'arma equipaggiata sia sempre una valida o sbloccata
+	var saved_equip = save_data.get("pvp_equipped_weapon", "PVP_RAZOR")
+	if pvp_unlocked_weapons.get(saved_equip, false):
+		pvp_equipped_weapon = saved_equip
+	else:
+		pvp_equipped_weapon = "PVP_RAZOR"  # fallback sicuro
+		
 func _ready() -> void:
 	autosave_timer = Timer.new()
 	autosave_timer.wait_time = 2.0
@@ -714,7 +742,6 @@ func _ready() -> void:
 	autosave_timer.timeout.connect(_on_autosave)
 	autosave_timer.start()
 	
-	# Configura il timer
 	play_timer.wait_time = 1.0
 	play_timer.one_shot = false
 	play_timer.autostart = true
@@ -726,7 +753,6 @@ func _on_play_timer_timeout() -> void:
 	if play_seconds >= 60:
 		play_seconds = 0
 		play_minutes += 1
-	
 	if play_minutes >= 60:
 		play_minutes = 0
 		play_hours += 1

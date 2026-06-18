@@ -40,12 +40,8 @@ func upload_score(lb_type: int) -> bool:
 			current_best_in_cache = entry.score
 			break
 	
-	if score <= current_best_in_cache:
-		print("[Scoreboard] Skipping upload: Record not broken (%d <= %d)" % [score, current_best_in_cache])
-		return false
+	if score <= current_best_in_cache: return false
 
-	print("[Scoreboard] Uploading new record: %d to %s for %s" % [score, lb_name, p_name])
-	
 	# --- 1. Elimina tutti i vecchi punteggi di questo giocatore nella classifica ---
 	var safe_lb_name = lb_name.uri_encode()
 	# Prendiamo TUTTI i punteggi (passiamo un limite molto alto)
@@ -57,13 +53,12 @@ func upload_score(lb_type: int) -> bool:
 				if not del_res.success:
 					push_warning("[Scoreboard] Could not delete old score %s" % s.score_id)
 				else:
-					print("[Scoreboard] Deleted previous score %s for %s" % [s.score_id, p_name])
+					pass
 	
 	# --- 2. Salva il nuovo punteggio (senza overwrite, ora non ci saranno duplicati) ---
 	var sw_result = await SilentWolf.Scores.save_score(p_name, score, lb_name).sw_save_score_complete
 	
 	if sw_result.success:
-		print("[Scoreboard] Record saved successfully!")
 		await refresh_leaderboard(lb_type)
 		return true
 	return false
@@ -102,11 +97,9 @@ func refresh_leaderboard(lb_type: int) -> void:
 ## Reset completo: elimina TUTTI i punteggi della classifica dal server
 func reset_leaderboard(lb_type: int) -> void:
 	var lb_name = _get_lb_name(lb_type)
-	print("[Scoreboard] Wiping leaderboard: %s ..." % lb_name)
 	
 	var sw_result = await SilentWolf.Scores.wipe_leaderboard(lb_name).sw_wipe_leaderboard_complete
 	if sw_result.success:
-		print("[Scoreboard] Leaderboard wiped successfully.")
 		leaderboard_entries[lb_type] = []
 		leaderboard_updated.emit(lb_type)
 	else:

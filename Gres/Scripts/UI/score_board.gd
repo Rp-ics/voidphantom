@@ -27,9 +27,6 @@ func _ready() -> void:
 	btn_tophunter.pressed.connect(func(): _switch_tab(GlobalScoreboard.LeaderboardType.TOP_HUNTER))
 	btn_wavemaster.pressed.connect(func(): _switch_tab(GlobalScoreboard.LeaderboardType.WAVE_MASTER))
 	
-	if $container.has_node("CloseScore"):
-		$container/CloseScore.pressed.connect(_on_close_score_pressed)
-	
 	visibility_changed.connect(_on_visibility_changed)
 
 func _on_visibility_changed() -> void:

@@ -33,6 +33,8 @@ var is_deflected := false
 var player: Node = null
 var canon: Node = null
 
+var shootX = 0.0
+var shootY = 0.0
 # === DAILY === #
 var spin_gem := 0
 
@@ -149,7 +151,8 @@ var fullscreen: bool = true
 var vsync: bool = true
 var bloom_quality: float = 80.0
 var particle_quality: float = 80.0
-
+var max_fps = 0
+var stretch_mode = "keep"
 # === MODE === #
 var campaign_goal_type := ""
 var base_hurt := false
@@ -432,7 +435,13 @@ var unlocked_weapons := {
 	"legendary": []
 }
 
-var equipped_weapon := {
+# Aggiungi queste variabili (se non esistono già)
+var equipped_weapon: Dictionary = {
+	"name": "SOLBREAKER",
+	"rarity": "common"
+}
+
+var last_sp_weapon: Dictionary = {
 	"name": "SOLBREAKER",
 	"rarity": "common"
 }
@@ -886,7 +895,6 @@ func craft_weapon(weapon_name: String, rarity: String) -> String:
 		consume_material(mat_name, weapon_data.craft_materials[mat_name])
 
 	GlobalStats.gold -= gold_cost
-	print("💸 Spesi", gold_cost, "gold per craft", weapon_name)
 	register_found_weapon(weapon_name, rarity)
 	return "✅ Crafted %s (%s)! (-%d gold)" % [weapon_name.capitalize(), rarity.capitalize(), gold_cost]
 
@@ -916,7 +924,6 @@ func add_material(mat_name: String, amount: int = 1) -> void:
 	if materials.has(mat_name):
 		materials[mat_name] += amount
 		emit_signal("material_changed", mat_name)
-		print("➕ Aggiunto materiale:", mat_name, "x", amount)
 	else:
 		push_warning("Materiale sconosciuto: %s" % mat_name)
 
@@ -953,12 +960,12 @@ func register_found_weapon(weapon_name: String, rarity: String) -> void:
 		weapons_found[rarity] = []
 	if weapon_name not in weapons_found[rarity]:
 		weapons_found[rarity].append(weapon_name)
-		print("🧩 Arma trovata:", weapon_name, rarity)
 
 func equip_weapon(weapon_name: String, rarity: String) -> void:
 	equipped_weapon.name = weapon_name
 	equipped_weapon.rarity = rarity
 	emit_signal("weapon_equipped", weapon_name, rarity)
+	save_game()
 
 func unlock_weapon(weapon_name: String, rarity: String) -> void:
 	if not unlocked_weapons.has(rarity):
@@ -966,7 +973,6 @@ func unlock_weapon(weapon_name: String, rarity: String) -> void:
 	if weapon_name not in unlocked_weapons[rarity]:
 		unlocked_weapons[rarity].append(weapon_name)
 		emit_signal("weapon_unlocked", weapon_name, rarity)
-		print("🔓 Unlocked:", weapon_name, rarity)
 
 func is_weapon_unlocked(weapon_name: String, rarity: String = "common") -> bool:
 	return unlocked_weapons.has(rarity) and weapon_name in unlocked_weapons[rarity]
@@ -995,7 +1001,6 @@ func sync_weapons_data_from_global_weapons() -> void:
 						"LightShard": 0
 					}
 				}
-	print("✅ weapons_data sincronizzato con GlobalWeapons")
 
 # Sblocca tutte le armi nel crafting (aggiunge a weapons_found)
 func unlock_all_weapons_for_crafting() -> void:
@@ -1005,7 +1010,6 @@ func unlock_all_weapons_for_crafting() -> void:
 		for weapon_name in weapons_data[rarity].keys():
 			if weapon_name not in weapons_found[rarity]:
 				weapons_found[rarity].append(weapon_name)
-	print("🔓 Tutte le armi sbloccate nel crafting")
 	
 # ======================================
 # SAVE SYSTEM - FUNZIONI PRINCIPALI (LOCALE)
@@ -1034,6 +1038,7 @@ func collect_save_data() -> Dictionary:
 		
 		# === ICONS === #
 		"wrath_icons": wrath_icons,
+		
 		# Player Stats
 		"player_max_hp": player_max_hp,
 		"player_hp_reg": player_hp_reg,
@@ -1069,6 +1074,9 @@ func collect_save_data() -> Dictionary:
 		"mode": mode,
 		"in_tutorial": in_tutorial,
 		"rarity": rarity,
+		
+		"max_game_wave": GlobalStats.max_game_wave,
+		"pvp_coin": GlobalStats.pvp_coin,
 		
 		# Locked Items
 		"LOCKED_BODIES": LOCKED_BODIES,
@@ -1203,6 +1211,7 @@ func collect_save_data() -> Dictionary:
 			"canon_lvl": GlobalStats.canon_lvl,
 			"prop_lvl": GlobalStats.prop_lvl,
 			"owned_weapons": GlobalStats.owned_weapons,
+			"pvp_unlocked_weapons": GlobalStats.pvp_unlocked_weapons,
 		},
 		
 		# GlobalSkills
@@ -1271,6 +1280,8 @@ func apply_save_data(data: Dictionary) -> bool:
 	mode = data.get("mode", mode)
 	in_tutorial = data.get("in_tutorial", in_tutorial)
 	rarity = data.get("rarity", rarity)
+	GlobalStats.pvp_coin = data.get("pvp_coin", GlobalStats.pvp_coin)
+	GlobalStats.max_game_wave = data.get("max_game_wave", GlobalStats.max_game_wave)
 	
 	# Locked Items
 	LOCKED_BODIES = data.get("LOCKED_BODIES", LOCKED_BODIES)
@@ -1405,6 +1416,7 @@ func apply_save_data(data: Dictionary) -> bool:
 	GlobalStats.canon_lvl = gs.get("canon_lvl", GlobalStats.canon_lvl)
 	GlobalStats.prop_lvl = gs.get("prop_lvl", GlobalStats.prop_lvl)
 	GlobalStats.owned_weapons = gs.get("owned_weapons", GlobalStats.owned_weapons)
+	GlobalStats.pvp_unlocked_weapons = gs.get("pvp_unlocked_weapons", GlobalStats.pvp_unlocked_weapons)
 	
 	# GlobalSkills
 	var gskills = data.get("global_skills", {})
@@ -1424,13 +1436,9 @@ func save_game() -> bool:
 	
 	if save_local(data):
 		success = true
-		print("✅ Salvataggio locale completato")
 	
 	last_save_time = Time.get_unix_time_from_system()
 	emit_signal("save_completed", success)
-	
-	if success:
-		print("💾 Gioco salvato con successo alle: " + Time.get_time_string_from_system())
 	
 	return success
 
@@ -1439,20 +1447,16 @@ func load_game() -> bool:
 	var success = false
 	
 	if not data.is_empty():
-		print("✅ Dati caricati da salvataggio locale")
 		success = true
 	
 	# Applica i dati
 	if success and apply_save_data(data):
-		print("🎮 Dati applicati correttamente")
-		
 		# Reset dei valori temporanei
 		reset_temporary_values()
 		
 		emit_signal("load_completed", true)
 		return true
 	else:
-		print("⚠ Nessun salvataggio trovato, avvio nuovo gioco")
 		reset_to_default()
 		emit_signal("load_completed", false)
 		return false
@@ -1468,7 +1472,6 @@ func save_local(data: Dictionary) -> bool:
 		file.close()
 		return true
 	else:
-		print("❌ Errore salvataggio locale: " + str(FileAccess.get_open_error()))
 		return false
 
 func load_local() -> Dictionary:
@@ -1485,8 +1488,6 @@ func load_local() -> Dictionary:
 		if error == OK:
 			return json.data
 		else:
-			print("❌ Errore parsing JSON locale: " + json.get_error_message())
-			print("JSON data: " + json_data.substr(0, 100) + "...")  # Debug
 			return {}
 	
 	return {}
@@ -1502,7 +1503,6 @@ func create_backup():
 		if not dir.dir_exists(BACKUP_PATH):
 			var error = dir.make_dir(BACKUP_PATH)
 			if error != OK:
-				print("❌ Impossibile creare directory backup")
 				return
 	
 	# Crea nome file con timestamp
@@ -1519,9 +1519,6 @@ func create_backup():
 			
 			# Mantieni solo gli ultimi 5 backup
 			cleanup_old_backups(5)
-			print("📦 Backup creato: " + backup_file)
-		else:
-			print("❌ Impossibile creare backup")
 
 func cleanup_old_backups(max_backups: int):
 	var dir = DirAccess.open(BACKUP_PATH)
@@ -1531,7 +1528,6 @@ func cleanup_old_backups(max_backups: int):
 	var files = []
 	var error = dir.list_dir_begin()
 	if error != OK:
-		print("❌ Impossibile listare directory backup")
 		return
 	
 	var file_name = dir.get_next()
@@ -1552,9 +1548,9 @@ func cleanup_old_backups(max_backups: int):
 			var file_to_delete = files[i].path
 			var remove_error = DirAccess.remove_absolute(file_to_delete)
 			if remove_error == OK:
-				print("🗑️ Backup rimosso: " + file_to_delete)
+				pass
 			else:
-				print("❌ Impossibile rimuovere backup: " + file_to_delete)
+				pass
 
 func restore_from_backup(backup_path: String) -> bool:
 	if not FileAccess.file_exists(backup_path):
@@ -1565,10 +1561,8 @@ func restore_from_backup(backup_path: String) -> bool:
 	if file:
 		file.store_buffer(backup_data)
 		file.close()
-		print("🔧 Backup ripristinato: " + backup_path)
 		return true
 	else:
-		print("❌ Impossibile ripristinare backup")
 		return false
 
 # ======================================
@@ -1732,8 +1726,6 @@ func reset_to_default():
 	# Reset valori temporanei
 	reset_temporary_values()
 	
-	print("🔄 Gioco resettato ai valori di default")
-
 # ======================================
 # TIMERS E CALLBACKS
 # ======================================
@@ -1769,6 +1761,9 @@ func _ready() -> void:
 	# Carica il gioco (solo locale)
 	load_game()
 	
+	# Initialize audio volumes from saved settings
+	_init_audio_volumes()
+	
 	# Il reset giornaliero è gestito da TimeManager._ready() con call_deferred
 	# per garantire che GlobalStats sia già inizializzato prima del check
 		
@@ -1786,12 +1781,28 @@ func _ready() -> void:
 	
 	# Reset valori temporanei
 	reset_temporary_values()
+
+func _init_audio_volumes() -> void:
+	# Applica i volumi salvati agli audio bus
+	var db_music = -80 if music_volume == 0 else linear_to_db(music_volume / 100.0)
+	var db_effects = -80 if effects_volume == 0 else linear_to_db(effects_volume / 100.0)
 	
-	print("🎮 Global.gd pronto!")
+	var music_idx = AudioServer.get_bus_index("Music")
+	if music_idx != -1:
+		AudioServer.set_bus_volume_db(music_idx, db_music)
+	
+	var effects_idx = AudioServer.get_bus_index("Effects")
+	if effects_idx != -1:
+		AudioServer.set_bus_volume_db(effects_idx, db_effects)
+	
+	var master_idx = AudioServer.get_bus_index("Master")
+	if master_idx != -1:
+		# Master volume handled by individual buses
+		pass
+	
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		print("⚠ Chiusura gioco rilevata, salvo dati...")
 		save_game()
 		get_tree().quit()
 
@@ -1810,7 +1821,6 @@ func get_save_status() -> String:
 	return status
 
 func force_save():
-	print("💾 Salvataggio forzato...")
 	return save_game()
 
 func delete_save():
@@ -1818,9 +1828,9 @@ func delete_save():
 	if FileAccess.file_exists(LOCAL_SAVE_PATH):
 		var error = DirAccess.remove_absolute(LOCAL_SAVE_PATH)
 		if error == OK:
-			print("🗑️ Salvataggio locale eliminato")
+			pass
 		else:
-			print("❌ Impossibile eliminare salvataggio locale")
+			pass
 	
 	# Elimina tutti i backup
 	var dir = DirAccess.open(BACKUP_PATH)
@@ -1832,12 +1842,11 @@ func delete_save():
 				if file_name.begins_with("backup_") and file_name.ends_with(".save"):
 					var remove_error = DirAccess.remove_absolute(BACKUP_PATH + file_name)
 					if remove_error == OK:
-						print("🗑️ Backup rimosso: " + file_name)
+						pass
 				file_name = dir.get_next()
 	
 	reset_to_default()
-	print("🗑️ Tutti i salvataggi eliminati, gioco resettato")
-
+	
 func export_save_data() -> String:
 	var data = collect_save_data()
 	return JSON.stringify(data, "\t", false)
@@ -1849,27 +1858,21 @@ func import_save_data(json_string: String) -> bool:
 		var data = json.data
 		if apply_save_data(data):
 			save_game()
-			print("✅ Salvataggio importato con successo")
 			return true
 		else:
-			print("❌ Errore nell'applicare i dati importati")
 			return false
 	else:
-		print("❌ JSON non valido: " + json.get_error_message())
 		return false
 
 # Funzione per test rapido del salvataggio
 func quick_save_test():
-	print("🧪 Test rapido salvataggio...")
 	var original_gold = GlobalStats.gold
 	GlobalStats.gold += 100
 	
 	if save_game():
-		print("✅ Salvataggio test completato")
 		# Ripristina valore
 		GlobalStats.gold = original_gold
 		save_game()
 		return true
 	else:
-		print("❌ Salvataggio test fallito")
 		return false

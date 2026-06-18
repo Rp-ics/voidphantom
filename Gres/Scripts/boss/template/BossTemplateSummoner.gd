@@ -37,14 +37,16 @@ class_name BossTemplate_Summoner
 @export var mission_key_hard: String = "boss_killer_3"
 @export var legendary_weapon_drop: String = "SUMMONER CORE"
 @export var death_scene_path: String = "res://Gres/Scenes/Story/boss_dead_scene.tscn"
+@export var can_change_scene: bool = false
+@export var rotation_speed_deg: float = 180.0
 
 # ============================================================
 # === HP ======================================================
 # ============================================================
 @export_group("Health")
-@export var hp_easy: int = 7000
-@export var hp_medium: int = 11000
-@export var hp_hard: int = 16000
+@export var hp_easy: int = 15500
+@export var hp_medium: int = 35000
+@export var hp_hard: int = 65000
 ## Il summoner si può resuscitare una volta per partita (fase 3)
 @export var use_resurrection: bool = false
 @export var resurrection_hp_percent: float = 0.3   # torna con il 30% degli HP
@@ -168,6 +170,7 @@ var is_invincible: bool = false
 var player: Node2D
 var rng := RandomNumberGenerator.new()
 var _max_hp: int = 0
+var _current_hp = _max_hp
 var _orbit_angle: float = 0.0
 var _orbit_center: Vector2 = Vector2.ZERO
 var _barrier_minions: Array = []
@@ -197,13 +200,16 @@ var _draw_ritual_charge: float = 0.0
 # === READY ===================================================
 # ============================================================
 func _ready() -> void:
+	if Global.wave >= 5 and Global.wave <= 10: Global.dificulty = "easy"
+	elif Global.wave >= 15 and Global.wave <= 20: Global.dificulty = "medium"
+	else: Global.dificulty = "hard"
+	
 	match Global.dificulty:
 		"easy":   _max_hp = hp_easy
 		"medium": _max_hp = hp_medium
 		"hard":   _max_hp = hp_hard
-
-	Global.set(hp_key + "_max", _max_hp)
-	Global.set(hp_key, _max_hp)
+	_current_hp = _max_hp
+	
 	player = get_tree().get_first_node_in_group("player")
 	_orbit_center = global_position
 	_draw_aura_color = aura_color_p1
@@ -226,6 +232,17 @@ func _ready() -> void:
 # === PROCESS =================================================
 # ============================================================
 func _physics_process(delta: float) -> void:
+	# Usa la variabile 'player' già esistente
+	if player:
+		var target_angle = (player.global_position - $Sprite2D.global_position).angle()
+		$Sprite2D.rotation = move_toward(
+			$Sprite2D.rotation,
+			target_angle,
+			deg_to_rad(rotation_speed_deg) * delta
+		)
+	
+	_check_barrier()
+	
 	_check_barrier()
 
 	match phase:
@@ -320,22 +337,8 @@ func _orbital_move(delta: float) -> void:
 # === TRANSIZIONI =============================================
 # ============================================================
 func _on_damage(amount: int) -> void:
-	if is_invincible: return
-	Global.set(hp_key, Global.get(hp_key) - amount)
+	return
 
-	var hp_now = Global.get(hp_key)
-	if hp_now <= 0:
-		# Resurrezione
-		if use_resurrection and not _resurrection_used and phase == 3:
-			_resurrection_used = true
-			Global.set(hp_key, int(_max_hp * resurrection_hp_percent))
-			_do_resurrection()
-			return
-		_die(); return
-
-	var ratio = float(hp_now) / float(_max_hp)
-	if use_phase_two and phase == 1 and ratio <= phase_two_threshold: _enter_phase(2)
-	elif use_phase_three and phase == 2 and ratio <= phase_three_threshold: _enter_phase(3)
 
 func _enter_phase(p: int) -> void:
 	phase = p
@@ -404,13 +407,17 @@ func _spawn_living_barrier() -> void:
 
 	for i in range(barrier_count):
 		var m = barrier_minion_scene.instantiate()
-		get_parent().add_child(m)
 		var angle = (TAU / barrier_count) * i
+		# Imposta la posizione prima di aggiungerlo alla scena
 		m.global_position = global_position + Vector2(cos(angle), sin(angle)) * barrier_radius
+		# Marca come barriera (se supportato)
+		if m.has_meta("is_barrier"):
+			m.set_meta("is_barrier", true)
+		# Aggiungi il minion alla lista (anche se non ancora nella scena)
 		_barrier_minions.append(m)
-		# Marca i minion come barriera (il minion deve gestirsi la posizione)
-		if m.has_meta("is_barrier"): m.set_meta("is_barrier", true)
-
+		# Aggiungi in modo differito per evitare il blocco
+		get_parent().add_child.call_deferred(m)
+	
 func _check_barrier() -> void:
 	if not use_living_barrier or not barrier_invincibility: return
 	_barrier_minions = _barrier_minions.filter(func(m): return is_instance_valid(m))
@@ -461,8 +468,8 @@ func _cast_soul_drain() -> void:
 		Global.hurt = true
 		# Heals il boss
 		var healed = int(dmg * soul_drain_heal_ratio)
-		var hp_now = Global.get(hp_key)
-		Global.set(hp_key, min(hp_now + healed, _max_hp))
+		var hp_now = _current_hp
+		_current_hp += healed
 		await get_tree().process_frame
 		elapsed += get_process_delta_time()
 
@@ -568,11 +575,42 @@ func _play_anim(name: String) -> void:
 # === HIT =====================================================
 # ============================================================
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	if area.is_in_group("p_bullet"):
-		var dmg := _get_bullet_damage(area)
-		_on_damage(int(dmg))
+	if not area.is_in_group("p_bullet"):
 		area.queue_free()
-		_spawn_damage_popup(int(dmg))
+		return
+	if is_invincible:
+		area.queue_free()
+		return
+	var dmg := _get_bullet_damage(area)
+	
+	# Applica danno
+	_current_hp -= dmg
+	print(_current_hp)
+	
+	# Effetti visivi
+	GlobalTweens.glitch_flash($Sprite2D)
+	area.queue_free()
+	_spawn_damage_popup(int(dmg))
+	
+	# Gestione morte
+	if _current_hp <= 0:
+		# Resurrezione (solo fase 3)
+		if use_resurrection and not _resurrection_used and phase == 3:
+			_resurrection_used = true
+			_current_hp = int(_max_hp * resurrection_hp_percent)  # CORRETTO: assegnazione, non sottrazione
+			_do_resurrection()
+			return
+		
+		_die()
+		return
+	
+	# Gestione fasi (solo se vivo)
+	var ratio := float(_current_hp) / float(_max_hp)
+	
+	if use_phase_two and phase == 1 and ratio <= phase_two_threshold:
+		_enter_phase(2)
+	elif use_phase_three and phase == 2 and ratio <= phase_three_threshold:
+		_enter_phase(3)
 
 func _get_bullet_damage(area: Area2D) -> float:
 	if area.has_meta("damage"): return area.get_meta("damage")
@@ -608,12 +646,22 @@ func _death_cleanup() -> void:
 	if randf() < (tablet_chance_easy if diff == "easy" else (tablet_chance_medium if diff == "medium" else tablet_chance_hard)):
 		GlobalStats.tablet += 1
 	if randf() < spin_gem_chance: Global.spin_gem += 1
-	Global.register_found_weapon(legendary_weapon_drop, "legendary")
-	get_tree().change_scene_to_file(death_scene_path)
-
+	if Global.dificulty == "hard":  Global.register_found_weapon(legendary_weapon_drop, "legendary")
+	if can_change_scene: get_tree().change_scene_to_file(death_scene_path)
+	else: $Sprite2D/loop.play("death")
+	
 func _drop_shard() -> void:
 	match ["ice","magma","light","void"].pick_random():
 		"ice":   GlobalStats.ice_shard += 1
 		"magma": GlobalStats.magma_shard += 1
 		"light": GlobalStats.light_shard += 1
 		"void":  GlobalStats.void_shard += 1
+
+
+func _on_shield_area_entered(area: Area2D) -> void:
+	if area.is_in_group("p_bullet"):
+		GlobalTweens.explode_and_free(area)
+
+
+func _on_loop_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "death": queue_free()

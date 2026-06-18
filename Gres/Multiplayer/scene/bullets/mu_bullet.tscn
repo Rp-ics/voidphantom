@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dt6p2e3raq7li"]
+
+[ext_resource type="Script" uid="uid://bikguegdi4xj3" path="res://Gres/Multiplayer/script/Players/mu_bullet.gd" id="1_27o4r"]
+[ext_resource type="Texture2D" uid="uid://bv28g8exiyl6t" path="res://Gres/Assets/Icons/bullet_skill_1.png" id="2_2hqqk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1lvf3"]
+
+[node name="mu_bullet" type="Area2D" unique_id=247471964 groups=["bullet_spawner", "p_bullet"]]
+collision_layer = 288
+script = ExtResource("1_27o4r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1921634789]
+texture = ExtResource("2_2hqqk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1407145851]
+shape = SubResource("CircleShape2D_1lvf3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

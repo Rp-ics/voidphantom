@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://baa1pfdwbdsfg"]
+
+[ext_resource type="Script" uid="uid://bwfuhapj3nx8u" path="res://Gres/Multiplayer/script/pve/PVEBoss.gd" id="1_cvyjo"]
+[ext_resource type="Texture2D" uid="uid://y5nsroam8fwj" path="res://Gres/Assets/Enemy/Boss/egg_3.png" id="2_5at65"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hnlyr"]
+height = 44.0
+
+[node name="PVEBoss" type="CharacterBody2D" unique_id=348469275]
+script = ExtResource("1_cvyjo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1550434381]
+texture = ExtResource("2_5at65")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=262707883]
+shape = SubResource("CapsuleShape2D_hnlyr")

@@ -5,10 +5,11 @@ var next = 0
 func _ready() -> void:
 	if not Global.in_tutorial:
 		call_deferred("change_scene_safe", "res://Gres/Scenes/UI/main_menu.tscn")
-
+	Global.in_tutorial = false
 	$Next.connect("pressed", _on_next_pressed)
 	$story.play("p1")
-
+	Global.save_game()
+	GlobalStats.save_data_stats()
 	
 func change_scene_safe(scene_path: String) -> void:
 	get_tree().change_scene_to_file(scene_path)
@@ -34,6 +35,6 @@ func _on_next_pressed() -> void:
 		$story.play("p3")
 	elif next == 2:
 		$story.play("p4")
-	
+
 func _on_skip_pressed() -> void:
-	get_tree().change_scene_to_file("res://Gres/Scenes/UI/tutorial.tscn")
+	call_deferred("change_scene_safe", "res://Gres/Scenes/UI/main_menu.tscn")

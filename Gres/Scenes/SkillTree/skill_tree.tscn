@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dxx3hsqx7q0bm"]
+[gd_scene format=3 uid="uid://dxx3hsqx7q0bm"]
 
 [ext_resource type="Texture2D" uid="uid://43s6ybnwt5sn" path="res://Gres/Assets/Effects/Star_02A.png" id="1_en8tx"]
 [ext_resource type="Script" uid="uid://biix6n4cux0es" path="res://Gres/Scripts/skills/skill_tree.gd" id="1_nanvd"]
@@ -57,7 +57,7 @@
 [ext_resource type="AudioStream" uid="uid://dc0mwjbmt0iqh" path="res://Gres/Music/BGM/bg28.ogg" id="53_a6ogk"]
 [ext_resource type="AudioStream" uid="uid://b25l86087pan" path="res://Gres/Music/BGM/bg29.ogg" id="54_alxr2"]
 [ext_resource type="AudioStream" uid="uid://duggkgjmp4aaq" path="res://Gres/Music/BGM/bg30.ogg" id="55_hhjip"]
-[ext_resource type="Texture2D" uid="uid://bft7wnryhrob4" path="res://Gres/Assets/Background/bgstar_9.png" id="56_xce22"]
+[ext_resource type="Texture2D" uid="uid://csfrnfvngqkuh" path="res://Gres/Assets/BGame/galaxy8.png" id="56_xce22"]
 
 [sub_resource type="Gradient" id="Gradient_werl2"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
@@ -79,16 +79,16 @@ shader_parameter/core_intensity = 2.0
 shader_parameter/hdr = true
 shader_parameter/seed = 5.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1ab0"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_to2pg"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ckmy2"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nanvd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kf4gr"]
 texture = ExtResource("8_km7p6")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nanvd"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ckmy2"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_to2pg"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1ab0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vt6we"]
 blend_mode = 1
@@ -96,19 +96,19 @@ blend_mode = 1
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u5r0s"]
 blend_mode = 1
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_egvgk"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_llxqr"]
 texture = ExtResource("13_vd41k")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sl8dk"]
-texture = ExtResource("16_x8unj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tomss"]
-texture = ExtResource("15_g1bdo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l060j"]
 texture = ExtResource("14_p066g")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_llxqr"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tomss"]
+texture = ExtResource("15_g1bdo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sl8dk"]
+texture = ExtResource("16_x8unj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_egvgk"]
 texture = ExtResource("13_vd41k")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi8n6"]
@@ -120,20 +120,20 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pm3dw"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0buit"]
+texture = ExtResource("18_wag1v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rej5d"]
+texture = ExtResource("19_wecft")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_usw3e"]
 texture = ExtResource("20_hkm7u")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_forb2"]
 texture = ExtResource("21_cos1o")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_usw3e"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pm3dw"]
 texture = ExtResource("20_hkm7u")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rej5d"]
-texture = ExtResource("19_wecft")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0buit"]
-texture = ExtResource("18_wag1v")
 
 [sub_resource type="Animation" id="Animation_htpd8"]
 resource_name = "close"
@@ -197,42 +197,42 @@ _data = {
 &"open": SubResource("Animation_eelop")
 }
 
-[node name="SkillTree" type="Node2D" node_paths=PackedStringArray("markers")]
+[node name="SkillTree" type="Node2D" unique_id=1561658194 node_paths=PackedStringArray("markers")]
 script = ExtResource("1_nanvd")
 markers = [NodePath("Pos_1"), NodePath("Pos_2"), NodePath("Pos_3"), NodePath("Pos_4"), NodePath("Pos_5")]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1702133191]
 offset_left = -2032.0
 offset_top = -1695.0
 offset_right = 8323.1
 offset_bottom = 6384.0
 color = Color(0, 0, 0, 1)
 
-[node name="Galaxy" type="Parallax2D" parent="."]
+[node name="Galaxy" type="Parallax2D" parent="." unique_id=806442982]
 repeat_size = Vector2(2000, 1200)
 
-[node name="Sprite2D" type="Sprite2D" parent="Galaxy"]
+[node name="Sprite2D" type="Sprite2D" parent="Galaxy" unique_id=1905505101]
 position = Vector2(168, 32)
 texture = ExtResource("1_wngtg")
 
-[node name="Stars" type="Parallax2D" parent="."]
+[node name="Stars" type="Parallax2D" parent="." unique_id=1860025026]
 repeat_size = Vector2(200, 400)
 
-[node name="Sprite2D" type="Sprite2D" parent="Stars"]
+[node name="Sprite2D" type="Sprite2D" parent="Stars" unique_id=539803039]
 texture = ExtResource("2_to2pg")
 
-[node name="ParallaxBackground" type="Node2D" parent="."]
+[node name="ParallaxBackground" type="Node2D" parent="." unique_id=1589237099]
 
-[node name="Constellations" type="Node2D" parent="."]
+[node name="Constellations" type="Node2D" parent="." unique_id=113763131]
 
-[node name="Aries" type="Node2D" parent="Constellations"]
+[node name="Aries" type="Node2D" parent="Constellations" unique_id=1607884075]
 script = ExtResource("4_p066g")
 
-[node name="star_min_1" type="Sprite2D" parent="Constellations/Aries"]
+[node name="star_min_1" type="Sprite2D" parent="Constellations/Aries" unique_id=1302219685]
 position = Vector2(4, 6)
 texture = ExtResource("1_en8tx")
 
-[node name="PB1" type="TextureProgressBar" parent="Constellations/Aries"]
+[node name="PB1" type="TextureProgressBar" parent="Constellations/Aries" unique_id=1215832726]
 offset_left = -2.20369
 offset_top = 3.20638
 offset_right = 271.499
@@ -243,7 +243,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB2" type="TextureProgressBar" parent="Constellations/Aries"]
+[node name="PB2" type="TextureProgressBar" parent="Constellations/Aries" unique_id=1223315274]
 offset_left = 245.0
 offset_top = 98.0
 offset_right = 460.013
@@ -254,7 +254,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB3" type="TextureProgressBar" parent="Constellations/Aries"]
+[node name="PB3" type="TextureProgressBar" parent="Constellations/Aries" unique_id=1278360581]
 offset_left = 457.0
 offset_top = 67.0
 offset_right = 525.67
@@ -265,7 +265,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB4" type="TextureProgressBar" parent="Constellations/Aries"]
+[node name="PB4" type="TextureProgressBar" parent="Constellations/Aries" unique_id=76139369]
 visible = false
 offset_left = 344.759
 offset_top = 171.0
@@ -277,79 +277,79 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="star_max_2" type="Sprite2D" parent="Constellations/Aries"]
+[node name="star_max_2" type="Sprite2D" parent="Constellations/Aries" unique_id=1847161532]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(250.5, 89.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_en8tx")
 
-[node name="glow_1" type="Sprite2D" parent="Constellations/Aries/star_max_2"]
+[node name="glow_1" type="Sprite2D" parent="Constellations/Aries/star_max_2" unique_id=307934339]
 material = SubResource("ShaderMaterial_to2pg")
 scale = Vector2(1.88, 1.88)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_3" type="Sprite2D" parent="Constellations/Aries"]
+[node name="star_min_3" type="Sprite2D" parent="Constellations/Aries" unique_id=1308233504]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(453.759, 75)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_4" type="Sprite2D" parent="Constellations/Aries"]
+[node name="star_min_4" type="Sprite2D" parent="Constellations/Aries" unique_id=1071565152]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(521.759, 11)
 texture = ExtResource("1_en8tx")
 
-[node name="A1" type="Button" parent="Constellations/Aries"]
+[node name="A1" type="Button" parent="Constellations/Aries" unique_id=376351809]
 offset_left = -36.0
 offset_top = -35.0
 offset_right = 43.5918
 offset_bottom = 43.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A2" type="Button" parent="Constellations/Aries"]
+[node name="A2" type="Button" parent="Constellations/Aries" unique_id=607910863]
 offset_left = 201.0
 offset_top = 40.0
 offset_right = 301.0
 offset_bottom = 138.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 disabled = true
 
-[node name="A3" type="Button" parent="Constellations/Aries"]
+[node name="A3" type="Button" parent="Constellations/Aries" unique_id=664976996]
 offset_left = 421.0
 offset_top = 42.0
 offset_right = 486.0
 offset_bottom = 107.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 disabled = true
 
-[node name="A4" type="Button" parent="Constellations/Aries"]
+[node name="A4" type="Button" parent="Constellations/Aries" unique_id=1508910968]
 offset_left = 489.0
 offset_top = -22.0
 offset_right = 554.0
 offset_bottom = 43.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 disabled = true
 
-[node name="Taurus" type="Node2D" parent="Constellations"]
+[node name="Taurus" type="Node2D" parent="Constellations" unique_id=456902167]
 position = Vector2(989, 52)
 script = ExtResource("10_wecft")
 
-[node name="PB1" type="TextureProgressBar" parent="Constellations/Taurus"]
+[node name="PB1" type="TextureProgressBar" parent="Constellations/Taurus" unique_id=646806144]
 offset_left = 1822.5
 offset_top = 2036.5
 offset_right = 1890.47
@@ -360,7 +360,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB2" type="TextureProgressBar" parent="Constellations/Taurus"]
+[node name="PB2" type="TextureProgressBar" parent="Constellations/Taurus" unique_id=851235894]
 offset_left = 1556.76
 offset_top = 1887.86
 offset_right = 1848.31
@@ -371,7 +371,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB3" type="TextureProgressBar" parent="Constellations/Taurus"]
+[node name="PB3" type="TextureProgressBar" parent="Constellations/Taurus" unique_id=1707007846]
 offset_left = 1428.5
 offset_top = 1788.5
 offset_right = 1575.35
@@ -382,7 +382,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB4" type="TextureProgressBar" parent="Constellations/Taurus"]
+[node name="PB4" type="TextureProgressBar" parent="Constellations/Taurus" unique_id=959393600]
 offset_left = 1247.24
 offset_top = 1780.95
 offset_right = 1413.44
@@ -393,7 +393,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB5" type="TextureProgressBar" parent="Constellations/Taurus"]
+[node name="PB5" type="TextureProgressBar" parent="Constellations/Taurus" unique_id=1429912697]
 offset_left = 1120.78
 offset_top = 1883.39
 offset_right = 1279.14
@@ -404,7 +404,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB6" type="TextureProgressBar" parent="Constellations/Taurus"]
+[node name="PB6" type="TextureProgressBar" parent="Constellations/Taurus" unique_id=971539425]
 offset_left = 927.922
 offset_top = 1876.44
 offset_right = 1125.41
@@ -415,7 +415,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB7" type="TextureProgressBar" parent="Constellations/Taurus"]
+[node name="PB7" type="TextureProgressBar" parent="Constellations/Taurus" unique_id=1834787767]
 offset_left = 1275.0
 offset_top = 1553.0
 offset_right = 1546.78
@@ -426,7 +426,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB8" type="TextureProgressBar" parent="Constellations/Taurus"]
+[node name="PB8" type="TextureProgressBar" parent="Constellations/Taurus" unique_id=2064956698]
 offset_left = 1190.5
 offset_top = 1483.5
 offset_right = 1284.81
@@ -437,7 +437,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB9" type="TextureProgressBar" parent="Constellations/Taurus"]
+[node name="PB9" type="TextureProgressBar" parent="Constellations/Taurus" unique_id=1072063749]
 offset_left = 943.5
 offset_top = 1352.5
 offset_right = 1217.2
@@ -448,192 +448,192 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="star_min_1" type="Sprite2D" parent="Constellations/Taurus"]
+[node name="star_min_1" type="Sprite2D" parent="Constellations/Taurus" unique_id=1178335683]
 position = Vector2(1856.5, 2101.5)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_2" type="Sprite2D" parent="Constellations/Taurus"]
+[node name="star_min_2" type="Sprite2D" parent="Constellations/Taurus" unique_id=1172239209]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(1805.5, 2025.5)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_3" type="Sprite2D" parent="Constellations/Taurus"]
+[node name="star_min_3" type="Sprite2D" parent="Constellations/Taurus" unique_id=1443823751]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(1417.5, 1777.5)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_4" type="Sprite2D" parent="Constellations/Taurus"]
+[node name="star_min_4" type="Sprite2D" parent="Constellations/Taurus" unique_id=1505873695]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(1249.5, 1781.5)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_5" type="Sprite2D" parent="Constellations/Taurus"]
+[node name="star_min_5" type="Sprite2D" parent="Constellations/Taurus" unique_id=564962626]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(1131.5, 1882.5)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_6" type="Sprite2D" parent="Constellations/Taurus"]
+[node name="star_min_6" type="Sprite2D" parent="Constellations/Taurus" unique_id=1886032899]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(1264.5, 1551.5)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_7" type="Sprite2D" parent="Constellations/Taurus"]
+[node name="star_min_7" type="Sprite2D" parent="Constellations/Taurus" unique_id=1892374926]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(1178.5, 1482.5)
 texture = ExtResource("1_en8tx")
 
-[node name="star_max_3" type="Sprite2D" parent="Constellations/Taurus"]
+[node name="star_max_3" type="Sprite2D" parent="Constellations/Taurus" unique_id=1828729778]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(946.5, 1352.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_en8tx")
 metadata/_edit_group_ = true
 
-[node name="glow_1" type="Sprite2D" parent="Constellations/Taurus/star_max_3"]
+[node name="glow_1" type="Sprite2D" parent="Constellations/Taurus/star_max_3" unique_id=788390954]
 material = SubResource("ShaderMaterial_to2pg")
 scale = Vector2(1.88, 1.88)
 texture = ExtResource("1_en8tx")
 
-[node name="star_max_1" type="Sprite2D" parent="Constellations/Taurus"]
+[node name="star_max_1" type="Sprite2D" parent="Constellations/Taurus" unique_id=688992310]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(1548.5, 1887.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_en8tx")
 metadata/_edit_group_ = true
 
-[node name="glow_1" type="Sprite2D" parent="Constellations/Taurus/star_max_1"]
+[node name="glow_1" type="Sprite2D" parent="Constellations/Taurus/star_max_1" unique_id=2075272759]
 material = SubResource("ShaderMaterial_to2pg")
 scale = Vector2(1.88, 1.88)
 texture = ExtResource("1_en8tx")
 
-[node name="star_max_2" type="Sprite2D" parent="Constellations/Taurus"]
+[node name="star_max_2" type="Sprite2D" parent="Constellations/Taurus" unique_id=1480522708]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(926.5, 1869.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_en8tx")
 metadata/_edit_group_ = true
 
-[node name="glow_1" type="Sprite2D" parent="Constellations/Taurus/star_max_2"]
+[node name="glow_1" type="Sprite2D" parent="Constellations/Taurus/star_max_2" unique_id=307111356]
 material = SubResource("ShaderMaterial_to2pg")
 scale = Vector2(1.88, 1.88)
 texture = ExtResource("1_en8tx")
 
-[node name="A1" type="Button" parent="Constellations/Taurus"]
+[node name="A1" type="Button" parent="Constellations/Taurus" unique_id=522415300]
 offset_left = 1832.0
 offset_top = 2077.0
 offset_right = 1880.0
 offset_bottom = 2125.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A2" type="Button" parent="Constellations/Taurus"]
+[node name="A2" type="Button" parent="Constellations/Taurus" unique_id=134211918]
 offset_left = 1773.0
 offset_top = 1992.0
 offset_right = 1837.0
 offset_bottom = 2056.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A3" type="Button" parent="Constellations/Taurus"]
+[node name="A3" type="Button" parent="Constellations/Taurus" unique_id=545357907]
 offset_left = 1498.0
 offset_top = 1835.0
 offset_right = 1598.0
 offset_bottom = 1935.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A4" type="Button" parent="Constellations/Taurus"]
+[node name="A4" type="Button" parent="Constellations/Taurus" unique_id=790809347]
 offset_left = 1386.0
 offset_top = 1744.0
 offset_right = 1450.0
 offset_bottom = 1808.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A5" type="Button" parent="Constellations/Taurus"]
+[node name="A5" type="Button" parent="Constellations/Taurus" unique_id=1946662812]
 offset_left = 1217.0
 offset_top = 1749.0
 offset_right = 1281.0
 offset_bottom = 1813.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A6" type="Button" parent="Constellations/Taurus"]
+[node name="A6" type="Button" parent="Constellations/Taurus" unique_id=943559376]
 offset_left = 1099.0
 offset_top = 1850.0
 offset_right = 1163.0
 offset_bottom = 1914.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A7" type="Button" parent="Constellations/Taurus"]
+[node name="A7" type="Button" parent="Constellations/Taurus" unique_id=1966621145]
 offset_left = 876.0
 offset_top = 1817.0
 offset_right = 976.0
 offset_bottom = 1917.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A8" type="Button" parent="Constellations/Taurus"]
+[node name="A8" type="Button" parent="Constellations/Taurus" unique_id=116631669]
 offset_left = 1233.0
 offset_top = 1518.0
 offset_right = 1297.0
 offset_bottom = 1582.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A9" type="Button" parent="Constellations/Taurus"]
+[node name="A9" type="Button" parent="Constellations/Taurus" unique_id=1099202488]
 offset_left = 1146.0
 offset_top = 1451.0
 offset_right = 1210.0
 offset_bottom = 1515.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A10" type="Button" parent="Constellations/Taurus"]
+[node name="A10" type="Button" parent="Constellations/Taurus" unique_id=889351353]
 offset_left = 895.0
 offset_top = 1302.0
 offset_right = 995.0
 offset_bottom = 1402.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="Gemini" type="Node2D" parent="Constellations"]
+[node name="Gemini" type="Node2D" parent="Constellations" unique_id=387572106]
 position = Vector2(989, 52)
 script = ExtResource("11_hkm7u")
 
-[node name="PB1" type="TextureProgressBar" parent="Constellations/Gemini"]
+[node name="PB1" type="TextureProgressBar" parent="Constellations/Gemini" unique_id=541842321]
 offset_left = 2556.0
 offset_top = 409.0
 offset_right = 2641.8
@@ -644,7 +644,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB2" type="TextureProgressBar" parent="Constellations/Gemini"]
+[node name="PB2" type="TextureProgressBar" parent="Constellations/Gemini" unique_id=715196114]
 offset_left = 2449.78
 offset_top = 417.599
 offset_right = 2568.97
@@ -655,7 +655,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB3" type="TextureProgressBar" parent="Constellations/Gemini"]
+[node name="PB3" type="TextureProgressBar" parent="Constellations/Gemini" unique_id=2114815805]
 offset_left = 2367.0
 offset_top = 332.0
 offset_right = 2538.45
@@ -666,7 +666,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB4" type="TextureProgressBar" parent="Constellations/Gemini"]
+[node name="PB4" type="TextureProgressBar" parent="Constellations/Gemini" unique_id=1102381551]
 offset_left = 2191.0
 offset_top = 369.0
 offset_right = 2290.29
@@ -677,7 +677,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB5" type="TextureProgressBar" parent="Constellations/Gemini"]
+[node name="PB5" type="TextureProgressBar" parent="Constellations/Gemini" unique_id=1604006100]
 offset_left = 2457.0
 offset_top = 429.0
 offset_right = 2525.22
@@ -688,7 +688,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB6" type="TextureProgressBar" parent="Constellations/Gemini"]
+[node name="PB6" type="TextureProgressBar" parent="Constellations/Gemini" unique_id=1867184548]
 offset_left = 2471.0
 offset_top = 501.0
 offset_right = 2596.55
@@ -699,7 +699,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB7" type="TextureProgressBar" parent="Constellations/Gemini"]
+[node name="PB7" type="TextureProgressBar" parent="Constellations/Gemini" unique_id=21829227]
 offset_left = 2453.0
 offset_top = 648.0
 offset_right = 2578.55
@@ -710,7 +710,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB8" type="TextureProgressBar" parent="Constellations/Gemini"]
+[node name="PB8" type="TextureProgressBar" parent="Constellations/Gemini" unique_id=247244877]
 offset_left = 2457.0
 offset_top = 644.0
 offset_right = 2748.14
@@ -721,7 +721,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB9" type="TextureProgressBar" parent="Constellations/Gemini"]
+[node name="PB9" type="TextureProgressBar" parent="Constellations/Gemini" unique_id=110256013]
 offset_left = 2046.79
 offset_top = 592.844
 offset_right = 2165.87
@@ -732,186 +732,186 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="star_min_1" type="Sprite2D" parent="Constellations/Gemini"]
+[node name="star_min_1" type="Sprite2D" parent="Constellations/Gemini" unique_id=1173331865]
 position = Vector2(2557, 402)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_2" type="Sprite2D" parent="Constellations/Gemini"]
+[node name="star_min_2" type="Sprite2D" parent="Constellations/Gemini" unique_id=86797877]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(2452, 416)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_3" type="Sprite2D" parent="Constellations/Gemini"]
+[node name="star_min_3" type="Sprite2D" parent="Constellations/Gemini" unique_id=179823604]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(2358, 328)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_4" type="Sprite2D" parent="Constellations/Gemini"]
+[node name="star_min_4" type="Sprite2D" parent="Constellations/Gemini" unique_id=1042559649]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(2190, 361)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_5" type="Sprite2D" parent="Constellations/Gemini"]
+[node name="star_min_5" type="Sprite2D" parent="Constellations/Gemini" unique_id=787881502]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(2467, 501)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_7" type="Sprite2D" parent="Constellations/Gemini"]
+[node name="star_min_7" type="Sprite2D" parent="Constellations/Gemini" unique_id=447419726]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(2544, 746)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_8" type="Sprite2D" parent="Constellations/Gemini"]
+[node name="star_min_8" type="Sprite2D" parent="Constellations/Gemini" unique_id=1814116602]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(2173, 637)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_9" type="Sprite2D" parent="Constellations/Gemini"]
+[node name="star_min_9" type="Sprite2D" parent="Constellations/Gemini" unique_id=25743946]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(2043, 592)
 texture = ExtResource("1_en8tx")
 
-[node name="star_max_1" type="Sprite2D" parent="Constellations/Gemini"]
+[node name="star_max_1" type="Sprite2D" parent="Constellations/Gemini" unique_id=243009295]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(2196, 492)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_en8tx")
 metadata/_edit_group_ = true
 
-[node name="glow_1" type="Sprite2D" parent="Constellations/Gemini/star_max_1"]
+[node name="glow_1" type="Sprite2D" parent="Constellations/Gemini/star_max_1" unique_id=1792688634]
 material = SubResource("ShaderMaterial_to2pg")
 scale = Vector2(1.88, 1.88)
 texture = ExtResource("1_en8tx")
 
-[node name="star_max_2" type="Sprite2D" parent="Constellations/Gemini"]
+[node name="star_max_2" type="Sprite2D" parent="Constellations/Gemini" unique_id=515684317]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(2441, 629)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_en8tx")
 metadata/_edit_group_ = true
 
-[node name="glow_1" type="Sprite2D" parent="Constellations/Gemini/star_max_2"]
+[node name="glow_1" type="Sprite2D" parent="Constellations/Gemini/star_max_2" unique_id=1206904985]
 material = SubResource("ShaderMaterial_to2pg")
 scale = Vector2(1.88, 1.88)
 texture = ExtResource("1_en8tx")
 
-[node name="A1" type="Button" parent="Constellations/Gemini"]
+[node name="A1" type="Button" parent="Constellations/Gemini" unique_id=829003956]
 offset_left = 2533.0
 offset_top = 377.0
 offset_right = 2581.0
 offset_bottom = 425.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A2" type="Button" parent="Constellations/Gemini"]
+[node name="A2" type="Button" parent="Constellations/Gemini" unique_id=4027114]
 offset_left = 2417.0
 offset_top = 380.0
 offset_right = 2487.0
 offset_bottom = 450.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A3" type="Button" parent="Constellations/Gemini"]
+[node name="A3" type="Button" parent="Constellations/Gemini" unique_id=2035402420]
 offset_left = 2324.0
 offset_top = 293.0
 offset_right = 2394.0
 offset_bottom = 363.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A4" type="Button" parent="Constellations/Gemini"]
+[node name="A4" type="Button" parent="Constellations/Gemini" unique_id=830349181]
 offset_left = 2158.0
 offset_top = 329.0
 offset_right = 2222.0
 offset_bottom = 393.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A5" type="Button" parent="Constellations/Gemini"]
+[node name="A5" type="Button" parent="Constellations/Gemini" unique_id=1079226821]
 offset_left = 2145.0
 offset_top = 441.0
 offset_right = 2245.0
 offset_bottom = 541.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A6" type="Button" parent="Constellations/Gemini"]
+[node name="A6" type="Button" parent="Constellations/Gemini" unique_id=997324410]
 offset_left = 2443.0
 offset_top = 476.0
 offset_right = 2491.0
 offset_bottom = 524.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A7" type="Button" parent="Constellations/Gemini"]
+[node name="A7" type="Button" parent="Constellations/Gemini" unique_id=215616966]
 offset_left = 2391.0
 offset_top = 577.0
 offset_right = 2491.0
 offset_bottom = 677.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A8" type="Button" parent="Constellations/Gemini"]
+[node name="A8" type="Button" parent="Constellations/Gemini" unique_id=2059552510]
 offset_left = 2509.0
 offset_top = 710.0
 offset_right = 2579.0
 offset_bottom = 780.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A9" type="Button" parent="Constellations/Gemini"]
+[node name="A9" type="Button" parent="Constellations/Gemini" unique_id=166178102]
 offset_left = 2138.0
 offset_top = 600.0
 offset_right = 2208.0
 offset_bottom = 670.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A10" type="Button" parent="Constellations/Gemini"]
+[node name="A10" type="Button" parent="Constellations/Gemini" unique_id=1292271067]
 offset_left = 2008.0
 offset_top = 556.0
 offset_right = 2078.0
 offset_bottom = 626.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="Cancer" type="Node2D" parent="Constellations"]
+[node name="Cancer" type="Node2D" parent="Constellations" unique_id=1088545526]
 position = Vector2(989, 52)
 script = ExtResource("12_u5r0s")
 
-[node name="PB1" type="TextureProgressBar" parent="Constellations/Cancer"]
+[node name="PB1" type="TextureProgressBar" parent="Constellations/Cancer" unique_id=743911996]
 offset_left = 4677.0
 offset_top = -729.0
 offset_right = 4838.26
@@ -922,7 +922,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB2" type="TextureProgressBar" parent="Constellations/Cancer"]
+[node name="PB2" type="TextureProgressBar" parent="Constellations/Cancer" unique_id=5792628]
 offset_left = 4665.0
 offset_top = -561.0
 offset_right = 4720.55
@@ -933,7 +933,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB3" type="TextureProgressBar" parent="Constellations/Cancer"]
+[node name="PB3" type="TextureProgressBar" parent="Constellations/Cancer" unique_id=1280404595]
 offset_left = 4655.0
 offset_top = -483.0
 offset_right = 4916.98
@@ -944,7 +944,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB4" type="TextureProgressBar" parent="Constellations/Cancer"]
+[node name="PB4" type="TextureProgressBar" parent="Constellations/Cancer" unique_id=1919486950]
 offset_left = 4645.0
 offset_top = -487.0
 offset_right = 4798.78
@@ -955,100 +955,100 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="star_min_1" type="Sprite2D" parent="Constellations/Cancer"]
+[node name="star_min_1" type="Sprite2D" parent="Constellations/Cancer" unique_id=1098792499]
 position = Vector2(4673, -725)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_2" type="Sprite2D" parent="Constellations/Cancer"]
+[node name="star_min_2" type="Sprite2D" parent="Constellations/Cancer" unique_id=1243223558]
 modulate = Color(1, 1, 1, 0.301961)
 position = Vector2(4663, -568)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_3" type="Sprite2D" parent="Constellations/Cancer"]
+[node name="star_min_3" type="Sprite2D" parent="Constellations/Cancer" unique_id=1311006421]
 modulate = Color(1, 1, 1, 0.301961)
 position = Vector2(4897, -521)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_4" type="Sprite2D" parent="Constellations/Cancer"]
+[node name="star_min_4" type="Sprite2D" parent="Constellations/Cancer" unique_id=445944707]
 modulate = Color(1, 1, 1, 0.301961)
 position = Vector2(4548, -618)
 texture = ExtResource("1_en8tx")
 
-[node name="star_max_1" type="Sprite2D" parent="Constellations/Cancer"]
+[node name="star_max_1" type="Sprite2D" parent="Constellations/Cancer" unique_id=987038911]
 modulate = Color(1, 1, 1, 0.301961)
 position = Vector2(4648, -489)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_en8tx")
 metadata/_edit_group_ = true
 
-[node name="glow_1" type="Sprite2D" parent="Constellations/Cancer/star_max_1"]
+[node name="glow_1" type="Sprite2D" parent="Constellations/Cancer/star_max_1" unique_id=1009949513]
 material = SubResource("ShaderMaterial_to2pg")
 scale = Vector2(1.88, 1.88)
 texture = ExtResource("1_en8tx")
 
-[node name="A1" type="Button" parent="Constellations/Cancer"]
+[node name="A1" type="Button" parent="Constellations/Cancer" unique_id=1736040104]
 offset_left = 4641.0
 offset_top = -758.0
 offset_right = 4705.0
 offset_bottom = -694.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A2" type="Button" parent="Constellations/Cancer"]
+[node name="A2" type="Button" parent="Constellations/Cancer" unique_id=1005187112]
 offset_left = 4639.0
 offset_top = -593.0
 offset_right = 4687.0
 offset_bottom = -545.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A3" type="Button" parent="Constellations/Cancer"]
+[node name="A3" type="Button" parent="Constellations/Cancer" unique_id=1478415642]
 offset_left = 4598.0
 offset_top = -540.0
 offset_right = 4698.0
 offset_bottom = -440.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A4" type="Button" parent="Constellations/Cancer"]
+[node name="A4" type="Button" parent="Constellations/Cancer" unique_id=930225358]
 offset_left = 4873.0
 offset_top = -546.0
 offset_right = 4921.0
 offset_bottom = -498.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A5" type="Button" parent="Constellations/Cancer"]
+[node name="A5" type="Button" parent="Constellations/Cancer" unique_id=1175695869]
 offset_left = 4513.0
 offset_top = -654.0
 offset_right = 4583.0
 offset_bottom = -584.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 disabled = true
 
-[node name="Leo" type="Node2D" parent="Constellations"]
+[node name="Leo" type="Node2D" parent="Constellations" unique_id=628504312]
 position = Vector2(989, 52)
 script = ExtResource("13_tkwdi")
 
-[node name="PB1" type="TextureProgressBar" parent="Constellations/Leo"]
+[node name="PB1" type="TextureProgressBar" parent="Constellations/Leo" unique_id=355185845]
 offset_left = 4098.0
 offset_top = 505.0
 offset_right = 4298.0
@@ -1059,7 +1059,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB2" type="TextureProgressBar" parent="Constellations/Leo"]
+[node name="PB2" type="TextureProgressBar" parent="Constellations/Leo" unique_id=69473196]
 offset_left = 4291.0
 offset_top = 460.0
 offset_right = 4497.0
@@ -1070,7 +1070,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB3" type="TextureProgressBar" parent="Constellations/Leo"]
+[node name="PB3" type="TextureProgressBar" parent="Constellations/Leo" unique_id=1510389159]
 offset_left = 4274.0
 offset_top = 683.0
 offset_right = 4535.98
@@ -1081,7 +1081,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="PB4" type="TextureProgressBar" parent="Constellations/Leo"]
+[node name="PB4" type="TextureProgressBar" parent="Constellations/Leo" unique_id=1016222443]
 offset_left = 4271.0
 offset_top = 677.0
 offset_right = 4424.78
@@ -1092,100 +1092,100 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_to2pg")
 texture_progress = ExtResource("5_nanvd")
 
-[node name="star_min_1" type="Sprite2D" parent="Constellations/Leo"]
+[node name="star_min_1" type="Sprite2D" parent="Constellations/Leo" unique_id=329343611]
 position = Vector2(4105, 507)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_2" type="Sprite2D" parent="Constellations/Leo"]
+[node name="star_min_2" type="Sprite2D" parent="Constellations/Leo" unique_id=584322837]
 modulate = Color(1, 1, 1, 0.301961)
 position = Vector2(4286, 475)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_3" type="Sprite2D" parent="Constellations/Leo"]
+[node name="star_min_3" type="Sprite2D" parent="Constellations/Leo" unique_id=1806707292]
 modulate = Color(1, 1, 1, 0.301961)
 position = Vector2(4407, 470)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_en8tx")
 
-[node name="star_min_4" type="Sprite2D" parent="Constellations/Leo"]
+[node name="star_min_4" type="Sprite2D" parent="Constellations/Leo" unique_id=724105797]
 modulate = Color(1, 1, 1, 0.301961)
 position = Vector2(4139, 590)
 texture = ExtResource("1_en8tx")
 
-[node name="star_max_1" type="Sprite2D" parent="Constellations/Leo"]
+[node name="star_max_1" type="Sprite2D" parent="Constellations/Leo" unique_id=1048911024]
 modulate = Color(1, 1, 1, 0.301961)
 position = Vector2(4277, 677)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_en8tx")
 metadata/_edit_group_ = true
 
-[node name="glow_1" type="Sprite2D" parent="Constellations/Leo/star_max_1"]
+[node name="glow_1" type="Sprite2D" parent="Constellations/Leo/star_max_1" unique_id=1339430369]
 material = SubResource("ShaderMaterial_to2pg")
 scale = Vector2(1.88, 1.88)
 texture = ExtResource("1_en8tx")
 
-[node name="A1" type="Button" parent="Constellations/Leo"]
+[node name="A1" type="Button" parent="Constellations/Leo" unique_id=756934790]
 offset_left = 4073.0
 offset_top = 474.0
 offset_right = 4137.0
 offset_bottom = 538.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A2" type="Button" parent="Constellations/Leo"]
+[node name="A2" type="Button" parent="Constellations/Leo" unique_id=481934416]
 offset_left = 4262.0
 offset_top = 450.0
 offset_right = 4310.0
 offset_bottom = 498.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A3" type="Button" parent="Constellations/Leo"]
+[node name="A3" type="Button" parent="Constellations/Leo" unique_id=265069152]
 offset_left = 4227.0
 offset_top = 626.0
 offset_right = 4327.0
 offset_bottom = 726.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A4" type="Button" parent="Constellations/Leo"]
+[node name="A4" type="Button" parent="Constellations/Leo" unique_id=908419657]
 offset_left = 4383.0
 offset_top = 445.0
 offset_right = 4431.0
 offset_bottom = 493.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 
-[node name="A5" type="Button" parent="Constellations/Leo"]
+[node name="A5" type="Button" parent="Constellations/Leo" unique_id=1761415982]
 offset_left = 4104.0
 offset_top = 554.0
 offset_right = 4174.0
 offset_bottom = 624.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_to2pg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nanvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf4gr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckmy2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1ab0")
 disabled = true
 
-[node name="Buttons" type="Node2D" parent="."]
+[node name="Buttons" type="Node2D" parent="." unique_id=575317943]
 position = Vector2(213, 132)
 scale = Vector2(2, 2)
 
-[node name="Next" type="TextureButton" parent="Buttons"]
+[node name="Next" type="TextureButton" parent="Buttons" unique_id=23578739]
 modulate = Color(1, 1, 1, 0.32)
 material = SubResource("CanvasItemMaterial_vt6we")
 offset_left = 220.0
@@ -1201,7 +1201,7 @@ texture_focused = ExtResource("10_qk8qp")
 stretch_mode = 5
 script = ExtResource("11_opos2")
 
-[node name="Back" type="TextureButton" parent="Buttons"]
+[node name="Back" type="TextureButton" parent="Buttons" unique_id=2038248797]
 modulate = Color(1, 1, 1, 0.32)
 material = SubResource("CanvasItemMaterial_vt6we")
 offset_left = -289.5
@@ -1218,7 +1218,7 @@ stretch_mode = 5
 flip_h = true
 script = ExtResource("11_opos2")
 
-[node name="close" type="Button" parent="Buttons"]
+[node name="close" type="Button" parent="Buttons" unique_id=1506110762]
 modulate = Color(1, 1, 1, 0.204)
 material = SubResource("CanvasItemMaterial_u5r0s")
 offset_left = -307.5
@@ -1228,14 +1228,14 @@ offset_bottom = -108.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(60, 60)
 theme_override_font_sizes/font_size = 100
-theme_override_styles/focus = SubResource("StyleBoxTexture_egvgk")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_sl8dk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_tomss")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_l060j")
 theme_override_styles/normal = SubResource("StyleBoxTexture_llxqr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l060j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tomss")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_sl8dk")
+theme_override_styles/focus = SubResource("StyleBoxTexture_egvgk")
 script = ExtResource("22_5belc")
 
-[node name="InfoSkills" type="RichTextLabel" parent="Buttons"]
+[node name="InfoSkills" type="RichTextLabel" parent="Buttons" unique_id=12641724]
 visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = -281.5
@@ -1255,7 +1255,7 @@ Critical Damage: x2.6"
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="CloseInfo" type="TextureButton" parent="Buttons/InfoSkills"]
+[node name="CloseInfo" type="TextureButton" parent="Buttons/InfoSkills" unique_id=423561552]
 layout_mode = 0
 offset_left = 880.0
 offset_top = 5.83333
@@ -1268,7 +1268,7 @@ texture_disabled = ExtResource("16_x8unj")
 texture_focused = ExtResource("14_p066g")
 stretch_mode = 0
 
-[node name="price" type="RichTextLabel" parent="Buttons/InfoSkills"]
+[node name="price" type="RichTextLabel" parent="Buttons/InfoSkills" unique_id=911407846]
 layout_mode = 0
 offset_top = 323.333
 offset_right = 949.167
@@ -1279,7 +1279,7 @@ text = "[img=60]res://Gres/Assets/obj/tablet_2.png[/img]5/2 -[img=80]res://Gres/
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Upgrade" type="Button" parent="Buttons/InfoSkills"]
+[node name="Upgrade" type="Button" parent="Buttons/InfoSkills" unique_id=1380871739]
 layout_mode = 0
 offset_left = 224.167
 offset_top = 343.333
@@ -1288,59 +1288,57 @@ offset_bottom = 535.333
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(240, 96)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/focus = SubResource("StyleBoxTexture_pm3dw")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_forb2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_usw3e")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_rej5d")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0buit")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rej5d")
+theme_override_styles/hover = SubResource("StyleBoxTexture_usw3e")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_forb2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_pm3dw")
 text = "BUY A STAR"
 script = ExtResource("22_5belc")
 
-[node name="Pos_1" type="Marker2D" parent="."]
+[node name="Pos_1" type="Marker2D" parent="." unique_id=1588802191]
 position = Vector2(213, 132)
 
-[node name="Pos_2" type="Marker2D" parent="."]
+[node name="Pos_2" type="Marker2D" parent="." unique_id=439798179]
 position = Vector2(2334, 1764)
 
-[node name="Pos_3" type="Marker2D" parent="."]
+[node name="Pos_3" type="Marker2D" parent="." unique_id=1053158618]
 position = Vector2(3275, 611)
 
-[node name="Pos_4" type="Marker2D" parent="."]
+[node name="Pos_4" type="Marker2D" parent="." unique_id=687688694]
 position = Vector2(5637, -435)
 
-[node name="Pos_5" type="Marker2D" parent="."]
+[node name="Pos_5" type="Marker2D" parent="." unique_id=1398868898]
 position = Vector2(5261, 659)
 
-[node name="Aries_Pos" type="Marker2D" parent="."]
+[node name="Aries_Pos" type="Marker2D" parent="." unique_id=697575934]
 position = Vector2(-364, -176)
 
-[node name="Taurus_Pos" type="Marker2D" parent="."]
+[node name="Taurus_Pos" type="Marker2D" parent="." unique_id=36137053]
 position = Vector2(1780, 1473)
 
-[node name="Gemini_Pos" type="Marker2D" parent="."]
+[node name="Gemini_Pos" type="Marker2D" parent="." unique_id=1231557346]
 position = Vector2(2699, 381)
 
-[node name="Cancer_Pos" type="Marker2D" parent="."]
+[node name="Cancer_Pos" type="Marker2D" parent="." unique_id=555950296]
 position = Vector2(5053, -752)
 
-[node name="Leo_Pos" type="Marker2D" parent="."]
+[node name="Leo_Pos" type="Marker2D" parent="." unique_id=121596104]
 position = Vector2(4677, 342)
 
-[node name="Updater" type="Timer" parent="."]
+[node name="Updater" type="Timer" parent="." unique_id=1682423822]
 wait_time = 0.1
 one_shot = true
 autostart = true
 
-[node name="AudioManager" parent="." instance=ExtResource("25_vt6we")]
+[node name="AudioManager" parent="." unique_id=796164053 instance=ExtResource("25_vt6we")]
 playlist = Array[AudioStream]([ExtResource("26_u5r0s"), ExtResource("27_tkwdi"), ExtResource("28_wdjpv"), ExtResource("29_1twhc"), ExtResource("30_rurxl"), ExtResource("31_3chxb"), ExtResource("32_23b1d"), ExtResource("33_rxfh6"), ExtResource("34_0f46p"), ExtResource("35_qampt"), ExtResource("36_hadqr"), ExtResource("37_h7w0d"), ExtResource("38_foexd"), ExtResource("39_uckut"), ExtResource("40_c2kin"), ExtResource("41_msk1l"), ExtResource("42_nkgqs"), ExtResource("43_rlyln"), ExtResource("44_ysfxx"), ExtResource("45_yiqco"), ExtResource("46_1q1hu"), ExtResource("47_xxhna"), ExtResource("48_ohbjw"), ExtResource("49_uxxka"), ExtResource("50_ggu7x"), ExtResource("51_d6ea5"), ExtResource("52_6vleh"), ExtResource("53_a6ogk"), ExtResource("54_alxr2"), ExtResource("55_hhjip")])
 
-[node name="trs" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_htpd8")
-}
-autoplay = "open"
+[node name="trs" type="AnimationPlayer" parent="." unique_id=1862434922]
+libraries/ = SubResource("AnimationLibrary_htpd8")
+autoplay = &"open"
 
-[node name="bgtrs" type="TextureRect" parent="."]
+[node name="bgtrs" type="TextureRect" parent="." unique_id=863709466]
 visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = -2135.0
@@ -1351,7 +1349,7 @@ texture = ExtResource("56_xce22")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=33751465]
 position = Vector2(5261, 659)
 
 [connection signal="mouse_entered" from="Buttons/close" to="Buttons/close" method="_on_mouse_entered"]

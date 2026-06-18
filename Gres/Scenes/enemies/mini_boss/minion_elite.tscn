@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://hpheb2wjyx0b"]
+
+[ext_resource type="Script" uid="uid://boinhltrcfpt7" path="res://Gres/Scripts/enemies/mini_boss/minion_elite.gd" id="1_t1c23"]
+[ext_resource type="PackedScene" uid="uid://rupg6m325jkj" path="res://Gres/Scenes/enemies/bullets/enemy_bullet_1.tscn" id="2_fu2uf"]
+[ext_resource type="Texture2D" uid="uid://dchf84ixompe0" path="res://Gres/Assets/Enemy/obj/mantide.png" id="3_leerp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0fbnv"]
+radius = 11.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoueg"]
+size = Vector2(6, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq5s4"]
+size = Vector2(6, 12.828427)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fu2uf"]
+radius = 24.083189
+
+[sub_resource type="Animation" id="Animation_ydynr"]
+resource_name = "dash"
+
+[sub_resource type="Animation" id="Animation_q7i15"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_fvqrt"]
+resource_name = "poison_charge"
+
+[sub_resource type="Animation" id="Animation_u5l0f"]
+resource_name = "shockwave_charge"
+
+[sub_resource type="Animation" id="Animation_yfqrn"]
+resource_name = "teleport_charge"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p6rjq"]
+_data = {
+&"dash": SubResource("Animation_ydynr"),
+&"idle": SubResource("Animation_q7i15"),
+&"poison_charge": SubResource("Animation_fvqrt"),
+&"shockwave_charge": SubResource("Animation_u5l0f"),
+&"teleport_charge": SubResource("Animation_yfqrn")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r1ocp"]
+
+[node name="MinionElite" type="CharacterBody2D" unique_id=1581660309 groups=["enemy"]]
+script = ExtResource("1_t1c23")
+missile_scene = ExtResource("2_fu2uf")
+poison_projectile_scene = ExtResource("2_fu2uf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=210355543]
+texture = ExtResource("3_leerp")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=838895351]
+collision_layer = 2
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1589726245]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_0fbnv")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="MeleeHitBox" type="Area2D" parent="." unique_id=375165440]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHitBox" unique_id=1129002499]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_eoueg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MeleeHitBox" unique_id=1588803092]
+position = Vector2(6.464467, -13.535534)
+rotation = -0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_xq5s4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MeleeHitBox" unique_id=733150428]
+position = Vector2(6.464466, 13.464467)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_xq5s4")
+
+[node name="ShockwaveArea" type="Area2D" parent="." unique_id=1493383066]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShockwaveArea" unique_id=1721616014]
+shape = SubResource("CircleShape2D_fu2uf")
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="DashCooldown" type="Timer" parent="." unique_id=1618014255]
+
+[node name="ShockwaveCooldown" type="Timer" parent="." unique_id=1234229230]
+
+[node name="MissileCooldown" type="Timer" parent="." unique_id=1453803615]
+
+[node name="TeleportCooldown" type="Timer" parent="." unique_id=164432224]
+
+[node name="RandomSkillTimer" type="Timer" parent="." unique_id=849100820]
+
+[node name="Anim" type="AnimationPlayer" parent="." unique_id=393917948]
+libraries/ = SubResource("AnimationLibrary_p6rjq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=510585423]
+shape = SubResource("CircleShape2D_r1ocp")
